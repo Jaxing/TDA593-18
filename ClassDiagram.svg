@@ -7,9 +7,9 @@
    xmlns="http://www.w3.org/2000/svg"
    version="1.1"
    id="svg2"
-   viewBox="0 0 712.76248 855.00869"
-   height="241.30241mm"
-   width="201.15741mm">
+   viewBox="0 0 769.58521 1280.8244"
+   height="361.47705mm"
+   width="217.19405mm">
   <defs
      id="defs4" />
   <metadata
@@ -25,7 +25,7 @@
     </rdf:RDF>
   </metadata>
   <g
-     transform="translate(-69.102105,-113.66507)"
+     transform="translate(402.90782,80.428816)"
      id="layer1">
     <rect
        y="172.46066"
@@ -56,15 +56,23 @@
          style="font-size:25px"
          y="292.72748"
          x="101.52033"
-         id="tspan4146">-ID</tspan><tspan
+         id="tspan4146">- ID</tspan><tspan
          id="tspan4158"
          style="font-size:25px"
          y="323.97748"
-         x="101.52033">-Check in date</tspan><tspan
+         x="101.52033">- Check in date</tspan><tspan
          id="tspan4164"
          style="font-size:25px"
          y="355.22748"
-         x="101.52033">-Check out date</tspan></text>
+         x="101.52033">- Check out date</tspan><tspan
+         id="tspan4350"
+         style="font-size:25px"
+         y="386.47748"
+         x="101.52033">- First name</tspan><tspan
+         id="tspan4352"
+         style="font-size:25px"
+         y="417.72748"
+         x="101.52033">- Last name</tspan></text>
     <rect
        y="643.89233"
        x="72.016197"
@@ -126,72 +134,119 @@
          x="208.09145"
          id="tspan4198">1... n</tspan></text>
     <rect
-       y="623.04742"
-       x="533.36053"
+       y="914.47601"
+       x="-362.49738"
        height="255.5686"
        width="210.11171"
        id="rect4219"
        style="opacity:1;fill:#008080;fill-opacity:0;stroke:#000000;stroke-width:4.00899982;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <path
        id="path4221"
-       d="m 742.46212,688.70752 -210.11173,1.00969"
+       d="m -153.3958,980.13613 -210.11173,1.00969"
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <text
        id="text4223"
-       y="672.54486"
-       x="557.60425"
+       y="963.97345"
+       x="-338.25366"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         y="672.54486"
-         x="557.60425"
+         y="963.97345"
+         x="-338.25366"
          id="tspan4225">Admin</tspan></text>
     <rect
-       y="177.31448"
-       x="513.40692"
+       y="-49.8284"
+       x="-372.30743"
        height="255.06969"
        width="266.18134"
        id="rect4219-3"
        style="opacity:1;fill:#008080;fill-opacity:0;stroke:#000000;stroke-width:4.50791168;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <path
        id="path4221-6"
-       d="m 781.86249,242.72745 -269.71957,1.00511"
+       d="m -103.85185,15.584565 -269.71957,1.00511"
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.13042498px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <text
        id="text4223-7"
-       y="225.55234"
-       x="527.29962"
+       y="-1.5905473"
+       x="-358.41473"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         y="225.55234"
-         x="527.29962"
+         y="-1.5905473"
+         x="-358.41473"
          id="tspan4225-5">Receptionist</tspan></text>
     <path
        id="path4251"
-       d="m 513.15749,313.94069 c -179.80715,0 -180.8173,0 -180.8173,0"
+       d="m -249.72952,397.55529 c -0.0669,-195.43422 -0.0673,-196.53217 -0.0673,-196.53217"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.04253471px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text
+       transform="matrix(3.567271e-4,1.042565,-0.95917269,3.8774159e-4,0,0)"
+       id="text4255"
+       y="259.44797"
+       x="202.19708"
+       style="font-style:normal;font-weight:normal;font-size:41.70138931px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:26.06336784px"
+         y="259.44797"
+         x="202.19708"
+         id="tspan4257">*</tspan></text>
+    <rect
+       y="400.1022"
+       x="-372.32651"
+       height="347.14285"
+       width="275.71429"
+       id="rect4373"
+       style="opacity:1;fill:#008080;fill-opacity:0;stroke:#000000;stroke-width:4.00899982;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       id="path4375"
+       d="m -370.89793,482.95933 274.285714,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text
+       id="text4377"
+       y="460.10217"
+       x="-339.46936"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="460.10217"
+         x="-339.46936"
+         id="tspan4379">Hotel</tspan></text>
+    <path
+       id="path4381"
+       d="M -248.71663,916.4082 -250.1452,747.83677"
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <path
-       id="path4253"
-       d="m 336.3808,779.62102 c 196.97974,-1.01016 196.97974,-1.01016 196.97974,-1.01016"
+       id="path4383"
+       d="m -96.612216,672.95933 c 168.571433,60 170.000004,60 170.000004,60"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       id="path4385"
+       d="M -98.040786,500.10218 69.102074,392.95933"
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <text
-       id="text4255"
-       y="312.93054"
-       x="341.43155"
+       id="text4387"
+       y="758.67365"
+       x="1.9592206"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-size:25px"
-         y="312.93054"
-         x="341.43155"
-         id="tspan4257">*</tspan></text>
+         style="font-size:25.00000191px"
+         y="758.67365"
+         x="1.9592206"
+         id="tspan4389">1... n</tspan></text>
     <text
-       id="text4259"
-       y="773.56012"
-       x="342.44171"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="text4391"
+       y="393.76288"
+       x="55.530647"
+       style="font-style:normal;font-weight:normal;font-size:25.00000191px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-size:25px"
-         y="773.56012"
-         x="342.44171"
-         id="tspan4261">1 ... n</tspan></text>
+         y="393.76288"
+         x="55.530647"
+         id="tspan4393">*</tspan></text>
+    <text
+       id="text4401"
+       y="900.99341"
+       x="-231.92337"
+       style="font-style:normal;font-weight:normal;font-size:25.00000191px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="900.99341"
+         x="-231.92337"
+         id="tspan4403">*</tspan></text>
   </g>
 </svg>
