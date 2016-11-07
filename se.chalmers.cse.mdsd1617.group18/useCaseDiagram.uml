@@ -21,4 +21,5 @@
   <packagedElement xmi:type="uml:UseCase" xmi:id="_6jCJUKTJEeaq4ojlJmBUdg" name="List Check-ins for specific day"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="__rCk8KTJEeaq4ojlJmBUdg" name="List occupied rooms for specific day"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_GDwagKTKEeaq4ojlJmBUdg" name="List checkout for speciifc day"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_izzXEKTNEeatjoFTVpd5sA" name="Remove Room Type"/>
 </uml:Model>
