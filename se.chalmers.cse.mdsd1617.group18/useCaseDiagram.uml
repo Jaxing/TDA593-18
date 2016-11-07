@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_l0vHkKTEEea36uwiLO6_WQ" name="RootElement">
+  <packagedElement xmi:type="uml:Actor" xmi:id="_o7GbkKTEEea36uwiLO6_WQ" name="Admin"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_xOM6MKTEEea36uwiLO6_WQ" name="Receptionist"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_uIjicKTFEea36uwiLO6_WQ" name="Unblock Room"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_DpNngKTGEea36uwiLO6_WQ" name="Block Room"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_GqF-kKTGEea36uwiLO6_WQ" name="Remove Room"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_ILlmgKTGEea36uwiLO6_WQ" name="Change Room Type"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_Jf0OgKTGEea36uwiLO6_WQ" name="Add Room"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_WnmkIKTGEea36uwiLO6_WQ" name="Startup Hotell System"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_ZykEQKTGEea36uwiLO6_WQ" name="Add Room Type"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_dy9-oKTGEea36uwiLO6_WQ" name="Update Room Type"/>
+</uml:Model>
