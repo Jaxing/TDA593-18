@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   id="svg2"
+   viewBox="0 0 712.76248 855.00869"
+   height="241.30241mm"
+   width="201.15741mm">
+  <defs
+     id="defs4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-69.102105,-113.66507)"
+     id="layer1">
+    <rect
+       y="172.46066"
+       x="71.20504"
+       height="291.23166"
+       width="261.18958"
+       id="rect4136"
+       style="opacity:1;fill:#008080;fill-opacity:0;stroke:#000000;stroke-width:4.20593119;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       id="path4138"
+       d="m 69.676446,245.22024 262.818214,1.09503"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.04873216px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text
+       id="text4140"
+       y="226.05742"
+       x="89.398491"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="226.05742"
+         x="89.398491"
+         id="tspan4142">Booking</tspan></text>
+    <text
+       id="text4144"
+       y="292.72748"
+       x="101.52033"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:25px"
+         y="292.72748"
+         x="101.52033"
+         id="tspan4146">-ID</tspan><tspan
+         id="tspan4158"
+         style="font-size:25px"
+         y="323.97748"
+         x="101.52033">-Check in date</tspan><tspan
+         id="tspan4164"
+         style="font-size:25px"
+         y="355.22748"
+         x="101.52033">-Check out date</tspan></text>
+    <rect
+       y="643.89233"
+       x="72.016197"
+       height="323.14468"
+       width="264.67841"
+       id="rect4168"
+       style="opacity:1;fill:#008080;fill-opacity:0;stroke:#000000;stroke-width:3.27268624;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       id="path4170"
+       d="M 71.108876,712.3639 338.24714,710.93193"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.91681135px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text
+       id="text4172"
+       y="695.93365"
+       x="103.96372"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="695.93365"
+         x="103.96372"
+         id="tspan4174">Room</tspan></text>
+    <text
+       id="text4176"
+       y="778.79077"
+       x="103.96372"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:27.5px"
+         y="778.79077"
+         x="103.96372"
+         id="tspan4178">- Name</tspan><tspan
+         style="font-size:27.5px"
+         id="tspan4180"
+         y="813.16577"
+         x="103.96372">- Available?</tspan><tspan
+         style="font-size:27.5px"
+         id="tspan4182"
+         y="847.54077"
+         x="103.96372">- Price</tspan><tspan
+         style="font-size:27.5px"
+         id="tspan4186"
+         y="881.91577"
+         x="103.96372">- Beds n</tspan><tspan
+         style="font-size:27.5px"
+         id="tspan4190"
+         y="916.29077"
+         x="103.96372">- Room Num</tspan></text>
+    <path
+       id="path4194"
+       d="m 195.9696,464.45342 0,179.80716"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text
+       id="text4196"
+       y="630.11847"
+       x="208.09145"
+       style="font-style:normal;font-weight:normal;font-size:25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:25px"
+         y="630.11847"
+         x="208.09145"
+         id="tspan4198">1... n</tspan></text>
+    <rect
+       y="623.04742"
+       x="533.36053"
+       height="255.5686"
+       width="210.11171"
+       id="rect4219"
+       style="opacity:1;fill:#008080;fill-opacity:0;stroke:#000000;stroke-width:4.00899982;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       id="path4221"
+       d="m 742.46212,688.70752 -210.11173,1.00969"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text
+       id="text4223"
+       y="672.54486"
+       x="557.60425"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="672.54486"
+         x="557.60425"
+         id="tspan4225">Admin</tspan></text>
+    <rect
+       y="177.31448"
+       x="513.40692"
+       height="255.06969"
+       width="266.18134"
+       id="rect4219-3"
+       style="opacity:1;fill:#008080;fill-opacity:0;stroke:#000000;stroke-width:4.50791168;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       id="path4221-6"
+       d="m 781.86249,242.72745 -269.71957,1.00511"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.13042498px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text
+       id="text4223-7"
+       y="225.55234"
+       x="527.29962"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="225.55234"
+         x="527.29962"
+         id="tspan4225-5">Receptionist</tspan></text>
+    <path
+       id="path4251"
+       d="m 513.15749,313.94069 c -179.80715,0 -180.8173,0 -180.8173,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       id="path4253"
+       d="m 336.3808,779.62102 c 196.97974,-1.01016 196.97974,-1.01016 196.97974,-1.01016"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text
+       id="text4255"
+       y="312.93054"
+       x="341.43155"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:25px"
+         y="312.93054"
+         x="341.43155"
+         id="tspan4257">*</tspan></text>
+    <text
+       id="text4259"
+       y="773.56012"
+       x="342.44171"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:25px"
+         y="773.56012"
+         x="342.44171"
+         id="tspan4261">1 ... n</tspan></text>
+  </g>
+</svg>
