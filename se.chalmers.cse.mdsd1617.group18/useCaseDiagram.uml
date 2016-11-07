@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_l0vHkKTEEea36uwiLO6_WQ" name="RootElement">
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_l0vHkKTEEea36uwiLO6_WQ" name="RootElement">
   <packagedElement xmi:type="uml:Actor" xmi:id="_o7GbkKTEEea36uwiLO6_WQ" name="Admin"/>
   <packagedElement xmi:type="uml:Actor" xmi:id="_xOM6MKTEEea36uwiLO6_WQ" name="Receptionist"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_uIjicKTFEea36uwiLO6_WQ" name="Unblock Room"/>
@@ -10,4 +10,15 @@
   <packagedElement xmi:type="uml:UseCase" xmi:id="_WnmkIKTGEea36uwiLO6_WQ" name="Startup Hotell System"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_ZykEQKTGEea36uwiLO6_WQ" name="Add Room Type"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_dy9-oKTGEea36uwiLO6_WQ" name="Update Room Type"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_zFPiEKTJEeaq4ojlJmBUdg" memberEnd="_zFeLkKTJEeaq4ojlJmBUdg _zFeyoKTJEeaq4ojlJmBUdg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zFYE8KTJEeaq4ojlJmBUdg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zFYsAKTJEeaq4ojlJmBUdg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_zFeLkKTJEeaq4ojlJmBUdg" name="unblock room" type="_uIjicKTFEea36uwiLO6_WQ" association="_zFPiEKTJEeaq4ojlJmBUdg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_zFeyoKTJEeaq4ojlJmBUdg" name="admin" type="_o7GbkKTEEea36uwiLO6_WQ" association="_zFPiEKTJEeaq4ojlJmBUdg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_2bwx8KTJEeaq4ojlJmBUdg" name="List Booking"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_6jCJUKTJEeaq4ojlJmBUdg" name="List Check-ins for specific day"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="__rCk8KTJEeaq4ojlJmBUdg" name="List occupied rooms for specific day"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_GDwagKTKEeaq4ojlJmBUdg" name="List checkout for speciifc day"/>
 </uml:Model>
