@@ -20,6 +20,12 @@
   <packagedElement xmi:type="uml:UseCase" xmi:id="_2bwx8KTJEeaq4ojlJmBUdg" name="List Booking"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_6jCJUKTJEeaq4ojlJmBUdg" name="List Check-ins for specific day"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="__rCk8KTJEeaq4ojlJmBUdg" name="List occupied rooms for specific day"/>
-  <packagedElement xmi:type="uml:UseCase" xmi:id="_GDwagKTKEeaq4ojlJmBUdg" name="List checkout for speciifc day"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_izzXEKTNEeatjoFTVpd5sA" name="Remove Room Type"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_-ynyYKTNEeatjoFTVpd5sA" name="Search for Rooms"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_A2g8wKTOEeatjoFTVpd5sA" name="Make a Booking"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_Fo_0UKTOEeatjoFTVpd5sA" name="Edit Booking"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_H5nzIKTOEeatjoFTVpd5sA" name="Check In Booking"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_KiPbMKTOEeatjoFTVpd5sA" name="Check Out Booking"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_Om3HMKTOEeatjoFTVpd5sA" name="Cancel Booking"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_P8dBIKTOEeatjoFTVpd5sA" name="List Booking"/>
 </uml:Model>
