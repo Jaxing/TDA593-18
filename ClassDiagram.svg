@@ -47,32 +47,6 @@
          y="226.05742"
          x="89.398491"
          id="tspan4142">Booking</tspan></text>
-    <text
-       id="text4144"
-       y="292.72748"
-       x="101.52033"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         style="font-size:25px"
-         y="292.72748"
-         x="101.52033"
-         id="tspan4146">- ID</tspan><tspan
-         id="tspan4158"
-         style="font-size:25px"
-         y="323.97748"
-         x="101.52033">- Check in date</tspan><tspan
-         id="tspan4164"
-         style="font-size:25px"
-         y="355.22748"
-         x="101.52033">- Check out date</tspan><tspan
-         id="tspan4350"
-         style="font-size:25px"
-         y="386.47748"
-         x="101.52033">- First name</tspan><tspan
-         id="tspan4352"
-         style="font-size:25px"
-         y="417.72748"
-         x="101.52033">- Last name</tspan></text>
     <rect
        y="643.89233"
        x="72.016197"
@@ -93,32 +67,6 @@
          y="695.93365"
          x="103.96372"
          id="tspan4174">Room</tspan></text>
-    <text
-       id="text4176"
-       y="778.79077"
-       x="103.96372"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         style="font-size:27.5px"
-         y="778.79077"
-         x="103.96372"
-         id="tspan4178">- Name</tspan><tspan
-         style="font-size:27.5px"
-         id="tspan4180"
-         y="813.16577"
-         x="103.96372">- Available?</tspan><tspan
-         style="font-size:27.5px"
-         id="tspan4182"
-         y="847.54077"
-         x="103.96372">- Price</tspan><tspan
-         style="font-size:27.5px"
-         id="tspan4186"
-         y="881.91577"
-         x="103.96372">- Beds n</tspan><tspan
-         style="font-size:27.5px"
-         id="tspan4190"
-         y="916.29077"
-         x="103.96372">- Room Num</tspan></text>
     <path
        id="path4194"
        d="m 195.9696,464.45342 0,179.80716"
@@ -279,9 +227,39 @@
            height="201.42857"
            width="201.42857"
            id="rect5193" /></flowRegion><flowPara
-         id="flowPara5195"></flowPara></flowRoot>    <path
+         id="flowPara5195" /></flowRoot>    <path
        id="path5197"
        d="m 338.52072,830.39538 c 162.85714,1.42857 162.85714,1.42857 162.85714,1.42857"
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text
+       id="text4296"
+       y="817.53821"
+       x="482.80643"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:25.00000298px"
+         y="817.53821"
+         x="482.80643"
+         id="tspan4298">1</tspan></text>
+    <flowRoot
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"
+       id="flowRoot4300"
+       xml:space="preserve"><flowRegion
+         id="flowRegion4302"><rect
+           y="813.68134"
+           x="488.57144"
+           height="212.85715"
+           width="217.14285"
+           id="rect4304" /></flowRegion><flowPara
+         id="flowPara4306"></flowPara></flowRoot>    <text
+       id="text4308"
+       y="820.39539"
+       x="341.37784"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:25.00000298px"
+         y="820.39539"
+         x="341.37784"
+         id="tspan4310">0...n</tspan></text>
   </g>
 </svg>
