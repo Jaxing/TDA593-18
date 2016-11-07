@@ -7,9 +7,9 @@
    xmlns="http://www.w3.org/2000/svg"
    version="1.1"
    id="svg2"
-   viewBox="0 0 769.58521 1280.8244"
+   viewBox="0 0 1207.7929 1280.8244"
    height="361.47705mm"
-   width="217.19405mm">
+   width="340.866mm">
   <defs
      id="defs4" />
   <metadata
@@ -248,5 +248,40 @@
          y="900.99341"
          x="-231.92337"
          id="tspan4403">*</tspan></text>
+    <rect
+       y="643.37311"
+       x="502.25598"
+       height="331.6962"
+       width="272.53305"
+       id="rect5181"
+       style="opacity:1;fill:#008080;fill-opacity:0;stroke:#000000;stroke-width:3.49926138;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       id="path5183"
+       d="m 502.80795,714.73598 c 271.7168,1.30736 272.85365,1.31881 272.85365,1.31881"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.89300394px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text
+       id="text5185"
+       y="698.9668"
+       x="527.09216"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="698.9668"
+         x="527.09216"
+         id="tspan5187">Room Type</tspan></text>
+    <flowRoot
+       transform="translate(-402.90785,-80.428816)"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="flowRoot5189"
+       xml:space="preserve"><flowRegion
+         id="flowRegion5191"><rect
+           y="813.68134"
+           x="494.28571"
+           height="201.42857"
+           width="201.42857"
+           id="rect5193" /></flowRegion><flowPara
+         id="flowPara5195"></flowPara></flowRoot>    <path
+       id="path5197"
+       d="m 338.52072,830.39538 c 162.85714,1.42857 162.85714,1.42857 162.85714,1.42857"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
   </g>
 </svg>
