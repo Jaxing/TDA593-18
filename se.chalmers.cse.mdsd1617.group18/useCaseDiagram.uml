@@ -148,13 +148,6 @@
       <ownedEnd xmi:type="uml:Property" xmi:id="_a8GBs6TSEeadMJh-U4YXzQ" name="receptionist" type="_xOM6MKTEEea36uwiLO6_WQ" association="_a8FaoKTSEeadMJh-U4YXzQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Actor" xmi:id="_v_8O8KTSEeadMJh-U4YXzQ" name="Payment System"/>
-    <packagedElement xmi:type="uml:Association" xmi:id="_x4N_MKTSEeadMJh-U4YXzQ" memberEnd="_x4OmQqTSEeadMJh-U4YXzQ _x4OmQ6TSEeadMJh-U4YXzQ">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_x4OmQKTSEeadMJh-U4YXzQ" source="org.eclipse.papyrus">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_x4OmQaTSEeadMJh-U4YXzQ" key="nature" value="UML_Nature"/>
-      </eAnnotations>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_x4OmQqTSEeadMJh-U4YXzQ" name="check out booking" type="_KiPbMKTOEeatjoFTVpd5sA" association="_x4N_MKTSEeadMJh-U4YXzQ"/>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_x4OmQ6TSEeadMJh-U4YXzQ" name="payment system" type="_v_8O8KTSEeadMJh-U4YXzQ" association="_x4N_MKTSEeadMJh-U4YXzQ"/>
-    </packagedElement>
     <packagedElement xmi:type="uml:Actor" xmi:id="_yevzsKTSEeadMJh-U4YXzQ" name="External Supplier System"/>
     <packagedElement xmi:type="uml:Association" xmi:id="_6yLpgKTSEeadMJh-U4YXzQ" memberEnd="_6yMQkKTSEeadMJh-U4YXzQ _6yMQkaTSEeadMJh-U4YXzQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6yLpgaTSEeadMJh-U4YXzQ" source="org.eclipse.papyrus">
@@ -177,6 +170,7 @@
       <ownedEnd xmi:type="uml:Property" xmi:id="_-I670qTSEeadMJh-U4YXzQ" name="check out booking" type="_KiPbMKTOEeatjoFTVpd5sA" association="_-I6UwKTSEeadMJh-U4YXzQ"/>
       <ownedEnd xmi:type="uml:Property" xmi:id="_-I6706TSEeadMJh-U4YXzQ" name="external supplier system" type="_yevzsKTSEeadMJh-U4YXzQ" association="_-I6UwKTSEeadMJh-U4YXzQ"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_wAljsKaJEea4sLWriZOnAg" client="_KiPbMKTOEeatjoFTVpd5sA" supplier="_v_8O8KTSEeadMJh-U4YXzQ"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_Ayfe0KaDEea4sLWriZOnAg" name="ComponentDiagram"/>
 </uml:Model>
