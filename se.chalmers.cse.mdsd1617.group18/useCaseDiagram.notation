@@ -286,7 +286,7 @@
   <styles xmi:type="notation:StringValueStyle" xmi:id="_l14-IaTEEea36uwiLO6_WQ" name="diagram_compatibility_version" stringValue="1.2.0"/>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_l14-IqTEEea36uwiLO6_WQ"/>
   <styles xmi:type="style:PapyrusViewStyle" xmi:id="_l14-I6TEEea36uwiLO6_WQ">
-    <owner xmi:type="uml:Model" href="useCaseDiagram.uml#_l0vHkKTEEea36uwiLO6_WQ"/>
+    <owner xmi:type="uml:Package" href="useCaseDiagram.uml#_6yj8sKaCEea4sLWriZOnAg"/>
   </styles>
   <element xmi:type="uml:Model" href="useCaseDiagram.uml#_l0vHkKTEEea36uwiLO6_WQ"/>
   <edges xmi:type="notation:Connector" xmi:id="_zGHr0KTJEeaq4ojlJmBUdg" type="Association_Edge" source="_o7L7IKTEEea36uwiLO6_WQ" target="_uIkwkKTFEea36uwiLO6_WQ">
