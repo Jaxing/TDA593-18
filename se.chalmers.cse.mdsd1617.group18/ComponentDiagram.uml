@@ -164,6 +164,16 @@
         </ownedParameter>
       </ownedOperation>
     </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Interface" xmi:id="_kAShIKa2Eea6v_LEHy7Trw" name="IHotelRoomProvider">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_tbbdAKgCEeauM4HoNkhouQ" name="getRooms">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_9si7EKgCEeauM4HoNkhouQ" direction="return">
+          <type xmi:type="uml:Class" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaClass-_ownedElement.0-_ownedParameter.0-_ownedParameteredElement"/>
+        </ownedParameter>
+      </ownedOperation>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Interface" xmi:id="_NstogKgCEeauM4HoNkhouQ" name="IHotelRoomManager">
+      <generalization xmi:type="uml:Generalization" xmi:id="_VybycKgCEeauM4HoNkhouQ" general="_kAShIKa2Eea6v_LEHy7Trw"/>
+    </nestedClassifier>
     <packagedElement xmi:type="uml:Component" xmi:id="_Aazr4Ka1Eea6v_LEHy7Trw" name="BookingSystem">
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_DbRzQKa1Eea6v_LEHy7Trw" client="_Aazr4Ka1Eea6v_LEHy7Trw" supplier="_ztfhMKazEea6v_LEHy7Trw" contract="_ztfhMKazEea6v_LEHy7Trw"/>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_V5k6kKa1Eea6v_LEHy7Trw" client="_Aazr4Ka1Eea6v_LEHy7Trw" supplier="_OwuBgKa1Eea6v_LEHy7Trw" contract="_OwuBgKa1Eea6v_LEHy7Trw"/>
@@ -174,12 +184,13 @@
       <packagedElement xmi:type="uml:Usage" xmi:id="_T20_sKa1Eea6v_LEHy7Trw" client="_FTEbUKa1Eea6v_LEHy7Trw" supplier="_OwuBgKa1Eea6v_LEHy7Trw"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Component" xmi:id="_gBizoKa2Eea6v_LEHy7Trw" name="Administrator">
-      <packagedElement xmi:type="uml:Usage" xmi:id="_rdujEKa2Eea6v_LEHy7Trw" client="_gBizoKa2Eea6v_LEHy7Trw" supplier="_kAShIKa2Eea6v_LEHy7Trw"/>
       <packagedElement xmi:type="uml:Usage" xmi:id="_GWxpIKa3Eea6v_LEHy7Trw" client="_gBizoKa2Eea6v_LEHy7Trw" supplier="_20e_8Ka2Eea6v_LEHy7Trw"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_SuLXQKgCEeauM4HoNkhouQ" client="_gBizoKa2Eea6v_LEHy7Trw" supplier="_NstogKgCEeauM4HoNkhouQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Component" xmi:id="_hc9BsKa2Eea6v_LEHy7Trw" name="RoomManagement">
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_tGiT8Ka2Eea6v_LEHy7Trw" client="_hc9BsKa2Eea6v_LEHy7Trw" supplier="_kAShIKa2Eea6v_LEHy7Trw" contract="_kAShIKa2Eea6v_LEHy7Trw"/>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_JnyG4Ka3Eea6v_LEHy7Trw" client="_hc9BsKa2Eea6v_LEHy7Trw" supplier="_20e_8Ka2Eea6v_LEHy7Trw" contract="_20e_8Ka2Eea6v_LEHy7Trw"/>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_jC_0IKgDEeauM4HoNkhouQ" client="_hc9BsKa2Eea6v_LEHy7Trw" supplier="_NstogKgCEeauM4HoNkhouQ" contract="_NstogKgCEeauM4HoNkhouQ"/>
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Component" xmi:id="_Pob-kKazEea6v_LEHy7Trw" name="ExternalSupplierSystem">
@@ -344,5 +355,4 @@
   <packagedElement xmi:type="uml:Usage" xmi:id="_OAS0sKa2Eea6v_LEHy7Trw" client="_rdkAcKa1Eea6v_LEHy7Trw" supplier="_rdlOkKa1Eea6v_LEHy7Trw"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_UbdhUKa2Eea6v_LEHy7Trw" client="_9lGNkKa1Eea6v_LEHy7Trw" supplier="_rdkngKa1Eea6v_LEHy7Trw"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_U_Fy0Ka2Eea6v_LEHy7Trw" client="_9lGNkKa1Eea6v_LEHy7Trw" supplier="_rdlOkKa1Eea6v_LEHy7Trw"/>
-  <packagedElement xmi:type="uml:Interface" xmi:id="_kAShIKa2Eea6v_LEHy7Trw" name="IHotelRoomProvider"/>
 </uml:Model>
