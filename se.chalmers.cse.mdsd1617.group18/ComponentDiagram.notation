@@ -117,6 +117,10 @@
             <element xmi:type="uml:Operation" href="ComponentDiagram.uml#_on3SQKgAEeauM4HoNkhouQ"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_oodvMagAEeauM4HoNkhouQ"/>
           </children>
+          <children xmi:type="notation:Shape" xmi:id="_xPWJcKpFEea_EZT7TFtmBQ" type="Operation_InterfaceOperationLabel">
+            <element xmi:type="uml:Operation" href="ComponentDiagram.uml#_xOemwKpFEea_EZT7TFtmBQ"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_xPWJcapFEea_EZT7TFtmBQ"/>
+          </children>
           <styles xmi:type="notation:TitleStyle" xmi:id="_OwvPqaa1Eea6v_LEHy7Trw"/>
           <styles xmi:type="notation:SortingStyle" xmi:id="_OwvPqqa1Eea6v_LEHy7Trw"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_OwvPq6a1Eea6v_LEHy7Trw"/>
