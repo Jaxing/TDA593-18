@@ -197,8 +197,8 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_g6_R4KgbEeanF_TUJ6-6rA" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QchlUKnREeanF_TUJ6-6rA" name="roomNumber">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QchlUKnREeanF_TUJ6-6rA" name="roomDescription">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_Sj00gKgaEeanF_TUJ6-6rA" name="updateRoomType" visibility="public">
