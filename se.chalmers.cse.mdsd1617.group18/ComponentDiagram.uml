@@ -201,7 +201,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_Sj00gKgaEeanF_TUJ6-6rA" name="updateRoom" visibility="public">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Sj00gKgaEeanF_TUJ6-6rA" name="updateRoomType" visibility="public">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_Bz43AKgbEeanF_TUJ6-6rA" name="roomType"/>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_yjR-QKgbEeanF_TUJ6-6rA" name="roomName">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
