@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_9BJ6YKayEea6v_LEHy7Trw" name="RootElement">
-  <packagedElement xmi:type="uml:Component" xmi:id="_GYVsMKazEea6v_LEHy7Trw" name="t">
+  <packagedElement xmi:type="uml:Component" xmi:id="_GYVsMKazEea6v_LEHy7Trw" name="Hotel">
     <ownedAttribute xmi:type="uml:Port" xmi:id="_I4PdIKazEea6v_LEHy7Trw" name="ESSPort" visibility="public" type="_ztfhMKazEea6v_LEHy7Trw" aggregation="composite"/>
     <ownedAttribute xmi:type="uml:Port" xmi:id="_9lGNkKa1Eea6v_LEHy7Trw" name="PaymentService" visibility="public" type="_rdkAcKa1Eea6v_LEHy7Trw" aggregation="composite"/>
     <nestedClassifier xmi:type="uml:Interface" xmi:id="_ztfhMKazEea6v_LEHy7Trw" name="IHotelCustomerProvides">
