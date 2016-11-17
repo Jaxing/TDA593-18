@@ -14,8 +14,9 @@
       <vertices xsi:type="sgraph:Entry" xmi:id="_rb3IEKf5EeaPELw6Hy3jPQ">
         <outgoingTransitions xmi:id="_tYcwkKf5EeaPELw6Hy3jPQ" specification="" target="_r9lVEKf5EeaPELw6Hy3jPQ"/>
       </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_r9lVEKf5EeaPELw6Hy3jPQ" name="Idle" incomingTransitions="_tYcwkKf5EeaPELw6Hy3jPQ _unfWkKf5EeaPELw6Hy3jPQ">
+      <vertices xsi:type="sgraph:State" xmi:id="_r9lVEKf5EeaPELw6Hy3jPQ" name="Idle" incomingTransitions="_tYcwkKf5EeaPELw6Hy3jPQ _unfWkKf5EeaPELw6Hy3jPQ _dhQ80KzYEeaOGcmc2fT_EA">
         <outgoingTransitions xmi:id="_unfWkKf5EeaPELw6Hy3jPQ" specification="admin.doUnblockRoom/raise room.unblock : roomNumber" target="_r9lVEKf5EeaPELw6Hy3jPQ"/>
+        <outgoingTransitions xmi:id="_dhQ80KzYEeaOGcmc2fT_EA" specification="admin.doBlockRoom/raise room.block : roomNumber" target="_r9lVEKf5EeaPELw6Hy3jPQ"/>
       </vertices>
     </regions>
     <regions xmi:id="_1cT0IKp8Eea9rP9r4tEs6w" name="roomSwitch">
@@ -506,6 +507,17 @@
       <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_afHR9qv9Eeav_cMDv7Z36Q" points="[4, -9, 2, 72]$[4, -72, 2, 9]"/>
       <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_afHR96v9Eeav_cMDv7Z36Q" id="(0.7553956834532374,0.16129032258064516)"/>
       <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_afHR-Kv9Eeav_cMDv7Z36Q" id="(0.3237410071942446,0.8548387096774194)"/>
+    </edges>
+    <edges xmi:id="_dhat0KzYEeaOGcmc2fT_EA" type="Transition" element="_dhQ80KzYEeaOGcmc2fT_EA" source="_r9mjMKf5EeaPELw6Hy3jPQ" target="_r9mjMKf5EeaPELw6Hy3jPQ">
+      <children xsi:type="notation:DecorationNode" xmi:id="_dheYMKzYEeaOGcmc2fT_EA" type="TransitionExpression">
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_dheYMazYEeaOGcmc2fT_EA"/>
+        <layoutConstraint xsi:type="notation:Location" xmi:id="_dheYMqzYEeaOGcmc2fT_EA" x="28" y="23"/>
+      </children>
+      <styles xsi:type="notation:ConnectorStyle" xmi:id="_dhat0azYEeaOGcmc2fT_EA" lineColor="4210752"/>
+      <styles xsi:type="notation:FontStyle" xmi:id="_dhb78KzYEeaOGcmc2fT_EA" fontName="Verdana"/>
+      <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_dhat0qzYEeaOGcmc2fT_EA" points="[0, 0, 6, 13]$[67, 20, 73, 33]$[123, -10, 129, 3]$[99, -46, 105, -33]$[0, -15, 6, -2]"/>
+      <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_dhipoKzYEeaOGcmc2fT_EA" id="(1.0,0.5135135135135135)"/>
+      <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_dhipoazYEeaOGcmc2fT_EA" id="(0.9310344827586207,0.32432432432432434)"/>
     </edges>
   </notation:Diagram>
 </xmi:XMI>
