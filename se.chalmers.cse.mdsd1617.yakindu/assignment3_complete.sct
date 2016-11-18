@@ -17,7 +17,7 @@
         <outgoingTransitions xmi:id="_qP8rkKgaEeajc9cS_HWa6Q" specification="usr.initiateBooking[usr.booking==1]/&#xA;booking1.bookingId = booking.initiateBooking()" target="_dOOhsKgaEeajc9cS_HWa6Q"/>
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_dOOhsKgaEeajc9cS_HWa6Q" name="Initiated" incomingTransitions="_qP8rkKgaEeajc9cS_HWa6Q _7l_KUKgaEeajc9cS_HWa6Q">
-        <outgoingTransitions xmi:id="_qnMt8KgaEeajc9cS_HWa6Q" specification="usr.confirmBooking [usr.booking==1&amp;&amp; booking.confirmBooking(1)]" target="_e_-zMKgaEeajc9cS_HWa6Q"/>
+        <outgoingTransitions xmi:id="_qnMt8KgaEeajc9cS_HWa6Q" specification="usr.confirmBooking [usr.booking==1&amp;&amp; booking.confirmBooking(booking1.bookingId)]" target="_e_-zMKgaEeajc9cS_HWa6Q"/>
         <outgoingTransitions xmi:id="_7l_KUKgaEeajc9cS_HWa6Q" specification="usr.addRoomToBooking [usr.booking==1 &amp;&amp; booking.addRoomToBooking(booking1.bookingId)]&#xA;/raise room.assign" documentation="Create a new room reservation and assign a room when a room is added" target="_dOOhsKgaEeajc9cS_HWa6Q"/>
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_e_-zMKgaEeajc9cS_HWa6Q" name="Confirmed" incomingTransitions="_qnMt8KgaEeajc9cS_HWa6Q">
@@ -39,7 +39,7 @@
         <outgoingTransitions xmi:id="_L1tM8qpaEea9rP9r4tEs6w" specification="usr.initiateBooking[usr.booking==0]/&#xA;booking0.bookingId = booking.initiateBooking()" target="_L1tNA6paEea9rP9r4tEs6w"/>
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_L1tNA6paEea9rP9r4tEs6w" name="Initiated" incomingTransitions="_L1tM8qpaEea9rP9r4tEs6w _L1t0E6paEea9rP9r4tEs6w">
-        <outgoingTransitions xmi:id="_L1t0AKpaEea9rP9r4tEs6w" specification="usr.confirmBooking [usr.booking==0 &amp;&amp; booking.confirmBooking(0)]&#xA;" target="_L1t0JqpaEea9rP9r4tEs6w"/>
+        <outgoingTransitions xmi:id="_L1t0AKpaEea9rP9r4tEs6w" specification="usr.confirmBooking [usr.booking==0 &amp;&amp; booking.confirmBooking(booking0.bookingId)]&#xA;" target="_L1t0JqpaEea9rP9r4tEs6w"/>
         <outgoingTransitions xmi:id="_L1t0E6paEea9rP9r4tEs6w" specification="usr.addRoomToBooking [usr.booking==0 &amp;&amp; booking.addRoomToBooking(booking0.bookingId)]&#xA;/raise room.assign" target="_L1tNA6paEea9rP9r4tEs6w"/>
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_L1t0JqpaEea9rP9r4tEs6w" name="Confirmed" incomingTransitions="_L1t0AKpaEea9rP9r4tEs6w">
