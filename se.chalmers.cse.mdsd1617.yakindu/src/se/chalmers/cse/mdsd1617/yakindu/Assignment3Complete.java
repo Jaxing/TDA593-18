@@ -32,8 +32,8 @@ public class Assignment3Complete {
 	}
 	
 	public boolean confirmBooking(long bookingId){
-		
-		return false;
+		//If there is an entry with this booking id then there is a reservation connected to that booking.
+		return reservationToBookingId.containsValue(bookingId);
 	}
 	
 	public long getCurrentReservationNumber(){
