@@ -39,6 +39,17 @@ public class Assignment3Complete {
 	public long getCurrentReservationNumber(){
 		return currentReservationNumber;
 	}
-	
+	 
+	 public boolean checkInBooking(int bookingId) {
+		 return false;
+	 }
+	 
+	 public boolean initiateCheckout(int bookingId) {
+		 return false;
+	 }
+	 
+	 public boolean payDuringCheckout(int bookingId) {
+		 return false;
+	 }
 	
 }
