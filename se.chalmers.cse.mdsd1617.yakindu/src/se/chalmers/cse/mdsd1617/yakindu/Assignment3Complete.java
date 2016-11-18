@@ -40,15 +40,15 @@ public class Assignment3Complete {
 		return currentReservationNumber;
 	}
 	 
-	 public boolean checkInBooking(int bookingId) {
+	 public boolean checkInBooking(long bookingId) {
+		 return reservationToBookingId.containsValue(bookingId);
+	 }
+	 
+	 public boolean initiateCheckout(long bookingId) {
 		 return false;
 	 }
 	 
-	 public boolean initiateCheckout(int bookingId) {
-		 return false;
-	 }
-	 
-	 public boolean payDuringCheckout(int bookingId) {
+	 public boolean payDuringCheckout(long bookingId) {
 		 return false;
 	 }
 	
