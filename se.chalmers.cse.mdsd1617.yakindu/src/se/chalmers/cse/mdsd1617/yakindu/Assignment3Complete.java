@@ -20,8 +20,8 @@ public class Assignment3Complete {
 		} else if (currentReservationNumber >= MAX_ROOMS) {
 			return false;
 		} else {
-			reservationToBookingId.put(currentReservationNumber, bookingId);
 			++currentReservationNumber;
+			reservationToBookingId.put(currentReservationNumber, bookingId);
 			return true;
 		}
 	}
