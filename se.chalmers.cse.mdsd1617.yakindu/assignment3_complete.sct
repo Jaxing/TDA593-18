@@ -70,7 +70,7 @@
     </regions>
     <regions xmi:id="_QZe-UKzEEeahjcZS5sh9Xw" name="Room0">
       <vertices xsi:type="sgraph:State" xmi:id="_R7mRUKzEEeahjcZS5sh9Xw" name="Free" incomingTransitions="_ZY8zsKzEEeahjcZS5sh9Xw _exKnwK2DEeab4sEqqQpNHQ">
-        <outgoingTransitions xmi:id="_Xl3sgKzEEeahjcZS5sh9Xw" specification="room.assign[reservation.getCurrentReservationNumber == room0.roomId]" target="_Ud85UKzEEeahjcZS5sh9Xw"/>
+        <outgoingTransitions xmi:id="_Xl3sgKzEEeahjcZS5sh9Xw" specification="room.assign[reservation.getCurrentReservationNumber == room1.roomId]" target="_Ud85UKzEEeahjcZS5sh9Xw"/>
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_Ud85UKzEEeahjcZS5sh9Xw" name="Assigned" incomingTransitions="_Xl3sgKzEEeahjcZS5sh9Xw">
         <outgoingTransitions xmi:id="_YM53UKzEEeahjcZS5sh9Xw" specification="" target="_VqwqsKzEEeahjcZS5sh9Xw"/>
@@ -84,7 +84,7 @@
     </regions>
     <regions xmi:id="_3rBEAKzEEeahjcZS5sh9Xw" name="Room1">
       <vertices xsi:type="sgraph:State" xmi:id="_3rBEAazEEeahjcZS5sh9Xw" name="Free" incomingTransitions="_3rGjkazEEeahjcZS5sh9Xw _jFpUsK2DEeab4sEqqQpNHQ">
-        <outgoingTransitions xmi:id="_3rCSIazEEeahjcZS5sh9Xw" specification="room.assign[reservation.getCurrentReservationNumber == room1.roomId]" target="_3rDgQKzEEeahjcZS5sh9Xw"/>
+        <outgoingTransitions xmi:id="_3rCSIazEEeahjcZS5sh9Xw" specification="room.assign[reservation.getCurrentReservationNumber == room2.roomId]" target="_3rDgQKzEEeahjcZS5sh9Xw"/>
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_3rDgQKzEEeahjcZS5sh9Xw" name="Assigned" incomingTransitions="_3rCSIazEEeahjcZS5sh9Xw">
         <outgoingTransitions xmi:id="_3rEuYazEEeahjcZS5sh9Xw" specification="" target="_3rF8gKzEEeahjcZS5sh9Xw"/>
