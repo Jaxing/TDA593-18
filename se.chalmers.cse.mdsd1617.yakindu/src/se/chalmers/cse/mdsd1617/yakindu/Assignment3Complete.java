@@ -53,8 +53,8 @@ public class Assignment3Complete {
 		 return false;
 	 }
 	 
-	 public void connectRoomToReservation( long roomId, long reservationId) {
-		 roomToReservation.put(roomId, reservationId);		 
+	 public boolean connectRoomToReservation(long reservationId) {
+		 return null == roomToReservation.put(this.getSmallestFreeId(), reservationId);
 	 }
 	 
 	 public boolean roomMappedToReservation(long roomId, long reservationId) {
@@ -62,8 +62,12 @@ public class Assignment3Complete {
 				 roomToReservation.get(roomId) == reservationId;
 	 }
 	 
-	 public long getSmallestFreeId() {
-		 for (int i = 1; i <= MAX_ROOMS; i++) {
+	 /**
+	  * Since the number of reservations always are equal to the number of rooms, if this method is called ther will be a room yet not occupied, i.e. not in the map.
+	  * @return
+	  */
+	 private synchronized long getSmallestFreeId() {
+		 for (long i = 1; i <= MAX_ROOMS; i++) {
 			 if (!roomToReservation.containsKey(i)) {
 				 return i;
 			 }
