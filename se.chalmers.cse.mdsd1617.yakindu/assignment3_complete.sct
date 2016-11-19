@@ -43,7 +43,7 @@
         <outgoingTransitions xmi:id="_L1t0E6paEea9rP9r4tEs6w" specification="usr.addRoomToBooking [usr.booking==0 &amp;&amp; booking.addRoomToBooking(booking0.bookingId)]&#xA;/raise room.assign" target="_L1tNA6paEea9rP9r4tEs6w"/>
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_L1t0JqpaEea9rP9r4tEs6w" name="Confirmed" incomingTransitions="_L1t0AKpaEea9rP9r4tEs6w">
-        <outgoingTransitions xmi:id="_L1ubEapaEea9rP9r4tEs6w" specification="usr.checkInBooking [usr.booking==0 &amp;&amp; booking.checkInBooking(booking1.bookingId)]/&#xA;&#x9;raise reservation.checkIn" target="_L1ubIapaEea9rP9r4tEs6w"/>
+        <outgoingTransitions xmi:id="_L1ubEapaEea9rP9r4tEs6w" specification="usr.checkInBooking [usr.booking==0 &amp;&amp; booking.checkInBooking(booking0.bookingId)]/&#xA;&#x9;raise reservation.checkIn" target="_L1ubIapaEea9rP9r4tEs6w"/>
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_L1ubIapaEea9rP9r4tEs6w" specification="" name="CheckedIn" incomingTransitions="_L1ubEapaEea9rP9r4tEs6w">
         <outgoingTransitions xmi:id="_L1ubI6paEea9rP9r4tEs6w" specification="usr.initiateCheckout [usr.booking==0]" target="_L1ubM6paEea9rP9r4tEs6w"/>
