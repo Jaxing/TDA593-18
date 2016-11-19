@@ -57,9 +57,8 @@ public class Assignment3Complete {
 		 return null == roomToReservation.put(this.getSmallestFreeId(), reservationId);
 	 }
 	 
-	 public boolean roomMappedToReservation(long roomId, long reservationId) {
-		 return roomToReservation.containsKey(roomId) &&
-				 roomToReservation.get(roomId) == reservationId;
+	 public boolean roomMappedToReservation(long roomId) {
+		 return roomToReservation.containsKey(roomId);
 	 }
 	 
 	 /**
