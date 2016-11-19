@@ -49,7 +49,13 @@ public class Assignment3Complete {
 	 
 	 public boolean initiateCheckout(long bookingId) {
 		 if (reservationToBookingId.containsValue(bookingId)) {
-			 currentReservationNumber -= 1;
+			 int reservationsToRemove = 0;
+			 for (Map.Entry<Long, Long> e : reservationToBookingId.entrySet()) {
+				 if (e.getValue() == bookingId) {
+					 reservationsToRemove++;
+				 }
+			 }
+			 currentReservationNumber -= reservationsToRemove;
 			 return true;
 		 }
 		 return false;
