@@ -73,7 +73,7 @@
         <outgoingTransitions xmi:id="_Xl3sgKzEEeahjcZS5sh9Xw" specification="room.assign[reservation.getCurrentReservationNumber == room1.roomId]" target="_Ud85UKzEEeahjcZS5sh9Xw"/>
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_Ud85UKzEEeahjcZS5sh9Xw" name="Assigned" incomingTransitions="_Xl3sgKzEEeahjcZS5sh9Xw">
-        <outgoingTransitions xmi:id="_YM53UKzEEeahjcZS5sh9Xw" specification="room.occupy[&#xA;&#x9;room.roomMappedToReservation(room0.roomId, reservation1.idl)&#xA;&#x9;||&#xA;&#x9;room.roomMappedToReservation(room0.roomId.reservation0.id)&#xA;]" documentation="have to include that that resevation is active by checking that the reservation is mapped to the current booking." target="_VqwqsKzEEeahjcZS5sh9Xw"/>
+        <outgoingTransitions xmi:id="_YM53UKzEEeahjcZS5sh9Xw" specification="room.occupy[&#xA;&#x9;room.roomMappedToReservation(room1.roomId, reservation1.id)&#xA;&#x9;||&#xA;&#x9;room.roomMappedToReservation(room1.roomId, reservation2.id)&#xA;]" documentation="have to include that that resevation is active by checking that the reservation is mapped to the current booking." target="_VqwqsKzEEeahjcZS5sh9Xw"/>
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_VqwqsKzEEeahjcZS5sh9Xw" name="Occupied" incomingTransitions="_YM53UKzEEeahjcZS5sh9Xw">
         <outgoingTransitions xmi:id="_ZY8zsKzEEeahjcZS5sh9Xw" specification="" target="_R7mRUKzEEeahjcZS5sh9Xw"/>
