@@ -6,6 +6,7 @@ import java.util.Map;
 public class Assignment3Complete {
 	private long currentBookingId = 0;
 	private long currentReservationNumber = 0;
+	private long reservationCounter = 0;
 	private Map<Long,Long> reservationToBookingId = new HashMap<Long,Long>(); 
 	private Map<Long, Long> roomToReservation = new HashMap<Long,Long>();
 	
@@ -22,7 +23,8 @@ public class Assignment3Complete {
 			return false;
 		} else {
 			++currentReservationNumber;
-			reservationToBookingId.put(currentReservationNumber, bookingId);
+			++reservationCounter;
+			reservationToBookingId.put(reservationCounter, bookingId);
 			return true;
 		}
 	}
@@ -46,7 +48,11 @@ public class Assignment3Complete {
 	 }
 	 
 	 public boolean initiateCheckout(long bookingId) {
-		 return reservationToBookingId.containsValue(bookingId);
+		 if (reservationToBookingId.containsValue(bookingId)) {
+			 currentReservationNumber -= 1;
+			 return true;
+		 }
+		 return false;
 	 }
 	 
 	 public boolean payDuringCheckout(long bookingId) {
@@ -59,6 +65,15 @@ public class Assignment3Complete {
 	 
 	 public boolean roomMappedToReservation(long roomId) {
 		 return roomToReservation.containsKey(roomId);
+	 }
+	 
+	 public void checkOutReservation(long reservationId) {
+		 for (Map.Entry<Long, Long> e : roomToReservation.entrySet()) {
+			 if (e.getValue() == reservationId) {
+				 roomToReservation.remove(e.getKey());
+				 return;
+			 }
+		 }
 	 }
 	 
 	 /**
