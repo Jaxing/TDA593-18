@@ -76,7 +76,7 @@
         <outgoingTransitions xmi:id="_gs2MQa5-EeaEMptXa5GM7w" specification="reservation.checkIn [&#xA;&#x9;usr.booking == 1 &amp;&amp; reservation.reservationMappedToBooking(reservation2.id, booking1.bookingId)&#xA;&#x9;||&#xA;&#x9;usr.booking == 0 &amp;&amp; reservation.reservationMappedToBooking(reservation2.id, booking0.bookingId)&#xA;]/room.connectRoomToReservation(reservation2.id)" target="_gs3afq5-EeaEMptXa5GM7w"/>
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_gs3afq5-EeaEMptXa5GM7w" specification="entry/ raise room.occupy" name="checkedIn" incomingTransitions="_gs2MQa5-EeaEMptXa5GM7w">
-        <outgoingTransitions xmi:id="_gs4BeK5-EeaEMptXa5GM7w" specification="reservation.confirm [&#xA;&#x9;usr.booking == 1 &amp;&amp; reservation.reservationMappedToBooking(reservation2.id, booking1.bookingId)&#xA;&#x9;||&#xA;&#x9;usr.booking == 0 &amp;&amp; reservation.reservationMappedToBooking(reservation2.id, booking0.bookingId)&#xA;]" target="_gs4ogK5-EeaEMptXa5GM7w"/>
+        <outgoingTransitions xmi:id="_gs4BeK5-EeaEMptXa5GM7w" specification="reservation.checkOut [&#xA;&#x9;usr.booking == 1 &amp;&amp; reservation.reservationMappedToBooking(reservation2.id, booking1.bookingId)&#xA;&#x9;||&#xA;&#x9;usr.booking == 0 &amp;&amp; reservation.reservationMappedToBooking(reservation2.id, booking0.bookingId)&#xA;]" target="_gs4ogK5-EeaEMptXa5GM7w"/>
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_gs4ogK5-EeaEMptXa5GM7w" specification="entry/ raise room.free&#xA;entry/ reservation.checkOutReservation()" name="checkedOut" incomingTransitions="_gs4BeK5-EeaEMptXa5GM7w"/>
       <vertices xsi:type="sgraph:Entry" xmi:id="_gs5Pka5-EeaEMptXa5GM7w">
@@ -105,7 +105,7 @@
         <outgoingTransitions xmi:id="_3rEuYazEEeahjcZS5sh9Xw" specification="room.occupy[&#xA;&#x9;room.roomMappedToReservation(room2.roomId, reservation1.id)&#xA;&#x9;||&#xA;&#x9;room.roomMappedToReservation(room2.roomId, reservation2.id)&#xA;]" target="_3rF8gKzEEeahjcZS5sh9Xw"/>
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_3rF8gKzEEeahjcZS5sh9Xw" name="Occupied" incomingTransitions="_3rEuYazEEeahjcZS5sh9Xw">
-        <outgoingTransitions xmi:id="_3rGjkazEEeahjcZS5sh9Xw" specification="room.occupy[&#xA;&#x9;room.roomMappedToReservation(room2.roomId, reservation1.id)&#xA;&#x9;||&#xA;&#x9;room.roomMappedToReservation(room2.roomId, reservation2.id)&#xA;]" target="_3rBEAazEEeahjcZS5sh9Xw"/>
+        <outgoingTransitions xmi:id="_3rGjkazEEeahjcZS5sh9Xw" specification="room.free[&#xA;&#x9;room.roomMappedToReservation(room2.roomId, reservation1.id)&#xA;&#x9;||&#xA;&#x9;room.roomMappedToReservation(room2.roomId, reservation2.id)&#xA;]" target="_3rBEAazEEeahjcZS5sh9Xw"/>
       </vertices>
       <vertices xsi:type="sgraph:Entry" xmi:id="_hYG00K2DEeab4sEqqQpNHQ">
         <outgoingTransitions xmi:id="_jFpUsK2DEeab4sEqqQpNHQ" specification="" target="_3rBEAazEEeahjcZS5sh9Xw"/>
@@ -445,7 +445,7 @@
           <styles xsi:type="notation:ShapeStyle" xmi:id="_acaGsazCEeahjcZS5sh9Xw" fontName="Verdana" fillColor="15981773" lineColor="12632256"/>
           <styles xsi:type="notation:FontStyle" xmi:id="_acaGsqzCEeahjcZS5sh9Xw"/>
           <styles xsi:type="notation:BooleanValueStyle" xmi:id="_acbU1KzCEeahjcZS5sh9Xw" name="isHorizontal" booleanValue="true"/>
-          <layoutConstraint xsi:type="notation:Bounds" xmi:id="_acaGs6zCEeahjcZS5sh9Xw" x="642" y="45"/>
+          <layoutConstraint xsi:type="notation:Bounds" xmi:id="_acaGs6zCEeahjcZS5sh9Xw" x="727" y="46"/>
         </children>
         <children xmi:id="_5ys0IKzCEeahjcZS5sh9Xw" type="Entry" element="_5yqX4KzCEeahjcZS5sh9Xw">
           <children xmi:id="_5yuCQKzCEeahjcZS5sh9Xw" type="BorderItemLabelContainer">
@@ -677,7 +677,7 @@
           <styles xsi:type="notation:ShapeStyle" xmi:id="_gsyiEa5-EeaEMptXa5GM7w" fontName="Verdana" fillColor="15981773" lineColor="12632256"/>
           <styles xsi:type="notation:FontStyle" xmi:id="_gsyiEq5-EeaEMptXa5GM7w"/>
           <styles xsi:type="notation:BooleanValueStyle" xmi:id="_gsyiE65-EeaEMptXa5GM7w" name="isHorizontal" booleanValue="true"/>
-          <layoutConstraint xsi:type="notation:Bounds" xmi:id="_gsyiFK5-EeaEMptXa5GM7w" x="642" y="45"/>
+          <layoutConstraint xsi:type="notation:Bounds" xmi:id="_gsyiFK5-EeaEMptXa5GM7w" x="727" y="46"/>
         </children>
         <children xmi:id="_gsyiFa5-EeaEMptXa5GM7w" type="Entry" element="_gs5Pka5-EeaEMptXa5GM7w">
           <children xmi:id="_gsyiFq5-EeaEMptXa5GM7w" type="BorderItemLabelContainer">
@@ -880,7 +880,7 @@
     <edges xmi:id="_-MGA0KzDEeahjcZS5sh9Xw" type="Transition" element="_-MELoKzDEeahjcZS5sh9Xw" source="_XzinAKzCEeahjcZS5sh9Xw" target="_acaGsKzCEeahjcZS5sh9Xw">
       <children xsi:type="notation:DecorationNode" xmi:id="_-MGn4azDEeahjcZS5sh9Xw" type="TransitionExpression">
         <styles xsi:type="notation:ShapeStyle" xmi:id="_-MGn4qzDEeahjcZS5sh9Xw"/>
-        <layoutConstraint xsi:type="notation:Location" xmi:id="_-MGn46zDEeahjcZS5sh9Xw" x="3" y="45"/>
+        <layoutConstraint xsi:type="notation:Location" xmi:id="_-MGn46zDEeahjcZS5sh9Xw" x="207" y="66"/>
       </children>
       <styles xsi:type="notation:ConnectorStyle" xmi:id="_-MGA0azDEeahjcZS5sh9Xw" lineColor="4210752"/>
       <styles xsi:type="notation:FontStyle" xmi:id="_-MGn4KzDEeahjcZS5sh9Xw" fontName="Verdana"/>
@@ -996,7 +996,7 @@
     <edges xmi:id="_gs_WN65-EeaEMptXa5GM7w" type="Transition" element="_gs4BeK5-EeaEMptXa5GM7w" source="_gsyh_a5-EeaEMptXa5GM7w" target="_gsyiCa5-EeaEMptXa5GM7w">
       <children xsi:type="notation:DecorationNode" xmi:id="_gs_WOK5-EeaEMptXa5GM7w" type="TransitionExpression">
         <styles xsi:type="notation:ShapeStyle" xmi:id="_gs_WOa5-EeaEMptXa5GM7w"/>
-        <layoutConstraint xsi:type="notation:Location" xmi:id="_gs_WOq5-EeaEMptXa5GM7w" x="3" y="45"/>
+        <layoutConstraint xsi:type="notation:Location" xmi:id="_gs_WOq5-EeaEMptXa5GM7w" x="15" y="109"/>
       </children>
       <styles xsi:type="notation:ConnectorStyle" xmi:id="_gs_WO65-EeaEMptXa5GM7w" lineColor="4210752"/>
       <styles xsi:type="notation:FontStyle" xmi:id="_gs_WPK5-EeaEMptXa5GM7w" fontName="Verdana"/>
