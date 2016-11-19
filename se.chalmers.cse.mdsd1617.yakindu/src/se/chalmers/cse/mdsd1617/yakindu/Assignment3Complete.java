@@ -46,15 +46,15 @@ public class Assignment3Complete {
 	 }
 	 
 	 public boolean initiateCheckout(long bookingId) {
-		 return false;
+		 return reservationToBookingId.containsValue(bookingId);
 	 }
 	 
 	 public boolean payDuringCheckout(long bookingId) {
 		 return false;
 	 }
 	 
-	 public boolean connectRoomToReservation(long reservationId) {
-		 return null == roomToReservation.put(this.getSmallestFreeId(), reservationId);
+	 public void connectRoomToReservation(long reservationId) {
+		 roomToReservation.put(this.getSmallestFreeId(), reservationId);
 	 }
 	 
 	 public boolean roomMappedToReservation(long roomId) {
