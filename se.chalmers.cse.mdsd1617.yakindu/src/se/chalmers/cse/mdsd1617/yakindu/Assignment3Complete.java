@@ -61,5 +61,14 @@ public class Assignment3Complete {
 		 return roomToReservation.containsKey(roomId) &&
 				 roomToReservation.get(roomId) == reservationId;
 	 }
+	 
+	 public long getSmallestFreeId() {
+		 for (int i = 1; i <= MAX_ROOMS; i++) {
+			 if (!roomToReservation.containsKey(i)) {
+				 return i;
+			 }
+		 }
+		 return -1;
+	 }
 	
 }
