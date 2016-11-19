@@ -7,6 +7,7 @@ public class Assignment3Complete {
 	private long currentBookingId = 0;
 	private long currentReservationNumber = 0;
 	private Map<Long,Long> reservationToBookingId = new HashMap<Long,Long>(); 
+	private Map<Long, Long> roomToReservation = new HashMap<Long,Long>();
 	
 	private final int MAX_ROOMS = 5;
 	 
@@ -50,6 +51,15 @@ public class Assignment3Complete {
 	 
 	 public boolean payDuringCheckout(long bookingId) {
 		 return false;
+	 }
+	 
+	 public void connectRoomToReservation( long roomId, long reservationId) {
+		 roomToReservation.put(roomId, reservationId);		 
+	 }
+	 
+	 public boolean roomMappedToReservation(long roomId, long reservationId) {
+		 return roomToReservation.containsKey(roomId) &&
+				 roomToReservation.get(roomId) == reservationId;
 	 }
 	
 }
