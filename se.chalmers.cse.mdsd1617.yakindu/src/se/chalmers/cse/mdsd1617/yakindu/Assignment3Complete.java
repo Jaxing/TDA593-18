@@ -44,7 +44,15 @@ public class Assignment3Complete {
 	}
 	 
 	 public boolean checkInBooking(long bookingId) {
-		 return reservationToBookingId.containsValue(bookingId);
+		 if (reservationToBookingId.containsValue(bookingId)) {
+			 for (Map.Entry<Long, Long> e : reservationToBookingId.entrySet()) {
+				 if (e.getValue() == bookingId) {
+					 this.connectRoomToReservation(e.getKey());
+				 }
+			 }
+			 return true;
+		 }
+		 return false;
 	 }
 	 
 	 public boolean initiateCheckout(long bookingId) {
@@ -52,6 +60,7 @@ public class Assignment3Complete {
 			 int reservationsToRemove = 0;
 			 for (Map.Entry<Long, Long> e : reservationToBookingId.entrySet()) {
 				 if (e.getValue() == bookingId) {
+					 this.checkOutReservation(e.getKey());
 					 reservationsToRemove++;
 				 }
 			 }
@@ -65,7 +74,7 @@ public class Assignment3Complete {
 		 return false;
 	 }
 	 
-	 public void connectRoomToReservation(long reservationId) {
+	 private void connectRoomToReservation(long reservationId) {
 		 roomToReservation.put(this.getSmallestFreeId(), reservationId);
 	 }
 	 
@@ -73,7 +82,7 @@ public class Assignment3Complete {
 		 return roomToReservation.containsKey(roomId);
 	 }
 	 
-	 public void checkOutReservation(long reservationId) {
+	 private void checkOutReservation(long reservationId) {
 		 for (Map.Entry<Long, Long> e : roomToReservation.entrySet()) {
 			 if (e.getValue() == reservationId) {
 				 roomToReservation.remove(e.getKey());
