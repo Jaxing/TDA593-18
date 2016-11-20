@@ -15,6 +15,10 @@ public class Assignment3Complete {
 	public long initiateBooking() {
 		return ++currentBookingId;
 	}
+	
+	public long getMaxRooms() {
+		return (long)MAX_ROOMS;
+	}
 
 	public boolean addRoomToBooking(long bookingId) {
 		if (bookingId < 1 || bookingId > currentBookingId) {
