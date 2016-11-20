@@ -6,7 +6,7 @@ import java.util.Map;
 public class Assignment3Complete {
 	private long currentBookingId = 0;
 	private long currentReservationNumber = 0;
-	private long reservationCounter = 0;
+	private long currentReservationId = 0;
 	private Map<Long,Long> reservationToBookingId = new HashMap<Long,Long>(); 
 	private Map<Long, Long> roomToReservation = new HashMap<Long,Long>();
 	
@@ -23,8 +23,8 @@ public class Assignment3Complete {
 			return false;
 		} else {
 			++currentReservationNumber;
-			++reservationCounter;
-			reservationToBookingId.put(reservationCounter, bookingId);
+			reservationToBookingId.put(currentReservationId, bookingId);
+			++currentReservationId;
 			return true;
 		}
 	}
@@ -40,7 +40,7 @@ public class Assignment3Complete {
 	}
 	
 	public long getCurrentReservationNumber(){
-		return currentReservationNumber;
+		return currentReservationNumber - 1;
 	}
 	 
 	 public boolean checkInBooking(long bookingId) {
@@ -95,13 +95,18 @@ public class Assignment3Complete {
 	  * Since the number of reservations always are equal to the number of rooms, if this method is called ther will be a room yet not occupied, i.e. not in the map.
 	  * @return
 	  */
-	 private synchronized long getSmallestFreeId() {
-		 for (long i = 1; i <= MAX_ROOMS; i++) {
+	 private long getSmallestFreeId() {
+		 for (long i = 0; i < MAX_ROOMS; i++) {
 			 if (!roomToReservation.containsKey(i)) {
 				 return i;
 			 }
 		 }
 		 return -1;
+	 }
+	 
+	 //Should return current highest id, therefor currentReservationId needs to be one smaller.
+	 public long getCurrentReservationId() {
+		return this.currentReservationId - 1; 
 	 }
 	
 }
