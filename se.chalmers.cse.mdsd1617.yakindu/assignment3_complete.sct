@@ -38,7 +38,7 @@
       <vertices xsi:type="sgraph:State" xmi:id="_L1tM8KpaEea9rP9r4tEs6w" name="Created" incomingTransitions="_L1smMqpaEea9rP9r4tEs6w">
         <outgoingTransitions xmi:id="_L1tM8qpaEea9rP9r4tEs6w" specification="usr.initiateBooking[usr.booking==0]/&#xA;booking0.bookingId = booking.initiateBooking()" target="_L1tNA6paEea9rP9r4tEs6w"/>
       </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_L1tNA6paEea9rP9r4tEs6w" name="Initiated" incomingTransitions="_L1tM8qpaEea9rP9r4tEs6w _L1t0E6paEea9rP9r4tEs6w">
+      <vertices xsi:type="sgraph:State" xmi:id="_L1tNA6paEea9rP9r4tEs6w" specification="entry/booking.activeBookingId = booking0.bookingId" name="Initiated" incomingTransitions="_L1tM8qpaEea9rP9r4tEs6w _L1t0E6paEea9rP9r4tEs6w">
         <outgoingTransitions xmi:id="_L1t0AKpaEea9rP9r4tEs6w" specification="usr.confirmBooking [usr.booking==0 &amp;&amp; booking.confirmBooking(booking0.bookingId)]/&#xA;raise reservation.confirm&#xA;" target="_L1t0JqpaEea9rP9r4tEs6w"/>
         <outgoingTransitions xmi:id="_L1t0E6paEea9rP9r4tEs6w" specification="usr.addRoomToBooking [usr.booking==0 &amp;&amp; booking.addRoomToBooking(booking0.bookingId)]&#xA;/raise room.assign" target="_L1tNA6paEea9rP9r4tEs6w"/>
       </vertices>
@@ -752,7 +752,7 @@
     <edges xmi:id="_q706IKgaEeajc9cS_HWa6Q" type="Transition" element="_q70TEKgaEeajc9cS_HWa6Q" source="_fAABUKgaEeajc9cS_HWa6Q" target="_k_I5QKgaEeajc9cS_HWa6Q">
       <children xsi:type="notation:DecorationNode" xmi:id="_q706JKgaEeajc9cS_HWa6Q" type="TransitionExpression">
         <styles xsi:type="notation:ShapeStyle" xmi:id="_q706JagaEeajc9cS_HWa6Q"/>
-        <layoutConstraint xsi:type="notation:Location" xmi:id="_q706JqgaEeajc9cS_HWa6Q" x="12" y="-44"/>
+        <layoutConstraint xsi:type="notation:Location" xmi:id="_q706JqgaEeajc9cS_HWa6Q" x="-1" y="-53"/>
       </children>
       <styles xsi:type="notation:ConnectorStyle" xmi:id="_q706IagaEeajc9cS_HWa6Q" lineColor="4210752"/>
       <styles xsi:type="notation:FontStyle" xmi:id="_q706I6gaEeajc9cS_HWa6Q" fontName="Verdana"/>
