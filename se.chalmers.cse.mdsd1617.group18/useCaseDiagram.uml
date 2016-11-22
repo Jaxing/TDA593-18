@@ -19,7 +19,18 @@
       <ownedEnd xmi:type="uml:Property" xmi:id="_zFeyoKTJEeaq4ojlJmBUdg" name="admin" type="_o7GbkKTEEea36uwiLO6_WQ" association="_zFPiEKTJEeaq4ojlJmBUdg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:UseCase" xmi:id="_6jCJUKTJEeaq4ojlJmBUdg" name="List Check-ins for a specific day"/>
-    <packagedElement xmi:type="uml:UseCase" xmi:id="__rCk8KTJEeaq4ojlJmBUdg" name="List occupied rooms for a specific day"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="__rCk8KTJEeaq4ojlJmBUdg" name="List occupied rooms for a specific day">
+      <ownedUseCase xmi:type="uml:UseCase" xmi:id="_n5wKkLC9EeaOIKk2Rd-1Fg" name="List occupied rooms for a specific day"/>
+      <ownedUseCase xmi:type="uml:UseCase" xmi:id="_oMti0LC9EeaOIKk2Rd-1Fg" name="CopyOf_List occupied rooms for a specific day_1">
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_oMti0bC9EeaOIKk2Rd-1Fg" name="List occupied rooms for a specific day"/>
+      </ownedUseCase>
+      <ownedUseCase xmi:type="uml:UseCase" xmi:id="_qmuuMLC9EeaOIKk2Rd-1Fg" name="CopyOf_List occupied rooms for a specific day_2">
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_qmuuMbC9EeaOIKk2Rd-1Fg" name="List occupied rooms for a specific day"/>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_qmuuMrC9EeaOIKk2Rd-1Fg" name="CopyOf_List occupied rooms for a specific day_1">
+          <ownedUseCase xmi:type="uml:UseCase" xmi:id="_qmuuM7C9EeaOIKk2Rd-1Fg" name="List occupied rooms for a specific day"/>
+        </ownedUseCase>
+      </ownedUseCase>
+    </packagedElement>
     <packagedElement xmi:type="uml:UseCase" xmi:id="_izzXEKTNEeatjoFTVpd5sA" name="Remove Room Type"/>
     <packagedElement xmi:type="uml:UseCase" xmi:id="_-ynyYKTNEeatjoFTVpd5sA" name="Search for Rooms"/>
     <packagedElement xmi:type="uml:UseCase" xmi:id="_A2g8wKTOEeatjoFTVpd5sA" name="Make a Booking"/>
@@ -173,4 +184,42 @@
     <packagedElement xmi:type="uml:Usage" xmi:id="_wAljsKaJEea4sLWriZOnAg" client="_KiPbMKTOEeatjoFTVpd5sA" supplier="_v_8O8KTSEeadMJh-U4YXzQ"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_Ayfe0KaDEea4sLWriZOnAg" name="ComponentDiagram"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_rgIbYLC9EeaOIKk2Rd-1Fg" name="Check In Booking"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_v-bysLC9EeaOIKk2Rd-1Fg" name="Check Out And Pay Room"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_0RNPcLC9EeaOIKk2Rd-1Fg" name="Add Extra Cost To Rooms"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_5NEsgLC9EeaOIKk2Rd-1Fg" memberEnd="_5NHIwLC9EeaOIKk2Rd-1Fg _5NHIwbC9EeaOIKk2Rd-1Fg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5NF6oLC9EeaOIKk2Rd-1Fg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5NF6obC9EeaOIKk2Rd-1Fg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_5NHIwLC9EeaOIKk2Rd-1Fg" name="check in booking" type="_rgIbYLC9EeaOIKk2Rd-1Fg" association="_5NEsgLC9EeaOIKk2Rd-1Fg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_5NHIwbC9EeaOIKk2Rd-1Fg" name="receptionist" type="_xOM6MKTEEea36uwiLO6_WQ" association="_5NEsgLC9EeaOIKk2Rd-1Fg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_5zNfcLC9EeaOIKk2Rd-1Fg" memberEnd="_5zOGgrC9EeaOIKk2Rd-1Fg _5zOtkLC9EeaOIKk2Rd-1Fg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5zOGgLC9EeaOIKk2Rd-1Fg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5zOGgbC9EeaOIKk2Rd-1Fg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_5zOGgrC9EeaOIKk2Rd-1Fg" name="check out and pay room" type="_v-bysLC9EeaOIKk2Rd-1Fg" association="_5zNfcLC9EeaOIKk2Rd-1Fg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_5zOtkLC9EeaOIKk2Rd-1Fg" name="receptionist" type="_xOM6MKTEEea36uwiLO6_WQ" association="_5zNfcLC9EeaOIKk2Rd-1Fg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_6WUzkLC9EeaOIKk2Rd-1Fg" memberEnd="_6WWBsLC9EeaOIKk2Rd-1Fg _6WWBsbC9EeaOIKk2Rd-1Fg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6WVaoLC9EeaOIKk2Rd-1Fg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6WVaobC9EeaOIKk2Rd-1Fg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_6WWBsLC9EeaOIKk2Rd-1Fg" name="add extra cost to rooms" type="_0RNPcLC9EeaOIKk2Rd-1Fg" association="_6WUzkLC9EeaOIKk2Rd-1Fg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_6WWBsbC9EeaOIKk2Rd-1Fg" name="receptionist" type="_xOM6MKTEEea36uwiLO6_WQ" association="_6WUzkLC9EeaOIKk2Rd-1Fg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="__TeqELC9EeaOIKk2Rd-1Fg" memberEnd="__TfRIbC9EeaOIKk2Rd-1Fg __TfRIrC9EeaOIKk2Rd-1Fg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__TeqEbC9EeaOIKk2Rd-1Fg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__TfRILC9EeaOIKk2Rd-1Fg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="__TfRIbC9EeaOIKk2Rd-1Fg" name="external supplier system" type="_yevzsKTSEeadMJh-U4YXzQ" association="__TeqELC9EeaOIKk2Rd-1Fg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="__TfRIrC9EeaOIKk2Rd-1Fg" name="check out and pay room" type="_v-bysLC9EeaOIKk2Rd-1Fg" association="__TeqELC9EeaOIKk2Rd-1Fg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="___D9sLC9EeaOIKk2Rd-1Fg" memberEnd="___FL0bC9EeaOIKk2Rd-1Fg ___FL0rC9EeaOIKk2Rd-1Fg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="___EkwLC9EeaOIKk2Rd-1Fg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="___FL0LC9EeaOIKk2Rd-1Fg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="___FL0bC9EeaOIKk2Rd-1Fg" name="external supplier system" type="_yevzsKTSEeadMJh-U4YXzQ" association="___D9sLC9EeaOIKk2Rd-1Fg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="___FL0rC9EeaOIKk2Rd-1Fg" name="check in booking" type="_rgIbYLC9EeaOIKk2Rd-1Fg" association="___D9sLC9EeaOIKk2Rd-1Fg"/>
+  </packagedElement>
 </uml:Model>
