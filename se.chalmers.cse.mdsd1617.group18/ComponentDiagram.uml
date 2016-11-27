@@ -266,7 +266,7 @@
     <nestedClassifier xmi:type="uml:Interface" xmi:id="_kAShIKa2Eea6v_LEHy7Trw" name="IHotelRoomProvider">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_tbbdAKgCEeauM4HoNkhouQ" name="getRooms">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_9si7EKgCEeauM4HoNkhouQ" direction="return">
-          <type xmi:type="uml:Class" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaClass-_ownedElement.0-_ownedParameter.0-_ownedParameteredElement"/>
+          <type xmi:type="uml:DataType" href="group18.uml#_d9uCILSVEeaxVPR210aiSw"/>
         </ownedParameter>
       </ownedOperation>
     </nestedClassifier>
@@ -316,16 +316,13 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_YuVHkKgdEeanF_TUJ6-6rA" name="roomType">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_kbn1IKgdEeanF_TUJ6-6rA" name="room" direction="return">
-          <type xmi:type="uml:DataType" href="group18.uml#_mXkpALSVEeaxVPR210aiSw"/>
-        </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_8E0UAKgdEeanF_TUJ6-6rA" name="changeRoomType">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_EdLtIKgeEeanF_TUJ6-6rA" name="roomNumber">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
         </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_1uX9IKnPEeanF_TUJ6-6rA" name="roomType">
-          <type xmi:type="uml:DataType" href="group18.uml#_mXkpALSVEeaxVPR210aiSw"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_6N9G0KnPEeanF_TUJ6-6rA" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
