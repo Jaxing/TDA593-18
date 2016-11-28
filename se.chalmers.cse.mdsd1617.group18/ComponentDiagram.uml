@@ -227,7 +227,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_h2S30KgAEeauM4HoNkhouQ" direction="return">
-          <type xmi:type="uml:Class" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaClass-_ownedElement.0-_ownedParameter.0-_ownedParameteredElement"/>
+          <type xmi:type="uml:DataType" href="DataTypes.uml#_b8RskLVKEea-r_LmObOyWg"/>
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_on3SQKgAEeauM4HoNkhouQ" name="listCheckouts" visibility="public">
@@ -238,7 +238,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_62ov0KgAEeauM4HoNkhouQ" direction="return">
-          <type xmi:type="uml:Class" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaClass-_ownedElement.0-_ownedParameter.0-_ownedParameteredElement"/>
+          <type xmi:type="uml:DataType" href="DataTypes.uml#_b8RskLVKEea-r_LmObOyWg"/>
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_jQe_wLDFEeaEbPVMIWlGVA" name="addExtraCostToRoom">
