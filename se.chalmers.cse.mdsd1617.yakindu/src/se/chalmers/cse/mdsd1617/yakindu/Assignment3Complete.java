@@ -10,7 +10,7 @@ public class Assignment3Complete {
 	private Map<Long,Long> reservationToBookingId = new HashMap<Long,Long>(); 
 	private Map<Long, Long> roomToReservation = new HashMap<Long,Long>();
 	
-	private final int MAX_ROOMS = 5;
+	private final int MAX_ROOMS = 2;
 	 
 	public long initiateBooking() {
 		return ++currentBookingId;
