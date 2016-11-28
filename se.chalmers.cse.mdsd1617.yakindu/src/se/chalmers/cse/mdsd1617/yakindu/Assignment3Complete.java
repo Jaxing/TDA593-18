@@ -7,8 +7,6 @@ public class Assignment3Complete {
 	private long currentBookingId = 0;
 	private long currentReservationNumber = 0;
 	private long currentReservationId = 0;
-	private long reservationToCheckin = 0;
-	private long reservationToCheckout = 0;
 	private Map<Long,Long> reservationToBookingId = new HashMap<Long,Long>(); 
 	private Map<Long, Long> roomToReservation = new HashMap<Long,Long>();
 	
@@ -48,54 +46,33 @@ public class Assignment3Complete {
 	public long getCurrentReservationNumber(){
 		return currentReservationNumber - 1;
 	}
-	
-	public boolean initiateCheckin(long bookingId) {
-		if(reservationToBookingId.containsValue(bookingId))
-			return true;
-		
-		return false;
-	}
-	
-	// **************************** //
-	public boolean checkInBooking(long bookingId) {
-		if (reservationToBookingId.containsValue(bookingId)) {   			 
-			 for(Map.Entry<Long, Long> e : reservationToBookingId.entrySet()) {
-				 if(e.getKey() == reservationToCheckin && e.getValue() == bookingId) {
-					 this.connectRoomToReservation(reservationToCheckin);
-					 reservationToCheckin ++;
-					 return true;
-				 }
-				 reservationToCheckin ++;
-			 }
-		 }
-		 return false;
-	 }
-	// **************************** //
 	 
-	 public boolean initiateCheckout(long bookingId) {
+	 public boolean checkInBooking(long bookingId) {
 		 if (reservationToBookingId.containsValue(bookingId)) {
+			 for (Map.Entry<Long, Long> e : reservationToBookingId.entrySet()) {
+				 if (e.getValue() == bookingId) {
+					 this.connectRoomToReservation(e.getKey());
+				 }
+			 }
 			 return true;
 		 }
 		 return false;
 	 }
 	 
-	 // **************************** //
-	 public boolean checkOutBooking(long bookingId) {
-		 if(reservationToBookingId.containsValue(bookingId)) {
-			 for(Map.Entry<Long, Long> e : reservationToBookingId.entrySet()) {
-				 if(e.getKey() == reservationToCheckout && e.getKey() == bookingId) {
-					 this.checkOutReservation(reservationToCheckout);
-					 reservationToCheckout ++;
-					 currentReservationNumber --;
-					 return true;
+	 public boolean initiateCheckout(long bookingId) {
+		 if (reservationToBookingId.containsValue(bookingId)) {
+			 int reservationsToRemove = 0;
+			 for (Map.Entry<Long, Long> e : reservationToBookingId.entrySet()) {
+				 if (e.getValue() == bookingId) {
+					 this.checkOutReservation(e.getKey());
+					 reservationsToRemove++;
 				 }
-				 reservationToCheckout ++;
 			 }
+			 currentReservationNumber -= reservationsToRemove;
+			 return true;
 		 }
-		 
 		 return false;
 	 }
-	// **************************** //
 	 
 	 public boolean payDuringCheckout(long bookingId) {
 		 return false;
@@ -119,7 +96,7 @@ public class Assignment3Complete {
 	 }
 	 
 	 /**
-	  * Since the number of reservations always are equal to the number of rooms, if this method is called there will be a room yet not occupied, i.e. not in the map.
+	  * Since the number of reservations always are equal to the number of rooms, if this method is called ther will be a room yet not occupied, i.e. not in the map.
 	  * @return
 	  */
 	 private long getSmallestFreeId() {
@@ -131,7 +108,7 @@ public class Assignment3Complete {
 		 return -1;
 	 }
 	 
-	 //Should return current highest id, therefore currentReservationId needs to be one smaller.
+	 //Should return current highest id, therefor currentReservationId needs to be one smaller.
 	 public long getCurrentReservationId() {
 		return this.currentReservationId - 1; 
 	 }

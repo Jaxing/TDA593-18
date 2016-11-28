@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sgraph="http://www.yakindu.org/sct/sgraph/2.0.0">
-  <sgraph:Statechart xmi:id="_L3Al8KgUEeajc9cS_HWa6Q" specification="interface usr:&#xA;&#x9;in event initiateBooking&#xA;&#x9;in event addRoomToBooking&#xA;&#x9;in event confirmBooking&#xA;&#x9;in event initiateCheckin&#xA;&#x9;in event checkInBooking&#xA;&#x9;in event initiateCheckout&#xA;&#x9;in event checkOutBooking&#xA;&#x9;in event payDuringCheckout&#xA;&#x9;&#xA;&#x9;in event switchBooking&#xA;&#x9;var booking:integer = 1&#xA;&#x9;&#xA;interface booking:&#xA;&#x9;operation initiateBooking():integer&#xA;&#x9;operation addRoomToBooking(bookingId:integer):boolean&#xA;&#x9;operation confirmBooking(bookingId:integer):boolean&#xA;&#x9;operation initiateCheckin (bookingId:integer):boolean&#xA;&#x9;operation checkInBooking(bookingId:integer):boolean&#xA;&#x9;operation initiateCheckout(bookingId:integer):boolean&#xA;&#x9;operation checkOutBooking(bookingId:integer):boolean&#xA;&#x9;operation payDuringCheckout(bookingId:integer):boolean&#xA;&#x9;&#xA;&#x9;var activeBookingId:integer = 1&#xA;&#x9;&#xA;interface booking1:&#xA;&#x9;var bookingId:integer&#xA;&#x9;&#xA;interface booking0:&#xA;&#x9;var bookingId:integer&#xA;&#xA;interface reservation:&#xA;&#x9;in event confirm&#xA;&#x9;in event checkIn&#xA;&#x9;in event checkOut&#xA;&#x9;&#xA;&#x9;operation getCurrentReservationId():integer&#xA;&#x9;operation reservationMappedToBooking(reservationId:integer,bookingId:integer):boolean&#xA;&#xA;interface reservation0:&#xA;&#x9;var id:integer = 0&#xA;&#xA;interface reservation1:&#xA;&#x9;var id:integer = 1&#xA;&#x9;&#xA;interface room:&#xA;&#x9;in event free&#xA;&#x9;in event assign&#x9;&#xA;&#x9;in event occupy&#xA;&#x9;&#xA;&#x9;&#xA;&#x9;operation connectRoomToReservation(reservationId:integer)&#xA;&#x9;operation roomMappedToReservation(roomId:integer):boolean&#xA;&#x9;operation getSmallestFreeId():integer&#xA;&#x9;operation getMaxRooms():integer&#xA;&#x9;&#xA;interface room0:&#xA;&#x9;var roomId:integer = 0&#xA;&#xA;interface room1:&#xA;&#x9;var roomId:integer = 1&#xA;&#x9;&#xA;" name="assignment3_medium">
+  <sgraph:Statechart xmi:id="_L3Al8KgUEeajc9cS_HWa6Q" specification="interface usr:&#xA;&#x9;in event initiateBooking&#xA;&#x9;in event addRoomToBooking&#xA;&#x9;in event confirmBooking&#xA;&#x9;in event checkInBooking&#xA;&#x9;in event initiateCheckout&#xA;&#x9;in event payDuringCheckout&#xA;&#x9;&#xA;&#x9;in event switchBooking&#xA;&#x9;var booking:integer = 1&#xA;&#x9;&#xA;interface booking:&#xA;&#x9;operation initiateBooking():integer&#xA;&#x9;operation addRoomToBooking(bookingId:integer):boolean&#xA;&#x9;operation confirmBooking(bookingId:integer):boolean&#xA;&#x9;operation checkInBooking(bookingId:integer):boolean&#xA;&#x9;operation initiateCheckout(bookingId:integer):boolean&#xA;&#x9;operation payDuringCheckout(bookingId:integer):boolean&#xA;&#x9;&#xA;&#x9;var activeBookingId:integer = 1&#xA;&#x9;&#xA;interface booking1:&#xA;&#x9;var bookingId:integer&#xA;&#x9;&#xA;interface booking0:&#xA;&#x9;var bookingId:integer&#xA;&#xA;interface reservation:&#xA;&#x9;in event confirm&#xA;&#x9;in event checkIn&#xA;&#x9;in event checkOut&#xA;&#x9;&#xA;&#x9;operation getCurrentReservationId():integer&#xA;&#x9;operation reservationMappedToBooking(reservationId:integer,bookingId:integer):boolean&#xA;&#xA;interface reservation0:&#xA;&#x9;var id:integer = 0&#xA;&#xA;interface reservation1:&#xA;&#x9;var id:integer = 1&#xA;&#x9;&#xA;interface room:&#xA;&#x9;in event free&#xA;&#x9;in event assign&#x9;&#xA;&#x9;in event occupy&#xA;&#x9;&#xA;&#x9;&#xA;&#x9;operation connectRoomToReservation(reservationId:integer)&#xA;&#x9;operation roomMappedToReservation(roomId:integer):boolean&#xA;&#x9;operation getSmallestFreeId():integer&#xA;&#x9;operation getMaxRooms():integer&#xA;&#x9;&#xA;interface room0:&#xA;&#x9;var roomId:integer = 0&#xA;&#xA;interface room1:&#xA;&#x9;var roomId:integer = 1&#xA;&#x9;&#xA;" name="assignment3_medium">
     <regions xmi:id="_RJVPcKpqEea9rP9r4tEs6w" name="bookingChoice">
       <vertices xsi:type="sgraph:Entry" xmi:id="_S-5p8KpqEea9rP9r4tEs6w">
         <outgoingTransitions xmi:id="_ULbHcKpqEea9rP9r4tEs6w" target="_TSla8KpqEea9rP9r4tEs6w"/>
@@ -21,15 +21,13 @@
         <outgoingTransitions xmi:id="_7l_KUKgaEeajc9cS_HWa6Q" specification="usr.addRoomToBooking [usr.booking==1 &amp;&amp; booking.addRoomToBooking(booking1.bookingId)]&#xA;/raise room.assign" documentation="Create a new room reservation and assign a room when a room is added" target="_dOOhsKgaEeajc9cS_HWa6Q"/>
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_e_-zMKgaEeajc9cS_HWa6Q" name="Confirmed" incomingTransitions="_qnMt8KgaEeajc9cS_HWa6Q">
-        <outgoingTransitions xmi:id="_q70TEKgaEeajc9cS_HWa6Q" specification="usr.initiateCheckin [usr.booking==1 &amp;&amp; booking.initiateCheckin(booking1.bookingId)]/&#xA;&#x9;raise reservation.checkIn" target="_k_HrIKgaEeajc9cS_HWa6Q"/>
+        <outgoingTransitions xmi:id="_q70TEKgaEeajc9cS_HWa6Q" specification="usr.checkInBooking [usr.booking==1 &amp;&amp; booking.checkInBooking(booking1.bookingId)]/&#xA;&#x9;raise reservation.checkIn" target="_k_HrIKgaEeajc9cS_HWa6Q"/>
       </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_k_HrIKgaEeajc9cS_HWa6Q" specification="entry/ raise room.occupy" name="CheckedIn" incomingTransitions="_q70TEKgaEeajc9cS_HWa6Q _gd-WkLJfEeaKoPrnmKLLvg">
+      <vertices xsi:type="sgraph:State" xmi:id="_k_HrIKgaEeajc9cS_HWa6Q" specification="entry/ raise room.occupy" name="CheckedIn" incomingTransitions="_q70TEKgaEeajc9cS_HWa6Q">
         <outgoingTransitions xmi:id="_rRQXkKgaEeajc9cS_HWa6Q" specification="usr.initiateCheckout [usr.booking==1 &amp;&amp; booking.initiateCheckout(booking1.bookingId)]&#xA;/raise reservation.checkOut" target="_m5uWoKgaEeajc9cS_HWa6Q"/>
-        <outgoingTransitions xmi:id="_gd-WkLJfEeaKoPrnmKLLvg" specification="usr.checkInBooking [usr.booking == 1 &amp;&amp; booking.checkInBooking(booking1.bookingId)]" target="_k_HrIKgaEeajc9cS_HWa6Q"/>
       </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_m5uWoKgaEeajc9cS_HWa6Q" specification="entry/ raise room.free " name="CheckedOut" incomingTransitions="_rRQXkKgaEeajc9cS_HWa6Q _X-lh0LNDEea-e-g_NLyrkQ">
+      <vertices xsi:type="sgraph:State" xmi:id="_m5uWoKgaEeajc9cS_HWa6Q" specification="entry/ raise room.free " name="CheckedOut" incomingTransitions="_rRQXkKgaEeajc9cS_HWa6Q">
         <outgoingTransitions xmi:id="_paPLkKgaEeajc9cS_HWa6Q" specification="usr.payDuringCheckout [usr.booking==1]" target="_G5kFQKppEea9rP9r4tEs6w"/>
-        <outgoingTransitions xmi:id="_X-lh0LNDEea-e-g_NLyrkQ" specification="usr.checkOutBooking[usr.booking==1 &amp;&amp; booking.checkOutBooking(booking1.bookingId)]" target="_m5uWoKgaEeajc9cS_HWa6Q"/>
       </vertices>
       <vertices xsi:type="sgraph:FinalState" xmi:id="_G5kFQKppEea9rP9r4tEs6w" incomingTransitions="_paPLkKgaEeajc9cS_HWa6Q"/>
     </regions>
@@ -1045,28 +1043,6 @@
       <styles xsi:type="notation:FontStyle" xmi:id="_vtdUY68xEeaTd91kznyLTw" fontName="Verdana"/>
       <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_vtdUYq8xEeaTd91kznyLTw" points="[11, 1, -80, 1]$[97, 1, 6, 1]"/>
       <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_vtd7cK8xEeaTd91kznyLTw" id="(0.8351648351648352,0.6415094339622641)"/>
-    </edges>
-    <edges xmi:id="_ge1SMLJfEeaKoPrnmKLLvg" type="Transition" element="_gd-WkLJfEeaKoPrnmKLLvg" source="_k_I5QKgaEeajc9cS_HWa6Q" target="_k_I5QKgaEeajc9cS_HWa6Q">
-      <children xsi:type="notation:DecorationNode" xmi:id="_ge2gULJfEeaKoPrnmKLLvg" type="TransitionExpression">
-        <styles xsi:type="notation:ShapeStyle" xmi:id="_ge2gUbJfEeaKoPrnmKLLvg"/>
-        <layoutConstraint xsi:type="notation:Location" xmi:id="_ge2gUrJfEeaKoPrnmKLLvg" y="10"/>
-      </children>
-      <styles xsi:type="notation:ConnectorStyle" xmi:id="_ge1SMbJfEeaKoPrnmKLLvg" lineColor="4210752"/>
-      <styles xsi:type="notation:FontStyle" xmi:id="_ge15QLJfEeaKoPrnmKLLvg" fontName="Verdana"/>
-      <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_ge1SMrJfEeaKoPrnmKLLvg" points="[-76, 0, 76, 31]$[-76, 0, 76, 31]$[-76, 30, 76, 61]$[-76, 78, 76, 109]$[-160, 78, -8, 109]$[-160, 0, -8, 31]"/>
-      <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_ge48kLJfEeaKoPrnmKLLvg" id="(0.9166666666666666,1.0)"/>
-      <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_ge48kbJfEeaKoPrnmKLLvg" id="(0.23684210526315788,0.38181818181818183)"/>
-    </edges>
-    <edges xmi:id="_X_kZQLNDEea-e-g_NLyrkQ" type="Transition" element="_X-lh0LNDEea-e-g_NLyrkQ" source="_m5vkwKgaEeajc9cS_HWa6Q" target="_m5vkwKgaEeajc9cS_HWa6Q">
-      <children xsi:type="notation:DecorationNode" xmi:id="_X_m1gLNDEea-e-g_NLyrkQ" type="TransitionExpression">
-        <styles xsi:type="notation:ShapeStyle" xmi:id="_X_m1gbNDEea-e-g_NLyrkQ"/>
-        <layoutConstraint xsi:type="notation:Location" xmi:id="_X_nckLNDEea-e-g_NLyrkQ" y="10"/>
-      </children>
-      <styles xsi:type="notation:ConnectorStyle" xmi:id="_X_kZQbNDEea-e-g_NLyrkQ" lineColor="4210752"/>
-      <styles xsi:type="notation:FontStyle" xmi:id="_X_lnYLNDEea-e-g_NLyrkQ" fontName="Verdana"/>
-      <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_X_kZQrNDEea-e-g_NLyrkQ" points="[-7, 0, 45, 3]$[-7, 66, 45, 69]$[-7, 82, 45, 85]$[-57, 82, -5, 85]$[-57, 0, -5, 3]"/>
-      <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_X_qf4LNDEea-e-g_NLyrkQ" id="(0.7962962962962963,1.0)"/>
-      <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_Y45N8LNDEea-e-g_NLyrkQ" id="(0.2962962962962963,0.9454545454545454)"/>
     </edges>
   </notation:Diagram>
 </xmi:XMI>
