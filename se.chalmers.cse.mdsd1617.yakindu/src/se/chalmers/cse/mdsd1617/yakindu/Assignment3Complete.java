@@ -40,6 +40,16 @@ public class Assignment3Complete {
 				reservationToBookingId.get(reservationID) == bookingId;
 	}
 	
+	public boolean reservationMappedToBookingForCheckin(long reservationID, long bookingId) {
+			return  reservationToBookingId.get(reservationID) == bookingId &&
+					reservationID == reservationToCheckin - 1;
+	}
+	
+	public boolean reservationMappedToBookingForCheckout(long reservationID, long bookingId) {
+		return  reservationToBookingId.get(reservationID) == bookingId &&
+				reservationID == reservationToCheckout - 1;
+}
+	
 	public boolean confirmBooking(long bookingId){
 		//If there is an entry with this booking id then there is a reservation connected to that booking.
 		return reservationToBookingId.containsValue(bookingId);
@@ -58,41 +68,51 @@ public class Assignment3Complete {
 	
 	// **************************** //
 	public boolean checkInBooking(long bookingId) {
+		if(reservationToCheckin > currentReservationNumber) {
+			reservationToCheckin = 0;
+			return false;
+		}
 		if (reservationToBookingId.containsValue(bookingId)) {   			 
-			 for(Map.Entry<Long, Long> e : reservationToBookingId.entrySet()) {
-				 if(e.getKey() == reservationToCheckin && e.getValue() == bookingId) {
-					 this.connectRoomToReservation(reservationToCheckin);
-					 reservationToCheckin ++;
-					 return true;
-				 }
+			if(reservationToBookingId.get(reservationToCheckin) == bookingId) {
+				 this.connectRoomToReservation(reservationToCheckin);
 				 reservationToCheckin ++;
-			 }
+				 return true;
+			}
+			else {
+				reservationToCheckin ++;
+				checkInBooking(bookingId);
+			}
+			 
 		 }
 		 return false;
 	 }
 	// **************************** //
 	 
-	 public boolean initiateCheckout(long bookingId) {
-		 if (reservationToBookingId.containsValue(bookingId)) {
-			 return true;
-		 }
-		 return false;
-	 }
+	public boolean initiateCheckout(long bookingId) {
+		if (reservationToBookingId.containsValue(bookingId)) {
+			return true;
+		}
+		return false;
+	}
 	 
 	 // **************************** //
 	 public boolean checkOutBooking(long bookingId) {
+		 if(reservationToCheckout > currentReservationNumber) {
+			 reservationToCheckout = 0;
+			 return false;
+		 }
 		 if(reservationToBookingId.containsValue(bookingId)) {
-			 for(Map.Entry<Long, Long> e : reservationToBookingId.entrySet()) {
-				 if(e.getKey() == reservationToCheckout && e.getKey() == bookingId) {
-					 this.checkOutReservation(reservationToCheckout);
-					 reservationToCheckout ++;
-					 currentReservationNumber --;
-					 return true;
-				 }
+			 if(reservationToBookingId.get(reservationToCheckout) == bookingId) {
+				 this.checkOutReservation(reservationToCheckout);
 				 reservationToCheckout ++;
+				 currentReservationNumber --;
+				 return true;
+			 }
+			 else {
+				 reservationToCheckout ++;
+				 checkOutBooking(bookingId);
 			 }
 		 }
-		 
 		 return false;
 	 }
 	// **************************** //
