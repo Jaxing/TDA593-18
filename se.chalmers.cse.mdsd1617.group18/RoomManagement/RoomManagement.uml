@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_8P7IQLb5EeaGlNOYyna58Q" name="RootElement">
+  <packagedElement xmi:type="uml:Class" xmi:id="_9pRg0Lb5EeaGlNOYyna58Q" name="RoomManager"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_AYBmELb6EeaGlNOYyna58Q" name="IHotelRoomManager"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_C9LDYLb6EeaGlNOYyna58Q" name="IHotelRoomProvider"/>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_JNvpkLb6EeaGlNOYyna58Q" client="_9pRg0Lb5EeaGlNOYyna58Q" supplier="_AYBmELb6EeaGlNOYyna58Q"/>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_J6bJYLb6EeaGlNOYyna58Q" client="_9pRg0Lb5EeaGlNOYyna58Q" supplier="_C9LDYLb6EeaGlNOYyna58Q"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_LCchYLb6EeaGlNOYyna58Q" name="IRoom" visibility="public"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_MlkhALb6EeaGlNOYyna58Q" client="_9pRg0Lb5EeaGlNOYyna58Q" supplier="_LCchYLb6EeaGlNOYyna58Q"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_UqCtwLb6EeaGlNOYyna58Q" name="IRoomType"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_qig14Lb6EeaGlNOYyna58Q" memberEnd="_qiirELb6EeaGlNOYyna58Q _qijSILb6EeaGlNOYyna58Q">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qiiEALb6EeaGlNOYyna58Q" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_qiiEAbb6EeaGlNOYyna58Q" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_qijSILb6EeaGlNOYyna58Q" name="iroom" type="_LCchYLb6EeaGlNOYyna58Q" aggregation="shared" association="_qig14Lb6EeaGlNOYyna58Q"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_qiirELb6EeaGlNOYyna58Q" name="iroomtype" type="_UqCtwLb6EeaGlNOYyna58Q" association="_qig14Lb6EeaGlNOYyna58Q"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_UMwC4Lb8EeaGlNOYyna58Q" client="_9pRg0Lb5EeaGlNOYyna58Q" supplier="_UqCtwLb6EeaGlNOYyna58Q"/>
+</uml:Model>
