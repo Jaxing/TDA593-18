@@ -346,6 +346,11 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_glUiELb8EeaGlNOYyna58Q" name="getRoomTypes">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_sXM0sLb8EeaGlNOYyna58Q" direction="return">
+          <type xmi:type="uml:DataType" href="group18.uml#_0ZOZgJeDEeatRIhPgYoqQg"/>
+        </ownedParameter>
+      </ownedOperation>
     </nestedClassifier>
     <packagedElement xmi:type="uml:Component" xmi:id="_Aazr4Ka1Eea6v_LEHy7Trw" name="BookingSystem">
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_DbRzQKa1Eea6v_LEHy7Trw" client="_Aazr4Ka1Eea6v_LEHy7Trw" supplier="_ztfhMKazEea6v_LEHy7Trw" contract="_ztfhMKazEea6v_LEHy7Trw"/>
