@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_S6-xoLb_EeaGlNOYyna58Q" name="RootElement">
+  <packagedElement xmi:type="uml:Class" xmi:id="_Txos0Lb_EeaGlNOYyna58Q" name="BookingSystem">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_GOKckLcGEeaGlNOYyna58Q" name="bookings"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Qs1a4LcGEeaGlNOYyna58Q" name="events"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_YJbzgLb_EeaGlNOYyna58Q" name="IHotelBookingManager">
+    <generalization xmi:type="uml:Generalization" xmi:id="_px438Lb_EeaGlNOYyna58Q" general="_a-_EULb_EeaGlNOYyna58Q"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_a-_EULb_EeaGlNOYyna58Q" name="IHotelCustomerProvider"/>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_ljBq0Lb_EeaGlNOYyna58Q" client="_Txos0Lb_EeaGlNOYyna58Q" supplier="_YJbzgLb_EeaGlNOYyna58Q"/>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_mGSI4Lb_EeaGlNOYyna58Q" client="_Txos0Lb_EeaGlNOYyna58Q" supplier="_a-_EULb_EeaGlNOYyna58Q"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_y4WGILb_EeaGlNOYyna58Q" name="IBooking"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_69-wgLb_EeaGlNOYyna58Q" client="_Txos0Lb_EeaGlNOYyna58Q" supplier="_y4WGILb_EeaGlNOYyna58Q"/>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_BV8l4LcFEeaGlNOYyna58Q" name="EventType">
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_eh_z4LcGEeaGlNOYyna58Q" name="CHECKIN"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_f7XakLcGEeaGlNOYyna58Q" name="CHECKOUT"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_EQSQELcFEeaGlNOYyna58Q" name="IEvent"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_KDiBELcFEeaGlNOYyna58Q" memberEnd="_KDioIbcFEeaGlNOYyna58Q _KDioIrcFEeaGlNOYyna58Q">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KDiBEbcFEeaGlNOYyna58Q" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KDioILcFEeaGlNOYyna58Q" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_KDioIrcFEeaGlNOYyna58Q" name="eventtype" type="_BV8l4LcFEeaGlNOYyna58Q" association="_KDiBELcFEeaGlNOYyna58Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ND6B0LcFEeaGlNOYyna58Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NEQAELcFEeaGlNOYyna58Q" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_KDioIbcFEeaGlNOYyna58Q" name="ievent" type="_EQSQELcFEeaGlNOYyna58Q" aggregation="shared" association="_KDiBELcFEeaGlNOYyna58Q"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_W53aULcFEeaGlNOYyna58Q" client="_Txos0Lb_EeaGlNOYyna58Q" supplier="_EQSQELcFEeaGlNOYyna58Q"/>
+</uml:Model>
