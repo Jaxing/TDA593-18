@@ -59,6 +59,10 @@ public class Assignment3Complete {
 		 return false;
 	 }
 	 
+	 public boolean checkInOneBooking(long bookingId) {
+		return checkInBooking(bookingId);
+	 }
+	 
 	 public boolean initiateCheckout(long bookingId) {
 		 if (reservationToBookingId.containsValue(bookingId)) {
 			 int reservationsToRemove = 0;
@@ -70,6 +74,20 @@ public class Assignment3Complete {
 			 }
 			 currentReservationNumber -= reservationsToRemove;
 			 return true;
+		 }
+		 return false;
+	 }
+	 
+	 public boolean initiateCheckoutOne(long bookingId) {
+		 if (reservationToBookingId.containsValue(bookingId)) {
+			 for (Map.Entry<Long, Long> e : reservationToBookingId.entrySet()) {
+				 if (e.getValue() == bookingId) {
+					 this.checkOutReservation(e.getKey());
+					 reservationToBookingId.remove(e.getKey());
+					 this.currentReservationNumber --;
+					 return true;
+				 }
+			 }
 		 }
 		 return false;
 	 }
@@ -111,6 +129,19 @@ public class Assignment3Complete {
 	 //Should return current highest id, therefor currentReservationId needs to be one smaller.
 	 public long getCurrentReservationId() {
 		return this.currentReservationId - 1; 
+	 }
+	 
+	 public long getNumberOfReservationsForBooking(long bookingId) {
+		 long nbrOfRes = 0;
+		 
+		 for (Map.Entry<Long, Long> entry : reservationToBookingId.entrySet()) {
+			 if (entry.getValue() == bookingId) {
+				 nbrOfRes ++;
+				 System.out.print(nbrOfRes); 
+			 }
+		 }
+		 
+		 return nbrOfRes;
 	 }
 	
 }
