@@ -47,6 +47,44 @@
         <outgoingTransitions xmi:id="_o3pooLlBEeaz6rNlUyPgrQ" specification="[booking1.reservationsToCheckOut == 0]" target="_m5uWoKgaEeajc9cS_HWa6Q"/>
       </vertices>
     </regions>
+    <regions xmi:id="_f5QfYLlDEeaz6rNlUyPgrQ" name="booking0">
+      <vertices xsi:type="sgraph:Entry" xmi:id="_f5QfYblDEeaz6rNlUyPgrQ" name="">
+        <outgoingTransitions xmi:id="_f5QfYrlDEeaz6rNlUyPgrQ" specification="" target="_f5RGcLlDEeaz6rNlUyPgrQ"/>
+      </vertices>
+      <vertices xsi:type="sgraph:State" xmi:id="_f5RGcLlDEeaz6rNlUyPgrQ" name="Created" incomingTransitions="_f5QfYrlDEeaz6rNlUyPgrQ">
+        <outgoingTransitions xmi:id="_f5RtgLlDEeaz6rNlUyPgrQ" specification="usr.initiateBooking[usr.booking==0]/&#xA;booking0.bookingId = booking.initiateBooking()" target="_f5SUkLlDEeaz6rNlUyPgrQ"/>
+      </vertices>
+      <vertices xsi:type="sgraph:State" xmi:id="_f5SUkLlDEeaz6rNlUyPgrQ" specification="entry/booking.activeBookingId = booking0.bookingId" name="Initiated" incomingTransitions="_f5RtgLlDEeaz6rNlUyPgrQ _f5S7s7lDEeaz6rNlUyPgrQ">
+        <outgoingTransitions xmi:id="_f5SUm7lDEeaz6rNlUyPgrQ" specification="usr.confirmBooking [usr.booking==0&amp;&amp; booking.confirmBooking(booking0.bookingId)]/&#xA;raise reservation.confirm" target="_f5UJwLlDEeaz6rNlUyPgrQ"/>
+        <outgoingTransitions xmi:id="_f5S7s7lDEeaz6rNlUyPgrQ" specification="usr.addRoomToBooking [usr.booking==0 &amp;&amp; booking.addRoomToBooking(booking0.bookingId)]&#xA;/raise room.assign;&#xA;booking0.reservationsToCheckIn = booking0.reservationsToCheckIn + 1;&#xA;booking0.reservationsToCheckOut = booking0.reservationsToCheckOut + 1" documentation="Create a new room reservation and assign a room when a room is added" target="_f5SUkLlDEeaz6rNlUyPgrQ"/>
+      </vertices>
+      <vertices xsi:type="sgraph:State" xmi:id="_f5UJwLlDEeaz6rNlUyPgrQ" specification="" name="Confirmed" incomingTransitions="_f5SUm7lDEeaz6rNlUyPgrQ">
+        <outgoingTransitions xmi:id="_f5UJwrlDEeaz6rNlUyPgrQ" specification="usr.initiateCheckin [usr.booking==0 &amp;&amp; booking.initiateCheckin(booking0.bookingId)]" target="_f5WmAblDEeaz6rNlUyPgrQ"/>
+      </vertices>
+      <vertices xsi:type="sgraph:State" xmi:id="_f5Uw37lDEeaz6rNlUyPgrQ" specification="entry/booking.activeBookingId = booking0.bookingId" name="CheckedIn" incomingTransitions="_f5X0ILlDEeaz6rNlUyPgrQ _f5YbMLlDEeaz6rNlUyPgrQ">
+        <outgoingTransitions xmi:id="_f5VX4LlDEeaz6rNlUyPgrQ" specification="usr.initiateCheckout [usr.booking==0 &amp;&amp; booking.initiateCheckout(booking0.bookingId)]" target="_f5YbOLlDEeaz6rNlUyPgrQ"/>
+      </vertices>
+      <vertices xsi:type="sgraph:State" xmi:id="_f5VX8LlDEeaz6rNlUyPgrQ" specification="entry/booking.activeBookingId = booking1.bookingId" name="CheckedOut" incomingTransitions="_f5aQdblDEeaz6rNlUyPgrQ _f5Zpa7lDEeaz6rNlUyPgrQ">
+        <outgoingTransitions xmi:id="_f5V--rlDEeaz6rNlUyPgrQ" specification="usr.payDuringCheckout [usr.booking==0]" target="_f5WmALlDEeaz6rNlUyPgrQ"/>
+      </vertices>
+      <vertices xsi:type="sgraph:FinalState" xmi:id="_f5WmALlDEeaz6rNlUyPgrQ" incomingTransitions="_f5V--rlDEeaz6rNlUyPgrQ"/>
+      <vertices xsi:type="sgraph:State" xmi:id="_f5WmAblDEeaz6rNlUyPgrQ" specification="entry/booking.activeBookingId = booking0.bookingId" name="CheckInInitiated" incomingTransitions="_f5UJwrlDEeaz6rNlUyPgrQ _f5X0NblDEeaz6rNlUyPgrQ">
+        <outgoingTransitions xmi:id="_f5WmDLlDEeaz6rNlUyPgrQ" specification="usr.checkInOneBooking [usr.booking == 0 &amp;&amp; booking.checkInOneBooking(booking0.bookingId)]&#xA;/raise reservation.checkIn;&#xA;booking0.reservationsToCheckIn = booking0.reservationsToCheckIn - 1" target="_f5X0NLlDEeaz6rNlUyPgrQ"/>
+        <outgoingTransitions xmi:id="_f5X0ILlDEeaz6rNlUyPgrQ" specification="usr.checkInBooking [usr.booking==0 &amp;&amp; booking.checkInBooking(booking0.bookingId)]&#xA;/raise reservation.checkInAll" target="_f5Uw37lDEeaz6rNlUyPgrQ"/>
+      </vertices>
+      <vertices xsi:type="sgraph:Choice" xmi:id="_f5X0NLlDEeaz6rNlUyPgrQ" incomingTransitions="_f5WmDLlDEeaz6rNlUyPgrQ">
+        <outgoingTransitions xmi:id="_f5X0NblDEeaz6rNlUyPgrQ" specification="" target="_f5WmAblDEeaz6rNlUyPgrQ"/>
+        <outgoingTransitions xmi:id="_f5YbMLlDEeaz6rNlUyPgrQ" specification="[booking0.reservationsToCheckIn == 0]" target="_f5Uw37lDEeaz6rNlUyPgrQ"/>
+      </vertices>
+      <vertices xsi:type="sgraph:State" xmi:id="_f5YbOLlDEeaz6rNlUyPgrQ" specification="entry/booking.activeBookingId = booking0.bookingId" name="CheckOutInitiated" incomingTransitions="_f5VX4LlDEeaz6rNlUyPgrQ _f5aQdLlDEeaz6rNlUyPgrQ">
+        <outgoingTransitions xmi:id="_f5ZCSrlDEeaz6rNlUyPgrQ" specification="usr.checkOutOneBooking[usr.booking==0 &amp;&amp; booking.checkOutOneBooking(booking0.bookingId)]/raise reservation.checkOut;&#xA;booking0.reservationsToCheckOut = booking0.reservationsToCheckOut - 1" target="_f5aQc7lDEeaz6rNlUyPgrQ"/>
+        <outgoingTransitions xmi:id="_f5Zpa7lDEeaz6rNlUyPgrQ" specification="usr.checkOutBooking [usr.booking==0 &amp;&amp; booking.checkOutBooking(booking0.bookingId)]&#xA;/raise reservation.checkOutAll" target="_f5VX8LlDEeaz6rNlUyPgrQ"/>
+      </vertices>
+      <vertices xsi:type="sgraph:Choice" xmi:id="_f5aQc7lDEeaz6rNlUyPgrQ" incomingTransitions="_f5ZCSrlDEeaz6rNlUyPgrQ">
+        <outgoingTransitions xmi:id="_f5aQdLlDEeaz6rNlUyPgrQ" specification="" target="_f5YbOLlDEeaz6rNlUyPgrQ"/>
+        <outgoingTransitions xmi:id="_f5aQdblDEeaz6rNlUyPgrQ" specification="[booking0.reservationsToCheckOut == 0]" target="_f5VX8LlDEeaz6rNlUyPgrQ"/>
+      </vertices>
+    </regions>
     <regions xmi:id="_Jg12cblEEeaz6rNlUyPgrQ" name="reservation0">
       <vertices xsi:type="sgraph:State" xmi:id="_JhAOlLlEEeaz6rNlUyPgrQ" name="Created" incomingTransitions="_Jg_ncrlEEeaz6rNlUyPgrQ">
         <outgoingTransitions xmi:id="_JhA1mblEEeaz6rNlUyPgrQ" specification="reservation.confirm [reservation.reservationMappedToBooking(reservation0.id, booking.activeBookingId)]" documentation="use the corrected booking id in the mappedTo method, that is usr.booking==1 we have to use the booking1 interface " target="_Jg9LPLlEEeaz6rNlUyPgrQ"/>
@@ -113,44 +151,6 @@
       </vertices>
       <vertices xsi:type="sgraph:Entry" xmi:id="_hYG00K2DEeab4sEqqQpNHQ">
         <outgoingTransitions xmi:id="_jFpUsK2DEeab4sEqqQpNHQ" specification="" target="_3rBEAazEEeahjcZS5sh9Xw"/>
-      </vertices>
-    </regions>
-    <regions xmi:id="_f5QfYLlDEeaz6rNlUyPgrQ" name="booking0">
-      <vertices xsi:type="sgraph:Entry" xmi:id="_f5QfYblDEeaz6rNlUyPgrQ" name="">
-        <outgoingTransitions xmi:id="_f5QfYrlDEeaz6rNlUyPgrQ" specification="" target="_f5RGcLlDEeaz6rNlUyPgrQ"/>
-      </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_f5RGcLlDEeaz6rNlUyPgrQ" name="Created" incomingTransitions="_f5QfYrlDEeaz6rNlUyPgrQ">
-        <outgoingTransitions xmi:id="_f5RtgLlDEeaz6rNlUyPgrQ" specification="usr.initiateBooking[usr.booking==0]/&#xA;booking0.bookingId = booking.initiateBooking()" target="_f5SUkLlDEeaz6rNlUyPgrQ"/>
-      </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_f5SUkLlDEeaz6rNlUyPgrQ" specification="entry/booking.activeBookingId = booking0.bookingId" name="Initiated" incomingTransitions="_f5RtgLlDEeaz6rNlUyPgrQ _f5S7s7lDEeaz6rNlUyPgrQ">
-        <outgoingTransitions xmi:id="_f5SUm7lDEeaz6rNlUyPgrQ" specification="usr.confirmBooking [usr.booking==0&amp;&amp; booking.confirmBooking(booking0.bookingId)]/&#xA;raise reservation.confirm" target="_f5UJwLlDEeaz6rNlUyPgrQ"/>
-        <outgoingTransitions xmi:id="_f5S7s7lDEeaz6rNlUyPgrQ" specification="usr.addRoomToBooking [usr.booking==0 &amp;&amp; booking.addRoomToBooking(booking0.bookingId)]&#xA;/raise room.assign;&#xA;booking0.reservationsToCheckIn = booking0.reservationsToCheckIn + 1;&#xA;booking0.reservationsToCheckOut = booking0.reservationsToCheckOut + 1" documentation="Create a new room reservation and assign a room when a room is added" target="_f5SUkLlDEeaz6rNlUyPgrQ"/>
-      </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_f5UJwLlDEeaz6rNlUyPgrQ" specification="" name="Confirmed" incomingTransitions="_f5SUm7lDEeaz6rNlUyPgrQ">
-        <outgoingTransitions xmi:id="_f5UJwrlDEeaz6rNlUyPgrQ" specification="usr.initiateCheckin [usr.booking==0 &amp;&amp; booking.initiateCheckin(booking0.bookingId)]" target="_f5WmAblDEeaz6rNlUyPgrQ"/>
-      </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_f5Uw37lDEeaz6rNlUyPgrQ" specification="entry/booking.activeBookingId = booking0.bookingId" name="CheckedIn" incomingTransitions="_f5X0ILlDEeaz6rNlUyPgrQ _f5YbMLlDEeaz6rNlUyPgrQ">
-        <outgoingTransitions xmi:id="_f5VX4LlDEeaz6rNlUyPgrQ" specification="usr.initiateCheckout [usr.booking==0 &amp;&amp; booking.initiateCheckout(booking0.bookingId)]" target="_f5YbOLlDEeaz6rNlUyPgrQ"/>
-      </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_f5VX8LlDEeaz6rNlUyPgrQ" specification="entry/booking.activeBookingId = booking1.bookingId" name="CheckedOut" incomingTransitions="_f5aQdblDEeaz6rNlUyPgrQ _f5Zpa7lDEeaz6rNlUyPgrQ">
-        <outgoingTransitions xmi:id="_f5V--rlDEeaz6rNlUyPgrQ" specification="usr.payDuringCheckout [usr.booking==0]" target="_f5WmALlDEeaz6rNlUyPgrQ"/>
-      </vertices>
-      <vertices xsi:type="sgraph:FinalState" xmi:id="_f5WmALlDEeaz6rNlUyPgrQ" incomingTransitions="_f5V--rlDEeaz6rNlUyPgrQ"/>
-      <vertices xsi:type="sgraph:State" xmi:id="_f5WmAblDEeaz6rNlUyPgrQ" specification="entry/booking.activeBookingId = booking0.bookingId" name="CheckInInitiated" incomingTransitions="_f5UJwrlDEeaz6rNlUyPgrQ _f5X0NblDEeaz6rNlUyPgrQ">
-        <outgoingTransitions xmi:id="_f5WmDLlDEeaz6rNlUyPgrQ" specification="usr.checkInOneBooking [usr.booking == 0 &amp;&amp; booking.checkInOneBooking(booking0.bookingId)]&#xA;/raise reservation.checkIn;&#xA;booking0.reservationsToCheckIn = booking0.reservationsToCheckIn - 1" target="_f5X0NLlDEeaz6rNlUyPgrQ"/>
-        <outgoingTransitions xmi:id="_f5X0ILlDEeaz6rNlUyPgrQ" specification="usr.checkInBooking [usr.booking==0 &amp;&amp; booking.checkInBooking(booking0.bookingId)]&#xA;/raise reservation.checkInAll" target="_f5Uw37lDEeaz6rNlUyPgrQ"/>
-      </vertices>
-      <vertices xsi:type="sgraph:Choice" xmi:id="_f5X0NLlDEeaz6rNlUyPgrQ" incomingTransitions="_f5WmDLlDEeaz6rNlUyPgrQ">
-        <outgoingTransitions xmi:id="_f5X0NblDEeaz6rNlUyPgrQ" specification="" target="_f5WmAblDEeaz6rNlUyPgrQ"/>
-        <outgoingTransitions xmi:id="_f5YbMLlDEeaz6rNlUyPgrQ" specification="[booking0.reservationsToCheckIn == 0]" target="_f5Uw37lDEeaz6rNlUyPgrQ"/>
-      </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_f5YbOLlDEeaz6rNlUyPgrQ" specification="entry/booking.activeBookingId = booking0.bookingId" name="CheckOutInitiated" incomingTransitions="_f5VX4LlDEeaz6rNlUyPgrQ _f5aQdLlDEeaz6rNlUyPgrQ">
-        <outgoingTransitions xmi:id="_f5ZCSrlDEeaz6rNlUyPgrQ" specification="usr.checkOutOneBooking[usr.booking==0 &amp;&amp; booking.checkOutOneBooking(booking0.bookingId)]/raise reservation.checkOut;&#xA;booking0.reservationsToCheckOut = booking0.reservationsToCheckOut - 1" target="_f5aQc7lDEeaz6rNlUyPgrQ"/>
-        <outgoingTransitions xmi:id="_f5Zpa7lDEeaz6rNlUyPgrQ" specification="usr.checkOutBooking [usr.booking==0 &amp;&amp; booking.checkOutBooking(booking0.bookingId)]&#xA;/raise reservation.checkOutAll" target="_f5VX8LlDEeaz6rNlUyPgrQ"/>
-      </vertices>
-      <vertices xsi:type="sgraph:Choice" xmi:id="_f5aQc7lDEeaz6rNlUyPgrQ" incomingTransitions="_f5ZCSrlDEeaz6rNlUyPgrQ">
-        <outgoingTransitions xmi:id="_f5aQdLlDEeaz6rNlUyPgrQ" specification="" target="_f5YbOLlDEeaz6rNlUyPgrQ"/>
-        <outgoingTransitions xmi:id="_f5aQdblDEeaz6rNlUyPgrQ" specification="[booking0.reservationsToCheckOut == 0]" target="_f5VX8LlDEeaz6rNlUyPgrQ"/>
       </vertices>
     </regions>
   </sgraph:Statechart>

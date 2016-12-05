@@ -31,7 +31,6 @@ public class Assignment3Complete {
 			++currentReservationNumber;
 			reservationToBookingId.put(currentReservationId, bookingId);
 			++currentReservationId;
-			System.out.println("Add Room To Booking");
 			return true;
 		}
 	}
@@ -69,6 +68,8 @@ public class Assignment3Complete {
 	
 	// **************************** //
 	public boolean checkInOneBooking(long bookingId) {
+		System.out.println("bookingId" + bookingId);
+		System.out.println("resToCheckIn" + reservationToCheckin);
 		if(reservationToCheckin > currentReservationNumber) {
 			reservationToCheckin = 0;
 			return false;
@@ -109,6 +110,8 @@ public class Assignment3Complete {
 	 
 	 // **************************** //
 	 public boolean checkOutOneBooking(long bookingId) {
+		System.out.println("bookingId" + bookingId);
+		System.out.println("resToCheckOut" + reservationToCheckout);
 		 if(reservationToCheckout > currentReservationNumber) {
 			 reservationToCheckout = 0;
 			 return false;
@@ -129,13 +132,9 @@ public class Assignment3Complete {
 	 }
 	 
 	 public boolean checkOutBooking(long bookingId) {
-		 if(this.reservationToBookingId.containsKey(bookingId)) {
-			for(Map.Entry<Long, Long> entry : this.reservationToBookingId.entrySet()){
-				if(entry.getKey() < this.reservationToCheckout && entry.getValue() == bookingId) {
-					continue;
-				}
-				this.checkOutReservation(entry.getKey());
-				this.currentReservationNumber--;
+		 if(this.reservationToBookingId.containsValue(bookingId)) {
+			while(checkOutOneBooking(bookingId)) {
+				
 			}
 			return true;
 		} else {
@@ -158,7 +157,7 @@ public class Assignment3Complete {
 	 
 	 private void checkOutReservation(long reservationId) {
 		 for (Map.Entry<Long, Long> e : roomToReservation.entrySet()) {
-			 if (e.getValue() == reservationId) {
+			 if (e.getValue() == reservationId && reservationId == reservationToCheckout) {
 				 roomToReservation.remove(e.getKey());
 				 return;
 			 }
@@ -180,7 +179,6 @@ public class Assignment3Complete {
 	 
 	 //Should return current highest id, therefore currentReservationId needs to be one smaller.
 	 public long getCurrentReservationId() {
-		System.out.println(currentReservationId - 1);
 		return this.currentReservationId - 1; 
 	 }
 	
