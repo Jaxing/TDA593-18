@@ -375,16 +375,6 @@
             </packagedElement>
             <packagedElement xmi:type="uml:Usage" xmi:id="_Ifx9wLrTEeaz3IRliUciHQ" client="_FeS0r7rREeaVMa-P8AMS-A" supplier="_FSfiYLrTEeaz3IRliUciHQ"/>
           </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="_FhggsLrREeaVMa-P8AMS-A" name="Main">
-            <packagedElement xmi:type="uml:Interface" xmi:id="_FhggsbrREeaVMa-P8AMS-A" name="IHotelStartupProvies">
-              <ownedAttribute xmi:type="uml:Property" xmi:id="_FhggsrrREeaVMa-P8AMS-A" name="roommanager" type="_FhhH37rREeaVMa-P8AMS-A" association="_FhhHx7rREeaVMa-P8AMS-A"/>
-              <ownedOperation xmi:type="uml:Operation" xmi:id="_Fhggs7rREeaVMa-P8AMS-A" name="startup" visibility="public">
-                <ownedParameter xmi:type="uml:Parameter" xmi:id="_FhggtLrREeaVMa-P8AMS-A" name="numRoom">
-                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-                </ownedParameter>
-              </ownedOperation>
-            </packagedElement>
-          </packagedElement>
           <packagedElement xmi:type="uml:Realization" xmi:id="_FhggtbrREeaVMa-P8AMS-A" client="_FhhH8brREeaVMa-P8AMS-A" supplier="_FhhH5rrREeaVMa-P8AMS-A"/>
           <packagedElement xmi:type="uml:Association" xmi:id="_FhggtrrREeaVMa-P8AMS-A" memberEnd="_FeS0rrrREeaVMa-P8AMS-A _FhggubrREeaVMa-P8AMS-A">
             <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Fhggt7rREeaVMa-P8AMS-A" source="org.eclipse.papyrus">
@@ -402,12 +392,6 @@
             </ownedEnd>
           </packagedElement>
           <packagedElement xmi:type="uml:Realization" xmi:id="_FhhHxrrREeaVMa-P8AMS-A" client="_FhhH27rREeaVMa-P8AMS-A" supplier="_FhhHzLrREeaVMa-P8AMS-A"/>
-          <packagedElement xmi:type="uml:Association" xmi:id="_FhhHx7rREeaVMa-P8AMS-A" name="initiates" memberEnd="_FhggsrrREeaVMa-P8AMS-A _FhhHyrrREeaVMa-P8AMS-A">
-            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FhhHyLrREeaVMa-P8AMS-A" source="org.eclipse.papyrus">
-              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FhhHybrREeaVMa-P8AMS-A" key="nature" value="UML_Nature"/>
-            </eAnnotations>
-            <ownedEnd xmi:type="uml:Property" xmi:id="_FhhHyrrREeaVMa-P8AMS-A" name="ihotelstartupprovies" type="_FhggsbrREeaVMa-P8AMS-A" association="_FhhHx7rREeaVMa-P8AMS-A"/>
-          </packagedElement>
           <packagedElement xmi:type="uml:Package" xmi:id="_FhhHy7rREeaVMa-P8AMS-A" name="RoomManager">
             <packagedElement xmi:type="uml:Interface" xmi:id="_FhhHzLrREeaVMa-P8AMS-A" name="IRoomType">
               <ownedOperation xmi:type="uml:Operation" xmi:id="_FhhHzbrREeaVMa-P8AMS-A" name="getName">
@@ -466,6 +450,7 @@
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FhhH5LrREeaVMa-P8AMS-A"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FhhH5brREeaVMa-P8AMS-A" value="*"/>
               </ownedAttribute>
+              <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_tAu8wLrUEea03qPcjSw8vA" client="_FhhH37rREeaVMa-P8AMS-A" supplier="_FhggsbrREeaVMa-P8AMS-A" contract="_FhggsbrREeaVMa-P8AMS-A"/>
             </packagedElement>
             <packagedElement xmi:type="uml:Interface" xmi:id="_FhhH5rrREeaVMa-P8AMS-A" name="IRoom">
               <ownedOperation xmi:type="uml:Operation" xmi:id="_FhhH57rREeaVMa-P8AMS-A" name="getRoomType">
@@ -572,6 +557,13 @@
             </packagedElement>
             <packagedElement xmi:type="uml:Realization" xmi:id="_FhhIFrrREeaVMa-P8AMS-A" client="_FhhH37rREeaVMa-P8AMS-A" supplier="_FhhH9brREeaVMa-P8AMS-A"/>
             <packagedElement xmi:type="uml:Realization" xmi:id="_FhhIF7rREeaVMa-P8AMS-A" client="_FhhH37rREeaVMa-P8AMS-A" supplier="_FhhH-rrREeaVMa-P8AMS-A"/>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_FhggsbrREeaVMa-P8AMS-A" name="IHotelStartupProvies">
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Fhggs7rREeaVMa-P8AMS-A" name="startup" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_FhggtLrREeaVMa-P8AMS-A" name="numRoom">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                </ownedParameter>
+              </ownedOperation>
+            </packagedElement>
           </packagedElement>
           <packagedElement xmi:type="uml:Association" xmi:id="_Fhi88LrREeaVMa-P8AMS-A" memberEnd="_FeS0q7rREeaVMa-P8AMS-A _Fhi887rREeaVMa-P8AMS-A">
             <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Fhi88brREeaVMa-P8AMS-A" source="org.eclipse.papyrus">
