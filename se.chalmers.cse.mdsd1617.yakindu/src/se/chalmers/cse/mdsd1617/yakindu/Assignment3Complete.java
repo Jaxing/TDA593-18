@@ -89,13 +89,9 @@ public class Assignment3Complete {
 	 }
 	
 	public boolean checkInBooking(long bookingId) {
-		if(this.reservationToBookingId.containsKey(bookingId)) {
-			for(Map.Entry<Long, Long> entry : this.reservationToBookingId.entrySet()){
-				if(entry.getKey() < this.reservationToCheckin && entry.getValue() == bookingId) {
-					System.out.println("hej");
-					continue;
-				}
-				this.connectRoomToReservation(entry.getKey());
+		if(this.reservationToBookingId.containsValue(bookingId)) {
+			while(checkInOneBooking(bookingId)){
+				
 			}
 			return true;
 		} else {
