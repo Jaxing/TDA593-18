@@ -732,6 +732,15 @@
     <element xmi:type="uml:Package" href="ClassDiagram.uml#_uH2HQLiOEeaxibSrfw2Yjw"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uH3VYbiOEeaxibSrfw2Yjw" x="-762" y="644" width="1206" height="824"/>
   </children>
+  <children xmi:type="notation:Shape" xmi:id="_zJ9U4LrAEeacxLVHrFllag" type="Package_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="_zJ_xILrAEeacxLVHrFllag" type="Package_NameLabel"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_zJ_xIbrAEeacxLVHrFllag" type="Package_PackagedElementCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_zJ_xIrrAEeacxLVHrFllag"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zJ_xI7rAEeacxLVHrFllag"/>
+    </children>
+    <element xmi:type="uml:Package" href="ClassDiagram.uml#_zJKDoLrAEeacxLVHrFllag"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zJ9U4brAEeacxLVHrFllag" x="636" y="143" width="523" height="734"/>
+  </children>
   <styles xmi:type="notation:StringValueStyle" xmi:id="__cubwbgHEeauN4s_XV28Hw" name="diagram_compatibility_version" stringValue="1.2.0"/>
   <styles xmi:type="notation:DiagramStyle" xmi:id="__cubwrgHEeauN4s_XV28Hw"/>
   <styles xmi:type="style:PapyrusViewStyle" xmi:id="__cubw7gHEeauN4s_XV28Hw">

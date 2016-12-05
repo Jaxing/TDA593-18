@@ -576,4 +576,5 @@
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="_fyxiUriSEeaxibSrfw2Yjw" name="bookingsystem" type="_BrTqMLhrEeadp_yqlmxcdQ" association="_fyvGELiSEeaxibSrfw2Yjw"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_zJKDoLrAEeacxLVHrFllag" name="Main"/>
 </uml:Model>
