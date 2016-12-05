@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Classes -->
+      <package
+            uri="http:///se/chalmers/cse/mdsd1617/group18/BookingSystem.ecore"
+            class="se.chalmers.cse.mdsd1617.group18.BookingSystem.BookingSystemPackage"
+            genModel="Classes.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Classes -->
+      <package
+            uri="http:///se/chalmers/cse/mdsd1617/group18/RoomManager.ecore"
+            class="se.chalmers.cse.mdsd1617.group18.RoomManager.RoomManagerPackage"
+            genModel="Classes.genmodel"/>
+   </extension>
+
+</plugin>
