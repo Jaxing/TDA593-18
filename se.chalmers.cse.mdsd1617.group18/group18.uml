@@ -124,37 +124,4 @@
       </packagedElement>
     </packagedElement>
   </packagedElement>
-  <packagedElement xmi:type="uml:DataType" xmi:id="_d9uCILSVEeaxVPR210aiSw" name="RoomList"/>
-  <packagedElement xmi:type="uml:DataType" xmi:id="_mXkpALSVEeaxVPR210aiSw" name="Room">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_mXkpAbSVEeaxVPR210aiSw" name="roomType">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_mXkpArSVEeaxVPR210aiSw" name="roomId">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-    </ownedAttribute>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Usage" xmi:id="_qjpA0LSVEeaxVPR210aiSw">
-    <client xmi:type="uml:DataType" href="DataTypes.uml#_EWyEMLIkEeaHpPhPENrH3w"/>
-    <supplier xmi:type="uml:DataType" href="DataTypes.uml#_BdKywLIkEeaHpPhPENrH3w"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Usage" xmi:id="_DtQwoLSWEeaxVPR210aiSw" client="_d9uCILSVEeaxVPR210aiSw" supplier="_mXkpALSVEeaxVPR210aiSw"/>
-  <packagedElement xmi:type="uml:DataType" xmi:id="_JExA0LSWEeaxVPR210aiSw" name="BookingList"/>
-  <packagedElement xmi:type="uml:DataType" xmi:id="_Mlf8oLSWEeaxVPR210aiSw" name="Booking">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_Mlf8obSWEeaxVPR210aiSw" name="firstName">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_Mlf8orSWEeaxVPR210aiSw" name="lastName">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_Mlf8o7SWEeaxVPR210aiSw" name="bookingId">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_Mlf8pLSWEeaxVPR210aiSw" name="startDate">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_Mlf8pbSWEeaxVPR210aiSw" name="endDate">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-    </ownedAttribute>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Usage" xmi:id="_PmdMMLSWEeaxVPR210aiSw" name="" client="_JExA0LSWEeaxVPR210aiSw" supplier="_oZNqEI_JEeaMDqvmI2HKcg _Mlf8pbSWEeaxVPR210aiSw"/>
 </uml:Model>
