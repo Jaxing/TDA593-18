@@ -432,14 +432,6 @@
             <element xmi:type="uml:Operation" href="ClassDiagram.uml#_RqTTUbiPEeaxibSrfw2Yjw"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_WYgHqbiPEeaxibSrfw2Yjw"/>
           </children>
-          <children xmi:type="notation:Shape" xmi:id="_WYgusLiPEeaxibSrfw2Yjw" type="Operation_InterfaceOperationLabel">
-            <element xmi:type="uml:Operation" href="ClassDiagram.uml#_RqTTVbiPEeaxibSrfw2Yjw"/>
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_WYgusbiPEeaxibSrfw2Yjw"/>
-          </children>
-          <children xmi:type="notation:Shape" xmi:id="_WYgusriPEeaxibSrfw2Yjw" type="Operation_InterfaceOperationLabel">
-            <element xmi:type="uml:Operation" href="ClassDiagram.uml#_RqTTWbiPEeaxibSrfw2Yjw"/>
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_WYgus7iPEeaxibSrfw2Yjw"/>
-          </children>
           <styles xmi:type="notation:TitleStyle" xmi:id="_RqVvaLiPEeaxibSrfw2Yjw"/>
           <styles xmi:type="notation:SortingStyle" xmi:id="_RqVvabiPEeaxibSrfw2Yjw"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_RqVvariPEeaxibSrfw2Yjw"/>
