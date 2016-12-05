@@ -16,7 +16,7 @@
             </eAnnotations>
             <ownedEnd xmi:type="uml:Property" xmi:id="_FeS0o7rREeaVMa-P8AMS-A" name="bookingsystem" type="_FeS0p7rREeaVMa-P8AMS-A" association="_FeS0oLrREeaVMa-P8AMS-A"/>
           </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="_FeS0pLrREeaVMa-P8AMS-A" name="BookingSystem">
+          <packagedElement xmi:type="uml:Package" xmi:id="_FeS0pLrREeaVMa-P8AMS-A" name="bookingSystem">
             <packagedElement xmi:type="uml:Class" xmi:id="_FeS0pbrREeaVMa-P8AMS-A" name="CheckInEvent"/>
             <packagedElement xmi:type="uml:Class" xmi:id="_FeS0prrREeaVMa-P8AMS-A" name="CheckOutEvent"/>
             <packagedElement xmi:type="uml:Class" xmi:id="_FeS0p7rREeaVMa-P8AMS-A" name="BookingSystem">
@@ -392,7 +392,7 @@
             </ownedEnd>
           </packagedElement>
           <packagedElement xmi:type="uml:Realization" xmi:id="_FhhHxrrREeaVMa-P8AMS-A" client="_FhhH27rREeaVMa-P8AMS-A" supplier="_FhhHzLrREeaVMa-P8AMS-A"/>
-          <packagedElement xmi:type="uml:Package" xmi:id="_FhhHy7rREeaVMa-P8AMS-A" name="RoomManager">
+          <packagedElement xmi:type="uml:Package" xmi:id="_FhhHy7rREeaVMa-P8AMS-A" name="roomManager">
             <packagedElement xmi:type="uml:Interface" xmi:id="_FhhHzLrREeaVMa-P8AMS-A" name="IRoomType">
               <ownedOperation xmi:type="uml:Operation" xmi:id="_FhhHzbrREeaVMa-P8AMS-A" name="getName">
                 <ownedParameter xmi:type="uml:Parameter" xmi:id="_FhhHzrrREeaVMa-P8AMS-A" direction="return">
