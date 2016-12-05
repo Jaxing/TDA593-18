@@ -1,12 +1,18 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: se.chalmers.cse.mdsd1617.group18;singleton:=true
+Bundle-SymbolicName: TDA593-18_se.chalmers.cse.mdsd1617.group18;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: se.chalmers.cse.mdsd1617.group18.BookingSystem,
+ se.chalmers.cse.mdsd1617.group18.BookingSystem.impl,
+ se.chalmers.cse.mdsd1617.group18.BookingSystem.util,
+ se.chalmers.cse.mdsd1617.group18.RoomManager,
+ se.chalmers.cse.mdsd1617.group18.RoomManager.impl,
+ se.chalmers.cse.mdsd1617.group18.RoomManager.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy
