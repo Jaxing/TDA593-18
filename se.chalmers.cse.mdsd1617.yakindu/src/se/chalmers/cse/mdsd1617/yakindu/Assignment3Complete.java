@@ -24,16 +24,14 @@ public class Assignment3Complete {
 
 	public boolean addRoomToBooking(long bookingId) {
 		if (bookingId < 1 || bookingId > currentBookingId) {
-			System.out.println("bookingId");
 			return false;
 		} else if (currentReservationNumber >= MAX_ROOMS) {
-			System.out.println("resNum");
 			return false;
 		} else {
-			System.out.println("True");
 			++currentReservationNumber;
 			reservationToBookingId.put(currentReservationId, bookingId);
 			++currentReservationId;
+			System.out.println("Add Room To Booking");
 			return true;
 		}
 	}
@@ -93,7 +91,8 @@ public class Assignment3Complete {
 	public boolean checkInBooking(long bookingId) {
 		if(this.reservationToBookingId.containsKey(bookingId)) {
 			for(Map.Entry<Long, Long> entry : this.reservationToBookingId.entrySet()){
-				if(entry.getKey() < this.reservationToCheckin) {
+				if(entry.getKey() < this.reservationToCheckin && entry.getValue() == bookingId) {
+					System.out.println("hej");
 					continue;
 				}
 				this.connectRoomToReservation(entry.getKey());
@@ -136,7 +135,7 @@ public class Assignment3Complete {
 	 public boolean checkOutBooking(long bookingId) {
 		 if(this.reservationToBookingId.containsKey(bookingId)) {
 			for(Map.Entry<Long, Long> entry : this.reservationToBookingId.entrySet()){
-				if(entry.getKey() < this.reservationToCheckout) {
+				if(entry.getKey() < this.reservationToCheckout && entry.getValue() == bookingId) {
 					continue;
 				}
 				this.checkOutReservation(entry.getKey());
@@ -185,6 +184,7 @@ public class Assignment3Complete {
 	 
 	 //Should return current highest id, therefore currentReservationId needs to be one smaller.
 	 public long getCurrentReservationId() {
+		System.out.println(currentReservationId - 1);
 		return this.currentReservationId - 1; 
 	 }
 	
