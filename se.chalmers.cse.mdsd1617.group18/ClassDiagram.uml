@@ -548,7 +548,6 @@
   <packagedElement xmi:type="uml:Package" xmi:id="_zJKDoLrAEeacxLVHrFllag" name="Main">
     <packagedElement xmi:type="uml:Interface" xmi:id="_Rds40LrEEea-T8nzEweZsw" name="IHotelStartupProvies">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_gsJRkbrHEea-T8nzEweZsw" name="roommanager" type="_SWUX8LgIEeauN4s_XV28Hw" association="_gsIqgLrHEea-T8nzEweZsw"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_j8ZhY7rHEea-T8nzEweZsw" name="bookingsystem" type="_BrTqMLhrEeadp_yqlmxcdQ" association="_j8ZhYLrHEea-T8nzEweZsw"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_Vnq-4LrEEea-T8nzEweZsw" name="startup" visibility="public">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_f4w0MLrEEea-T8nzEweZsw" name="numRoom">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
@@ -561,11 +560,5 @@
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_gsJRkLrHEea-T8nzEweZsw" key="nature" value="UML_Nature"/>
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="_gsJRkrrHEea-T8nzEweZsw" name="ihotelstartupprovies" type="_Rds40LrEEea-T8nzEweZsw" association="_gsIqgLrHEea-T8nzEweZsw"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Association" xmi:id="_j8ZhYLrHEea-T8nzEweZsw" name="Initiates" memberEnd="_j8ZhY7rHEea-T8nzEweZsw _j8aIcLrHEea-T8nzEweZsw">
-    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_j8ZhYbrHEea-T8nzEweZsw" source="org.eclipse.papyrus">
-      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_j8ZhYrrHEea-T8nzEweZsw" key="nature" value="UML_Nature"/>
-    </eAnnotations>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_j8aIcLrHEea-T8nzEweZsw" name="ihotelstartupprovies" type="_Rds40LrEEea-T8nzEweZsw" association="_j8ZhYLrHEea-T8nzEweZsw"/>
   </packagedElement>
 </uml:Model>
