@@ -68,14 +68,18 @@ public class Assignment3Complete {
 	
 	// **************************** //
 	public boolean checkInOneBooking(long bookingId) {
-		System.out.println("bookingId" + bookingId);
-		System.out.println("resToCheckIn" + reservationToCheckin);
-		if(reservationToCheckin > currentReservationNumber) {
+		System.out.println("BookingId " + bookingId);
+		for(Map.Entry<Long, Long> entry : reservationToBookingId.entrySet()){
+				System.out.println("\t key: " + entry.getKey() + " value: " + entry.getValue());
+				System.out.println("\t \t resToCheckin: " + reservationToCheckin);
+		}
+		if(reservationToCheckin >= currentReservationNumber) {
 			reservationToCheckin = 0;
 			return false;
 		}
 		if (reservationToBookingId.containsValue(bookingId) && reservationToBookingId.containsKey(reservationToCheckin)) {   			 
 			if(reservationToBookingId.get(reservationToCheckin) == bookingId) {
+				System.out.println("\t \t \t chekin True");
 				 this.connectRoomToReservation(reservationToCheckin);
 				 reservationToCheckin ++;
 				 return true;
@@ -110,9 +114,12 @@ public class Assignment3Complete {
 	 
 	 // **************************** //
 	 public boolean checkOutOneBooking(long bookingId) {
-		System.out.println("bookingId" + bookingId);
-		System.out.println("resToCheckOut" + reservationToCheckout);
-		 if(reservationToCheckout > currentReservationNumber) {
+		System.out.println("BookingId " + bookingId);
+		for(Map.Entry<Long, Long> entry : reservationToBookingId.entrySet()){
+				System.out.println("\t key: " + entry.getKey() + " value: " + entry.getValue());
+				System.out.println("\t \t resToCheckOut: " + reservationToCheckout);
+		}
+		 if(reservationToCheckout >= currentReservationNumber) {
 			 reservationToCheckout = 0;
 			 return false;
 		 }
