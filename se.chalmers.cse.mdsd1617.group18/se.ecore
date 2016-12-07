@@ -191,7 +191,7 @@
                 <eParameters name="beds" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
               </eOperations>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="RoomType">
+            <eClassifiers xsi:type="ecore:EClass" name="RoomType" eSuperTypes="#//chalmers/cse/mdsd1617/group18/roomManager/IRoomType">
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="price" ordered="false"
                   lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
@@ -199,7 +199,7 @@
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfBeds"
                   ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="RoomManager" eSuperTypes="#//chalmers/cse/mdsd1617/group18/roomManager/IHotelStartupProvies">
+            <eClassifiers xsi:type="ecore:EClass" name="RoomManager" eSuperTypes="#//chalmers/cse/mdsd1617/group18/roomManager/IHotelStartupProvies #//chalmers/cse/mdsd1617/group18/roomManager/IHotelRoomProvider #//chalmers/cse/mdsd1617/group18/roomManager/IHotelRoomManager">
               <eStructuralFeatures xsi:type="ecore:EReference" name="roomTypes" ordered="false"
                   upperBound="-1" eType="#//chalmers/cse/mdsd1617/group18/roomManager/IRoomType"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="rooms" ordered="false"
@@ -210,14 +210,6 @@
               <eOperations name="startup" ordered="false" lowerBound="1">
                 <eParameters name="numRoom" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
               </eOperations>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="Room">
-              <eStructuralFeatures xsi:type="ecore:EReference" name="roomType" ordered="false"
-                  lowerBound="1" eType="#//chalmers/cse/mdsd1617/group18/roomManager/IRoomType"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomNumber" ordered="false"
-                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="blocked" ordered="false"
-                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="IHotelRoomProvider" abstract="true"
                 interface="true">
@@ -256,6 +248,14 @@
               <eOperations name="unblockRoom" ordered="false" lowerBound="1">
                 <eParameters name="roomNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
               </eOperations>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="Room" eSuperTypes="#//chalmers/cse/mdsd1617/group18/roomManager/IRoom">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="roomType" ordered="false"
+                  lowerBound="1" eType="#//chalmers/cse/mdsd1617/group18/roomManager/IRoomType"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomNumber" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="blocked" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="IRoom" abstract="true" interface="true">
               <eOperations name="getRoomType" ordered="false" lowerBound="1" eType="#//chalmers/cse/mdsd1617/group18/roomManager/IRoomType"/>

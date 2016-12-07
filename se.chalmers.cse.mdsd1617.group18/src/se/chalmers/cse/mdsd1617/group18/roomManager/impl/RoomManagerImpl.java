@@ -14,6 +14,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
+import se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager;
+import se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomProvider;
 import se.chalmers.cse.mdsd1617.group18.roomManager.IRoom;
 import se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType;
 import se.chalmers.cse.mdsd1617.group18.roomManager.RoomManager;
@@ -113,6 +115,94 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void addRoomType(String name, double price, int numberOfBeds) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void changeRoomType(String name, double price, int numberOfBeds) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void removeRoomType(String name) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void addRoom(int roomNumber, IRoomType roomType) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void updateRoom(int roomNumber, IRoomType roomType) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void removeRoom(int roomNumber) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void blockRoom(int roomNumber) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unblockRoom(int roomNumber) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -185,10 +275,64 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated
 	 */
 	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == IHotelRoomProvider.class) {
+			switch (baseOperationID) {
+				case RoomManagerPackage.IHOTEL_ROOM_PROVIDER___GET_ROOMS: return RoomManagerPackage.ROOM_MANAGER___GET_ROOMS;
+				default: return -1;
+			}
+		}
+		if (baseClass == IHotelRoomManager.class) {
+			switch (baseOperationID) {
+				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_DOUBLE_INT: return RoomManagerPackage.ROOM_MANAGER___ADD_ROOM_TYPE__STRING_DOUBLE_INT;
+				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___CHANGE_ROOM_TYPE__STRING_DOUBLE_INT: return RoomManagerPackage.ROOM_MANAGER___CHANGE_ROOM_TYPE__STRING_DOUBLE_INT;
+				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___GET_ROOM_TYPES: return RoomManagerPackage.ROOM_MANAGER___GET_ROOM_TYPES;
+				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___REMOVE_ROOM_TYPE__STRING: return RoomManagerPackage.ROOM_MANAGER___REMOVE_ROOM_TYPE__STRING;
+				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___ADD_ROOM__INT_IROOMTYPE: return RoomManagerPackage.ROOM_MANAGER___ADD_ROOM__INT_IROOMTYPE;
+				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___UPDATE_ROOM__INT_IROOMTYPE: return RoomManagerPackage.ROOM_MANAGER___UPDATE_ROOM__INT_IROOMTYPE;
+				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___REMOVE_ROOM__INT: return RoomManagerPackage.ROOM_MANAGER___REMOVE_ROOM__INT;
+				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___BLOCK_ROOM__INT: return RoomManagerPackage.ROOM_MANAGER___BLOCK_ROOM__INT;
+				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___UNBLOCK_ROOM__INT: return RoomManagerPackage.ROOM_MANAGER___UNBLOCK_ROOM__INT;
+				default: return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case RoomManagerPackage.ROOM_MANAGER___STARTUP__INT:
 				startup((Integer)arguments.get(0));
+				return null;
+			case RoomManagerPackage.ROOM_MANAGER___ADD_ROOM_TYPE__STRING_DOUBLE_INT:
+				addRoomType((String)arguments.get(0), (Double)arguments.get(1), (Integer)arguments.get(2));
+				return null;
+			case RoomManagerPackage.ROOM_MANAGER___CHANGE_ROOM_TYPE__STRING_DOUBLE_INT:
+				changeRoomType((String)arguments.get(0), (Double)arguments.get(1), (Integer)arguments.get(2));
+				return null;
+			case RoomManagerPackage.ROOM_MANAGER___REMOVE_ROOM_TYPE__STRING:
+				removeRoomType((String)arguments.get(0));
+				return null;
+			case RoomManagerPackage.ROOM_MANAGER___ADD_ROOM__INT_IROOMTYPE:
+				addRoom((Integer)arguments.get(0), (IRoomType)arguments.get(1));
+				return null;
+			case RoomManagerPackage.ROOM_MANAGER___UPDATE_ROOM__INT_IROOMTYPE:
+				updateRoom((Integer)arguments.get(0), (IRoomType)arguments.get(1));
+				return null;
+			case RoomManagerPackage.ROOM_MANAGER___REMOVE_ROOM__INT:
+				removeRoom((Integer)arguments.get(0));
+				return null;
+			case RoomManagerPackage.ROOM_MANAGER___BLOCK_ROOM__INT:
+				blockRoom((Integer)arguments.get(0));
+				return null;
+			case RoomManagerPackage.ROOM_MANAGER___UNBLOCK_ROOM__INT:
+				unblockRoom((Integer)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

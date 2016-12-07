@@ -65,13 +65,6 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass roomEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass iHotelRoomProviderEClass = null;
 
 	/**
@@ -80,6 +73,13 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 	 * @generated
 	 */
 	private EClass iHotelRoomManagerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass roomEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -312,42 +312,6 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRoom() {
-		return roomEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRoom_RoomType() {
-		return (EReference)roomEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRoom_RoomNumber() {
-		return (EAttribute)roomEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRoom_Blocked() {
-		return (EAttribute)roomEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getIHotelRoomProvider() {
 		return iHotelRoomProviderEClass;
 	}
@@ -456,6 +420,42 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getRoom() {
+		return roomEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRoom_RoomType() {
+		return (EReference)roomEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRoom_RoomNumber() {
+		return (EAttribute)roomEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRoom_Blocked() {
+		return (EAttribute)roomEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getIRoom() {
 		return iRoomEClass;
 	}
@@ -554,11 +554,6 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 		iHotelStartupProviesEClass = createEClass(IHOTEL_STARTUP_PROVIES);
 		createEOperation(iHotelStartupProviesEClass, IHOTEL_STARTUP_PROVIES___STARTUP__INT);
 
-		roomEClass = createEClass(ROOM);
-		createEReference(roomEClass, ROOM__ROOM_TYPE);
-		createEAttribute(roomEClass, ROOM__ROOM_NUMBER);
-		createEAttribute(roomEClass, ROOM__BLOCKED);
-
 		iHotelRoomProviderEClass = createEClass(IHOTEL_ROOM_PROVIDER);
 		createEOperation(iHotelRoomProviderEClass, IHOTEL_ROOM_PROVIDER___GET_ROOMS);
 
@@ -572,6 +567,11 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 		createEOperation(iHotelRoomManagerEClass, IHOTEL_ROOM_MANAGER___REMOVE_ROOM__INT);
 		createEOperation(iHotelRoomManagerEClass, IHOTEL_ROOM_MANAGER___BLOCK_ROOM__INT);
 		createEOperation(iHotelRoomManagerEClass, IHOTEL_ROOM_MANAGER___UNBLOCK_ROOM__INT);
+
+		roomEClass = createEClass(ROOM);
+		createEReference(roomEClass, ROOM__ROOM_TYPE);
+		createEAttribute(roomEClass, ROOM__ROOM_NUMBER);
+		createEAttribute(roomEClass, ROOM__BLOCKED);
 
 		iRoomEClass = createEClass(IROOM);
 		createEOperation(iRoomEClass, IROOM___GET_ROOM_TYPE);
@@ -609,8 +609,12 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		roomTypeEClass.getESuperTypes().add(this.getIRoomType());
 		roomManagerEClass.getESuperTypes().add(this.getIHotelStartupProvies());
+		roomManagerEClass.getESuperTypes().add(this.getIHotelRoomProvider());
+		roomManagerEClass.getESuperTypes().add(this.getIHotelRoomManager());
 		iHotelRoomManagerEClass.getESuperTypes().add(this.getIHotelRoomProvider());
+		roomEClass.getESuperTypes().add(this.getIRoom());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(iRoomTypeEClass, IRoomType.class, "IRoomType", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -645,11 +649,6 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 
 		op = initEOperation(getIHotelStartupProvies__Startup__int(), null, "startup", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "numRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEClass(roomEClass, Room.class, "Room", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRoom_RoomType(), this.getIRoomType(), null, "roomType", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoom_RoomNumber(), ecorePackage.getEInt(), "roomNumber", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoom_Blocked(), ecorePackage.getEBoolean(), "blocked", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(iHotelRoomProviderEClass, IHotelRoomProvider.class, "IHotelRoomProvider", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -688,6 +687,11 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 
 		op = initEOperation(getIHotelRoomManager__UnblockRoom__int(), null, "unblockRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "roomNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(roomEClass, Room.class, "Room", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRoom_RoomType(), this.getIRoomType(), null, "roomType", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoom_RoomNumber(), ecorePackage.getEInt(), "roomNumber", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoom_Blocked(), ecorePackage.getEBoolean(), "blocked", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(iRoomEClass, IRoom.class, "IRoom", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

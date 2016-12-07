@@ -84,16 +84,16 @@ public class RoomManagerAdapterFactory extends AdapterFactoryImpl {
 				return createIHotelStartupProviesAdapter();
 			}
 			@Override
-			public Adapter caseRoom(Room object) {
-				return createRoomAdapter();
-			}
-			@Override
 			public Adapter caseIHotelRoomProvider(IHotelRoomProvider object) {
 				return createIHotelRoomProviderAdapter();
 			}
 			@Override
 			public Adapter caseIHotelRoomManager(IHotelRoomManager object) {
 				return createIHotelRoomManagerAdapter();
+			}
+			@Override
+			public Adapter caseRoom(Room object) {
+				return createRoomAdapter();
 			}
 			@Override
 			public Adapter caseIRoom(IRoom object) {
@@ -176,20 +176,6 @@ public class RoomManagerAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link se.chalmers.cse.mdsd1617.group18.roomManager.Room <em>Room</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.Room
-	 * @generated
-	 */
-	public Adapter createRoomAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomProvider <em>IHotel Room Provider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -214,6 +200,20 @@ public class RoomManagerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createIHotelRoomManagerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link se.chalmers.cse.mdsd1617.group18.roomManager.Room <em>Room</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.Room
+	 * @generated
+	 */
+	public Adapter createRoomAdapter() {
 		return null;
 	}
 

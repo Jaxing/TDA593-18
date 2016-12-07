@@ -2,7 +2,6 @@
  */
 package se.chalmers.cse.mdsd1617.group18.roomManager;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Room extends EObject {
+public interface Room extends IRoom {
 	/**
 	 * Returns the value of the '<em><b>Room Type</b></em>' reference.
 	 * <!-- begin-user-doc -->

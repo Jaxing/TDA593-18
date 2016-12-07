@@ -165,7 +165,7 @@ public interface RoomManagerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_TYPE__PRICE = 0;
+	int ROOM_TYPE__PRICE = IROOM_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -174,7 +174,7 @@ public interface RoomManagerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_TYPE__NAME = 1;
+	int ROOM_TYPE__NAME = IROOM_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Number Of Beds</b></em>' attribute.
@@ -183,7 +183,7 @@ public interface RoomManagerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_TYPE__NUMBER_OF_BEDS = 2;
+	int ROOM_TYPE__NUMBER_OF_BEDS = IROOM_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Room Type</em>' class.
@@ -192,7 +192,70 @@ public interface RoomManagerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_TYPE_FEATURE_COUNT = 3;
+	int ROOM_TYPE_FEATURE_COUNT = IROOM_TYPE_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE___GET_NAME = IROOM_TYPE___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Get Price</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE___GET_PRICE = IROOM_TYPE___GET_PRICE;
+
+	/**
+	 * The operation id for the '<em>Get Number Of Beds</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE___GET_NUMBER_OF_BEDS = IROOM_TYPE___GET_NUMBER_OF_BEDS;
+
+	/**
+	 * The operation id for the '<em>Get Description</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE___GET_DESCRIPTION = IROOM_TYPE___GET_DESCRIPTION;
+
+	/**
+	 * The operation id for the '<em>Set Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE___SET_NAME__STRING = IROOM_TYPE___SET_NAME__STRING;
+
+	/**
+	 * The operation id for the '<em>Set Price</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE___SET_PRICE__DOUBLE = IROOM_TYPE___SET_PRICE__DOUBLE;
+
+	/**
+	 * The operation id for the '<em>Set Number Of Beds</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE___SET_NUMBER_OF_BEDS__INT = IROOM_TYPE___SET_NUMBER_OF_BEDS__INT;
 
 	/**
 	 * The number of operations of the '<em>Room Type</em>' class.
@@ -201,7 +264,7 @@ public interface RoomManagerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_TYPE_OPERATION_COUNT = 0;
+	int ROOM_TYPE_OPERATION_COUNT = IROOM_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IHotelStartupProvies <em>IHotel Startup Provies</em>}' class.
@@ -287,68 +350,103 @@ public interface RoomManagerPackage extends EPackage {
 	int ROOM_MANAGER___STARTUP__INT = IHOTEL_STARTUP_PROVIES___STARTUP__INT;
 
 	/**
+	 * The operation id for the '<em>Get Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER___GET_ROOMS = IHOTEL_STARTUP_PROVIES_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Add Room Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER___ADD_ROOM_TYPE__STRING_DOUBLE_INT = IHOTEL_STARTUP_PROVIES_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Change Room Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER___CHANGE_ROOM_TYPE__STRING_DOUBLE_INT = IHOTEL_STARTUP_PROVIES_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get Room Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER___GET_ROOM_TYPES = IHOTEL_STARTUP_PROVIES_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Remove Room Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER___REMOVE_ROOM_TYPE__STRING = IHOTEL_STARTUP_PROVIES_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Add Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER___ADD_ROOM__INT_IROOMTYPE = IHOTEL_STARTUP_PROVIES_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Update Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER___UPDATE_ROOM__INT_IROOMTYPE = IHOTEL_STARTUP_PROVIES_OPERATION_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Remove Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER___REMOVE_ROOM__INT = IHOTEL_STARTUP_PROVIES_OPERATION_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>Block Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER___BLOCK_ROOM__INT = IHOTEL_STARTUP_PROVIES_OPERATION_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>Unblock Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGER___UNBLOCK_ROOM__INT = IHOTEL_STARTUP_PROVIES_OPERATION_COUNT + 9;
+
+	/**
 	 * The number of operations of the '<em>Room Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER_OPERATION_COUNT = IHOTEL_STARTUP_PROVIES_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomImpl <em>Room</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomImpl
-	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomManagerPackageImpl#getRoom()
-	 * @generated
-	 */
-	int ROOM = 4;
-
-	/**
-	 * The feature id for the '<em><b>Room Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM__ROOM_TYPE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Room Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM__ROOM_NUMBER = 1;
-
-	/**
-	 * The feature id for the '<em><b>Blocked</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM__BLOCKED = 2;
-
-	/**
-	 * The number of structural features of the '<em>Room</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_FEATURE_COUNT = 3;
-
-	/**
-	 * The number of operations of the '<em>Room</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_OPERATION_COUNT = 0;
+	int ROOM_MANAGER_OPERATION_COUNT = IHOTEL_STARTUP_PROVIES_OPERATION_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomProvider <em>IHotel Room Provider</em>}' class.
@@ -358,7 +456,7 @@ public interface RoomManagerPackage extends EPackage {
 	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomManagerPackageImpl#getIHotelRoomProvider()
 	 * @generated
 	 */
-	int IHOTEL_ROOM_PROVIDER = 5;
+	int IHOTEL_ROOM_PROVIDER = 4;
 
 	/**
 	 * The number of structural features of the '<em>IHotel Room Provider</em>' class.
@@ -395,7 +493,7 @@ public interface RoomManagerPackage extends EPackage {
 	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomManagerPackageImpl#getIHotelRoomManager()
 	 * @generated
 	 */
-	int IHOTEL_ROOM_MANAGER = 6;
+	int IHOTEL_ROOM_MANAGER = 5;
 
 	/**
 	 * The number of structural features of the '<em>IHotel Room Manager</em>' class.
@@ -578,6 +676,106 @@ public interface RoomManagerPackage extends EPackage {
 	 */
 	int IROOM_OPERATION_COUNT = 5;
 
+	/**
+	 * The meta object id for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomImpl <em>Room</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomImpl
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomManagerPackageImpl#getRoom()
+	 * @generated
+	 */
+	int ROOM = 6;
+
+	/**
+	 * The feature id for the '<em><b>Room Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM__ROOM_TYPE = IROOM_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Room Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM__ROOM_NUMBER = IROOM_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Blocked</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM__BLOCKED = IROOM_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Room</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_FEATURE_COUNT = IROOM_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get Room Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM___GET_ROOM_TYPE = IROOM___GET_ROOM_TYPE;
+
+	/**
+	 * The operation id for the '<em>Get Room Number</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM___GET_ROOM_NUMBER = IROOM___GET_ROOM_NUMBER;
+
+	/**
+	 * The operation id for the '<em>Set Room Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM___SET_ROOM_TYPE__IROOMTYPE = IROOM___SET_ROOM_TYPE__IROOMTYPE;
+
+	/**
+	 * The operation id for the '<em>Set Is Blocked</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM___SET_IS_BLOCKED__BOOLEAN = IROOM___SET_IS_BLOCKED__BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>Is Blocked</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM___IS_BLOCKED = IROOM___IS_BLOCKED;
+
+	/**
+	 * The number of operations of the '<em>Room</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_OPERATION_COUNT = IROOM_OPERATION_COUNT + 0;
+
 
 	/**
 	 * Returns the meta object for class '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType <em>IRoom Type</em>}'.
@@ -755,49 +953,6 @@ public interface RoomManagerPackage extends EPackage {
 	EOperation getIHotelStartupProvies__Startup__int();
 
 	/**
-	 * Returns the meta object for class '{@link se.chalmers.cse.mdsd1617.group18.roomManager.Room <em>Room</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Room</em>'.
-	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.Room
-	 * @generated
-	 */
-	EClass getRoom();
-
-	/**
-	 * Returns the meta object for the reference '{@link se.chalmers.cse.mdsd1617.group18.roomManager.Room#getRoomType <em>Room Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Room Type</em>'.
-	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.Room#getRoomType()
-	 * @see #getRoom()
-	 * @generated
-	 */
-	EReference getRoom_RoomType();
-
-	/**
-	 * Returns the meta object for the attribute '{@link se.chalmers.cse.mdsd1617.group18.roomManager.Room#getRoomNumber <em>Room Number</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Room Number</em>'.
-	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.Room#getRoomNumber()
-	 * @see #getRoom()
-	 * @generated
-	 */
-	EAttribute getRoom_RoomNumber();
-
-	/**
-	 * Returns the meta object for the attribute '{@link se.chalmers.cse.mdsd1617.group18.roomManager.Room#isBlocked <em>Blocked</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Blocked</em>'.
-	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.Room#isBlocked()
-	 * @see #getRoom()
-	 * @generated
-	 */
-	EAttribute getRoom_Blocked();
-
-	/**
 	 * Returns the meta object for class '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomProvider <em>IHotel Room Provider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -916,6 +1071,49 @@ public interface RoomManagerPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getIHotelRoomManager__UnblockRoom__int();
+
+	/**
+	 * Returns the meta object for class '{@link se.chalmers.cse.mdsd1617.group18.roomManager.Room <em>Room</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Room</em>'.
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.Room
+	 * @generated
+	 */
+	EClass getRoom();
+
+	/**
+	 * Returns the meta object for the reference '{@link se.chalmers.cse.mdsd1617.group18.roomManager.Room#getRoomType <em>Room Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Room Type</em>'.
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.Room#getRoomType()
+	 * @see #getRoom()
+	 * @generated
+	 */
+	EReference getRoom_RoomType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.chalmers.cse.mdsd1617.group18.roomManager.Room#getRoomNumber <em>Room Number</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Room Number</em>'.
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.Room#getRoomNumber()
+	 * @see #getRoom()
+	 * @generated
+	 */
+	EAttribute getRoom_RoomNumber();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.chalmers.cse.mdsd1617.group18.roomManager.Room#isBlocked <em>Blocked</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Blocked</em>'.
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.Room#isBlocked()
+	 * @see #getRoom()
+	 * @generated
+	 */
+	EAttribute getRoom_Blocked();
 
 	/**
 	 * Returns the meta object for class '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IRoom <em>IRoom</em>}'.
@@ -1145,40 +1343,6 @@ public interface RoomManagerPackage extends EPackage {
 		EOperation IHOTEL_STARTUP_PROVIES___STARTUP__INT = eINSTANCE.getIHotelStartupProvies__Startup__int();
 
 		/**
-		 * The meta object literal for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomImpl <em>Room</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomImpl
-		 * @see se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomManagerPackageImpl#getRoom()
-		 * @generated
-		 */
-		EClass ROOM = eINSTANCE.getRoom();
-
-		/**
-		 * The meta object literal for the '<em><b>Room Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROOM__ROOM_TYPE = eINSTANCE.getRoom_RoomType();
-
-		/**
-		 * The meta object literal for the '<em><b>Room Number</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM__ROOM_NUMBER = eINSTANCE.getRoom_RoomNumber();
-
-		/**
-		 * The meta object literal for the '<em><b>Blocked</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM__BLOCKED = eINSTANCE.getRoom_Blocked();
-
-		/**
 		 * The meta object literal for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomProvider <em>IHotel Room Provider</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1277,6 +1441,40 @@ public interface RoomManagerPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IHOTEL_ROOM_MANAGER___UNBLOCK_ROOM__INT = eINSTANCE.getIHotelRoomManager__UnblockRoom__int();
+
+		/**
+		 * The meta object literal for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomImpl <em>Room</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomImpl
+		 * @see se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomManagerPackageImpl#getRoom()
+		 * @generated
+		 */
+		EClass ROOM = eINSTANCE.getRoom();
+
+		/**
+		 * The meta object literal for the '<em><b>Room Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOM__ROOM_TYPE = eINSTANCE.getRoom_RoomType();
+
+		/**
+		 * The meta object literal for the '<em><b>Room Number</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM__ROOM_NUMBER = eINSTANCE.getRoom_RoomNumber();
+
+		/**
+		 * The meta object literal for the '<em><b>Blocked</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM__BLOCKED = eINSTANCE.getRoom_Blocked();
 
 		/**
 		 * The meta object literal for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IRoom <em>IRoom</em>}' class.

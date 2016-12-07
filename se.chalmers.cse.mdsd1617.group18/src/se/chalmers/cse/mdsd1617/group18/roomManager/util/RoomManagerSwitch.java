@@ -75,6 +75,7 @@ public class RoomManagerSwitch<T> extends Switch<T> {
 			case RoomManagerPackage.ROOM_TYPE: {
 				RoomType roomType = (RoomType)theEObject;
 				T result = caseRoomType(roomType);
+				if (result == null) result = caseIRoomType(roomType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -82,18 +83,14 @@ public class RoomManagerSwitch<T> extends Switch<T> {
 				RoomManager roomManager = (RoomManager)theEObject;
 				T result = caseRoomManager(roomManager);
 				if (result == null) result = caseIHotelStartupProvies(roomManager);
+				if (result == null) result = caseIHotelRoomManager(roomManager);
+				if (result == null) result = caseIHotelRoomProvider(roomManager);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case RoomManagerPackage.IHOTEL_STARTUP_PROVIES: {
 				IHotelStartupProvies iHotelStartupProvies = (IHotelStartupProvies)theEObject;
 				T result = caseIHotelStartupProvies(iHotelStartupProvies);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RoomManagerPackage.ROOM: {
-				Room room = (Room)theEObject;
-				T result = caseRoom(room);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -107,6 +104,13 @@ public class RoomManagerSwitch<T> extends Switch<T> {
 				IHotelRoomManager iHotelRoomManager = (IHotelRoomManager)theEObject;
 				T result = caseIHotelRoomManager(iHotelRoomManager);
 				if (result == null) result = caseIHotelRoomProvider(iHotelRoomManager);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RoomManagerPackage.ROOM: {
+				Room room = (Room)theEObject;
+				T result = caseRoom(room);
+				if (result == null) result = caseIRoom(room);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -181,21 +185,6 @@ public class RoomManagerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Room</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Room</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRoom(Room object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>IHotel Room Provider</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -222,6 +211,21 @@ public class RoomManagerSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseIHotelRoomManager(IHotelRoomManager object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Room</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Room</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRoom(Room object) {
 		return null;
 	}
 

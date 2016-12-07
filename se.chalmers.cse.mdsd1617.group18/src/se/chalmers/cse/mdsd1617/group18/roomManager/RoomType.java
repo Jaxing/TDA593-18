@@ -2,7 +2,6 @@
  */
 package se.chalmers.cse.mdsd1617.group18.roomManager;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface RoomType extends EObject {
+public interface RoomType extends IRoomType {
 	/**
 	 * Returns the value of the '<em><b>Price</b></em>' attribute.
 	 * <!-- begin-user-doc -->
