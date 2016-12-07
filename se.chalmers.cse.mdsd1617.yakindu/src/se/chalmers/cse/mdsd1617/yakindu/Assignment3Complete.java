@@ -11,6 +11,8 @@ public class Assignment3Complete {
 	private long currentReservationId = 0;
 	private long reservationToCheckin = 0;
 	private long reservationToCheckout = 0;
+	private long assignedRooms = 0;
+	private long smallestAssignedRoom = 0;
 	private Map<Long,Long> reservationToBookingId = new HashMap<Long,Long>(); 
 	private Map<Long, Long> roomToReservation = new HashMap<Long,Long>();
 	private List<Long> idToCheckIn = new ArrayList<Long>();
@@ -35,6 +37,7 @@ public class Assignment3Complete {
 		} else {
 			++currentReservationNumber;
 			idToCheckIn.add(currentReservationId);
+			this.assignedRooms++;
 			reservationToBookingId.put(currentReservationId, bookingId);
 			for(Map.Entry<Long, Long> entry : reservationToBookingId.entrySet()) {
 				System.out.println("Key: " + entry.getKey() + " Value: " + entry.getValue());
@@ -59,15 +62,10 @@ public class Assignment3Complete {
 	}
 	
 	public boolean reservationMappedToBookingForCheckout(long reservationID, long bookingId) {
-		System.out.println("inRes: "+ reservationID + " inBooking" + bookingId);
-		for(Map.Entry<Long, Long> entry : reservationToBookingId.entrySet()) {
-			System.out.println("Key: " + entry.getKey() + " Value: " + entry.getValue());
-		}
+		
 		System.out.println("resMapped: " + reservationMappedToBooking(reservationID, bookingId));
-		if ( reservationMappedToBooking(reservationID, bookingId) &&
-				idToCheckOut.contains(reservationID)) {
+		if ( reservationMappedToBooking(reservationID, bookingId)) {
 			System.out.print("hej");
-			idToCheckOut.remove(reservationID);
 			return true;
 		}
 		
@@ -113,6 +111,12 @@ public class Assignment3Complete {
 //		this.reservationToCheckin++;
 //		return false;
 	 }
+	
+	private void printList(List<Long> list) {
+		for (Long l : list) {
+			System.out.println(l);
+		}
+	}
 	
 	public boolean checkInBooking(long bookingId) {
 		if(this.reservationToBookingId.containsValue(bookingId)) {
@@ -190,7 +194,20 @@ public class Assignment3Complete {
 	 }
 	 
 	 private void connectRoomToReservation(long reservationId) {
-		 roomToReservation.put(this.getSmallestFreeId(), reservationId);
+		 
+		 
+		 this.assignedRooms--;
+		 roomToReservation.put(this.smallestAssignedRoom, reservationId);
+		 System.out.println("Connecting room: " + this.smallestAssignedRoom);
+		 this.smallestAssignedRoom++;
+		 if (this.smallestAssignedRoom > this.assignedRooms) {
+			 this.smallestAssignedRoom = 0;
+		 }
+		 
+	 }
+	 
+	 public boolean roomNotMappedToRes(long roomId) {
+		 return !this.roomToReservation.containsKey(roomId);
 	 }
 	 
 	 public boolean roomMappedToReservation(long roomId, long bookingId) {
@@ -198,33 +215,28 @@ public class Assignment3Complete {
 		 for (Map.Entry<Long, Long> e2 : this.reservationToBookingId.entrySet()) {
 			 System.out.println("e2-key: " + e2.getKey() + ", e2-val: " + e2.getValue());
 			 if (e2.getValue() == bookingId) {
-				 System.out.println("got room id: " + this.roomToReservation.get(roomId));
-				 return e2.getKey() == this.roomToReservation.get(roomId);
+				 System.out.println("got reservation: " + this.roomToReservation.get(roomId));
+				 if (e2.getKey() == this.roomToReservation.get(roomId)) {
+					 return true;
+				 }
 			 }
 		 }
 		 return false;
 	 }
 	 
 	 private void checkOutReservation(long reservationId) {
-		 for (Map.Entry<Long, Long> e : roomToReservation.entrySet()) {
-			 if (e.getValue() == reservationId) {
-				 roomToReservation.remove(e.getKey());
-				 return;
+		 for (long id : this.idToCheckOut) {
+			 if (id == reservationId) {
+				 for (Map.Entry<Long, Long> e : this.roomToReservation.entrySet()) {
+					 if (e.getValue() == id) {
+						 this.roomToReservation.remove(e.getKey());
+						 this.idToCheckOut.remove(reservationId);
+						 System.out.println("Removed reservation: " + e.getKey());
+						 return;
+					 }
+				 }				 
 			 }
 		 }
-	 }
-	 
-	 /**
-	  * Since the number of reservations always are equal to the number of rooms, if this method is called there will be a room yet not occupied, i.e. not in the map.
-	  * @return
-	  */
-	 private long getSmallestFreeId() {
-		 for (long i = 0; i < MAX_ROOMS; i++) {
-			 if (!roomToReservation.containsKey(i)) {
-				 return i;
-			 }
-		 }
-		 return -1;
 	 }
 	 
 	 //Should return current highest id, therefore currentReservationId needs to be one smaller.
