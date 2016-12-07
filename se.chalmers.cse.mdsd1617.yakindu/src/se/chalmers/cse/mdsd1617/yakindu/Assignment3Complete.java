@@ -64,7 +64,7 @@ public class Assignment3Complete {
 	public boolean reservationMappedToBookingForCheckout(long reservationID, long bookingId) {
 		
 		System.out.println("resMapped: " + reservationMappedToBooking(reservationID, bookingId));
-		if ( reservationMappedToBooking(reservationID, bookingId)) {
+		if ( reservationMappedToBooking(reservationID, bookingId) && !this.idToCheckOut.contains(reservationID)) {
 			System.out.print("hej");
 			return true;
 		}
@@ -207,6 +207,8 @@ public class Assignment3Complete {
 	 }
 	 
 	 public boolean roomNotMappedToRes(long roomId) {
+		 System.out.println("Guard room: "+ roomId);
+		 System.out.println("Guard Size: " + this.roomToReservation.size());
 		 return !this.roomToReservation.containsKey(roomId);
 	 }
 	 
@@ -232,6 +234,7 @@ public class Assignment3Complete {
 						 this.roomToReservation.remove(e.getKey());
 						 this.idToCheckOut.remove(reservationId);
 						 System.out.println("Removed reservation: " + e.getKey());
+						 System.out.println("Size: " + this.roomToReservation.size());
 						 return;
 					 }
 				 }				 
