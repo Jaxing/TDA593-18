@@ -68,35 +68,30 @@ public class Assignment3Complete {
 	
 	// **************************** //
 	public boolean checkInOneBooking(long bookingId) {
-		System.out.println("BookingId " + bookingId);
-		for(Map.Entry<Long, Long> entry : reservationToBookingId.entrySet()){
-				System.out.println("\t key: " + entry.getKey() + " value: " + entry.getValue());
-				System.out.println("\t \t resToCheckin: " + reservationToCheckin);
+		//System.out.printf("booking: %v, contains: %v, reservationToBooking: %v, reservationToCheckIn: %v", bookingId, this.reservationToBookingId.containsKey(this.reservationToCheckin), this.reservationToBookingId.get(this.reservationToCheckin), this.reservationToCheckin);
+		System.out.println(this.reservationToCheckin);
+		System.out.println(this.reservationToBookingId.get(this.reservationToCheckin));
+		if (this.reservationToBookingId.containsKey(this.reservationToCheckin) 
+				&& this.reservationToBookingId.get(this.reservationToCheckin) == bookingId) {
+			this.connectRoomToReservation(this.reservationToCheckin++);
+			return true;
 		}
-		if(reservationToCheckin >= currentReservationNumber) {
-			reservationToCheckin = 0;
-			return false;
-		}
-		if (reservationToBookingId.containsValue(bookingId) && reservationToBookingId.containsKey(reservationToCheckin)) {   			 
-			if(reservationToBookingId.get(reservationToCheckin) == bookingId) {
-				System.out.println("\t \t \t chekin True");
-				 this.connectRoomToReservation(reservationToCheckin);
-				 reservationToCheckin ++;
-				 return true;
-			}
-			else {
-				reservationToCheckin ++;
-				checkInOneBooking(bookingId);
-			}
-			 
-		 }
-		 return false;
+		return false;
 	 }
 	
 	public boolean checkInBooking(long bookingId) {
 		if(this.reservationToBookingId.containsValue(bookingId)) {
-			while(checkInOneBooking(bookingId)){
-				
+			long firstToFail = 0;
+			boolean hasFailed = false;
+			for (long i = this.reservationToCheckin; i < this.currentReservationNumber; i++) {
+				boolean works = this.checkInOneBooking(bookingId);
+				if (!hasFailed && !works) {
+					firstToFail = i;
+					hasFailed = true;
+				}
+			}
+			if (hasFailed) {
+				this.reservationToCheckin = firstToFail;
 			}
 			return true;
 		} else {
@@ -114,39 +109,36 @@ public class Assignment3Complete {
 	 
 	 // **************************** //
 	 public boolean checkOutOneBooking(long bookingId) {
-		System.out.println("BookingId " + bookingId);
-		for(Map.Entry<Long, Long> entry : reservationToBookingId.entrySet()){
-				System.out.println("\t key: " + entry.getKey() + " value: " + entry.getValue());
-				System.out.println("\t \t resToCheckOut: " + reservationToCheckout);
-		}
-		 if(reservationToCheckout >= currentReservationNumber) {
-			 reservationToCheckout = 0;
-			 return false;
-		 }
-		 if(reservationToBookingId.containsValue(bookingId) && reservationToBookingId.containsKey(reservationToCheckout)) {
-			 if(reservationToBookingId.get(reservationToCheckout) == bookingId) {
-				 this.checkOutReservation(reservationToCheckout);
-				 reservationToCheckout ++;
-				 currentReservationNumber --;
-				 return true;
-			 }
-			 else {
-				 reservationToCheckout ++;
-				 checkOutOneBooking(bookingId);
-			 }
-		 }
-		 return false;
+		//System.out.printf("booking: %v, contains: %v, reservationToBooking: %v, reservationToCheckIn: %v", bookingId, this.reservationToBookingId.containsKey(this.reservationToCheckin), this.reservationToBookingId.get(this.reservationToCheckin), this.reservationToCheckin);
+			System.out.println(this.reservationToCheckout);
+			System.out.println(this.reservationToBookingId.get(this.reservationToCheckout));
+			if (this.reservationToBookingId.containsKey(this.reservationToCheckout) 
+					&& this.reservationToBookingId.get(this.reservationToCheckout) == bookingId) {
+				this.checkOutReservation(this.reservationToCheckout++);
+				this.currentReservationNumber--;
+				return true;
+			}
+			return false;
 	 }
 	 
 	 public boolean checkOutBooking(long bookingId) {
 		 if(this.reservationToBookingId.containsValue(bookingId)) {
-			while(checkOutOneBooking(bookingId)) {
-				
+				long firstToFail = 0;
+				boolean hasFailed = false;
+				for (long i = this.reservationToCheckout; i < this.currentReservationNumber; i++) {
+					boolean works = this.checkOutOneBooking(bookingId);
+					if (!hasFailed && !works) {
+						firstToFail = i;
+						hasFailed = true;
+					}
+				}
+				if (hasFailed) {
+					this.reservationToCheckout = firstToFail;
+				}
+				return true;
+			} else {
+				return false;
 			}
-			return true;
-		} else {
-			return false;
-		}
 	 }
 	// **************************** //
 	 
