@@ -23,14 +23,14 @@
       <vertices xsi:type="sgraph:State" xmi:id="_e_-zMKgaEeajc9cS_HWa6Q" specification="" name="Confirmed" incomingTransitions="_qnMt8KgaEeajc9cS_HWa6Q">
         <outgoingTransitions xmi:id="_q70TEKgaEeajc9cS_HWa6Q" specification="usr.initiateCheckin [usr.booking==1 &amp;&amp; booking.initiateCheckin(booking1.bookingId)]" target="_lrw_oLk6Eeaz6rNlUyPgrQ"/>
       </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_k_HrIKgaEeajc9cS_HWa6Q" specification="entry/booking.activeBookingId = booking1.bookingId" name="CheckedIn" incomingTransitions="_8WH3sLk6Eeaz6rNlUyPgrQ _4f_hYLk_Eeaz6rNlUyPgrQ">
+      <vertices xsi:type="sgraph:State" xmi:id="_k_HrIKgaEeajc9cS_HWa6Q" specification="" name="CheckedIn" incomingTransitions="_8WH3sLk6Eeaz6rNlUyPgrQ _4f_hYLk_Eeaz6rNlUyPgrQ">
         <outgoingTransitions xmi:id="_rRQXkKgaEeajc9cS_HWa6Q" specification="usr.initiateCheckout [usr.booking==1 &amp;&amp; booking.initiateCheckout(booking1.bookingId)]" target="_QSvvcLlBEeaz6rNlUyPgrQ"/>
       </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_m5uWoKgaEeajc9cS_HWa6Q" specification="entry/booking.activeBookingId = booking1.bookingId" name="CheckedOut" incomingTransitions="_o3pooLlBEeaz6rNlUyPgrQ _FAaDELlCEeaz6rNlUyPgrQ">
+      <vertices xsi:type="sgraph:State" xmi:id="_m5uWoKgaEeajc9cS_HWa6Q" specification="" name="CheckedOut" incomingTransitions="_o3pooLlBEeaz6rNlUyPgrQ _FAaDELlCEeaz6rNlUyPgrQ">
         <outgoingTransitions xmi:id="_paPLkKgaEeajc9cS_HWa6Q" specification="usr.payDuringCheckout [usr.booking==1]" target="_G5kFQKppEea9rP9r4tEs6w"/>
       </vertices>
       <vertices xsi:type="sgraph:FinalState" xmi:id="_G5kFQKppEea9rP9r4tEs6w" incomingTransitions="_paPLkKgaEeajc9cS_HWa6Q"/>
-      <vertices xsi:type="sgraph:State" xmi:id="_lrw_oLk6Eeaz6rNlUyPgrQ" specification="entry/booking.activeBookingId = booking1.bookingId" name="CheckInInitiated" incomingTransitions="_q70TEKgaEeajc9cS_HWa6Q _sA2gILk_Eeaz6rNlUyPgrQ">
+      <vertices xsi:type="sgraph:State" xmi:id="_lrw_oLk6Eeaz6rNlUyPgrQ" specification="" name="CheckInInitiated" incomingTransitions="_q70TEKgaEeajc9cS_HWa6Q _sA2gILk_Eeaz6rNlUyPgrQ">
         <outgoingTransitions xmi:id="_gd-WkLJfEeaKoPrnmKLLvg" specification="usr.checkInOneBooking [usr.booking == 1 &amp;&amp; booking.checkInOneBooking(booking1.bookingId)]&#xA;/raise reservation.checkIn;&#xA;booking1.reservationsToCheckIn = booking1.reservationsToCheckIn - 1" target="_mF92ELk_Eeaz6rNlUyPgrQ"/>
         <outgoingTransitions xmi:id="_8WH3sLk6Eeaz6rNlUyPgrQ" specification="usr.checkInBooking [usr.booking==1 &amp;&amp; booking.checkInBooking(booking1.bookingId)]&#xA;/raise reservation.checkInAll" target="_k_HrIKgaEeajc9cS_HWa6Q"/>
       </vertices>
@@ -38,7 +38,7 @@
         <outgoingTransitions xmi:id="_sA2gILk_Eeaz6rNlUyPgrQ" specification="" target="_lrw_oLk6Eeaz6rNlUyPgrQ"/>
         <outgoingTransitions xmi:id="_4f_hYLk_Eeaz6rNlUyPgrQ" specification="[booking1.reservationsToCheckIn == 0]" target="_k_HrIKgaEeajc9cS_HWa6Q"/>
       </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_QSvvcLlBEeaz6rNlUyPgrQ" specification="entry/booking.activeBookingId = booking1.bookingId" name="CheckOutInitiated" incomingTransitions="_rRQXkKgaEeajc9cS_HWa6Q _lG8XILlBEeaz6rNlUyPgrQ">
+      <vertices xsi:type="sgraph:State" xmi:id="_QSvvcLlBEeaz6rNlUyPgrQ" specification="" name="CheckOutInitiated" incomingTransitions="_rRQXkKgaEeajc9cS_HWa6Q _lG8XILlBEeaz6rNlUyPgrQ">
         <outgoingTransitions xmi:id="_X-lh0LNDEea-e-g_NLyrkQ" specification="usr.checkOutOneBooking[usr.booking==1 &amp;&amp; booking.checkOutOneBooking(booking1.bookingId)]/raise reservation.checkOut;&#xA;booking1.reservationsToCheckOut = booking1.reservationsToCheckOut - 1" target="_erf9sLlBEeaz6rNlUyPgrQ"/>
         <outgoingTransitions xmi:id="_FAaDELlCEeaz6rNlUyPgrQ" specification="usr.checkOutBooking [usr.booking==1 &amp;&amp; booking.checkOutBooking(booking1.bookingId)]&#xA;/raise reservation.checkOutAll" target="_m5uWoKgaEeajc9cS_HWa6Q"/>
       </vertices>
@@ -61,14 +61,14 @@
       <vertices xsi:type="sgraph:State" xmi:id="_f5UJwLlDEeaz6rNlUyPgrQ" specification="" name="Confirmed" incomingTransitions="_f5SUm7lDEeaz6rNlUyPgrQ">
         <outgoingTransitions xmi:id="_f5UJwrlDEeaz6rNlUyPgrQ" specification="usr.initiateCheckin [usr.booking==0 &amp;&amp; booking.initiateCheckin(booking0.bookingId)]" target="_f5WmAblDEeaz6rNlUyPgrQ"/>
       </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_f5Uw37lDEeaz6rNlUyPgrQ" specification="entry/booking.activeBookingId = booking0.bookingId" name="CheckedIn" incomingTransitions="_f5X0ILlDEeaz6rNlUyPgrQ _f5YbMLlDEeaz6rNlUyPgrQ">
+      <vertices xsi:type="sgraph:State" xmi:id="_f5Uw37lDEeaz6rNlUyPgrQ" specification="" name="CheckedIn" incomingTransitions="_f5X0ILlDEeaz6rNlUyPgrQ _f5YbMLlDEeaz6rNlUyPgrQ">
         <outgoingTransitions xmi:id="_f5VX4LlDEeaz6rNlUyPgrQ" specification="usr.initiateCheckout [usr.booking==0 &amp;&amp; booking.initiateCheckout(booking0.bookingId)]" target="_f5YbOLlDEeaz6rNlUyPgrQ"/>
       </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_f5VX8LlDEeaz6rNlUyPgrQ" specification="entry/booking.activeBookingId = booking1.bookingId" name="CheckedOut" incomingTransitions="_f5aQdblDEeaz6rNlUyPgrQ _f5Zpa7lDEeaz6rNlUyPgrQ">
+      <vertices xsi:type="sgraph:State" xmi:id="_f5VX8LlDEeaz6rNlUyPgrQ" specification="" name="CheckedOut" incomingTransitions="_f5aQdblDEeaz6rNlUyPgrQ _f5Zpa7lDEeaz6rNlUyPgrQ">
         <outgoingTransitions xmi:id="_f5V--rlDEeaz6rNlUyPgrQ" specification="usr.payDuringCheckout [usr.booking==0]" target="_f5WmALlDEeaz6rNlUyPgrQ"/>
       </vertices>
       <vertices xsi:type="sgraph:FinalState" xmi:id="_f5WmALlDEeaz6rNlUyPgrQ" incomingTransitions="_f5V--rlDEeaz6rNlUyPgrQ"/>
-      <vertices xsi:type="sgraph:State" xmi:id="_f5WmAblDEeaz6rNlUyPgrQ" specification="entry/booking.activeBookingId = booking0.bookingId" name="CheckInInitiated" incomingTransitions="_f5UJwrlDEeaz6rNlUyPgrQ _f5X0NblDEeaz6rNlUyPgrQ">
+      <vertices xsi:type="sgraph:State" xmi:id="_f5WmAblDEeaz6rNlUyPgrQ" specification="" name="CheckInInitiated" incomingTransitions="_f5UJwrlDEeaz6rNlUyPgrQ _f5X0NblDEeaz6rNlUyPgrQ">
         <outgoingTransitions xmi:id="_f5WmDLlDEeaz6rNlUyPgrQ" specification="usr.checkInOneBooking [usr.booking == 0 &amp;&amp; booking.checkInOneBooking(booking0.bookingId)]&#xA;/raise reservation.checkIn;&#xA;booking0.reservationsToCheckIn = booking0.reservationsToCheckIn - 1" target="_f5X0NLlDEeaz6rNlUyPgrQ"/>
         <outgoingTransitions xmi:id="_f5X0ILlDEeaz6rNlUyPgrQ" specification="usr.checkInBooking [usr.booking==0 &amp;&amp; booking.checkInBooking(booking0.bookingId)]&#xA;/raise reservation.checkInAll" target="_f5Uw37lDEeaz6rNlUyPgrQ"/>
       </vertices>
@@ -76,7 +76,7 @@
         <outgoingTransitions xmi:id="_f5X0NblDEeaz6rNlUyPgrQ" specification="" target="_f5WmAblDEeaz6rNlUyPgrQ"/>
         <outgoingTransitions xmi:id="_f5YbMLlDEeaz6rNlUyPgrQ" specification="[booking0.reservationsToCheckIn == 0]" target="_f5Uw37lDEeaz6rNlUyPgrQ"/>
       </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_f5YbOLlDEeaz6rNlUyPgrQ" specification="entry/booking.activeBookingId = booking0.bookingId" name="CheckOutInitiated" incomingTransitions="_f5VX4LlDEeaz6rNlUyPgrQ _f5aQdLlDEeaz6rNlUyPgrQ">
+      <vertices xsi:type="sgraph:State" xmi:id="_f5YbOLlDEeaz6rNlUyPgrQ" specification="" name="CheckOutInitiated" incomingTransitions="_f5VX4LlDEeaz6rNlUyPgrQ _f5aQdLlDEeaz6rNlUyPgrQ">
         <outgoingTransitions xmi:id="_f5ZCSrlDEeaz6rNlUyPgrQ" specification="usr.checkOutOneBooking[usr.booking==0 &amp;&amp; booking.checkOutOneBooking(booking0.bookingId)]/raise reservation.checkOut;&#xA;booking0.reservationsToCheckOut = booking0.reservationsToCheckOut - 1" target="_f5aQc7lDEeaz6rNlUyPgrQ"/>
         <outgoingTransitions xmi:id="_f5Zpa7lDEeaz6rNlUyPgrQ" specification="usr.checkOutBooking [usr.booking==0 &amp;&amp; booking.checkOutBooking(booking0.bookingId)]&#xA;/raise reservation.checkOutAll" target="_f5VX8LlDEeaz6rNlUyPgrQ"/>
       </vertices>

@@ -2,6 +2,8 @@ package se.chalmers.cse.mdsd1617.yakindu;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Assignment3Complete {
 	private long currentBookingId = 0;
@@ -11,6 +13,9 @@ public class Assignment3Complete {
 	private long reservationToCheckout = 0;
 	private Map<Long,Long> reservationToBookingId = new HashMap<Long,Long>(); 
 	private Map<Long, Long> roomToReservation = new HashMap<Long,Long>();
+	private List<Long> idToCheckIn = new ArrayList<Long>();
+	private List<Long> idToCheckOut = new ArrayList<Long>();
+	
 	
 	private final int MAX_ROOMS = 5;
 	 
@@ -29,7 +34,11 @@ public class Assignment3Complete {
 			return false;
 		} else {
 			++currentReservationNumber;
+			idToCheckIn.add(currentReservationId);
 			reservationToBookingId.put(currentReservationId, bookingId);
+			for(Map.Entry<Long, Long> entry : reservationToBookingId.entrySet()) {
+				System.out.println("Key: " + entry.getKey() + " Value: " + entry.getValue());
+			}
 			++currentReservationId;
 			return true;
 		}
@@ -41,14 +50,30 @@ public class Assignment3Complete {
 	}
 	
 	public boolean reservationMappedToBookingForCheckin(long reservationID, long bookingId) {
-			return  reservationToBookingId.get(reservationID) == bookingId &&
-					reservationID == reservationToCheckin - 1;
+			if (reservationMappedToBooking(reservationID, bookingId) &&
+					idToCheckIn.contains(reservationID)) {
+				idToCheckIn.remove(reservationID);
+				idToCheckOut.add(reservationID);
+				return true;
+			}
+			return false;
 	}
 	
 	public boolean reservationMappedToBookingForCheckout(long reservationID, long bookingId) {
-		return  reservationToBookingId.get(reservationID) == bookingId &&
-				reservationID == reservationToCheckout - 1;
-}
+		System.out.println("inRes: "+ reservationID + " inBooking" + bookingId);
+		for(Map.Entry<Long, Long> entry : reservationToBookingId.entrySet()) {
+			System.out.println("Key: " + entry.getKey() + " Value: " + entry.getValue());
+		}
+		System.out.println("resMapped: " + reservationMappedToBooking(reservationID, bookingId));
+		if ( reservationMappedToBooking(reservationID, bookingId) &&
+				idToCheckOut.contains(reservationID)) {
+			System.out.print("hej");
+			idToCheckOut.remove(reservationID);
+			return true;
+		}
+		
+		return false;
+	}
 	
 	public boolean confirmBooking(long bookingId){
 		//If there is an entry with this booking id then there is a reservation connected to that booking.
@@ -68,15 +93,24 @@ public class Assignment3Complete {
 	
 	// **************************** //
 	public boolean checkInOneBooking(long bookingId) {
-		//System.out.printf("booking: %v, contains: %v, reservationToBooking: %v, reservationToCheckIn: %v", bookingId, this.reservationToBookingId.containsKey(this.reservationToCheckin), this.reservationToBookingId.get(this.reservationToCheckin), this.reservationToCheckin);
-		System.out.println(this.reservationToCheckin);
-		System.out.println(this.reservationToBookingId.get(this.reservationToCheckin));
-		if (this.reservationToBookingId.containsKey(this.reservationToCheckin) 
-				&& this.reservationToBookingId.get(this.reservationToCheckin) == bookingId) {
-			this.connectRoomToReservation(this.reservationToCheckin++);
-			return true;
+		for(Long id : idToCheckIn) {
+			if (reservationToBookingId.get(id) == bookingId) {
+				this.connectRoomToReservation(id);
+				return true;
+			}
 		}
 		return false;
+		
+//		//System.out.printf("booking: %v, contains: %v, reservationToBooking: %v, reservationToCheckIn: %v", bookingId, this.reservationToBookingId.containsKey(this.reservationToCheckin), this.reservationToBookingId.get(this.reservationToCheckin), this.reservationToCheckin);
+//		System.out.println(this.reservationToCheckin);
+//		System.out.println(this.reservationToBookingId.get(this.reservationToCheckin));
+//		if (this.reservationToBookingId.containsKey(this.reservationToCheckin) 
+//				&& this.reservationToBookingId.get(this.reservationToCheckin) == bookingId) {
+//			this.connectRoomToReservation(this.reservationToCheckin++);
+//			return true;
+//		}
+//		this.reservationToCheckin++;
+//		return false;
 	 }
 	
 	public boolean checkInBooking(long bookingId) {
@@ -109,16 +143,24 @@ public class Assignment3Complete {
 	 
 	 // **************************** //
 	 public boolean checkOutOneBooking(long bookingId) {
-		//System.out.printf("booking: %v, contains: %v, reservationToBooking: %v, reservationToCheckIn: %v", bookingId, this.reservationToBookingId.containsKey(this.reservationToCheckin), this.reservationToBookingId.get(this.reservationToCheckin), this.reservationToCheckin);
-			System.out.println(this.reservationToCheckout);
-			System.out.println(this.reservationToBookingId.get(this.reservationToCheckout));
-			if (this.reservationToBookingId.containsKey(this.reservationToCheckout) 
-					&& this.reservationToBookingId.get(this.reservationToCheckout) == bookingId) {
-				this.checkOutReservation(this.reservationToCheckout++);
-				this.currentReservationNumber--;
+		 for(Long id : idToCheckOut) {
+			if (reservationToBookingId.get(id) == bookingId) {
+				this.checkOutReservation(id);
 				return true;
 			}
-			return false;
+		}
+		return false;
+		 
+		//System.out.printf("booking: %v, contains: %v, reservationToBooking: %v, reservationToCheckIn: %v", bookingId, this.reservationToBookingId.containsKey(this.reservationToCheckin), this.reservationToBookingId.get(this.reservationToCheckin), this.reservationToCheckin);
+//			System.out.println(this.reservationToCheckout);
+//			System.out.println(this.reservationToBookingId.get(this.reservationToCheckout));
+//			if (this.reservationToBookingId.containsKey(this.reservationToCheckout) 
+//					&& this.reservationToBookingId.get(this.reservationToCheckout) == bookingId) {
+//				this.checkOutReservation(this.reservationToCheckout++);
+//				this.currentReservationNumber--;
+//				return true;
+//			}
+//			return false;
 	 }
 	 
 	 public boolean checkOutBooking(long bookingId) {
