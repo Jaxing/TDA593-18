@@ -17,8 +17,12 @@
             <ownedEnd xmi:type="uml:Property" xmi:id="_FeS0o7rREeaVMa-P8AMS-A" name="bookingsystem" type="_FeS0p7rREeaVMa-P8AMS-A" association="_FeS0oLrREeaVMa-P8AMS-A"/>
           </packagedElement>
           <packagedElement xmi:type="uml:Package" xmi:id="_FeS0pLrREeaVMa-P8AMS-A" name="bookingSystem">
-            <packagedElement xmi:type="uml:Class" xmi:id="_FeS0pbrREeaVMa-P8AMS-A" name="CheckInEvent"/>
-            <packagedElement xmi:type="uml:Class" xmi:id="_FeS0prrREeaVMa-P8AMS-A" name="CheckOutEvent"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_FeS0pbrREeaVMa-P8AMS-A" name="CheckInEvent">
+              <generalization xmi:type="uml:Generalization" xmi:id="_yYqtALyQEea7_8j189OIog" general="_FeS1FbrREeaVMa-P8AMS-A"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_FeS0prrREeaVMa-P8AMS-A" name="CheckOutEvent">
+              <generalization xmi:type="uml:Generalization" xmi:id="_bYCC8LyQEea7_8j189OIog" general="_FeS1FbrREeaVMa-P8AMS-A"/>
+            </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_FeS0p7rREeaVMa-P8AMS-A" name="BookingSystem">
               <ownedAttribute xmi:type="uml:Property" xmi:id="_FeS0qLrREeaVMa-P8AMS-A" name="events" type="_FeS1C7rREeaVMa-P8AMS-A" association="_FeS0oLrREeaVMa-P8AMS-A">
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FeS0qbrREeaVMa-P8AMS-A"/>
@@ -29,6 +33,8 @@
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FeS0rbrREeaVMa-P8AMS-A" value="*"/>
               </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="_FeS0rrrREeaVMa-P8AMS-A" name="roomProvider" type="_FhhH9brREeaVMa-P8AMS-A" association="_FhggtrrREeaVMa-P8AMS-A"/>
+              <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_DZtBkLyQEea7_8j189OIog" client="_FeS0p7rREeaVMa-P8AMS-A" supplier="_FeS05LrREeaVMa-P8AMS-A" contract="_FeS05LrREeaVMa-P8AMS-A"/>
+              <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_FX4lgLyQEea7_8j189OIog" client="_FeS0p7rREeaVMa-P8AMS-A" supplier="_FeS0r7rREeaVMa-P8AMS-A" contract="_FeS0r7rREeaVMa-P8AMS-A"/>
             </packagedElement>
             <packagedElement xmi:type="uml:Interface" xmi:id="_FeS0r7rREeaVMa-P8AMS-A" name="IHotelCustomerProvides">
               <ownedOperation xmi:type="uml:Operation" xmi:id="_FeS0sLrREeaVMa-P8AMS-A" name="getFreeRooms" visibility="protected">
@@ -251,8 +257,6 @@
                 </ownedParameter>
               </ownedOperation>
             </packagedElement>
-            <packagedElement xmi:type="uml:Realization" xmi:id="_FeS1CbrREeaVMa-P8AMS-A" client="_FeS0p7rREeaVMa-P8AMS-A" supplier="_FeS05LrREeaVMa-P8AMS-A"/>
-            <packagedElement xmi:type="uml:Realization" xmi:id="_FeS1CrrREeaVMa-P8AMS-A" client="_FeS0p7rREeaVMa-P8AMS-A" supplier="_FeS0r7rREeaVMa-P8AMS-A"/>
             <packagedElement xmi:type="uml:Interface" xmi:id="_FeS1C7rREeaVMa-P8AMS-A" name="IEvent">
               <ownedOperation xmi:type="uml:Operation" xmi:id="_FeS1DLrREeaVMa-P8AMS-A" name="getTimestamp">
                 <ownedParameter xmi:type="uml:Parameter" xmi:id="_FeS1DbrREeaVMa-P8AMS-A" direction="return">
@@ -280,13 +284,8 @@
               <ownedAttribute xmi:type="uml:Property" xmi:id="_FeS1GLrREeaVMa-P8AMS-A" name="bookingID">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
               </ownedAttribute>
-              <ownedOperation xmi:type="uml:Operation" xmi:id="_FeS1GbrREeaVMa-P8AMS-A" name="getType" isAbstract="true">
-                <ownedParameter xmi:type="uml:Parameter" xmi:id="_FeS1GrrREeaVMa-P8AMS-A" type="_FeS1ErrREeaVMa-P8AMS-A" direction="return"/>
-              </ownedOperation>
+              <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_IYtSMLyQEea7_8j189OIog" client="_FeS1FbrREeaVMa-P8AMS-A" supplier="_FeS1C7rREeaVMa-P8AMS-A" contract="_FeS1C7rREeaVMa-P8AMS-A"/>
             </packagedElement>
-            <packagedElement xmi:type="uml:Realization" xmi:id="_FeS1G7rREeaVMa-P8AMS-A" client="_FeS1FbrREeaVMa-P8AMS-A" supplier="_FeS1C7rREeaVMa-P8AMS-A"/>
-            <packagedElement xmi:type="uml:Realization" xmi:id="_FeS1HLrREeaVMa-P8AMS-A" client="_FeS0pbrREeaVMa-P8AMS-A" supplier="_FeS1FbrREeaVMa-P8AMS-A"/>
-            <packagedElement xmi:type="uml:Realization" xmi:id="_FeS1HbrREeaVMa-P8AMS-A" client="_FeS0prrREeaVMa-P8AMS-A" supplier="_FeS1FbrREeaVMa-P8AMS-A"/>
             <packagedElement xmi:type="uml:Usage" xmi:id="_FeS1HrrREeaVMa-P8AMS-A" client="_FeS1C7rREeaVMa-P8AMS-A" supplier="_FeS1ErrREeaVMa-P8AMS-A"/>
             <packagedElement xmi:type="uml:Interface" xmi:id="_FeS1H7rREeaVMa-P8AMS-A" name="IBooking">
               <ownedOperation xmi:type="uml:Operation" xmi:id="_FeS1ILrREeaVMa-P8AMS-A" name="getRooms">
@@ -357,8 +356,8 @@
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FeS1PbrREeaVMa-P8AMS-A"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FeS1PrrREeaVMa-P8AMS-A" value="*"/>
               </ownedAttribute>
+              <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_GvI24LyREea7_8j189OIog" client="_FeS1NrrREeaVMa-P8AMS-A" supplier="_FeS1H7rREeaVMa-P8AMS-A" contract="_FeS1H7rREeaVMa-P8AMS-A"/>
             </packagedElement>
-            <packagedElement xmi:type="uml:Realization" xmi:id="_FeS1P7rREeaVMa-P8AMS-A" client="_FeS1NrrREeaVMa-P8AMS-A" supplier="_FeS1H7rREeaVMa-P8AMS-A"/>
             <packagedElement xmi:type="uml:DataType" xmi:id="_FSfiYLrTEeaz3IRliUciHQ" name="FreeRoomTypesDTO">
               <ownedAttribute xmi:type="uml:Property" xmi:id="_FSfiYbrTEeaz3IRliUciHQ" name="roomTypeDescription">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
