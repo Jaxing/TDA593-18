@@ -156,7 +156,7 @@ public class Assignment3Complete {
 	 
 	 private void checkOutReservation(long reservationId) {
 		 for (Map.Entry<Long, Long> e : roomToReservation.entrySet()) {
-			 if (e.getValue() == reservationId && reservationId == reservationToCheckout) {
+			 if (e.getValue() == reservationId) {
 				 roomToReservation.remove(e.getKey());
 				 return;
 			 }
