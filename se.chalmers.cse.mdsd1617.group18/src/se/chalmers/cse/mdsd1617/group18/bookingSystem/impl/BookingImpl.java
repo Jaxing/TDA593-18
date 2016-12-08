@@ -155,7 +155,17 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * @generated
 	 */
 	protected BookingImpl() {
-		super();
+		this(ID_EDEFAULT,FIRST_NAME_EDEFAULT, LAST_NAME_EDEFAULT,
+				START_DATE_EDEFAULT, END_DATE_EDEFAULT);
+	}
+	
+	protected BookingImpl(int id, String firstName, String lastName,
+			String startDate, String endDate) {
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.startDate = startDate;
+		this.endDate = endDate;
 	}
 
 	/**
