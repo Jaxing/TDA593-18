@@ -39,9 +39,6 @@ public class Assignment3Complete {
 			idToCheckIn.add(currentReservationId);
 			this.assignedRooms++;
 			reservationToBookingId.put(currentReservationId, bookingId);
-			for(Map.Entry<Long, Long> entry : reservationToBookingId.entrySet()) {
-				System.out.println("Key: " + entry.getKey() + " Value: " + entry.getValue());
-			}
 			++currentReservationId;
 			return true;
 		}
