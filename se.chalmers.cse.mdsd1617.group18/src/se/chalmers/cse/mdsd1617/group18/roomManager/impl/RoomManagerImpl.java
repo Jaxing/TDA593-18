@@ -5,6 +5,7 @@ package se.chalmers.cse.mdsd1617.group18.roomManager.impl;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -61,10 +62,12 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected RoomManagerImpl() {
 		super();
+		rooms = new BasicEList();
+		roomTypes = new BasicEList();
 	}
 
 	/**
