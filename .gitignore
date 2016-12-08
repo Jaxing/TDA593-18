@@ -4,7 +4,6 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.ear
 
@@ -363,7 +362,6 @@ TSWLatexianTemp*
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.ear
 
