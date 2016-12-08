@@ -60,9 +60,7 @@ public class Assignment3Complete {
 	
 	public boolean reservationMappedToBookingForCheckout(long reservationID, long bookingId) {
 		
-		System.out.println("resMapped: " + reservationMappedToBooking(reservationID, bookingId));
 		if ( reservationMappedToBooking(reservationID, bookingId) && !this.idToCheckOut.contains(reservationID)) {
-			System.out.print("hej");
 			return true;
 		}
 		
@@ -96,24 +94,7 @@ public class Assignment3Complete {
 			}
 		}
 		return false;
-		
-//		//System.out.printf("booking: %v, contains: %v, reservationToBooking: %v, reservationToCheckIn: %v", bookingId, this.reservationToBookingId.containsKey(this.reservationToCheckin), this.reservationToBookingId.get(this.reservationToCheckin), this.reservationToCheckin);
-//		System.out.println(this.reservationToCheckin);
-//		System.out.println(this.reservationToBookingId.get(this.reservationToCheckin));
-//		if (this.reservationToBookingId.containsKey(this.reservationToCheckin) 
-//				&& this.reservationToBookingId.get(this.reservationToCheckin) == bookingId) {
-//			this.connectRoomToReservation(this.reservationToCheckin++);
-//			return true;
-//		}
-//		this.reservationToCheckin++;
-//		return false;
 	 }
-	
-	private void printList(List<Long> list) {
-		for (Long l : list) {
-			System.out.println(l);
-		}
-	}
 	
 	public boolean checkInBooking(long bookingId) {
 		if(this.reservationToBookingId.containsValue(bookingId)) {
@@ -152,17 +133,6 @@ public class Assignment3Complete {
 			}
 		}
 		return false;
-		 
-		//System.out.printf("booking: %v, contains: %v, reservationToBooking: %v, reservationToCheckIn: %v", bookingId, this.reservationToBookingId.containsKey(this.reservationToCheckin), this.reservationToBookingId.get(this.reservationToCheckin), this.reservationToCheckin);
-//			System.out.println(this.reservationToCheckout);
-//			System.out.println(this.reservationToBookingId.get(this.reservationToCheckout));
-//			if (this.reservationToBookingId.containsKey(this.reservationToCheckout) 
-//					&& this.reservationToBookingId.get(this.reservationToCheckout) == bookingId) {
-//				this.checkOutReservation(this.reservationToCheckout++);
-//				this.currentReservationNumber--;
-//				return true;
-//			}
-//			return false;
 	 }
 	 
 	 public boolean checkOutBooking(long bookingId) {
@@ -195,7 +165,6 @@ public class Assignment3Complete {
 		 
 		 this.assignedRooms--;
 		 roomToReservation.put(this.smallestAssignedRoom, reservationId);
-		 System.out.println("Connecting room: " + this.smallestAssignedRoom);
 		 this.smallestAssignedRoom++;
 		 if (this.smallestAssignedRoom > this.assignedRooms) {
 			 this.smallestAssignedRoom = 0;
@@ -204,17 +173,12 @@ public class Assignment3Complete {
 	 }
 	 
 	 public boolean roomNotMappedToRes(long roomId) {
-		 System.out.println("Guard room: "+ roomId);
-		 System.out.println("Guard Size: " + this.roomToReservation.size());
 		 return !this.roomToReservation.containsKey(roomId);
 	 }
 	 
 	 public boolean roomMappedToReservation(long roomId, long bookingId) {
-		 System.out.println("roomId: " + roomId + ", bookingId: " + bookingId);
 		 for (Map.Entry<Long, Long> e2 : this.reservationToBookingId.entrySet()) {
-			 System.out.println("e2-key: " + e2.getKey() + ", e2-val: " + e2.getValue());
 			 if (e2.getValue() == bookingId) {
-				 System.out.println("got reservation: " + this.roomToReservation.get(roomId));
 				 if (e2.getKey() == this.roomToReservation.get(roomId)) {
 					 return true;
 				 }
@@ -230,8 +194,6 @@ public class Assignment3Complete {
 					 if (e.getValue() == id) {
 						 this.roomToReservation.remove(e.getKey());
 						 this.idToCheckOut.remove(reservationId);
-						 System.out.println("Removed reservation: " + e.getKey());
-						 System.out.println("Size: " + this.roomToReservation.size());
 						 return;
 					 }
 				 }				 
