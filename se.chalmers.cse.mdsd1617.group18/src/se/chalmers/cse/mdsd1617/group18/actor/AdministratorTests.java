@@ -25,11 +25,6 @@ public class AdministratorTests {
 	
 	@Test
 	public void testAdministratorAddRoom() {
-		
-	}
-	
-	@Test
-	public void testAdministratorCheckInRoom() {
 		RoomManagerFactoryImpl.init();
 		RoomManager rM = RoomManagerFactoryImpl.getInstance().createRoomManager(null, null);
 		int roomNumber = 0;
@@ -44,5 +39,10 @@ public class AdministratorTests {
 			}
 		}
 		assertEquals(true, found);
+	}
+	
+	@Test
+	public void testAdministratorCheckInRoom() {
+		assertEquals(true, false);
 	}
 }
