@@ -160,7 +160,7 @@
                   <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
                 </ownedParameter>
               </ownedOperation>
-              <ownedOperation xmi:type="uml:Operation" xmi:id="_FeS04LrREeaVMa-P8AMS-A" name="checkInRoom">
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_FeS04LrREeaVMa-P8AMS-A" name="checkInRoom" concurrency="concurrent">
                 <ownedParameter xmi:type="uml:Parameter" xmi:id="_FeS04brREeaVMa-P8AMS-A" name="roomTypeDescription">
                   <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
                 </ownedParameter>
@@ -168,7 +168,7 @@
                   <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
                 </ownedParameter>
                 <ownedParameter xmi:type="uml:Parameter" xmi:id="_FeS047rREeaVMa-P8AMS-A" direction="return">
-                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
                 </ownedParameter>
               </ownedOperation>
             </packagedElement>
@@ -178,17 +178,13 @@
                 <ownedParameter xmi:type="uml:Parameter" xmi:id="_FeS057rREeaVMa-P8AMS-A" name="bookingId" visibility="package">
                   <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
                 </ownedParameter>
-                <ownedParameter xmi:type="uml:Parameter" xmi:id="_FeS06LrREeaVMa-P8AMS-A" name="room">
-                  <type xmi:type="uml:DataType" href="group18.uml#_d9uCILSVEeaxVPR210aiSw"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_SprO0L1YEea2wqLyiAvrGw" direction="return">
+                  <type xmi:type="uml:DataType" href="group18.uml#_0ZOZgJeDEeatRIhPgYoqQg"/>
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WScFQL1YEea2wqLyiAvrGw"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WSlPML1YEea2wqLyiAvrGw" value="*"/>
                 </ownedParameter>
               </ownedOperation>
-              <ownedOperation xmi:type="uml:Operation" xmi:id="_FeS06brREeaVMa-P8AMS-A" name="editBooking">
-                <ownedParameter xmi:type="uml:Parameter" xmi:id="_FeS06rrREeaVMa-P8AMS-A" name="firstName">
-                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-                </ownedParameter>
-                <ownedParameter xmi:type="uml:Parameter" xmi:id="_FeS067rREeaVMa-P8AMS-A" name="lastName">
-                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-                </ownedParameter>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_FeS06brREeaVMa-P8AMS-A" name="editBookingPeriod" visibility="package">
                 <ownedParameter xmi:type="uml:Parameter" xmi:id="_FeS07LrREeaVMa-P8AMS-A" name="bookingId">
                   <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
                 </ownedParameter>
@@ -255,6 +251,15 @@
                 <ownedParameter xmi:type="uml:Parameter" xmi:id="_FeS1CLrREeaVMa-P8AMS-A" name="priceOfCost">
                   <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
                 </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_QQBzsL1UEea2wqLyiAvrGw" name="editBookingRooms">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_vN-SkL1UEea2wqLyiAvrGw" name="bookingID">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_4okS0L1WEea2wqLyiAvrGw" name="numOfRooms">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Rg-owL1VEea2wqLyiAvrGw" name="roomType" type="_FhhHzLrREeaVMa-P8AMS-A"/>
               </ownedOperation>
             </packagedElement>
             <packagedElement xmi:type="uml:Interface" xmi:id="_FeS1C7rREeaVMa-P8AMS-A" name="IEvent">
@@ -506,7 +511,7 @@
                   <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
                 </ownedParameter>
               </ownedOperation>
-              <ownedOperation xmi:type="uml:Operation" xmi:id="_FhhIALrREeaVMa-P8AMS-A" name="changeRoomType">
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_FhhIALrREeaVMa-P8AMS-A" name="updateRoomType">
                 <ownedParameter xmi:type="uml:Parameter" xmi:id="_FhhIAbrREeaVMa-P8AMS-A" name="name">
                   <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
                 </ownedParameter>
@@ -527,9 +532,7 @@
                 </ownedParameter>
               </ownedOperation>
               <ownedOperation xmi:type="uml:Operation" xmi:id="_FhhICLrREeaVMa-P8AMS-A" name="removeRoomType">
-                <ownedParameter xmi:type="uml:Parameter" xmi:id="_FhhICbrREeaVMa-P8AMS-A" name="name">
-                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-                </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_FhhICbrREeaVMa-P8AMS-A" name="roomType" type="_FhhHzLrREeaVMa-P8AMS-A"/>
               </ownedOperation>
               <ownedOperation xmi:type="uml:Operation" xmi:id="_FhhICrrREeaVMa-P8AMS-A" name="addRoom">
                 <ownedParameter xmi:type="uml:Parameter" xmi:id="_FhhIC7rREeaVMa-P8AMS-A" name="roomNumber">
@@ -537,7 +540,7 @@
                 </ownedParameter>
                 <ownedParameter xmi:type="uml:Parameter" xmi:id="_FhhIDLrREeaVMa-P8AMS-A" name="roomType" type="_FhhHzLrREeaVMa-P8AMS-A"/>
               </ownedOperation>
-              <ownedOperation xmi:type="uml:Operation" xmi:id="_FhhIDbrREeaVMa-P8AMS-A" name="updateRoom">
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_FhhIDbrREeaVMa-P8AMS-A" name="changeRoomType">
                 <ownedParameter xmi:type="uml:Parameter" xmi:id="_FhhIDrrREeaVMa-P8AMS-A" name="roomNumber">
                   <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
                 </ownedParameter>

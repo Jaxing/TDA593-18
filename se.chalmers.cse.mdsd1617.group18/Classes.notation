@@ -520,6 +520,10 @@
             <element xmi:type="uml:Operation" href="Classes.uml#_FeS1BLrREeaVMa-P8AMS-A"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_FhnPC7rREeaVMa-P8AMS-A"/>
           </children>
+          <children xmi:type="notation:Shape" xmi:id="_QRX3gL1UEea2wqLyiAvrGw" type="Operation_InterfaceOperationLabel">
+            <element xmi:type="uml:Operation" href="Classes.uml#_QQBzsL1UEea2wqLyiAvrGw"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_QRX3gb1UEea2wqLyiAvrGw"/>
+          </children>
           <styles xmi:type="notation:TitleStyle" xmi:id="_FhnPDLrREeaVMa-P8AMS-A"/>
           <styles xmi:type="notation:SortingStyle" xmi:id="_FhnPDbrREeaVMa-P8AMS-A"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_FhnPDrrREeaVMa-P8AMS-A"/>
