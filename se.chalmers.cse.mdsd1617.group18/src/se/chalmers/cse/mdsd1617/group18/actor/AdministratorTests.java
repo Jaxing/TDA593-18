@@ -2,8 +2,6 @@ package se.chalmers.cse.mdsd1617.group18.actor;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.ArrayList;
-
 import org.eclipse.emf.common.util.EList;
 import org.junit.*;
 
@@ -46,9 +44,22 @@ public class AdministratorTests {
 		assertEquals(true, found);
 	}
 	
-	// UC 2.1.11
+	// UC 2.2.6
 	@Test
-	public void testAdministratorCheckInRoom() {
-		assertEquals(true, false);
+	public void testAdministratorRemoveRoom() {
+		int roomNumber = 999;
+		IRoomType rT = RoomManagerFactoryImpl.getInstance().createRoomType(1000, "Basic room", 1);
+		roomManager.addRoom(roomNumber, rT);
+		roomManager.removeRoom(roomNumber);
+		boolean found = false;
+		EList<IRoom> rooms = roomManager.getRooms();
+		for(int i = 0; i < rooms.size(); i++) {
+			IRoom r = rooms.get(i);
+			if (r.getRoomNumber() == roomNumber && r.getRoomType().equals(rT)) {
+				found = true;
+			}
+		}
+		
+		assertEquals(false, found);
 	}
 }
