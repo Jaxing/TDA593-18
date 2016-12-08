@@ -29,6 +29,7 @@ public class CheckInEventImpl extends AbstractEventImpl implements CheckInEvent 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return BookingSystemPackage.Literals.CHECK_IN_EVENT;
 	}

@@ -54,6 +54,7 @@ public class BookingSystemFactoryImpl extends EFactoryImpl implements BookingSys
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case BookingSystemPackage.CHECK_IN_EVENT: return createCheckInEvent();
@@ -71,6 +72,7 @@ public class BookingSystemFactoryImpl extends EFactoryImpl implements BookingSys
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
 			case BookingSystemPackage.EVENT_TYPE:
@@ -85,6 +87,7 @@ public class BookingSystemFactoryImpl extends EFactoryImpl implements BookingSys
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
 			case BookingSystemPackage.EVENT_TYPE:
@@ -179,6 +182,7 @@ public class BookingSystemFactoryImpl extends EFactoryImpl implements BookingSys
 	 * @deprecated
 	 * @generated
 	 */
+	@Deprecated
 	public static BookingSystemPackage getPackage() {
 		return BookingSystemPackage.eINSTANCE;
 	}

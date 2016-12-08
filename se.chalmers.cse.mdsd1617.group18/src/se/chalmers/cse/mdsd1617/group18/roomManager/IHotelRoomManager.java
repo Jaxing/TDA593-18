@@ -26,26 +26,26 @@ public interface IHotelRoomManager extends IHotelRoomProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model nameRequired="true" nameOrdered="false" priceRequired="true" priceOrdered="false" numberOfBedsRequired="true" numberOfBedsOrdered="false"
+	 * @model nameRequired="true" nameOrdered="false" priceRequired="true" priceOrdered="false" numberOfBedsRequired="true" numberOfBedsOrdered="false" newNameRequired="true" newNameOrdered="false"
 	 * @generated
 	 */
-	void changeRoomType(String name, double price, int numberOfBeds, String newName);
+	void updateRoomType(String name, double price, int numberOfBeds, String newName);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" type="se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType" ordered="false"
+	 * @model kind="operation" ordered="false"
 	 * @generated
 	 */
-	EList getRoomTypes();
+	EList<IRoomType> getRoomTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model nameRequired="true" nameOrdered="false"
+	 * @model roomTypeRequired="true" roomTypeOrdered="false"
 	 * @generated
 	 */
-	void removeRoomType(String name);
+	void removeRoomType(IRoomType roomType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,7 +61,7 @@ public interface IHotelRoomManager extends IHotelRoomProvider {
 	 * @model roomNumberRequired="true" roomNumberOrdered="false" roomTypeRequired="true" roomTypeOrdered="false"
 	 * @generated
 	 */
-	void updateRoom(int roomNumber, IRoomType roomType);
+	void changeRoomType(int roomNumber, IRoomType roomType);
 
 	/**
 	 * <!-- begin-user-doc -->

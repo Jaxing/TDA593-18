@@ -123,6 +123,7 @@ public class FreeRoomTypesDTOImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return BookingSystemPackage.Literals.FREE_ROOM_TYPES_DTO;
 	}
@@ -216,16 +217,17 @@ public class FreeRoomTypesDTOImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BookingSystemPackage.FREE_ROOM_TYPES_DTO__ROOM_TYPE_DESCRIPTION:
 				return getRoomTypeDescription();
 			case BookingSystemPackage.FREE_ROOM_TYPES_DTO__NUM_BEDS:
-				return new Integer(getNumBeds());
+				return getNumBeds();
 			case BookingSystemPackage.FREE_ROOM_TYPES_DTO__PRICE_PER_NIGHT:
-				return new Double(getPricePerNight());
+				return getPricePerNight();
 			case BookingSystemPackage.FREE_ROOM_TYPES_DTO__NUM_FREE_ROOMS:
-				return new Integer(getNumFreeRooms());
+				return getNumFreeRooms();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -235,19 +237,20 @@ public class FreeRoomTypesDTOImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BookingSystemPackage.FREE_ROOM_TYPES_DTO__ROOM_TYPE_DESCRIPTION:
 				setRoomTypeDescription((String)newValue);
 				return;
 			case BookingSystemPackage.FREE_ROOM_TYPES_DTO__NUM_BEDS:
-				setNumBeds(((Integer)newValue).intValue());
+				setNumBeds((Integer)newValue);
 				return;
 			case BookingSystemPackage.FREE_ROOM_TYPES_DTO__PRICE_PER_NIGHT:
-				setPricePerNight(((Double)newValue).doubleValue());
+				setPricePerNight((Double)newValue);
 				return;
 			case BookingSystemPackage.FREE_ROOM_TYPES_DTO__NUM_FREE_ROOMS:
-				setNumFreeRooms(((Integer)newValue).intValue());
+				setNumFreeRooms((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -258,6 +261,7 @@ public class FreeRoomTypesDTOImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BookingSystemPackage.FREE_ROOM_TYPES_DTO__ROOM_TYPE_DESCRIPTION:
@@ -281,6 +285,7 @@ public class FreeRoomTypesDTOImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case BookingSystemPackage.FREE_ROOM_TYPES_DTO__ROOM_TYPE_DESCRIPTION:
@@ -300,6 +305,7 @@ public class FreeRoomTypesDTOImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

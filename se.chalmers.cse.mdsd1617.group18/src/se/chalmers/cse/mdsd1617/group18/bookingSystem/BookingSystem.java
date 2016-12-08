@@ -36,10 +36,10 @@ public interface BookingSystem extends IHotelBookingManager, IHotelCustomerProvi
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Events</em>' reference list.
 	 * @see se.chalmers.cse.mdsd1617.group18.bookingSystem.BookingSystemPackage#getBookingSystem_Events()
-	 * @model type="se.chalmers.cse.mdsd1617.group18.bookingSystem.IEvent" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	EList getEvents();
+	EList<IEvent> getEvents();
 
 	/**
 	 * Returns the value of the '<em><b>Bookings</b></em>' reference list.
@@ -52,10 +52,10 @@ public interface BookingSystem extends IHotelBookingManager, IHotelCustomerProvi
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Bookings</em>' reference list.
 	 * @see se.chalmers.cse.mdsd1617.group18.bookingSystem.BookingSystemPackage#getBookingSystem_Bookings()
-	 * @model type="se.chalmers.cse.mdsd1617.group18.bookingSystem.IBooking" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	EList getBookings();
+	EList<IBooking> getBookings();
 
 	/**
 	 * Returns the value of the '<em><b>Room Provider</b></em>' reference.

@@ -2,11 +2,10 @@
  */
 package se.chalmers.cse.mdsd1617.group18.bookingSystem.util;
 
-import java.util.List;
-
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.util.Switch;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.*;
 
 /**
@@ -22,7 +21,7 @@ import se.chalmers.cse.mdsd1617.group18.bookingSystem.*;
  * @see se.chalmers.cse.mdsd1617.group18.bookingSystem.BookingSystemPackage
  * @generated
  */
-public class BookingSystemSwitch {
+public class BookingSystemSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -44,14 +43,16 @@ public class BookingSystemSwitch {
 	}
 
 	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
+	 * @param ePackage the package in question.
+	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
-	public Object doSwitch(EObject theEObject) {
-		return doSwitch(theEObject.eClass(), theEObject);
+	@Override
+	protected boolean isSwitchFor(EPackage ePackage) {
+		return ePackage == modelPackage;
 	}
 
 	/**
@@ -61,31 +62,12 @@ public class BookingSystemSwitch {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	protected Object doSwitch(EClass theEClass, EObject theEObject) {
-		if (theEClass.eContainer() == modelPackage) {
-			return doSwitch(theEClass.getClassifierID(), theEObject);
-		}
-		else {
-			List eSuperTypes = theEClass.getESuperTypes();
-			return
-				eSuperTypes.isEmpty() ?
-					defaultCase(theEObject) :
-					doSwitch((EClass)eSuperTypes.get(0), theEObject);
-		}
-	}
-
-	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
-	 * @generated
-	 */
-	protected Object doSwitch(int classifierID, EObject theEObject) {
+	@Override
+	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case BookingSystemPackage.CHECK_IN_EVENT: {
 				CheckInEvent checkInEvent = (CheckInEvent)theEObject;
-				Object result = caseCheckInEvent(checkInEvent);
+				T result = caseCheckInEvent(checkInEvent);
 				if (result == null) result = caseAbstractEvent(checkInEvent);
 				if (result == null) result = caseIEvent(checkInEvent);
 				if (result == null) result = defaultCase(theEObject);
@@ -93,20 +75,20 @@ public class BookingSystemSwitch {
 			}
 			case BookingSystemPackage.ABSTRACT_EVENT: {
 				AbstractEvent abstractEvent = (AbstractEvent)theEObject;
-				Object result = caseAbstractEvent(abstractEvent);
+				T result = caseAbstractEvent(abstractEvent);
 				if (result == null) result = caseIEvent(abstractEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case BookingSystemPackage.IEVENT: {
 				IEvent iEvent = (IEvent)theEObject;
-				Object result = caseIEvent(iEvent);
+				T result = caseIEvent(iEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case BookingSystemPackage.CHECK_OUT_EVENT: {
 				CheckOutEvent checkOutEvent = (CheckOutEvent)theEObject;
-				Object result = caseCheckOutEvent(checkOutEvent);
+				T result = caseCheckOutEvent(checkOutEvent);
 				if (result == null) result = caseAbstractEvent(checkOutEvent);
 				if (result == null) result = caseIEvent(checkOutEvent);
 				if (result == null) result = defaultCase(theEObject);
@@ -114,7 +96,7 @@ public class BookingSystemSwitch {
 			}
 			case BookingSystemPackage.BOOKING_SYSTEM: {
 				BookingSystem bookingSystem = (BookingSystem)theEObject;
-				Object result = caseBookingSystem(bookingSystem);
+				T result = caseBookingSystem(bookingSystem);
 				if (result == null) result = caseIHotelBookingManager(bookingSystem);
 				if (result == null) result = caseIHotelCustomerProvides(bookingSystem);
 				if (result == null) result = defaultCase(theEObject);
@@ -122,32 +104,32 @@ public class BookingSystemSwitch {
 			}
 			case BookingSystemPackage.IBOOKING: {
 				IBooking iBooking = (IBooking)theEObject;
-				Object result = caseIBooking(iBooking);
+				T result = caseIBooking(iBooking);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case BookingSystemPackage.IHOTEL_BOOKING_MANAGER: {
 				IHotelBookingManager iHotelBookingManager = (IHotelBookingManager)theEObject;
-				Object result = caseIHotelBookingManager(iHotelBookingManager);
+				T result = caseIHotelBookingManager(iHotelBookingManager);
 				if (result == null) result = caseIHotelCustomerProvides(iHotelBookingManager);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case BookingSystemPackage.IHOTEL_CUSTOMER_PROVIDES: {
 				IHotelCustomerProvides iHotelCustomerProvides = (IHotelCustomerProvides)theEObject;
-				Object result = caseIHotelCustomerProvides(iHotelCustomerProvides);
+				T result = caseIHotelCustomerProvides(iHotelCustomerProvides);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case BookingSystemPackage.FREE_ROOM_TYPES_DTO: {
 				FreeRoomTypesDTO freeRoomTypesDTO = (FreeRoomTypesDTO)theEObject;
-				Object result = caseFreeRoomTypesDTO(freeRoomTypesDTO);
+				T result = caseFreeRoomTypesDTO(freeRoomTypesDTO);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case BookingSystemPackage.BOOKING: {
 				Booking booking = (Booking)theEObject;
-				Object result = caseBooking(booking);
+				T result = caseBooking(booking);
 				if (result == null) result = caseIBooking(booking);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -167,7 +149,7 @@ public class BookingSystemSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseCheckInEvent(CheckInEvent object) {
+	public T caseCheckInEvent(CheckInEvent object) {
 		return null;
 	}
 
@@ -182,7 +164,7 @@ public class BookingSystemSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseAbstractEvent(AbstractEvent object) {
+	public T caseAbstractEvent(AbstractEvent object) {
 		return null;
 	}
 
@@ -197,7 +179,7 @@ public class BookingSystemSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseIEvent(IEvent object) {
+	public T caseIEvent(IEvent object) {
 		return null;
 	}
 
@@ -212,7 +194,7 @@ public class BookingSystemSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseCheckOutEvent(CheckOutEvent object) {
+	public T caseCheckOutEvent(CheckOutEvent object) {
 		return null;
 	}
 
@@ -227,7 +209,7 @@ public class BookingSystemSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseBookingSystem(BookingSystem object) {
+	public T caseBookingSystem(BookingSystem object) {
 		return null;
 	}
 
@@ -242,7 +224,7 @@ public class BookingSystemSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseIBooking(IBooking object) {
+	public T caseIBooking(IBooking object) {
 		return null;
 	}
 
@@ -257,7 +239,7 @@ public class BookingSystemSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseIHotelBookingManager(IHotelBookingManager object) {
+	public T caseIHotelBookingManager(IHotelBookingManager object) {
 		return null;
 	}
 
@@ -272,7 +254,7 @@ public class BookingSystemSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseIHotelCustomerProvides(IHotelCustomerProvides object) {
+	public T caseIHotelCustomerProvides(IHotelCustomerProvides object) {
 		return null;
 	}
 
@@ -287,7 +269,7 @@ public class BookingSystemSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseFreeRoomTypesDTO(FreeRoomTypesDTO object) {
+	public T caseFreeRoomTypesDTO(FreeRoomTypesDTO object) {
 		return null;
 	}
 
@@ -302,7 +284,7 @@ public class BookingSystemSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseBooking(Booking object) {
+	public T caseBooking(Booking object) {
 		return null;
 	}
 
@@ -317,7 +299,8 @@ public class BookingSystemSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
-	public Object defaultCase(EObject object) {
+	@Override
+	public T defaultCase(EObject object) {
 		return null;
 	}
 

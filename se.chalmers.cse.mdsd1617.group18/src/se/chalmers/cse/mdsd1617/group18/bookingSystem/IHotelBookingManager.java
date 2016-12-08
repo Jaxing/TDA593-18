@@ -3,6 +3,7 @@
 package se.chalmers.cse.mdsd1617.group18.bookingSystem;
 
 import org.eclipse.emf.common.util.EList;
+import se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,18 +19,18 @@ public interface IHotelBookingManager extends IHotelCustomerProvides {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model bookingIdRequired="true" bookingIdOrdered="false" roomRequired="true" roomOrdered="false"
+	 * @model ordered="false" bookingIdRequired="true" bookingIdOrdered="false"
 	 * @generated
 	 */
-	void initiateCheckin(int bookingId, Object room);
+	EList<FreeRoomTypesDTO> initiateCheckin(int bookingId);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model firstNameRequired="true" firstNameOrdered="false" lastNameRequired="true" lastNameOrdered="false" bookingIdRequired="true" bookingIdOrdered="false" startDateRequired="true" startDateOrdered="false" endDateRequired="true" endDateOrdered="false"
+	 * @model bookingIdRequired="true" bookingIdOrdered="false" startDateRequired="true" startDateOrdered="false" endDateRequired="true" endDateOrdered="false"
 	 * @generated
 	 */
-	void editBooking(String firstName, String lastName, int bookingId, String startDate, String endDate);
+	void editBookingPeriod(int bookingId, String startDate, String endDate);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -42,10 +43,10 @@ public interface IHotelBookingManager extends IHotelCustomerProvides {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="se.chalmers.cse.mdsd1617.group18.bookingSystem.IBooking" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	EList listBooking();
+	EList<IBooking> listBooking();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -58,18 +59,18 @@ public interface IHotelBookingManager extends IHotelCustomerProvides {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="se.chalmers.cse.mdsd1617.group18.bookingSystem.IEvent" ordered="false" startTimeRequired="true" startTimeOrdered="false" endTimeRequired="true" endTimeOrdered="false"
+	 * @model ordered="false" startTimeRequired="true" startTimeOrdered="false" endTimeRequired="true" endTimeOrdered="false"
 	 * @generated
 	 */
-	EList listCheckins(String startTime, String endTime);
+	EList<IEvent> listCheckins(String startTime, String endTime);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="se.chalmers.cse.mdsd1617.group18.bookingSystem.IEvent" ordered="false" startTimeRequired="true" startTimeOrdered="false" endTimeRequired="true" endTimeOrdered="false"
+	 * @model ordered="false" startTimeRequired="true" startTimeOrdered="false" endTimeRequired="true" endTimeOrdered="false"
 	 * @generated
 	 */
-	EList listCheckouts(String startTime, String endTime);
+	EList<IEvent> listCheckouts(String startTime, String endTime);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,5 +79,13 @@ public interface IHotelBookingManager extends IHotelCustomerProvides {
 	 * @generated
 	 */
 	void addExtraCostToRoom(int bookingId, int roomNumber, String descriptionOfCost, double priceOfCost);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model bookingIDRequired="true" bookingIDOrdered="false" numOfRoomsRequired="true" numOfRoomsOrdered="false" roomTypeRequired="true" roomTypeOrdered="false"
+	 * @generated
+	 */
+	void editBookingRooms(int bookingID, int numOfRooms, IRoomType roomType);
 
 } // IHotelBookingManager

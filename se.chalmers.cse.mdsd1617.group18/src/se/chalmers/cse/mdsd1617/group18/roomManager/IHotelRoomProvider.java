@@ -20,9 +20,9 @@ public interface IHotelRoomProvider extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" type="se.chalmers.cse.mdsd1617.group18.roomManager.IRoom" ordered="false"
+	 * @model kind="operation" ordered="false"
 	 * @generated
 	 */
-	EList getRooms();
+	EList<IRoom> getRooms();
 
 } // IHotelRoomProvider

@@ -5,6 +5,7 @@ package se.chalmers.cse.mdsd1617.group18.bookingSystem;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
+import se.chalmers.cse.mdsd1617.group18.roomManager.IRoom;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,10 +21,10 @@ public interface IBooking extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" type="se.chalmers.cse.mdsd1617.group18.roomManager.IRoom" ordered="false"
+	 * @model kind="operation" ordered="false"
 	 * @generated
 	 */
-	EList getRooms();
+	EList<IRoom> getRooms();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,10 +69,10 @@ public interface IBooking extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model roomsType="se.chalmers.cse.mdsd1617.group18.roomManager.IRoom" roomsMany="true" roomsOrdered="false"
+	 * @model roomsMany="true" roomsOrdered="false"
 	 * @generated
 	 */
-	void setRooms(EList rooms);
+	void setRooms(EList<IRoom> rooms);
 
 	/**
 	 * <!-- begin-user-doc -->

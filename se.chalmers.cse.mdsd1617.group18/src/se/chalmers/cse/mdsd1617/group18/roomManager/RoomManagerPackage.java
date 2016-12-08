@@ -367,13 +367,13 @@ public interface RoomManagerPackage extends EPackage {
 	int ROOM_MANAGER___ADD_ROOM_TYPE__STRING_DOUBLE_INT = IHOTEL_STARTUP_PROVIES_OPERATION_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Change Room Type</em>' operation.
+	 * The operation id for the '<em>Update Room Type</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER___CHANGE_ROOM_TYPE__STRING_DOUBLE_INT_STRING = IHOTEL_STARTUP_PROVIES_OPERATION_COUNT + 2;
+	int ROOM_MANAGER___UPDATE_ROOM_TYPE__STRING_DOUBLE_INT_STRING = IHOTEL_STARTUP_PROVIES_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get Room Types</em>' operation.
@@ -391,7 +391,7 @@ public interface RoomManagerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER___REMOVE_ROOM_TYPE__STRING = IHOTEL_STARTUP_PROVIES_OPERATION_COUNT + 4;
+	int ROOM_MANAGER___REMOVE_ROOM_TYPE__IROOMTYPE = IHOTEL_STARTUP_PROVIES_OPERATION_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Add Room</em>' operation.
@@ -403,13 +403,13 @@ public interface RoomManagerPackage extends EPackage {
 	int ROOM_MANAGER___ADD_ROOM__INT_IROOMTYPE = IHOTEL_STARTUP_PROVIES_OPERATION_COUNT + 5;
 
 	/**
-	 * The operation id for the '<em>Update Room</em>' operation.
+	 * The operation id for the '<em>Change Room Type</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER___UPDATE_ROOM__INT_IROOMTYPE = IHOTEL_STARTUP_PROVIES_OPERATION_COUNT + 6;
+	int ROOM_MANAGER___CHANGE_ROOM_TYPE__INT_IROOMTYPE = IHOTEL_STARTUP_PROVIES_OPERATION_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Remove Room</em>' operation.
@@ -522,13 +522,13 @@ public interface RoomManagerPackage extends EPackage {
 	int IHOTEL_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_DOUBLE_INT = IHOTEL_ROOM_PROVIDER_OPERATION_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Change Room Type</em>' operation.
+	 * The operation id for the '<em>Update Room Type</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_ROOM_MANAGER___CHANGE_ROOM_TYPE__STRING_DOUBLE_INT_STRING = IHOTEL_ROOM_PROVIDER_OPERATION_COUNT + 1;
+	int IHOTEL_ROOM_MANAGER___UPDATE_ROOM_TYPE__STRING_DOUBLE_INT_STRING = IHOTEL_ROOM_PROVIDER_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get Room Types</em>' operation.
@@ -546,7 +546,7 @@ public interface RoomManagerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_ROOM_MANAGER___REMOVE_ROOM_TYPE__STRING = IHOTEL_ROOM_PROVIDER_OPERATION_COUNT + 3;
+	int IHOTEL_ROOM_MANAGER___REMOVE_ROOM_TYPE__IROOMTYPE = IHOTEL_ROOM_PROVIDER_OPERATION_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Add Room</em>' operation.
@@ -558,13 +558,13 @@ public interface RoomManagerPackage extends EPackage {
 	int IHOTEL_ROOM_MANAGER___ADD_ROOM__INT_IROOMTYPE = IHOTEL_ROOM_PROVIDER_OPERATION_COUNT + 4;
 
 	/**
-	 * The operation id for the '<em>Update Room</em>' operation.
+	 * The operation id for the '<em>Change Room Type</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_ROOM_MANAGER___UPDATE_ROOM__INT_IROOMTYPE = IHOTEL_ROOM_PROVIDER_OPERATION_COUNT + 5;
+	int IHOTEL_ROOM_MANAGER___CHANGE_ROOM_TYPE__INT_IROOMTYPE = IHOTEL_ROOM_PROVIDER_OPERATION_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Remove Room</em>' operation.
@@ -993,14 +993,14 @@ public interface RoomManagerPackage extends EPackage {
 	EOperation getIHotelRoomManager__AddRoomType__String_double_int();
 
 	/**
-	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#changeRoomType(java.lang.String, double, int, java.lang.String) <em>Change Room Type</em>}' operation.
+	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#updateRoomType(java.lang.String, double, int, java.lang.String) <em>Update Room Type</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Change Room Type</em>' operation.
-	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#changeRoomType(java.lang.String, double, int, java.lang.String)
+	 * @return the meta object for the '<em>Update Room Type</em>' operation.
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#updateRoomType(java.lang.String, double, int, java.lang.String)
 	 * @generated
 	 */
-	EOperation getIHotelRoomManager__ChangeRoomType__String_double_int_String();
+	EOperation getIHotelRoomManager__UpdateRoomType__String_double_int_String();
 
 	/**
 	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#getRoomTypes() <em>Get Room Types</em>}' operation.
@@ -1013,14 +1013,14 @@ public interface RoomManagerPackage extends EPackage {
 	EOperation getIHotelRoomManager__GetRoomTypes();
 
 	/**
-	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#removeRoomType(java.lang.String) <em>Remove Room Type</em>}' operation.
+	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#removeRoomType(se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType) <em>Remove Room Type</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Remove Room Type</em>' operation.
-	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#removeRoomType(java.lang.String)
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#removeRoomType(se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType)
 	 * @generated
 	 */
-	EOperation getIHotelRoomManager__RemoveRoomType__String();
+	EOperation getIHotelRoomManager__RemoveRoomType__IRoomType();
 
 	/**
 	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#addRoom(int, se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType) <em>Add Room</em>}' operation.
@@ -1033,14 +1033,14 @@ public interface RoomManagerPackage extends EPackage {
 	EOperation getIHotelRoomManager__AddRoom__int_IRoomType();
 
 	/**
-	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#updateRoom(int, se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType) <em>Update Room</em>}' operation.
+	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#changeRoomType(int, se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType) <em>Change Room Type</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Update Room</em>' operation.
-	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#updateRoom(int, se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType)
+	 * @return the meta object for the '<em>Change Room Type</em>' operation.
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#changeRoomType(int, se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType)
 	 * @generated
 	 */
-	EOperation getIHotelRoomManager__UpdateRoom__int_IRoomType();
+	EOperation getIHotelRoomManager__ChangeRoomType__int_IRoomType();
 
 	/**
 	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#removeRoom(int) <em>Remove Room</em>}' operation.
@@ -1378,12 +1378,12 @@ public interface RoomManagerPackage extends EPackage {
 		EOperation IHOTEL_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_DOUBLE_INT = eINSTANCE.getIHotelRoomManager__AddRoomType__String_double_int();
 
 		/**
-		 * The meta object literal for the '<em><b>Change Room Type</b></em>' operation.
+		 * The meta object literal for the '<em><b>Update Room Type</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IHOTEL_ROOM_MANAGER___CHANGE_ROOM_TYPE__STRING_DOUBLE_INT_STRING = eINSTANCE.getIHotelRoomManager__ChangeRoomType__String_double_int_String();
+		EOperation IHOTEL_ROOM_MANAGER___UPDATE_ROOM_TYPE__STRING_DOUBLE_INT_STRING = eINSTANCE.getIHotelRoomManager__UpdateRoomType__String_double_int_String();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Room Types</b></em>' operation.
@@ -1399,7 +1399,7 @@ public interface RoomManagerPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IHOTEL_ROOM_MANAGER___REMOVE_ROOM_TYPE__STRING = eINSTANCE.getIHotelRoomManager__RemoveRoomType__String();
+		EOperation IHOTEL_ROOM_MANAGER___REMOVE_ROOM_TYPE__IROOMTYPE = eINSTANCE.getIHotelRoomManager__RemoveRoomType__IRoomType();
 
 		/**
 		 * The meta object literal for the '<em><b>Add Room</b></em>' operation.
@@ -1410,12 +1410,12 @@ public interface RoomManagerPackage extends EPackage {
 		EOperation IHOTEL_ROOM_MANAGER___ADD_ROOM__INT_IROOMTYPE = eINSTANCE.getIHotelRoomManager__AddRoom__int_IRoomType();
 
 		/**
-		 * The meta object literal for the '<em><b>Update Room</b></em>' operation.
+		 * The meta object literal for the '<em><b>Change Room Type</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IHOTEL_ROOM_MANAGER___UPDATE_ROOM__INT_IROOMTYPE = eINSTANCE.getIHotelRoomManager__UpdateRoom__int_IRoomType();
+		EOperation IHOTEL_ROOM_MANAGER___CHANGE_ROOM_TYPE__INT_IROOMTYPE = eINSTANCE.getIHotelRoomManager__ChangeRoomType__int_IRoomType();
 
 		/**
 		 * The meta object literal for the '<em><b>Remove Room</b></em>' operation.

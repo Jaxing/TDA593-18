@@ -59,6 +59,15 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	protected EList rooms;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RoomManagerImpl() {
+		super();
+	}
+
+	/**
 	 * @generated NOT
 	 */
 	protected RoomManagerFactory factory;
@@ -131,6 +140,28 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void updateRoomType(String name, double price, int numberOfBeds, String newName) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void removeRoomType(IRoomType roomType) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public void changeRoomType(String name, double price, int numberOfBeds, String newName) {
@@ -147,24 +178,12 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated 
-	 */
-	public void removeRoomType(String name) {
-		for(int i = 0; i < roomTypes.size(); i++){
-			if(((RoomType) roomTypes.get(i)).getName().equals(name)){
-				roomTypes.remove((RoomType) roomTypes.get(i));
-				break;
-			}
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void addRoom(int roomNumber, IRoomType roomType) {
-		rooms.add(factory.createRoom(roomType, roomNumber));
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -172,12 +191,10 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void updateRoom(int roomNumber, IRoomType roomType) {
-		for(int i = 0; i < rooms.size(); i++){
-			if(((Room) rooms.get(i)).getRoomNumber()==roomNumber){
-				((Room) rooms.get(i)).setRoomType(roomType);
-			}
-		}
+	public void changeRoomType(int roomNumber, IRoomType roomType) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -186,11 +203,9 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated
 	 */
 	public void removeRoom(int roomNumber) {
-		for(int i = 0; i < rooms.size(); i++){
-			if(((Room) rooms.get(i)).getRoomNumber()==roomNumber){
-				rooms.remove(((Room) rooms.get(i)));
-			}
-		}
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	
@@ -214,7 +229,9 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated
 	 */
 	public void blockRoom(int roomNumber) {
-		setRoomBlock(roomNumber, true);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -313,11 +330,11 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 		if (baseClass == IHotelRoomManager.class) {
 			switch (baseOperationID) {
 				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_DOUBLE_INT: return RoomManagerPackage.ROOM_MANAGER___ADD_ROOM_TYPE__STRING_DOUBLE_INT;
-				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___CHANGE_ROOM_TYPE__STRING_DOUBLE_INT_STRING: return RoomManagerPackage.ROOM_MANAGER___CHANGE_ROOM_TYPE__STRING_DOUBLE_INT_STRING;
+				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___UPDATE_ROOM_TYPE__STRING_DOUBLE_INT_STRING: return RoomManagerPackage.ROOM_MANAGER___UPDATE_ROOM_TYPE__STRING_DOUBLE_INT_STRING;
 				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___GET_ROOM_TYPES: return RoomManagerPackage.ROOM_MANAGER___GET_ROOM_TYPES;
-				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___REMOVE_ROOM_TYPE__STRING: return RoomManagerPackage.ROOM_MANAGER___REMOVE_ROOM_TYPE__STRING;
+				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___REMOVE_ROOM_TYPE__IROOMTYPE: return RoomManagerPackage.ROOM_MANAGER___REMOVE_ROOM_TYPE__IROOMTYPE;
 				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___ADD_ROOM__INT_IROOMTYPE: return RoomManagerPackage.ROOM_MANAGER___ADD_ROOM__INT_IROOMTYPE;
-				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___UPDATE_ROOM__INT_IROOMTYPE: return RoomManagerPackage.ROOM_MANAGER___UPDATE_ROOM__INT_IROOMTYPE;
+				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___CHANGE_ROOM_TYPE__INT_IROOMTYPE: return RoomManagerPackage.ROOM_MANAGER___CHANGE_ROOM_TYPE__INT_IROOMTYPE;
 				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___REMOVE_ROOM__INT: return RoomManagerPackage.ROOM_MANAGER___REMOVE_ROOM__INT;
 				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___BLOCK_ROOM__INT: return RoomManagerPackage.ROOM_MANAGER___BLOCK_ROOM__INT;
 				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___UNBLOCK_ROOM__INT: return RoomManagerPackage.ROOM_MANAGER___UNBLOCK_ROOM__INT;
@@ -341,17 +358,17 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 			case RoomManagerPackage.ROOM_MANAGER___ADD_ROOM_TYPE__STRING_DOUBLE_INT:
 				addRoomType((String)arguments.get(0), (Double)arguments.get(1), (Integer)arguments.get(2));
 				return null;
-			case RoomManagerPackage.ROOM_MANAGER___CHANGE_ROOM_TYPE__STRING_DOUBLE_INT_STRING:
-				changeRoomType((String)arguments.get(0), (Double)arguments.get(1), (Integer)arguments.get(2), (String)arguments.get(3));
+			case RoomManagerPackage.ROOM_MANAGER___UPDATE_ROOM_TYPE__STRING_DOUBLE_INT_STRING:
+				updateRoomType((String)arguments.get(0), (Double)arguments.get(1), (Integer)arguments.get(2), (String)arguments.get(3));
 				return null;
-			case RoomManagerPackage.ROOM_MANAGER___REMOVE_ROOM_TYPE__STRING:
-				removeRoomType((String)arguments.get(0));
+			case RoomManagerPackage.ROOM_MANAGER___REMOVE_ROOM_TYPE__IROOMTYPE:
+				removeRoomType((IRoomType)arguments.get(0));
 				return null;
 			case RoomManagerPackage.ROOM_MANAGER___ADD_ROOM__INT_IROOMTYPE:
 				addRoom((Integer)arguments.get(0), (IRoomType)arguments.get(1));
 				return null;
-			case RoomManagerPackage.ROOM_MANAGER___UPDATE_ROOM__INT_IROOMTYPE:
-				updateRoom((Integer)arguments.get(0), (IRoomType)arguments.get(1));
+			case RoomManagerPackage.ROOM_MANAGER___CHANGE_ROOM_TYPE__INT_IROOMTYPE:
+				changeRoomType((Integer)arguments.get(0), (IRoomType)arguments.get(1));
 				return null;
 			case RoomManagerPackage.ROOM_MANAGER___REMOVE_ROOM__INT:
 				removeRoom((Integer)arguments.get(0));

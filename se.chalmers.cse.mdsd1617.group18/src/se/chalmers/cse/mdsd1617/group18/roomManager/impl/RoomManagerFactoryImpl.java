@@ -45,7 +45,7 @@ public class RoomManagerFactoryImpl extends EFactoryImpl implements RoomManagerF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private RoomManagerFactoryImpl() {
+	public RoomManagerFactoryImpl() {
 		super();
 	}
 	
@@ -69,6 +69,36 @@ public class RoomManagerFactoryImpl extends EFactoryImpl implements RoomManagerF
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoomType createRoomType() {
+		RoomTypeImpl roomType = new RoomTypeImpl();
+		return roomType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoomManager createRoomManager() {
+		RoomManagerImpl roomManager = new RoomManagerImpl();
+		return roomManager;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Room createRoom() {
+		RoomImpl room = new RoomImpl();
+		return room;
 	}
 
 	/**

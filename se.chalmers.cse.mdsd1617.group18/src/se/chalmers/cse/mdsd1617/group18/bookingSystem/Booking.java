@@ -3,6 +3,7 @@
 package se.chalmers.cse.mdsd1617.group18.bookingSystem;
 
 import org.eclipse.emf.common.util.EList;
+import se.chalmers.cse.mdsd1617.group18.roomManager.IRoom;
 
 /**
  * <!-- begin-user-doc -->
@@ -167,9 +168,9 @@ public interface Booking extends IBooking {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Room List</em>' reference list.
 	 * @see se.chalmers.cse.mdsd1617.group18.bookingSystem.BookingSystemPackage#getBooking_RoomList()
-	 * @model type="se.chalmers.cse.mdsd1617.group18.roomManager.IRoom" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	EList getRoomList();
+	EList<IRoom> getRoomList();
 
 } // Booking

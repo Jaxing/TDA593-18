@@ -2,8 +2,10 @@
  */
 package se.chalmers.cse.mdsd1617.group18.roomManager.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -114,6 +116,7 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return RoomManagerPackage.Literals.ROOM_TYPE;
 	}
@@ -197,14 +200,15 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case RoomManagerPackage.ROOM_TYPE__PRICE:
-				return new Double(getPrice());
+				return getPrice();
 			case RoomManagerPackage.ROOM_TYPE__NAME:
 				return getName();
 			case RoomManagerPackage.ROOM_TYPE__NUMBER_OF_BEDS:
-				return new Integer(getNumberOfBeds());
+				return getNumberOfBeds();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -214,16 +218,17 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RoomManagerPackage.ROOM_TYPE__PRICE:
-				setPrice(((Double)newValue).doubleValue());
+				setPrice((Double)newValue);
 				return;
 			case RoomManagerPackage.ROOM_TYPE__NAME:
 				setName((String)newValue);
 				return;
 			case RoomManagerPackage.ROOM_TYPE__NUMBER_OF_BEDS:
-				setNumberOfBeds(((Integer)newValue).intValue());
+				setNumberOfBeds((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -234,6 +239,7 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RoomManagerPackage.ROOM_TYPE__PRICE:
@@ -254,6 +260,7 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case RoomManagerPackage.ROOM_TYPE__PRICE:
@@ -271,6 +278,21 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case RoomManagerPackage.ROOM_TYPE___GET_DESCRIPTION:
+				return getDescription();
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

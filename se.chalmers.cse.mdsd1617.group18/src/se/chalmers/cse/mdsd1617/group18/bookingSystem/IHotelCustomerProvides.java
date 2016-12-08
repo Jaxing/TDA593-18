@@ -20,10 +20,10 @@ public interface IHotelCustomerProvides extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="se.chalmers.cse.mdsd1617.group18.bookingSystem.FreeRoomTypesDTO" ordered="false" numBedsRequired="true" numBedsOrdered="false" startDateRequired="true" startDateOrdered="false" endDateRequired="true" endDateOrdered="false"
+	 * @model ordered="false" numBedsRequired="true" numBedsOrdered="false" startDateRequired="true" startDateOrdered="false" endDateRequired="true" endDateOrdered="false"
 	 * @generated
 	 */
-	EList getFreeRooms(int numBeds, String startDate, String endDate);
+	EList<FreeRoomTypesDTO> getFreeRooms(int numBeds, String startDate, String endDate);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -87,6 +87,6 @@ public interface IHotelCustomerProvides extends EObject {
 	 * @model required="true" ordered="false" roomTypeDescriptionRequired="true" roomTypeDescriptionOrdered="false" bookingIdRequired="true" bookingIdOrdered="false"
 	 * @generated
 	 */
-	boolean checkInRoom(String roomTypeDescription, int bookingId);
+	int checkInRoom(String roomTypeDescription, int bookingId);
 
 } // IHotelCustomerProvides

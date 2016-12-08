@@ -2,8 +2,10 @@
  */
 package se.chalmers.cse.mdsd1617.group18.roomManager.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -105,6 +107,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return RoomManagerPackage.Literals.ROOM;
 	}
@@ -205,15 +208,16 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case RoomManagerPackage.ROOM__ROOM_TYPE:
 				if (resolve) return getRoomType();
 				return basicGetRoomType();
 			case RoomManagerPackage.ROOM__ROOM_NUMBER:
-				return new Integer(getRoomNumber());
+				return getRoomNumber();
 			case RoomManagerPackage.ROOM__BLOCKED:
-				return isBlocked() ? Boolean.TRUE : Boolean.FALSE;
+				return isBlocked();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -223,16 +227,17 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RoomManagerPackage.ROOM__ROOM_TYPE:
 				setRoomType((IRoomType)newValue);
 				return;
 			case RoomManagerPackage.ROOM__ROOM_NUMBER:
-				setRoomNumber(((Integer)newValue).intValue());
+				setRoomNumber((Integer)newValue);
 				return;
 			case RoomManagerPackage.ROOM__BLOCKED:
-				setBlocked(((Boolean)newValue).booleanValue());
+				setBlocked((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -243,6 +248,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RoomManagerPackage.ROOM__ROOM_TYPE:
@@ -263,6 +269,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case RoomManagerPackage.ROOM__ROOM_TYPE:
@@ -280,6 +287,22 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case RoomManagerPackage.ROOM___SET_IS_BLOCKED__BOOLEAN:
+				setIsBlocked((Boolean)arguments.get(0));
+				return null;
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
