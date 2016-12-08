@@ -2,6 +2,7 @@
  */
 package se.chalmers.cse.mdsd1617.group18.roomManager.impl;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -51,14 +52,13 @@ public class RoomManagerFactoryImpl extends EFactoryImpl implements RoomManagerF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case RoomManagerPackage.ROOM_TYPE: return createRoomType();
-			case RoomManagerPackage.ROOM_MANAGER: return createRoomManager();
-			case RoomManagerPackage.ROOM: return createRoom();
+			//case RoomManagerPackage.ROOM_TYPE: return createRoomType();
+			//case RoomManagerPackage.ROOM_MANAGER: return createRoomManager();
+			//case RoomManagerPackage.ROOM: return createRoom();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -91,6 +91,36 @@ public class RoomManagerFactoryImpl extends EFactoryImpl implements RoomManagerF
 	 */
 	public Room createRoom() {
 		RoomImpl room = new RoomImpl();
+		return room;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public RoomType createRoomType(double price, String name, int numberOfBeds) {
+		RoomTypeImpl roomType = new RoomTypeImpl(price, name, numberOfBeds);
+		return roomType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public RoomManager createRoomManager(EList roomTypes, EList rooms) {
+		RoomManagerImpl roomManager = new RoomManagerImpl(roomTypes, rooms);
+		return roomManager;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public Room createRoom(IRoomType roomType, int roomNumber) {
+		RoomImpl room = new RoomImpl(roomType, roomNumber);
 		return room;
 	}
 

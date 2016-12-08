@@ -516,6 +516,9 @@
                 <ownedParameter xmi:type="uml:Parameter" xmi:id="_FhhIA7rREeaVMa-P8AMS-A" name="numberOfBeds">
                   <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
                 </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_8PCV8L0kEeaaBrh0Qg-85w" name="newName">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+                </ownedParameter>
               </ownedOperation>
               <ownedOperation xmi:type="uml:Operation" xmi:id="_FhhIBLrREeaVMa-P8AMS-A" name="getRoomTypes">
                 <ownedParameter xmi:type="uml:Parameter" xmi:id="_FhhIBbrREeaVMa-P8AMS-A" type="_FhhHzLrREeaVMa-P8AMS-A" direction="return">

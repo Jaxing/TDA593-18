@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EReference;
  * <ul>
  *   <li>each class,</li>
  *   <li>each feature of each class,</li>
- *   <li>each operation of each class,</li>
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
@@ -374,7 +373,7 @@ public interface RoomManagerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER___CHANGE_ROOM_TYPE__STRING_DOUBLE_INT = IHOTEL_STARTUP_PROVIES_OPERATION_COUNT + 2;
+	int ROOM_MANAGER___CHANGE_ROOM_TYPE__STRING_DOUBLE_INT_STRING = IHOTEL_STARTUP_PROVIES_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get Room Types</em>' operation.
@@ -529,7 +528,7 @@ public interface RoomManagerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_ROOM_MANAGER___CHANGE_ROOM_TYPE__STRING_DOUBLE_INT = IHOTEL_ROOM_PROVIDER_OPERATION_COUNT + 1;
+	int IHOTEL_ROOM_MANAGER___CHANGE_ROOM_TYPE__STRING_DOUBLE_INT_STRING = IHOTEL_ROOM_PROVIDER_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get Room Types</em>' operation.
@@ -721,6 +720,7 @@ public interface RoomManagerPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROOM_FEATURE_COUNT = IROOM_FEATURE_COUNT + 3;
+
 
 	/**
 	 * The operation id for the '<em>Get Room Type</em>' operation.
@@ -993,14 +993,14 @@ public interface RoomManagerPackage extends EPackage {
 	EOperation getIHotelRoomManager__AddRoomType__String_double_int();
 
 	/**
-	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#changeRoomType(java.lang.String, double, int) <em>Change Room Type</em>}' operation.
+	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#changeRoomType(java.lang.String, double, int, java.lang.String) <em>Change Room Type</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Change Room Type</em>' operation.
-	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#changeRoomType(java.lang.String, double, int)
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#changeRoomType(java.lang.String, double, int, java.lang.String)
 	 * @generated
 	 */
-	EOperation getIHotelRoomManager__ChangeRoomType__String_double_int();
+	EOperation getIHotelRoomManager__ChangeRoomType__String_double_int_String();
 
 	/**
 	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#getRoomTypes() <em>Get Room Types</em>}' operation.
@@ -1190,7 +1190,6 @@ public interface RoomManagerPackage extends EPackage {
 	 * <ul>
 	 *   <li>each class,</li>
 	 *   <li>each feature of each class,</li>
-	 *   <li>each operation of each class,</li>
 	 *   <li>each enum,</li>
 	 *   <li>and each data type</li>
 	 * </ul>
@@ -1384,7 +1383,7 @@ public interface RoomManagerPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IHOTEL_ROOM_MANAGER___CHANGE_ROOM_TYPE__STRING_DOUBLE_INT = eINSTANCE.getIHotelRoomManager__ChangeRoomType__String_double_int();
+		EOperation IHOTEL_ROOM_MANAGER___CHANGE_ROOM_TYPE__STRING_DOUBLE_INT_STRING = eINSTANCE.getIHotelRoomManager__ChangeRoomType__String_double_int_String();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Room Types</b></em>' operation.

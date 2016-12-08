@@ -29,7 +29,6 @@ public class CheckOutEventImpl extends AbstractEventImpl implements CheckOutEven
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return BookingSystemPackage.Literals.CHECK_OUT_EVENT;
 	}

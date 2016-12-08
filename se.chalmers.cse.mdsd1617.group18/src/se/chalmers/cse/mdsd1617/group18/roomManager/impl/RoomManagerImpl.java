@@ -3,7 +3,6 @@
 package se.chalmers.cse.mdsd1617.group18.roomManager.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
@@ -19,6 +18,7 @@ import se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomProvider;
 import se.chalmers.cse.mdsd1617.group18.roomManager.IRoom;
 import se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType;
 import se.chalmers.cse.mdsd1617.group18.roomManager.RoomManager;
+import se.chalmers.cse.mdsd1617.group18.roomManager.RoomManagerFactory;
 import se.chalmers.cse.mdsd1617.group18.roomManager.RoomManagerPackage;
 
 /**
@@ -41,28 +41,35 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRoomTypes()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected EList<IRoomType> roomTypes;
+	protected EList roomTypes;
 
 	/**
 	 * The cached value of the '{@link #getRooms() <em>Rooms</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRooms()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected EList<IRoom> rooms;
+	protected EList rooms;
 
+	/**
+	 * @generated NOT
+	 */
+	protected RoomManagerFactory factory;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	protected RoomManagerImpl() {
+	protected RoomManagerImpl(EList roomTypes, EList rooms) {
 		super();
+		this.roomTypes = roomTypes;
+		this.rooms = rooms;
+		factory = new RoomManagerFactoryImpl();
 	}
 
 	/**
@@ -78,11 +85,11 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public EList<IRoomType> getRoomTypes() {
+	public EList getRoomTypes() {
 		if (roomTypes == null) {
-			roomTypes = new EObjectResolvingEList<IRoomType>(IRoomType.class, this, RoomManagerPackage.ROOM_MANAGER__ROOM_TYPES);
+			roomTypes = new EObjectResolvingEList(IRoomType.class, this, RoomManagerPackage.ROOM_MANAGER__ROOM_TYPES);
 		}
 		return roomTypes;
 	}
@@ -90,11 +97,11 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public EList<IRoom> getRooms() {
+	public EList getRooms() {
 		if (rooms == null) {
-			rooms = new EObjectResolvingEList<IRoom>(IRoom.class, this, RoomManagerPackage.ROOM_MANAGER__ROOMS);
+			rooms = new EObjectResolvingEList(IRoom.class, this, RoomManagerPackage.ROOM_MANAGER__ROOMS);
 		}
 		return rooms;
 	}
@@ -113,23 +120,26 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void addRoomType(String name, double price, int numberOfBeds) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		roomTypes.add(factory.createRoomType(price, name, numberOfBeds));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void changeRoomType(String name, double price, int numberOfBeds) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public void changeRoomType(String name, double price, int numberOfBeds, String newName) {
+		for(int i = 0; i < roomTypes.size(); i++){
+			IRoomType tmpRoomType = (IRoomType) roomTypes.get(i);
+			if(tmpRoomType.getName().equals(name)){
+				tmpRoomType.setName(newName);
+				tmpRoomType.setPrice(price);			
+				tmpRoomType.setNumberOfBeds(numberOfBeds);
+			}
+		}
 	}
 
 	/**
@@ -220,7 +230,7 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	@Override
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RoomManagerPackage.ROOM_MANAGER__ROOM_TYPES:
@@ -285,7 +295,7 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 		if (baseClass == IHotelRoomManager.class) {
 			switch (baseOperationID) {
 				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_DOUBLE_INT: return RoomManagerPackage.ROOM_MANAGER___ADD_ROOM_TYPE__STRING_DOUBLE_INT;
-				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___CHANGE_ROOM_TYPE__STRING_DOUBLE_INT: return RoomManagerPackage.ROOM_MANAGER___CHANGE_ROOM_TYPE__STRING_DOUBLE_INT;
+				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___CHANGE_ROOM_TYPE__STRING_DOUBLE_INT_STRING: return RoomManagerPackage.ROOM_MANAGER___CHANGE_ROOM_TYPE__STRING_DOUBLE_INT_STRING;
 				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___GET_ROOM_TYPES: return RoomManagerPackage.ROOM_MANAGER___GET_ROOM_TYPES;
 				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___REMOVE_ROOM_TYPE__STRING: return RoomManagerPackage.ROOM_MANAGER___REMOVE_ROOM_TYPE__STRING;
 				case RoomManagerPackage.IHOTEL_ROOM_MANAGER___ADD_ROOM__INT_IROOMTYPE: return RoomManagerPackage.ROOM_MANAGER___ADD_ROOM__INT_IROOMTYPE;
@@ -313,8 +323,8 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 			case RoomManagerPackage.ROOM_MANAGER___ADD_ROOM_TYPE__STRING_DOUBLE_INT:
 				addRoomType((String)arguments.get(0), (Double)arguments.get(1), (Integer)arguments.get(2));
 				return null;
-			case RoomManagerPackage.ROOM_MANAGER___CHANGE_ROOM_TYPE__STRING_DOUBLE_INT:
-				changeRoomType((String)arguments.get(0), (Double)arguments.get(1), (Integer)arguments.get(2));
+			case RoomManagerPackage.ROOM_MANAGER___CHANGE_ROOM_TYPE__STRING_DOUBLE_INT_STRING:
+				changeRoomType((String)arguments.get(0), (Double)arguments.get(1), (Integer)arguments.get(2), (String)arguments.get(3));
 				return null;
 			case RoomManagerPackage.ROOM_MANAGER___REMOVE_ROOM_TYPE__STRING:
 				removeRoomType((String)arguments.get(0));
@@ -336,6 +346,12 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);
+	}
+
+	@Override
+	public void changeRoomType(String name, double price, int numberOfBeds) {
+		// TODO Auto-generated method stub
+		
 	}
 
 } //RoomManagerImpl

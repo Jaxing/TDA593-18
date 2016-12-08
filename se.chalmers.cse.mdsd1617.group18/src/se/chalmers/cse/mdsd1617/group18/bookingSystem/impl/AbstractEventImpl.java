@@ -2,11 +2,7 @@
  */
 package se.chalmers.cse.mdsd1617.group18.bookingSystem.impl;
 
-import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -61,7 +57,7 @@ public abstract class AbstractEventImpl extends MinimalEObjectImpl.Container imp
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EventType EVENT_TYPE_EDEFAULT = EventType.CHECK_IN;
+	protected static final EventType EVENT_TYPE_EDEFAULT = EventType.CHECK_IN_LITERAL;
 
 	/**
 	 * The cached value of the '{@link #getEventType() <em>Event Type</em>}' attribute.
@@ -107,7 +103,6 @@ public abstract class AbstractEventImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return BookingSystemPackage.Literals.ABSTRACT_EVENT;
 	}
@@ -202,15 +197,14 @@ public abstract class AbstractEventImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BookingSystemPackage.ABSTRACT_EVENT__TIMESTAMP:
-				return getTimestamp();
+				return new Long(getTimestamp());
 			case BookingSystemPackage.ABSTRACT_EVENT__EVENT_TYPE:
 				return getEventType();
 			case BookingSystemPackage.ABSTRACT_EVENT__BOOKING_ID:
-				return getBookingID();
+				return new Integer(getBookingID());
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -220,17 +214,16 @@ public abstract class AbstractEventImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BookingSystemPackage.ABSTRACT_EVENT__TIMESTAMP:
-				setTimestamp((Long)newValue);
+				setTimestamp(((Long)newValue).longValue());
 				return;
 			case BookingSystemPackage.ABSTRACT_EVENT__EVENT_TYPE:
 				setEventType((EventType)newValue);
 				return;
 			case BookingSystemPackage.ABSTRACT_EVENT__BOOKING_ID:
-				setBookingID((Integer)newValue);
+				setBookingID(((Integer)newValue).intValue());
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -241,7 +234,6 @@ public abstract class AbstractEventImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BookingSystemPackage.ABSTRACT_EVENT__TIMESTAMP:
@@ -262,7 +254,6 @@ public abstract class AbstractEventImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case BookingSystemPackage.ABSTRACT_EVENT__TIMESTAMP:
@@ -280,23 +271,6 @@ public abstract class AbstractEventImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case BookingSystemPackage.ABSTRACT_EVENT___GET_TYPE:
-				return getType();
-			case BookingSystemPackage.ABSTRACT_EVENT___GET_BOOKING_ID:
-				return getBookingId();
-		}
-		return super.eInvoke(operationID, arguments);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

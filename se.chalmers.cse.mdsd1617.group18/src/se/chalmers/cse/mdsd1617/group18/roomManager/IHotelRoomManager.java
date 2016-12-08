@@ -34,10 +34,10 @@ public interface IHotelRoomManager extends IHotelRoomProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" ordered="false"
+	 * @model kind="operation" type="se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType" ordered="false"
 	 * @generated
 	 */
-	EList<IRoomType> getRoomTypes();
+	EList getRoomTypes();
 
 	/**
 	 * <!-- begin-user-doc -->

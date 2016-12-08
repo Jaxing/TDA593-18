@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated Classes -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="se.chalmers.cse.mdsd1617.group18.bookingSystem.presentation.BookingSystemModelWizardID"
+            name="%_UI_BookingSystemModelWizard_label"
+            class="se.chalmers.cse.mdsd1617.group18.bookingSystem.presentation.BookingSystemModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/BookingSystemModelFile.gif">
+         <description>%_UI_BookingSystemModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated Classes -->
+      <editor
+            id="se.chalmers.cse.mdsd1617.group18.bookingSystem.presentation.BookingSystemEditorID"
+            name="%_UI_BookingSystemEditor_label"
+            icon="icons/full/obj16/BookingSystemModelFile.gif"
+            extensions="bookingsystem"
+            class="se.chalmers.cse.mdsd1617.group18.bookingSystem.presentation.BookingSystemEditor"
+            contributorClass="se.chalmers.cse.mdsd1617.group18.bookingSystem.presentation.BookingSystemActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated Classes -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="se.chalmers.cse.mdsd1617.group18.roomManager.presentation.RoomManagerModelWizardID"
+            name="%_UI_RoomManagerModelWizard_label"
+            class="se.chalmers.cse.mdsd1617.group18.roomManager.presentation.RoomManagerModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RoomManagerModelFile.gif">
+         <description>%_UI_RoomManagerModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated Classes -->
+      <editor
+            id="se.chalmers.cse.mdsd1617.group18.roomManager.presentation.RoomManagerEditorID"
+            name="%_UI_RoomManagerEditor_label"
+            icon="icons/full/obj16/RoomManagerModelFile.gif"
+            extensions="roommanager"
+            class="se.chalmers.cse.mdsd1617.group18.roomManager.presentation.RoomManagerEditor"
+            contributorClass="se.chalmers.cse.mdsd1617.group18.roomManager.presentation.RoomManagerActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

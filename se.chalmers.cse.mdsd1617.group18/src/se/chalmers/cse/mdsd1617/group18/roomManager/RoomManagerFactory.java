@@ -2,6 +2,7 @@
  */
 package se.chalmers.cse.mdsd1617.group18.roomManager;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EFactory;
 
 /**
@@ -47,6 +48,33 @@ public interface RoomManagerFactory extends EFactory {
 	 * @generated
 	 */
 	Room createRoom();
+
+	/**
+	 * Returns a new object of class '<em>Room Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Room Type</em>'.
+	 * @generated NOT
+	 */
+	RoomType createRoomType(double price, String name, int numberOfBeds);
+
+	/**
+	 * Returns a new object of class '<em>Room Manager</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Room Manager</em>'.
+	 * @generated NOT
+	 */
+	RoomManager createRoomManager(EList roomTypes, EList rooms);
+
+	/**
+	 * Returns a new object of class '<em>Room</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Room</em>'.
+	 * @generated NOT
+	 */
+	Room createRoom(IRoomType roomType, int roomNumber);
 
 	/**
 	 * Returns the package supported by this factory.

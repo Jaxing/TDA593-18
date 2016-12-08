@@ -42,10 +42,10 @@ public interface IHotelBookingManager extends IHotelCustomerProvides {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model ordered="false"
+	 * @model type="se.chalmers.cse.mdsd1617.group18.bookingSystem.IBooking" ordered="false"
 	 * @generated
 	 */
-	EList<IBooking> listBooking();
+	EList listBooking();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -58,18 +58,18 @@ public interface IHotelBookingManager extends IHotelCustomerProvides {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model ordered="false" startTimeRequired="true" startTimeOrdered="false" endTimeRequired="true" endTimeOrdered="false"
+	 * @model type="se.chalmers.cse.mdsd1617.group18.bookingSystem.IEvent" ordered="false" startTimeRequired="true" startTimeOrdered="false" endTimeRequired="true" endTimeOrdered="false"
 	 * @generated
 	 */
-	EList<IEvent> listCheckins(String startTime, String endTime);
+	EList listCheckins(String startTime, String endTime);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model ordered="false" startTimeRequired="true" startTimeOrdered="false" endTimeRequired="true" endTimeOrdered="false"
+	 * @model type="se.chalmers.cse.mdsd1617.group18.bookingSystem.IEvent" ordered="false" startTimeRequired="true" startTimeOrdered="false" endTimeRequired="true" endTimeOrdered="false"
 	 * @generated
 	 */
-	EList<IEvent> listCheckouts(String startTime, String endTime);
+	EList listCheckouts(String startTime, String endTime);
 
 	/**
 	 * <!-- begin-user-doc -->

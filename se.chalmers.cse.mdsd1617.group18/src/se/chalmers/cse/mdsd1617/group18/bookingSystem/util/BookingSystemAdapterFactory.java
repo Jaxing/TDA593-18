@@ -48,7 +48,6 @@ public class BookingSystemAdapterFactory extends AdapterFactoryImpl {
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
-	@Override
 	public boolean isFactoryForType(Object object) {
 		if (object == modelPackage) {
 			return true;
@@ -65,50 +64,39 @@ public class BookingSystemAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BookingSystemSwitch<Adapter> modelSwitch =
-		new BookingSystemSwitch<Adapter>() {
-			@Override
-			public Adapter caseCheckInEvent(CheckInEvent object) {
+	protected BookingSystemSwitch modelSwitch =
+		new BookingSystemSwitch() {
+			public Object caseCheckInEvent(CheckInEvent object) {
 				return createCheckInEventAdapter();
 			}
-			@Override
-			public Adapter caseAbstractEvent(AbstractEvent object) {
+			public Object caseAbstractEvent(AbstractEvent object) {
 				return createAbstractEventAdapter();
 			}
-			@Override
-			public Adapter caseIEvent(IEvent object) {
+			public Object caseIEvent(IEvent object) {
 				return createIEventAdapter();
 			}
-			@Override
-			public Adapter caseCheckOutEvent(CheckOutEvent object) {
+			public Object caseCheckOutEvent(CheckOutEvent object) {
 				return createCheckOutEventAdapter();
 			}
-			@Override
-			public Adapter caseBookingSystem(BookingSystem object) {
+			public Object caseBookingSystem(BookingSystem object) {
 				return createBookingSystemAdapter();
 			}
-			@Override
-			public Adapter caseIBooking(IBooking object) {
+			public Object caseIBooking(IBooking object) {
 				return createIBookingAdapter();
 			}
-			@Override
-			public Adapter caseIHotelBookingManager(IHotelBookingManager object) {
+			public Object caseIHotelBookingManager(IHotelBookingManager object) {
 				return createIHotelBookingManagerAdapter();
 			}
-			@Override
-			public Adapter caseIHotelCustomerProvides(IHotelCustomerProvides object) {
+			public Object caseIHotelCustomerProvides(IHotelCustomerProvides object) {
 				return createIHotelCustomerProvidesAdapter();
 			}
-			@Override
-			public Adapter caseFreeRoomTypesDTO(FreeRoomTypesDTO object) {
+			public Object caseFreeRoomTypesDTO(FreeRoomTypesDTO object) {
 				return createFreeRoomTypesDTOAdapter();
 			}
-			@Override
-			public Adapter caseBooking(Booking object) {
+			public Object caseBooking(Booking object) {
 				return createBookingAdapter();
 			}
-			@Override
-			public Adapter defaultCase(EObject object) {
+			public Object defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
 		};
@@ -121,9 +109,8 @@ public class BookingSystemAdapterFactory extends AdapterFactoryImpl {
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
-	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return (Adapter)modelSwitch.doSwitch((EObject)target);
 	}
 
 

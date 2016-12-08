@@ -2,8 +2,6 @@
  */
 package se.chalmers.cse.mdsd1617.group18.bookingSystem.impl;
 
-import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -149,7 +147,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<IRoom> roomList;
+	protected EList roomList;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -165,7 +163,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return BookingSystemPackage.Literals.BOOKING;
 	}
@@ -280,9 +277,9 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<IRoom> getRoomList() {
+	public EList getRoomList() {
 		if (roomList == null) {
-			roomList = new EObjectResolvingEList<IRoom>(IRoom.class, this, BookingSystemPackage.BOOKING__ROOM_LIST);
+			roomList = new EObjectResolvingEList(IRoom.class, this, BookingSystemPackage.BOOKING__ROOM_LIST);
 		}
 		return roomList;
 	}
@@ -292,7 +289,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<IRoom> getRooms() {
+	public EList getRooms() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -314,7 +311,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRooms(EList<IRoom> rooms) {
+	public void setRooms(EList rooms) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -325,11 +322,10 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BookingSystemPackage.BOOKING__ID:
-				return getId();
+				return new Integer(getId());
 			case BookingSystemPackage.BOOKING__FIRST_NAME:
 				return getFirstName();
 			case BookingSystemPackage.BOOKING__LAST_NAME:
@@ -349,12 +345,10 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BookingSystemPackage.BOOKING__ID:
-				setId((Integer)newValue);
+				setId(((Integer)newValue).intValue());
 				return;
 			case BookingSystemPackage.BOOKING__FIRST_NAME:
 				setFirstName((String)newValue);
@@ -370,7 +364,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return;
 			case BookingSystemPackage.BOOKING__ROOM_LIST:
 				getRoomList().clear();
-				getRoomList().addAll((Collection<? extends IRoom>)newValue);
+				getRoomList().addAll((Collection)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -381,7 +375,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BookingSystemPackage.BOOKING__ID:
@@ -411,7 +404,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case BookingSystemPackage.BOOKING__ID:
@@ -435,27 +427,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case BookingSystemPackage.BOOKING___GET_ROOMS:
-				return getRooms();
-			case BookingSystemPackage.BOOKING___GET_ID:
-				return getID();
-			case BookingSystemPackage.BOOKING___SET_ROOMS__ELIST:
-				setRooms((EList<IRoom>)arguments.get(0));
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
