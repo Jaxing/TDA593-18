@@ -17,6 +17,8 @@ import se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager;
 import se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomProvider;
 import se.chalmers.cse.mdsd1617.group18.roomManager.IRoom;
 import se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType;
+import se.chalmers.cse.mdsd1617.group18.roomManager.Room;
+import se.chalmers.cse.mdsd1617.group18.roomManager.RoomType;
 import se.chalmers.cse.mdsd1617.group18.roomManager.RoomManager;
 import se.chalmers.cse.mdsd1617.group18.roomManager.RoomManagerFactory;
 import se.chalmers.cse.mdsd1617.group18.roomManager.RoomManagerPackage;
@@ -69,7 +71,7 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 		super();
 		this.roomTypes = roomTypes;
 		this.rooms = rooms;
-		factory = new RoomManagerFactoryImpl();
+		factory = RoomManagerFactoryImpl.getInstance();
 	}
 
 	/**
@@ -133,11 +135,25 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 */
 	public void changeRoomType(String name, double price, int numberOfBeds, String newName) {
 		for(int i = 0; i < roomTypes.size(); i++){
-			IRoomType tmpRoomType = (IRoomType) roomTypes.get(i);
-			if(tmpRoomType.getName().equals(name)){
-				tmpRoomType.setName(newName);
-				tmpRoomType.setPrice(price);			
-				tmpRoomType.setNumberOfBeds(numberOfBeds);
+			if(((RoomType) roomTypes.get(i)).equals(name)){
+				((RoomType) roomTypes.get(i)).setName(newName);
+				((RoomType) roomTypes.get(i)).setPrice(price);			
+				((RoomType) roomTypes.get(i)).setNumberOfBeds(numberOfBeds);
+				break;
+			}
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated 
+	 */
+	public void removeRoomType(String name) {
+		for(int i = 0; i < roomTypes.size(); i++){
+			if(((RoomType) roomTypes.get(i)).getName().equals(name)){
+				roomTypes.remove((RoomType) roomTypes.get(i));
+				break;
 			}
 		}
 	}
@@ -147,21 +163,8 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void removeRoomType(String name) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public void addRoom(int roomNumber, IRoomType roomType) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		rooms.add(factory.createRoom(roomType, roomNumber));
 	}
 
 	/**
@@ -170,9 +173,11 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated
 	 */
 	public void updateRoom(int roomNumber, IRoomType roomType) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for(int i = 0; i < rooms.size(); i++){
+			if(((Room) rooms.get(i)).getRoomNumber()==roomNumber){
+				((Room) rooms.get(i)).setRoomType(roomType);
+			}
+		}
 	}
 
 	/**
@@ -181,31 +186,44 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated
 	 */
 	public void removeRoom(int roomNumber) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for(int i = 0; i < rooms.size(); i++){
+			if(((Room) rooms.get(i)).getRoomNumber()==roomNumber){
+				rooms.remove(((Room) rooms.get(i)));
+			}
+		}
 	}
 
+	
+	/**
+	 * 
+	 * @param roomNumber
+	 * @param block
+	 * @generated NOT
+	 */
+	private void setRoomBlock(int roomNumber, boolean block){
+		for(int i = 0; i < rooms.size(); i++){
+			if(((Room) rooms.get(i)).getRoomNumber()==roomNumber){
+				((Room) rooms.get(i)).setBlocked(block);
+			}
+		}
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void blockRoom(int roomNumber) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		setRoomBlock(roomNumber, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void unblockRoom(int roomNumber) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		setRoomBlock(roomNumber, false);
 	}
 
 	/**
@@ -346,12 +364,6 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	@Override
-	public void changeRoomType(String name, double price, int numberOfBeds) {
-		// TODO Auto-generated method stub
-		
 	}
 
 } //RoomManagerImpl

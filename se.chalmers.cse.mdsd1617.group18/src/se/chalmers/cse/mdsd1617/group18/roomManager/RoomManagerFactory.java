@@ -22,32 +22,6 @@ public interface RoomManagerFactory extends EFactory {
 	 */
 	RoomManagerFactory eINSTANCE = se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomManagerFactoryImpl.init();
 
-	/**
-	 * Returns a new object of class '<em>Room Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Room Type</em>'.
-	 * @generated
-	 */
-	RoomType createRoomType();
-
-	/**
-	 * Returns a new object of class '<em>Room Manager</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Room Manager</em>'.
-	 * @generated
-	 */
-	RoomManager createRoomManager();
-
-	/**
-	 * Returns a new object of class '<em>Room</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Room</em>'.
-	 * @generated
-	 */
-	Room createRoom();
 
 	/**
 	 * Returns a new object of class '<em>Room Type</em>'.
