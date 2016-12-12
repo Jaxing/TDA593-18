@@ -38,10 +38,11 @@ public class ReceptionistTest {
 	//u.c. 2.1.1.  - make booking
 	@Test
 	public void createBooking() {		
-		int id = bookingSystem.initiateBooking("FirstName", "20161208", "20161223", "LastName");
+		int id = bookingSystem.initiateBooking("FirstName", "LastName", "20161208", "20161223");
 		
 		//TODO: Need a factory to create a booking with given parameters.
-		assertTrue((Booking)bookingSystem.listBooking().get(0) == bookingSystemFactory.createBooking() );
+		//assertTrue((Booking)bookingSystem.listBooking().get(0) == bookingSystemFactory.createBooking() );
+		assertTrue(bookingSystemFactory.createBooking(id,"FirstName", "LastName","20161208", "20161223").equals(bookingSystem.listBooking().get(0)));
 	}
 	
 	//TODO:u.c. 2.1.2.  - search for free rooms
@@ -55,11 +56,12 @@ public class ReceptionistTest {
 	//TODO:u.c. 2.1.3.  - check in booking
 	@Test
 	public void checkInBooking() {
-		int id = bookingSystem.initiateBooking("First", "20161211", "20161223", "Last");
+		int id = bookingSystem.initiateBooking("First", "Last", "20161211", "20161223");
 		
 		//TODO: what should discription be?
-		bookingSystem.checkInRoom("Discription", id);
+		bookingSystem.checkInRoom("roomTypeDescription", id);
 		//TODO: Not sure how to assert
+		//mark the room as occupied
 		
 	}
 	
@@ -81,17 +83,17 @@ public class ReceptionistTest {
 	//u.c. 2.1.7.  - list bookings
 	@Test
 	public void listBookingsIsNotEmpty () {
-		int id = bookingSystem.initiateBooking("FirstName", "20161208", "20161223", "LastName");
-		bookingSystem.addRoomToBooking("A Room", id);
-//		bookingSystem.checkInRoom("RoomType", id);
+		int id = bookingSystem.initiateBooking("FirstName","LastName", "20161208", "20161223");
+		//bookingSystem.addRoomToBooking("A Room", id);
+       //bookingSystem.checkInRoom("RoomType", id);
 		
 		assertTrue(!bookingSystem.listBooking().isEmpty());
 	}
 	
 	@Test
 	public void listBooking () {
-		int id = bookingSystem.initiateBooking("FirstName", "20161212", "20161223",	"Last Name");
-		bookingSystem.addRoomToBooking("First Room", id);
+		int id = bookingSystem.initiateBooking("FirstName", "Last Name", "20161212", "20161223");
+		//bookingSystem.addRoomToBooking("First Room", id);
 		
 		assertTrue(bookingSystem.listBooking().size() == 1); 
 		//Not Sure what to test.
@@ -116,6 +118,7 @@ public class ReceptionistTest {
 	//TODO:u.c. 2.1.11. - check in room 
 	@Test
 	public void checkInRoom() {
+		
 		
 	}
 	//TODO:u.c. 2.1.12. - check out and pay

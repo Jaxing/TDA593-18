@@ -146,6 +146,15 @@ public class BookingSystemFactoryImpl extends EFactoryImpl implements BookingSys
 		BookingImpl booking = new BookingImpl();
 		return booking;
 	}
+	
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public Booking createBooking(int id, String firstName, String lastName, String startDate, String endDate ) {
+		BookingImpl booking = new BookingImpl(id,firstName, lastName, startDate, endDate);
+		return booking;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->

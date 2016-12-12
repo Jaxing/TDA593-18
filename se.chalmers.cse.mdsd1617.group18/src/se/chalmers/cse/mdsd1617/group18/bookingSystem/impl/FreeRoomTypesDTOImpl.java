@@ -112,10 +112,21 @@ public class FreeRoomTypesDTOImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT */
+	protected FreeRoomTypesDTOImpl(String roomTypeDescription, int numBeds, 
+			double pricePerNight, int numFreeRooms) {
+		this.roomTypeDescription = roomTypeDescription;
+		this.numBeds = numBeds;
+		this.pricePerNight = pricePerNight;
+		this.numFreeRooms = numFreeRooms;
+		
+	}
+
+	/**
+	 * @generated NOT
 	 */
 	protected FreeRoomTypesDTOImpl() {
-		super();
+		this(ROOM_TYPE_DESCRIPTION_EDEFAULT, NUM_BEDS_EDEFAULT, PRICE_PER_NIGHT_EDEFAULT,NUM_FREE_ROOMS_EDEFAULT );
 	}
 
 	/**

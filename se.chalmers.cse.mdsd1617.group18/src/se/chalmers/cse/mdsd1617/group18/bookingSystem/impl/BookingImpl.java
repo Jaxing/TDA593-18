@@ -178,6 +178,25 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		this.startDate = startDate;
 		this.endDate = endDate;
 	}
+	
+	
+	/**
+	 * asdGSADFASDF
+	 * @param firstName
+	 * @param lastName
+	 * @param startDate
+	 * @param endDate
+	 * @generated NOT
+	 */
+	
+	
+	protected BookingImpl(String firstName, String lastName,
+			String startDate, String endDate) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.startDate = startDate;
+		this.endDate = endDate;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -309,12 +328,13 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<IRoom> getRooms() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if (roomList == null) {
+			roomList = new EObjectResolvingEList<IRoom>(IRoom.class, this, BookingSystemPackage.BOOKING__ROOM_LIST);
+		}
+		return roomList;
 	}
 
 	/**

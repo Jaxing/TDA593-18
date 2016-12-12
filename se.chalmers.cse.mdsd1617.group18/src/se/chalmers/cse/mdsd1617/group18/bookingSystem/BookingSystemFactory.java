@@ -61,10 +61,15 @@ public interface BookingSystemFactory extends EFactory {
 	 * Returns a new object of class '<em>Booking</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param string4 
+	 * @param string3 
+	 * @param string2 
+	 * @param string 
+	 * @param id 
 	 * @return a new object of class '<em>Booking</em>'.
-	 * @generated
+	 * @generated NOT
 	 */
-	Booking createBooking();
+	Booking createBooking(int id, String string, String string2, String string3, String string4);
 
 	/**
 	 * Returns the package supported by this factory.

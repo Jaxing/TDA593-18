@@ -6,12 +6,11 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -25,6 +24,7 @@ import se.chalmers.cse.mdsd1617.group18.bookingSystem.IEvent;
 
 import se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomProvider;
 import se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType;
+import se.chalmers.cse.mdsd1617.group18.roomManager.RoomManagerFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -71,6 +71,16 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * @ordered
 	 */
 	protected IHotelRoomProvider roomProvider;
+	
+	/**
+	 * @generated NOT
+	 */
+	protected EList<FreeRoomTypesDTO> freeRooms;
+	
+	/**
+	 * @generated NOT
+	 * */
+	protected int bookingId = 0;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,6 +89,8 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 */
 	protected BookingSystemImpl() {
 		super();
+		bookings = new BasicEList();
+		freeRooms = new BasicEList();
 	}
 
 	/**
@@ -156,33 +168,41 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<FreeRoomTypesDTO> getFreeRooms(int numBeds, String startDate, String endDate) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		FreeRoomTypesDTOImpl freeRoomsTypes = new FreeRoomTypesDTOImpl("Basic", 2, 1000.00, 10);
+		freeRooms.add(freeRoomsTypes);
+		if (freeRooms == null) {
+			freeRooms = new EObjectResolvingEList<FreeRoomTypesDTO>(FreeRoomTypesDTO.class, this, BookingSystemPackage.FREE_ROOM_TYPES_DTO);
+		}
+	   return freeRooms;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
+	 * Returns the booking id or -1 if empty
 	 */
-	public int initiateBooking(String firstName, String startDate, String endDate, String lastName) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+
+	public int initiateBooking(String firstName,  String lastName, String startDate, String endDate) {
+		BookingImpl booking = new BookingImpl(firstName, lastName, startDate, endDate);
+			if(!bookings.contains(booking)){
+				   bookings.add(booking);
+				   bookingId++;
+				   return bookingId;
+			}else
+		           return -1;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean addRoomToBooking(String roomTypeDescription, int bookingID) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
+		
 		throw new UnsupportedOperationException();
 	}
 
@@ -201,6 +221,8 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
+	 * returns a positive double value corresponding to the price of the room,
+	 * or a negative value if unsuccessful.
 	 */
 	public double initiateCheckout(int bookingID) {
 		// TODO: implement this method
@@ -223,6 +245,8 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
+	 * returns a positive double value corresponding to the price of the room,
+	 * or a negative value if unsuccessful.
 	 */
 	public double initiateRoomCheckout(int roomNumber, int bookingId) {
 		// TODO: implement this method
@@ -244,11 +268,11 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
+	 * Returns a non negative room number or -1 if unsuccessful
 	 */
 	public int checkInRoom(String roomTypeDescription, int bookingId) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
+		
 		throw new UnsupportedOperationException();
 	}
 
@@ -258,8 +282,6 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * @generated
 	 */
 	public EList<FreeRoomTypesDTO> initiateCheckin(int bookingId) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
 
@@ -288,12 +310,13 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<IBooking> listBooking() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if (bookings == null) {
+			bookings = new EObjectResolvingEList<IBooking>(IBooking.class, this, BookingSystemPackage.BOOKING_SYSTEM__BOOKINGS);
+		}
+		return bookings; 
 	}
 
 	/**
