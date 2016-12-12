@@ -72,8 +72,9 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 */
 	protected RoomManagerImpl() {
 		super();
-		rooms = new BasicEList();
-		roomTypes = new BasicEList();
+		this.rooms = new BasicEList();
+		this.roomTypes = new BasicEList();
+		this.factory = RoomManagerFactoryImpl.getInstance();
 	}
 
 	/**
@@ -89,7 +90,7 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 		super();
 		this.roomTypes = roomTypes;
 		this.rooms = rooms;
-		factory = RoomManagerFactoryImpl.getInstance();
+		this.factory = RoomManagerFactoryImpl.getInstance();
 	}
 
 	/**
@@ -134,7 +135,6 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	public void startup(int numRoom) {
 		rooms.clear();
 		roomTypes.clear();
-		EList roomTypes = new BasicEList();
 		int maxRoom = 3;
 		int priceInc = 300;
 		
