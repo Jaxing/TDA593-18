@@ -4,6 +4,7 @@ package se.chalmers.cse.mdsd1617.group18.roomManager.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import java.util.Random;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -58,7 +59,12 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @ordered
 	 */
 	protected EList rooms;
-
+	
+	/**
+	 * @generated NOT 
+	 */
+	private String[] roomTypesNames = {"Small Deluxe","Medium Deluxe","Large Deluxe", "First class suite", "Economy Suite", "Medium Standard", "Small Standard", "Large Standard"};
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -123,12 +129,29 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void startup(int numRoom) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		rooms.clear();
+		roomTypes.clear();
+		
+		Random names = new Random(roomTypesNames.length-1);
+		Random price = new Random(1500);
+		Random nmbrOfBeds = new Random(9);
+		for(int i = 1; i <= numRoom; i++){
+			String roomTypeName = roomTypesNames[names.nextInt()];
+			double p = 500 + price.nextDouble();
+			int nmbrOfBed = 1 + nmbrOfBeds.nextInt();
+			IRoomType roomType = factory.createRoomType(p, roomTypeName, nmbrOfBed);
+			roomTypes.add(roomType);
+		}
+		
+		Random roomType = new Random(roomTypes.size()-1);
+		for(int i = 1; i <= numRoom; i++){
+			IRoomType rt = (IRoomType)roomTypes.get(roomType.nextInt());
+			IRoom room = factory.createRoom(rt, i);
+			rooms.add(room);
+		}
 	}
 
 	/**
@@ -143,37 +166,15 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void updateRoomType(IRoomType roomType, String name, double price, int numberOfBeds) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void removeRoomType(IRoomType roomType) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void changeRoomType(String name, double price, int numberOfBeds, String newName) {
+	public void updateRoomType(IRoomType roomType, String name, double price, int numberOfBeds) {
 		for(int i = 0; i < roomTypes.size(); i++){
-			if(((RoomType) roomTypes.get(i)).equals(name)){
-				((RoomType) roomTypes.get(i)).setName(newName);
-				((RoomType) roomTypes.get(i)).setPrice(price);			
-				((RoomType) roomTypes.get(i)).setNumberOfBeds(numberOfBeds);
-				break;
+			if (roomTypes.get(i) == roomType){
+				roomType.setName(name);
+				roomType.setPrice(price);
+				roomType.setNumberOfBeds(numberOfBeds);
+				roomTypes.set(i,roomType);
 			}
 		}
 	}
@@ -181,34 +182,54 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
+	 */
+	public void removeRoomType(IRoomType roomType) {
+		for(int i = 0; i < roomTypes.size(); i++){
+			if (roomTypes.get(i) == roomType){
+				roomTypes.remove(i);
+			}
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
 	 */
 	public void addRoom(int roomNumber, IRoomType roomType) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for(int i = 0; i < rooms.size(); i++){
+			if (((Room)(rooms.get(i))).getRoomNumber() == roomNumber){
+				return;
+			}
+		}
+		rooms.add(roomNumber, roomType);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void changeRoomType(int roomNumber, IRoomType roomType) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for(int i = 0; i < rooms.size(); i++){
+			if (((Room)(rooms.get(i))).getRoomNumber() == roomNumber){
+				((Room)(rooms.get(i))).setRoomType(roomType);
+			}
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void removeRoom(int roomNumber) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for(int i = 0; i < rooms.size(); i++){
+			if (((Room)(rooms.get(i))).getRoomNumber() == roomNumber){
+				rooms.remove(i);
+			}
+		}
 	}
 
 	
@@ -229,12 +250,10 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void blockRoom(int roomNumber) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		setRoomBlock(roomNumber, true);
 	}
 
 	/**
