@@ -227,10 +227,10 @@
                   <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IHotelRoomManager/addRoomType/numberOfBeds"/>
                 </genOperations>
                 <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IHotelRoomManager/updateRoomType">
+                  <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IHotelRoomManager/updateRoomType/roomType"/>
                   <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IHotelRoomManager/updateRoomType/name"/>
                   <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IHotelRoomManager/updateRoomType/price"/>
                   <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IHotelRoomManager/updateRoomType/numberOfBeds"/>
-                  <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IHotelRoomManager/updateRoomType/newName"/>
                 </genOperations>
                 <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IHotelRoomManager/getRoomTypes"/>
                 <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IHotelRoomManager/removeRoomType">

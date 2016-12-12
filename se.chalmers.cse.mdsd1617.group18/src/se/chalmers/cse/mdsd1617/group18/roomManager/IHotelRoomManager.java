@@ -26,10 +26,10 @@ public interface IHotelRoomManager extends IHotelRoomProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model nameRequired="true" nameOrdered="false" priceRequired="true" priceOrdered="false" numberOfBedsRequired="true" numberOfBedsOrdered="false" newNameRequired="true" newNameOrdered="false"
+	 * @model roomTypeRequired="true" roomTypeOrdered="false" nameRequired="true" nameOrdered="false" priceRequired="true" priceOrdered="false" numberOfBedsRequired="true" numberOfBedsOrdered="false"
 	 * @generated
 	 */
-	void updateRoomType(String name, double price, int numberOfBeds, String newName);
+	void updateRoomType(IRoomType roomType, String name, double price, int numberOfBeds);
 
 	/**
 	 * <!-- begin-user-doc -->
