@@ -147,6 +147,7 @@ public class BookingSystemFactoryImpl extends EFactoryImpl implements BookingSys
 		return booking;
 	}
 	
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
