@@ -63,7 +63,7 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	/**
 	 * @generated NOT 
 	 */
-	private String[] roomTypesNames = {"Small Deluxe","Medium Deluxe","Large Deluxe", "First class suite", "Economy Suite", "Medium Standard", "Small Standard", "Large Standard"};
+	private String[] roomTypesNames = {"Small Standard", "Medium Standard", "Large Standard", "Small Deluxe","Medium Deluxe","Large Deluxe", "Economy Suite", "First class suite"};
 	
 	/**
 	 * <!-- begin-user-doc -->
@@ -134,22 +134,19 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	public void startup(int numRoom) {
 		rooms.clear();
 		roomTypes.clear();
+		EList roomTypes = new BasicEList();
+		int maxRoom = 3;
+		int priceInc = 300;
 		
-		Random names = new Random(roomTypesNames.length-1);
-		Random price = new Random(1500);
-		Random nmbrOfBeds = new Random(9);
-		for(int i = 1; i <= numRoom; i++){
-			String roomTypeName = roomTypesNames[names.nextInt()];
-			double p = 500 + price.nextDouble();
-			int nmbrOfBed = 1 + nmbrOfBeds.nextInt();
-			IRoomType roomType = factory.createRoomType(p, roomTypeName, nmbrOfBed);
+		for(int i = 1; i < roomTypesNames.length; i++){
+			double price = i * priceInc;
+			int nmbrOfBeds = i % maxRoom;
+			IRoomType roomType = factory.createRoomType(price, roomTypesNames[i-1], nmbrOfBeds);
 			roomTypes.add(roomType);
 		}
 		
-		Random roomType = new Random(roomTypes.size()-1);
-		for(int i = 1; i <= numRoom; i++){
-			IRoomType rt = (IRoomType)roomTypes.get(roomType.nextInt());
-			IRoom room = factory.createRoom(rt, i);
+		for(int i = 0; i < numRoom; i++){
+			IRoom room = factory.createRoom((IRoomType)roomTypes.get(i % roomTypes.size()), i+1);
 			rooms.add(room);
 		}
 	}
