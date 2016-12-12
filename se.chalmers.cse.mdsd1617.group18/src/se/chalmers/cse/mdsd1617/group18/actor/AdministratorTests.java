@@ -15,7 +15,8 @@ public class AdministratorTests {
 	@Before
 	public void initializeAdminTests() {
 		RoomManagerFactoryImpl.init();
-		roomManager = RoomManagerFactoryImpl.getInstance().createRoomManager(null, null);
+		roomManager = RoomManagerFactoryImpl.getInstance().createRoomManager();
+		roomManager.startup(50);
 	}
 	
 	// UC 2.2.3
