@@ -56,18 +56,29 @@ public class ReceptionistTest {
 	//TODO:u.c. 2.1.3.  - check in booking
 	@Test
 	public void checkInBooking() {
-		int id = bookingSystem.initiateBooking("First", "Last", "20161211", "20161223");
+		int bookingId = bookingSystem.initiateBooking("First", "Last", "20161211", "20161223");
 		
-		//TODO: what should discription be?
-		bookingSystem.checkInRoom("roomTypeDescription", id);
-		//TODO: Not sure how to assert
-		//mark the room as occupied
+		//bookingSystem.checkInRoom("roomTypeDescription", id); //the input is only the booking id
+		bookingSystem.initiateCheckin(bookingId);
+		//marks the room as occupied and links that room to the booking id, returns true if successful
+		boolean result = bookingSystem.addRoomToBooking("roomTypeDescription", bookingId);
+		
+		assertEquals(true, result);
+		
 		
 	}
 	
 	//TODO:u.c. 2.1.4.  - check out booking
 	@Test
 	public void checkOutBooking() {
+		int bookingId = bookingSystem.initiateBooking("FirstName", "LastName", "20161212", "20161214");
+		bookingSystem.initiateCheckin(bookingId);
+		bookingSystem.addRoomToBooking("roomTypeDescription", bookingId);
+		bookingSystem.confirmBooking(bookingId);
+		bookingSystem.initiateCheckout(bookingId);
+		//boolean result = bookingSystem.payDuringCheckout("ccNumber", "ccv", 05, 2018, "firstName", "lastName");
+		boolean result = bookingSystem.payRoomDuringCheckout(111, "ccNumber", "ccv", 05, 2018, "firstName", "lastName");
+		assertEquals(true, result);
 		
 	}
 	//TODO:u.c. 2.1.5.  - edit a booking
@@ -118,7 +129,11 @@ public class ReceptionistTest {
 	//TODO:u.c. 2.1.11. - check in room 
 	@Test
 	public void checkInRoom() {
-		
+		int bookingId = bookingSystem.initiateBooking("FirstName", "LastName", "20161212", "20161214");
+		int result = bookingSystem.checkInRoom("roomTypeDescription", bookingId);
+		//boolean result = bookingSystem.addRoomToBooking("roomTypeDescription", bookingId);
+		//bookingSystem.confirmBooking(bookingId);
+		assertEquals(true, result!=-1);
 		
 	}
 	//TODO:u.c. 2.1.12. - check out and pay
@@ -129,6 +144,14 @@ public class ReceptionistTest {
 	//TODO:u.c. 2.1.13. - add extra cost to rooms
 	@Test
 	public void addExtraCostToRoom() {
-		
+		int roomNumber = 111;
+		String descriptionOfCost = "laundry service";
+		double priceOfCost = 50.00;
+		int bookingId = bookingSystem.initiateBooking("FirstName", "LastName", "20161212", "20161214");
+		bookingSystem.initiateCheckin(bookingId);
+		bookingSystem.addRoomToBooking("roomTypeDescription", bookingId);
+		bookingSystem.confirmBooking(bookingId);
+		bookingSystem.addExtraCostToRoom(bookingId, roomNumber, descriptionOfCost, priceOfCost);
 	}
+	
 }
