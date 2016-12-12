@@ -2,11 +2,9 @@ package se.chalmers.cse.mdsd1617.group18.actor;
 
 import static org.junit.Assert.*;
 
+import org.eclipse.emf.common.util.EList;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
-import org.junit.runners.Suite.SuiteClasses;
 
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.Booking;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.BookingSystem;
@@ -14,39 +12,72 @@ import se.chalmers.cse.mdsd1617.group18.bookingSystem.BookingSystemFactory;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.IBooking;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.impl.BookingSystemFactoryImpl;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.impl.BookingSystemImpl;
+import se.chalmers.cse.mdsd1617.group18.roomManager.RoomManager;
+import se.chalmers.cse.mdsd1617.group18.roomManager.RoomManagerFactory;
+import se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomManagerFactoryImpl;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.impl.BookingImpl;;
 
 
 public class ReceptionistTest {
 	
 	private BookingSystemFactory bookingSystemFactory;
+	private RoomManagerFactory roomManagerFactory;
 	private BookingSystem bookingSystem;
+	private RoomManager roomManager;
 	
 	@Before
-	public void initReceptionist () {
+	public void initReceptionist() {
 		bookingSystemFactory = BookingSystemFactoryImpl.init();
+		roomManagerFactory = RoomManagerFactoryImpl.init();
 		bookingSystem = bookingSystemFactory.createBookingSystem();
+		roomManager = roomManagerFactory.createRoomManager();
+		
+		roomManager.startup(10);
 	}
 	
 	//u.c. 2.1.1.  - make booking
 	@Test
-	public void createBooking () {		
-		int id = bookingSystem.initiateBooking("FisrtName", "20161208", "20161223", "LastName");
+	public void createBooking() {		
+		int id = bookingSystem.initiateBooking("FirstName", "20161208", "20161223", "LastName");
 		
 		//TODO: Need a factory to create a booking with given parameters.
 		assertTrue((Booking)bookingSystem.listBooking().get(0) == bookingSystemFactory.createBooking() );
 	}
 	
 	//TODO:u.c. 2.1.2.  - search for free rooms
+	@Test
+	public void searchForFreeRooms() {
+		EList freeRooms = bookingSystem.getFreeRooms(2, "20170112", "20170118");
+		
+		assertFalse(freeRooms.isEmpty());
+	}
 	
 	//TODO:u.c. 2.1.3.  - check in booking
+	@Test
+	public void checkInBooking() {
+		int id = bookingSystem.initiateBooking("First", "20161211", "20161223", "Last");
+		
+		//TODO: what should discription be?
+		bookingSystem.checkInRoom("Discription", id);
+		//TODO: Not sure how to assert
+		
+	}
 	
 	//TODO:u.c. 2.1.4.  - check out booking
-	
+	@Test
+	public void checkOutBooking() {
+		
+	}
 	//TODO:u.c. 2.1.5.  - edit a booking
-	
+	@Test
+	public void editBooking() {
+		
+	}
 	//TODO:u.c. 2.1.6.  - cancel a booking
-	
+	@Test
+	public void cancelBooking() {
+		
+	}
 	//u.c. 2.1.7.  - list bookings
 	@Test
 	public void listBookingsIsNotEmpty () {
@@ -73,13 +104,28 @@ public class ReceptionistTest {
 	}
 	
 	//TODO:u.c. 2.1.9.  - list check in for specific day(s)
-	
+	@Test
+	public void listCheckinsForSpecificDay() {
+		
+	}
 	//TODO:u.c. 2.1.10. - list check out for specific day(s)
-	
+	@Test
+	public void listCheckoutForSpecificDay() {
+		
+	}
 	//TODO:u.c. 2.1.11. - check in room 
-	
+	@Test
+	public void checkInRoom() {
+		
+	}
 	//TODO:u.c. 2.1.12. - check out and pay
-	
+	@Test
+	public void checkOutAndPay() {
+		
+	}
 	//TODO:u.c. 2.1.13. - add extra cost to rooms
-	
+	@Test
+	public void addExtraCostToRoom() {
+		
+	}
 }
