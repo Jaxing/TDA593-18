@@ -237,7 +237,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean confirmBooking(int bookingID) {
 		IBooking theBooking = findBooking(bookingID);
