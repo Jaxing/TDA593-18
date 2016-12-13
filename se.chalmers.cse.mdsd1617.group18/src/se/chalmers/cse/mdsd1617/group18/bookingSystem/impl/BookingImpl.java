@@ -331,10 +331,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * @generated NOT
 	 */
 	public EList<IRoom> getRooms() {
-		if (roomList == null) {
-			roomList = new EObjectResolvingEList<IRoom>(IRoom.class, this, BookingSystemPackage.BOOKING__ROOM_LIST);
-		}
-		return roomList;
+		return this.getRoomList();
 	}
 
 	/**
@@ -363,9 +360,12 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * @generated
 	 */
 	public boolean addRoom(IRoom room) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if (roomList.contains(room)){
+			return false;
+		}else{
+			roomList.add(room);
+			return true;
+		}
 	}
 
 	/**
