@@ -244,9 +244,35 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * @generated NOT
 	 */
 	public boolean addRoomToBooking(String roomTypeDescription, int bookingID) {
-		IBooking theBooking = findBooking(bookingID);
-		return true;
+		EList<IRoom> rooms = this.roomProvider.getRooms();
+		IRoom freeRoomOfType = null;
+		IBooking theBooking = null;
+		boolean typeExists = false;
 		
+		for (int i = 0; i < this.freeRooms.size(); i++) {
+			FreeRoomTypesDTO freeRoomType = freeRooms.get(i); 
+			if (freeRoomType.equals(roomTypeDescription) && freeRoomType.getNumFreeRooms() > 0) {
+				for (int j = 0; j < rooms.size(); j++) {
+					String description = rooms.get(j).getRoomType().getDescription();
+					if (description.equals(roomTypeDescription)) {
+						freeRoomOfType = rooms.get(j);
+						freeRoomType.setNumFreeRooms(freeRoomType.getNumFreeRooms());
+						typeExists = true;
+						break;
+					}
+				}
+				break;
+			}
+		}
+		
+		
+		for (int i = 0;i < bookings.size(); i++){
+			if(bookingID == bookings.get(i).getID()){
+				theBooking = bookings.get(i);
+				return theBooking.addRoom(freeRoomOfType);
+			}
+		}
+		return false;
 	}
 
 	/**
