@@ -6,7 +6,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -24,7 +23,6 @@ import se.chalmers.cse.mdsd1617.group18.bookingSystem.IEvent;
 
 import se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomProvider;
 import se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType;
-import se.chalmers.cse.mdsd1617.group18.roomManager.RoomManagerFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -89,8 +87,6 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 */
 	protected BookingSystemImpl() {
 		super();
-		bookings = new BasicEList();
-		freeRooms = new BasicEList();
 	}
 
 	/**
@@ -221,8 +217,6 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
-	 * returns a positive double value corresponding to the price of the room,
-	 * or a negative value if unsuccessful.
 	 */
 	public double initiateCheckout(int bookingID) {
 		// TODO: implement this method
@@ -245,8 +239,6 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
-	 * returns a positive double value corresponding to the price of the room,
-	 * or a negative value if unsuccessful.
 	 */
 	public double initiateRoomCheckout(int roomNumber, int bookingId) {
 		// TODO: implement this method
@@ -282,6 +274,8 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * @generated
 	 */
 	public EList<FreeRoomTypesDTO> initiateCheckin(int bookingId) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
 

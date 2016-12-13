@@ -168,12 +168,13 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void removeRoomType(IRoomType roomType) {
+	public IRoomType removeRoomType(IRoomType roomType) {
 		for(int i = 0; i < roomTypes.size(); i++){
 			if (roomTypes.get(i) == roomType){
-				roomTypes.remove(i);
+				return (IRoomType)roomTypes.remove(i);
 			}
 		}
+		return null;
 	}
 
 	/**
@@ -208,12 +209,13 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void removeRoom(int roomNumber) {
+	public IRoom removeRoom(int roomNumber) {
 		for(int i = 0; i < rooms.size(); i++){
-			if (((Room)(rooms.get(i))).getRoomNumber() == roomNumber){
-				rooms.remove(i);
+			if (((IRoom)(rooms.get(i))).getRoomNumber() == roomNumber){
+				return (IRoom)rooms.remove(i);
 			}
 		}
+		return null;
 	}
 
 	

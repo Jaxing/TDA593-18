@@ -42,10 +42,10 @@ public interface IHotelRoomManager extends IHotelRoomProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model roomTypeRequired="true" roomTypeOrdered="false"
+	 * @model required="true" ordered="false" roomTypeRequired="true" roomTypeOrdered="false"
 	 * @generated
 	 */
-	void removeRoomType(IRoomType roomType);
+	IRoomType removeRoomType(IRoomType roomType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -66,10 +66,10 @@ public interface IHotelRoomManager extends IHotelRoomProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model roomNumberRequired="true" roomNumberOrdered="false"
+	 * @model required="true" ordered="false" roomNumberRequired="true" roomNumberOrdered="false"
 	 * @generated
 	 */
-	void removeRoom(int roomNumber);
+	IRoom removeRoom(int roomNumber);
 
 	/**
 	 * <!-- begin-user-doc -->

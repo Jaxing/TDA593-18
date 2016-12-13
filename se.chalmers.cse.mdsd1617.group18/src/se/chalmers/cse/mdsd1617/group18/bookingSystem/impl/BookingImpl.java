@@ -362,6 +362,17 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean addRoom(IRoom room) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -483,6 +494,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case BookingSystemPackage.BOOKING___SET_ROOMS__ELIST:
 				setRooms((EList<IRoom>)arguments.get(0));
 				return null;
+			case BookingSystemPackage.BOOKING___ADD_ROOM__IROOM:
+				return addRoom((IRoom)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
