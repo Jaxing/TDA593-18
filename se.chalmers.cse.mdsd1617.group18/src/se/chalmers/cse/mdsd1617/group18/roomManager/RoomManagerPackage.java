@@ -185,13 +185,22 @@ public interface RoomManagerPackage extends EPackage {
 	int ROOM_TYPE__NUMBER_OF_BEDS = IROOM_TYPE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE__DESCRIPTION = IROOM_TYPE_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Room Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_TYPE_FEATURE_COUNT = IROOM_TYPE_FEATURE_COUNT + 3;
+	int ROOM_TYPE_FEATURE_COUNT = IROOM_TYPE_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Get Name</em>' operation.
@@ -901,6 +910,17 @@ public interface RoomManagerPackage extends EPackage {
 	EAttribute getRoomType_NumberOfBeds();
 
 	/**
+	 * Returns the meta object for the attribute '{@link se.chalmers.cse.mdsd1617.group18.roomManager.RoomType#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.RoomType#getDescription()
+	 * @see #getRoomType()
+	 * @generated
+	 */
+	EAttribute getRoomType_Description();
+
+	/**
 	 * Returns the meta object for class '{@link se.chalmers.cse.mdsd1617.group18.roomManager.RoomManager <em>Room Manager</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1296,6 +1316,14 @@ public interface RoomManagerPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ROOM_TYPE__NUMBER_OF_BEDS = eINSTANCE.getRoomType_NumberOfBeds();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM_TYPE__DESCRIPTION = eINSTANCE.getRoomType_Description();
 
 		/**
 		 * The meta object literal for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomManagerImpl <em>Room Manager</em>}' class.

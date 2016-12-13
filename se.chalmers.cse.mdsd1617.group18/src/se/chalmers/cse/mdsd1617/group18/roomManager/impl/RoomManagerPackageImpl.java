@@ -267,6 +267,15 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getRoomType_Description() {
+		return (EAttribute)roomTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRoomManager() {
 		return roomManagerEClass;
 	}
@@ -546,6 +555,7 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 		createEAttribute(roomTypeEClass, ROOM_TYPE__PRICE);
 		createEAttribute(roomTypeEClass, ROOM_TYPE__NAME);
 		createEAttribute(roomTypeEClass, ROOM_TYPE__NUMBER_OF_BEDS);
+		createEAttribute(roomTypeEClass, ROOM_TYPE__DESCRIPTION);
 
 		roomManagerEClass = createEClass(ROOM_MANAGER);
 		createEReference(roomManagerEClass, ROOM_MANAGER__ROOM_TYPES);
@@ -640,6 +650,7 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 		initEAttribute(getRoomType_Price(), ecorePackage.getEDouble(), "price", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomType_Name(), ecorePackage.getEString(), "name", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomType_NumberOfBeds(), ecorePackage.getEInt(), "numberOfBeds", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoomType_Description(), ecorePackage.getEString(), "description", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(roomManagerEClass, RoomManager.class, "RoomManager", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRoomManager_RoomTypes(), this.getIRoomType(), null, "roomTypes", null, 0, -1, RoomManager.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

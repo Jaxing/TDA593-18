@@ -2,10 +2,7 @@
  */
 package se.chalmers.cse.mdsd1617.group18.roomManager.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -25,6 +22,7 @@ import se.chalmers.cse.mdsd1617.group18.roomManager.RoomType;
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomTypeImpl#getPrice <em>Price</em>}</li>
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomTypeImpl#getName <em>Name</em>}</li>
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomTypeImpl#getNumberOfBeds <em>Number Of Beds</em>}</li>
+ *   <li>{@link se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomTypeImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @generated
@@ -89,6 +87,26 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	 * @ordered
 	 */
 	protected int numberOfBeds = NUMBER_OF_BEDS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DESCRIPTION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -190,9 +208,19 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	 * @generated
 	 */
 	public String getDescription() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDescription(String newDescription) {
+		String oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RoomManagerPackage.ROOM_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -209,6 +237,8 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 				return getName();
 			case RoomManagerPackage.ROOM_TYPE__NUMBER_OF_BEDS:
 				return getNumberOfBeds();
+			case RoomManagerPackage.ROOM_TYPE__DESCRIPTION:
+				return getDescription();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -229,6 +259,9 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 				return;
 			case RoomManagerPackage.ROOM_TYPE__NUMBER_OF_BEDS:
 				setNumberOfBeds((Integer)newValue);
+				return;
+			case RoomManagerPackage.ROOM_TYPE__DESCRIPTION:
+				setDescription((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -251,6 +284,9 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 			case RoomManagerPackage.ROOM_TYPE__NUMBER_OF_BEDS:
 				setNumberOfBeds(NUMBER_OF_BEDS_EDEFAULT);
 				return;
+			case RoomManagerPackage.ROOM_TYPE__DESCRIPTION:
+				setDescription(DESCRIPTION_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -269,22 +305,10 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case RoomManagerPackage.ROOM_TYPE__NUMBER_OF_BEDS:
 				return numberOfBeds != NUMBER_OF_BEDS_EDEFAULT;
+			case RoomManagerPackage.ROOM_TYPE__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case RoomManagerPackage.ROOM_TYPE___GET_DESCRIPTION:
-				return getDescription();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
@@ -303,6 +327,8 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 		result.append(name);
 		result.append(", numberOfBeds: ");
 		result.append(numberOfBeds);
+		result.append(", description: ");
+		result.append(description);
 		result.append(')');
 		return result.toString();
 	}

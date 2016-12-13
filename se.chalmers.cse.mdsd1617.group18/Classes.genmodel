@@ -208,6 +208,7 @@
                 <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/RoomType/price"/>
                 <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/RoomType/name"/>
                 <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/RoomType/numberOfBeds"/>
+                <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/RoomType/description"/>
               </genClasses>
               <genClasses xsi:type="genmodel:GenClass" ecoreClass="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/RoomManager">
                 <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"

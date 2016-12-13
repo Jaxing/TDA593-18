@@ -447,6 +447,9 @@
               <ownedAttribute xmi:type="uml:Property" xmi:id="_FhhH3rrREeaVMa-P8AMS-A" name="numberOfBeds" visibility="private">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
               </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_CCDIMMEcEeam-ZTPGg2UPQ" name="description" visibility="private">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              </ownedAttribute>
               <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_B4FhALyUEea7_8j189OIog" client="_FhhH27rREeaVMa-P8AMS-A" supplier="_FhhHzLrREeaVMa-P8AMS-A" contract="_FhhHzLrREeaVMa-P8AMS-A"/>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_FhhH37rREeaVMa-P8AMS-A" name="RoomManager">

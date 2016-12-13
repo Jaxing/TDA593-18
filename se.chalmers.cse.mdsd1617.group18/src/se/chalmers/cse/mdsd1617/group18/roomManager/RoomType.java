@@ -15,6 +15,7 @@ package se.chalmers.cse.mdsd1617.group18.roomManager;
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.roomManager.RoomType#getPrice <em>Price</em>}</li>
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.roomManager.RoomType#getName <em>Name</em>}</li>
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.roomManager.RoomType#getNumberOfBeds <em>Number Of Beds</em>}</li>
+ *   <li>{@link se.chalmers.cse.mdsd1617.group18.roomManager.RoomType#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see se.chalmers.cse.mdsd1617.group18.roomManager.RoomManagerPackage#getRoomType()
@@ -99,5 +100,31 @@ public interface RoomType extends IRoomType {
 	 * @generated
 	 */
 	void setNumberOfBeds(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Description</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see #setDescription(String)
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.RoomManagerPackage#getRoomType_Description()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	String getDescription();
+
+	/**
+	 * Sets the value of the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.RoomType#getDescription <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * @see #getDescription()
+	 * @generated
+	 */
+	void setDescription(String value);
 
 } // RoomType

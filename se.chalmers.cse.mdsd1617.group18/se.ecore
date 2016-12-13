@@ -204,6 +204,8 @@
                   lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfBeds"
                   ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="description"
+                  ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="RoomManager" eSuperTypes="#//chalmers/cse/mdsd1617/group18/roomManager/IHotelStartupProvies #//chalmers/cse/mdsd1617/group18/roomManager/IHotelRoomProvider #//chalmers/cse/mdsd1617/group18/roomManager/IHotelRoomManager">
               <eStructuralFeatures xsi:type="ecore:EReference" name="roomTypes" ordered="false"
