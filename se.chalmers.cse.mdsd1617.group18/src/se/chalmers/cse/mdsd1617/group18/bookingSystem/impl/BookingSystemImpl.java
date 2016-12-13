@@ -264,14 +264,12 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 			}
 		}
 		
-		
-		for (int i = 0;i < bookings.size(); i++){
-			if(bookingID == bookings.get(i).getID()){
-				theBooking = bookings.get(i);
-				return theBooking.addRoom(freeRoomOfType);
-			}
+		theBooking = findBooking(bookingID);
+		if (theBooking == null){
+			return false;
+		}else{
+			return theBooking.addRoom(freeRoomOfType);
 		}
-		return false;
 	}
 
 	/**
@@ -280,7 +278,11 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * @generated NOT
 	 */
 	public boolean confirmBooking(int bookingID) {
+		
 		IBooking theBooking = findBooking(bookingID);
+		if (theBooking == null){
+			return false;
+		}
 		if (theBooking.getRooms().isEmpty()){
 			return false;
 		}else{
@@ -584,12 +586,13 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * @generated NOT
 	 */
 	private IBooking findBooking(int bookingID){
+		IBooking currentBooking = null;
 		for (int i = 0; i < bookings.size(); i++){
-			if (bookings.get(i).getID() == bookingID){
-				return bookings.get(i);
-			}
+			currentBooking = bookings.get(i);
+			if(currentBooking.getID() == bookingID)
+				return currentBooking;
 		}
-		return null;
+		return currentBooking;
 	}
 
 } //BookingSystemImpl
