@@ -3,9 +3,11 @@
 package se.chalmers.cse.mdsd1617.group18.bookingSystem.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -23,6 +25,7 @@ import se.chalmers.cse.mdsd1617.group18.bookingSystem.IEvent;
 
 import se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomProvider;
 import se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType;
+import se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomManagerFactoryImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -83,10 +86,15 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected BookingSystemImpl() {
 		super();
+		this.events = new BasicEList<IEvent>();
+		this.bookings = new BasicEList<IBooking>();
+		this.roomProvider = (IHotelRoomProvider) RoomManagerFactoryImpl.getInstance();
+		this.freeRooms = new BasicEList<FreeRoomTypesDTO>();
+		//TODO: we should probably have a room list here as well
 	}
 
 	/**
