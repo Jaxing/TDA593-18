@@ -229,13 +229,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * @generated NOT
 	 */
 	public boolean addRoomToBooking(String roomTypeDescription, int bookingID) {
-		IBooking theBooking = null;
-		for (int i = 0;i < bookings.size(); i++){
-			if(bookingID == bookings.get(i).getID()){
-				theBooking = bookings.get(i);
-			}
-		}
-		
+		IBooking theBooking = findBooking(bookingID);
 		return true;
 		
 	}
@@ -246,9 +240,13 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * @generated
 	 */
 	public boolean confirmBooking(int bookingID) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		IBooking theBooking = findBooking(bookingID);
+		if (theBooking.getRooms().isEmpty()){
+			return false;
+		}else{
+			return true;
+		}
+		
 	}
 
 	/**
@@ -538,6 +536,20 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);
+	}
+	/**
+	 * 
+	 * @param bookingID
+	 * @return The Booking the the matching ID
+	 * @generated NOT
+	 */
+	private IBooking findBooking(int bookingID){
+		for (int i = 0; i < bookings.size(); i++){
+			if (bookings.get(i).getID() == bookingID){
+				return bookings.get(i);
+			}
+		}
+		return null;
 	}
 
 } //BookingSystemImpl
