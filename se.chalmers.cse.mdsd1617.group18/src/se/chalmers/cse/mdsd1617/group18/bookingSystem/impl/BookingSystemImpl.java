@@ -212,8 +212,14 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * @generated NOT
 	 */
 	public boolean addRoomToBooking(String roomTypeDescription, int bookingID) {
+		IBooking theBooking = null;
+		for (int i = 0;i < bookings.size(); i++){
+			if(bookingID == bookings.get(i).getID()){
+				theBooking = bookings.get(i);
+			}
+		}
+		return true;
 		
-		throw new UnsupportedOperationException();
 	}
 
 	/**
