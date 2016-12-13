@@ -90,4 +90,12 @@ public interface IBooking extends EObject {
 	 */
 	void setEndDate(String endDate);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" roomRequired="true" roomOrdered="false"
+	 * @generated
+	 */
+	boolean addRoom(IRoom room);
+
 } // IBooking

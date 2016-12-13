@@ -669,7 +669,7 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 
 		initEOperation(getIHotelRoomManager__GetRoomTypes(), this.getIRoomType(), "getRoomTypes", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getIHotelRoomManager__RemoveRoomType__IRoomType(), null, "removeRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIHotelRoomManager__RemoveRoomType__IRoomType(), this.getIRoomType(), "removeRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getIRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getIHotelRoomManager__AddRoom__int_IRoomType(), null, "addRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -680,7 +680,7 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 		addEParameter(op, ecorePackage.getEInt(), "roomNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getIRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getIHotelRoomManager__RemoveRoom__int(), null, "removeRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIHotelRoomManager__RemoveRoom__int(), this.getIRoom(), "removeRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "roomNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getIHotelRoomManager__BlockRoom__int(), null, "blockRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);

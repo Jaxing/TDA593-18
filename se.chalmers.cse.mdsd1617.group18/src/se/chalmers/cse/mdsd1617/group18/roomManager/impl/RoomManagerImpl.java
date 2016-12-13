@@ -4,8 +4,6 @@ package se.chalmers.cse.mdsd1617.group18.roomManager.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
-import java.util.Random;
-
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
@@ -20,7 +18,6 @@ import se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomProvider;
 import se.chalmers.cse.mdsd1617.group18.roomManager.IRoom;
 import se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType;
 import se.chalmers.cse.mdsd1617.group18.roomManager.Room;
-import se.chalmers.cse.mdsd1617.group18.roomManager.RoomType;
 import se.chalmers.cse.mdsd1617.group18.roomManager.RoomManager;
 import se.chalmers.cse.mdsd1617.group18.roomManager.RoomManagerFactory;
 import se.chalmers.cse.mdsd1617.group18.roomManager.RoomManagerPackage;
@@ -371,8 +368,7 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 				updateRoomType((IRoomType)arguments.get(0), (String)arguments.get(1), (Double)arguments.get(2), (Integer)arguments.get(3));
 				return null;
 			case RoomManagerPackage.ROOM_MANAGER___REMOVE_ROOM_TYPE__IROOMTYPE:
-				removeRoomType((IRoomType)arguments.get(0));
-				return null;
+				return removeRoomType((IRoomType)arguments.get(0));
 			case RoomManagerPackage.ROOM_MANAGER___ADD_ROOM__INT_IROOMTYPE:
 				addRoom((Integer)arguments.get(0), (IRoomType)arguments.get(1));
 				return null;
@@ -380,8 +376,7 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 				changeRoomType((Integer)arguments.get(0), (IRoomType)arguments.get(1));
 				return null;
 			case RoomManagerPackage.ROOM_MANAGER___REMOVE_ROOM__INT:
-				removeRoom((Integer)arguments.get(0));
-				return null;
+				return removeRoom((Integer)arguments.get(0));
 			case RoomManagerPackage.ROOM_MANAGER___BLOCK_ROOM__INT:
 				blockRoom((Integer)arguments.get(0));
 				return null;

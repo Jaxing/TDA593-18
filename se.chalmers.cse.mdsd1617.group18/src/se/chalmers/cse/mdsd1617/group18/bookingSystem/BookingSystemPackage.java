@@ -975,13 +975,22 @@ public interface BookingSystemPackage extends EPackage {
 	int IBOOKING___SET_END_DATE__STRING = 8;
 
 	/**
+	 * The operation id for the '<em>Add Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING___ADD_ROOM__IROOM = 9;
+
+	/**
 	 * The number of operations of the '<em>IBooking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_OPERATION_COUNT = 9;
+	int IBOOKING_OPERATION_COUNT = 10;
 
 	/**
 	 * The meta object id for the '{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.impl.FreeRoomTypesDTOImpl <em>Free Room Types DTO</em>}' class.
@@ -1200,6 +1209,15 @@ public interface BookingSystemPackage extends EPackage {
 	 * @ordered
 	 */
 	int BOOKING___SET_END_DATE__STRING = IBOOKING___SET_END_DATE__STRING;
+
+	/**
+	 * The operation id for the '<em>Add Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING___ADD_ROOM__IROOM = IBOOKING___ADD_ROOM__IROOM;
 
 	/**
 	 * The number of operations of the '<em>Booking</em>' class.
@@ -1466,6 +1484,16 @@ public interface BookingSystemPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getIBooking__SetEndDate__String();
+
+	/**
+	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.IBooking#addRoom(se.chalmers.cse.mdsd1617.group18.roomManager.IRoom) <em>Add Room</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Room</em>' operation.
+	 * @see se.chalmers.cse.mdsd1617.group18.bookingSystem.IBooking#addRoom(se.chalmers.cse.mdsd1617.group18.roomManager.IRoom)
+	 * @generated
+	 */
+	EOperation getIBooking__AddRoom__IRoom();
 
 	/**
 	 * Returns the meta object for class '{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.IHotelBookingManager <em>IHotel Booking Manager</em>}'.
@@ -2032,6 +2060,14 @@ public interface BookingSystemPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IBOOKING___SET_END_DATE__STRING = eINSTANCE.getIBooking__SetEndDate__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Room</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IBOOKING___ADD_ROOM__IROOM = eINSTANCE.getIBooking__AddRoom__IRoom();
 
 		/**
 		 * The meta object literal for the '{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.IHotelBookingManager <em>IHotel Booking Manager</em>}' class.

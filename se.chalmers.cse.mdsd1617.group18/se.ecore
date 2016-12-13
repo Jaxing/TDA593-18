@@ -54,6 +54,9 @@
               <eOperations name="setEndDate" ordered="false" lowerBound="1">
                 <eParameters name="endDate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
               </eOperations>
+              <eOperations name="addRoom" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+                <eParameters name="room" ordered="false" lowerBound="1" eType="#//chalmers/cse/mdsd1617/group18/roomManager/IRoom"/>
+              </eOperations>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="IHotelBookingManager" abstract="true"
                 interface="true" eSuperTypes="#//chalmers/cse/mdsd1617/group18/bookingSystem/IHotelCustomerProvides">
@@ -232,7 +235,7 @@
                 <eParameters name="numberOfBeds" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
               </eOperations>
               <eOperations name="getRoomTypes" ordered="false" upperBound="-1" eType="#//chalmers/cse/mdsd1617/group18/roomManager/IRoomType"/>
-              <eOperations name="removeRoomType" ordered="false" lowerBound="1">
+              <eOperations name="removeRoomType" ordered="false" lowerBound="1" eType="#//chalmers/cse/mdsd1617/group18/roomManager/IRoomType">
                 <eParameters name="roomType" ordered="false" lowerBound="1" eType="#//chalmers/cse/mdsd1617/group18/roomManager/IRoomType"/>
               </eOperations>
               <eOperations name="addRoom" ordered="false" lowerBound="1">
@@ -243,7 +246,7 @@
                 <eParameters name="roomNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
                 <eParameters name="roomType" ordered="false" lowerBound="1" eType="#//chalmers/cse/mdsd1617/group18/roomManager/IRoomType"/>
               </eOperations>
-              <eOperations name="removeRoom" ordered="false" lowerBound="1">
+              <eOperations name="removeRoom" ordered="false" lowerBound="1" eType="#//chalmers/cse/mdsd1617/group18/roomManager/IRoom">
                 <eParameters name="roomNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
               </eOperations>
               <eOperations name="blockRoom" ordered="false" lowerBound="1">
