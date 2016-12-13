@@ -191,13 +191,18 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 */
 
 	public int initiateBooking(String firstName,  String lastName, String startDate, String endDate) {
-		BookingImpl booking = new BookingImpl(firstName, lastName, startDate, endDate);
-			if(!bookings.contains(booking)){
-				   bookings.add(booking);
-				   bookingId++;
-				   return bookingId;
-			}else
-		           return -1;
+		//Check dates here
+		BookingImpl booking = new BookingImpl(bookingId, firstName, lastName, startDate, endDate);
+		for(int i = 0;i < bookings.size();i++){
+			if (bookings.get(i).getID() == bookingId){
+				return -1;
+			
+			}
+		}
+		bookings.add(booking);
+		bookingId++;
+		return bookingId;
+		
 	}
 
 	/**
