@@ -217,8 +217,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 			start = dateFormat.parse(startDate);
 			end = dateFormat.parse(endDate);
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			return -1;
 		}
 		
 		if(!start.before(end)){
