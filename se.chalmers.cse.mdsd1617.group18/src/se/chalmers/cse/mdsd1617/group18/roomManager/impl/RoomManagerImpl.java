@@ -61,11 +61,6 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	protected EList rooms;
 	
 	/**
-	 * @generated NOT 
-	 */
-	private String[] roomTypesNames = {"Small Standard", "Medium Standard", "Large Standard", "Small Deluxe","Medium Deluxe","Large Deluxe", "Economy Suite", "First class suite"};
-	
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -135,18 +130,13 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	public void startup(int numRoom) {
 		rooms.clear();
 		roomTypes.clear();
-		int maxRoom = 3;
-		int priceInc = 300;
-		
-		for(int i = 1; i < roomTypesNames.length; i++){
-			double price = i * priceInc;
-			int nmbrOfBeds = i % maxRoom;
-			IRoomType roomType = factory.createRoomType(price, roomTypesNames[i-1], nmbrOfBeds);
-			roomTypes.add(roomType);
-		}
+		int nmbrOfBeds = 2;
+		double priceInc = 800;
+		IRoomType roomType = factory.createRoomType(priceInc, "Double basic room", nmbrOfBeds);
+		roomTypes.add(roomType);
 		
 		for(int i = 0; i < numRoom; i++){
-			IRoom room = factory.createRoom((IRoomType)roomTypes.get(i % roomTypes.size()), i+1);
+			IRoom room = factory.createRoom(roomType, i+1);
 			rooms.add(room);
 		}
 	}
