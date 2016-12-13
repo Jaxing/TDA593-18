@@ -3,8 +3,11 @@
 package se.chalmers.cse.mdsd1617.group18.bookingSystem.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicEList;
@@ -192,8 +195,22 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 */
 
 	public int initiateBooking(String firstName,  String lastName, String startDate, String endDate) {
-		//Check dates here
-		BookingImpl booking = new BookingImpl(bookingId, firstName, lastName, startDate, endDate);
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+		Date start = null;
+		Date end = null;
+		try {
+			start = dateFormat.parse(startDate);
+			end = dateFormat.parse(endDate);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		if(!start.before(end)){
+			return -1;
+		}
+		
+        BookingImpl booking = new BookingImpl(bookingId, firstName, lastName, startDate, endDate);
 		for(int i = 0;i < bookings.size();i++){
 			if (bookings.get(i).getID() == bookingId){
 				return -1;
