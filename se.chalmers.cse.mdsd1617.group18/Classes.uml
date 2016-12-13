@@ -530,6 +530,7 @@
               </ownedOperation>
               <ownedOperation xmi:type="uml:Operation" xmi:id="_FhhICLrREeaVMa-P8AMS-A" name="removeRoomType">
                 <ownedParameter xmi:type="uml:Parameter" xmi:id="_FhhICbrREeaVMa-P8AMS-A" name="roomType" type="_FhhHzLrREeaVMa-P8AMS-A"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_MIAXcMEPEeaYIZYU4xJ1hQ" type="_FhhHzLrREeaVMa-P8AMS-A" direction="return"/>
               </ownedOperation>
               <ownedOperation xmi:type="uml:Operation" xmi:id="_FhhICrrREeaVMa-P8AMS-A" name="addRoom">
                 <ownedParameter xmi:type="uml:Parameter" xmi:id="_FhhIC7rREeaVMa-P8AMS-A" name="roomNumber">
@@ -547,6 +548,7 @@
                 <ownedParameter xmi:type="uml:Parameter" xmi:id="_FhhIEbrREeaVMa-P8AMS-A" name="roomNumber">
                   <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
                 </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_G5o1IMEPEeaYIZYU4xJ1hQ" type="_FhhH5rrREeaVMa-P8AMS-A" direction="return"/>
               </ownedOperation>
               <ownedOperation xmi:type="uml:Operation" xmi:id="_FhhIErrREeaVMa-P8AMS-A" name="blockRoom">
                 <ownedParameter xmi:type="uml:Parameter" xmi:id="_FhhIE7rREeaVMa-P8AMS-A" name="roomNumber">
