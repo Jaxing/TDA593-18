@@ -122,11 +122,12 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected RoomTypeImpl(double price, String name, int numberOfBeds) {
+	protected RoomTypeImpl(double price, String name, int numberOfBeds, String description) {
 		super();
 		this.price = price;
 		this.name = name;
 		this.numberOfBeds = numberOfBeds;
+		this.description = description;
 	}
 
 	/**

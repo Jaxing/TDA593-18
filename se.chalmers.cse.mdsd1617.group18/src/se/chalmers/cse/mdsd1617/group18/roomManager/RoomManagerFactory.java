@@ -57,7 +57,7 @@ public interface RoomManagerFactory extends EFactory {
 	 * @return a new object of class '<em>Room Type</em>'.
 	 * @generated NOT
 	 */
-	RoomType createRoomType(double price, String name, int numberOfBeds);
+	RoomType createRoomType(double price, String name, int numberOfBeds, String description);
 
 	/**
 	 * Returns a new object of class '<em>Room Manager</em>'.

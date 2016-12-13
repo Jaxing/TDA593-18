@@ -129,7 +129,7 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 		roomTypes.clear();
 		int nmbrOfBeds = 2;
 		double priceInc = 800;
-		IRoomType roomType = factory.createRoomType(priceInc, "Double basic room", nmbrOfBeds);
+		IRoomType roomType = factory.createRoomType(priceInc, "Double basic room", nmbrOfBeds, "A basic room");
 		roomTypes.add(roomType);
 		
 		for(int i = 0; i < numRoom; i++){
@@ -141,10 +141,21 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void addRoomType(String name, double price, int numberOfBeds) {
-		roomTypes.add(factory.createRoomType(price, name, numberOfBeds));
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void addRoomType(String name, double price, int numberOfBeds, String description) {
+		roomTypes.add(factory.createRoomType(price, name, numberOfBeds, description));
 	}
 
 	/**

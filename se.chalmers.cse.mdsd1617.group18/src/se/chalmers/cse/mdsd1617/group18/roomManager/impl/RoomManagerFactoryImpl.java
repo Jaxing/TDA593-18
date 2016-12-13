@@ -106,8 +106,8 @@ public class RoomManagerFactoryImpl extends EFactoryImpl implements RoomManagerF
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public RoomType createRoomType(double price, String name, int numberOfBeds) {
-		RoomTypeImpl roomType = new RoomTypeImpl(price, name, numberOfBeds);
+	public RoomType createRoomType(double price, String name, int numberOfBeds, String description) {
+		RoomTypeImpl roomType = new RoomTypeImpl(price, name, numberOfBeds, description);
 		return roomType;
 	}
 

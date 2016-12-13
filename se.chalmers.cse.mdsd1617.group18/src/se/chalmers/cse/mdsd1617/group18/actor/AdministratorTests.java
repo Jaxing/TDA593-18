@@ -32,7 +32,7 @@ public class AdministratorTests {
 	@Test
 	public void testAdministratorAddRoom() {
 		int roomNumber = 0;
-		IRoomType rT = RoomManagerFactoryImpl.getInstance().createRoomType(1000, "Basic room", 1);
+		IRoomType rT = RoomManagerFactoryImpl.getInstance().createRoomType(1000, "Basic room", 1, "A basic room");
 		roomManager.addRoom(roomNumber, rT);
 		boolean found = false;
 		EList<IRoom> rooms = roomManager.getRooms();
@@ -49,7 +49,7 @@ public class AdministratorTests {
 	@Test
 	public void testAdministratorRemoveRoom() {
 		int roomNumber = 999;
-		IRoomType rT = RoomManagerFactoryImpl.getInstance().createRoomType(1000, "Basic room", 1);
+		IRoomType rT = RoomManagerFactoryImpl.getInstance().createRoomType(1000, "Basic room", 1, "A basic room");
 		roomManager.addRoom(roomNumber, rT);
 		roomManager.removeRoom(roomNumber);
 		boolean found = false;
