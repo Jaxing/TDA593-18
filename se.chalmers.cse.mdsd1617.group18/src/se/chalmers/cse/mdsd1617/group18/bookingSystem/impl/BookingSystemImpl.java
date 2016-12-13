@@ -218,6 +218,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 				theBooking = bookings.get(i);
 			}
 		}
+		
 		return true;
 		
 	}
