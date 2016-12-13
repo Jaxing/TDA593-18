@@ -24,6 +24,7 @@ import se.chalmers.cse.mdsd1617.group18.bookingSystem.IBooking;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.IEvent;
 
 import se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomProvider;
+import se.chalmers.cse.mdsd1617.group18.roomManager.IRoom;
 import se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType;
 import se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomManagerFactoryImpl;
 
@@ -96,6 +97,20 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 		//TODO: How should we handle the IHotelRoomProvider? We can really just create a new since it will not be connected then.
 		this.freeRooms = new BasicEList<FreeRoomTypesDTO>();
 		//TODO: we should probably have a room list here as well
+		EList<IRoom> rooms = roomProvider.getRooms();
+		for(int i = 0; i < rooms.size(); i++){
+			IRoomType roomType = rooms.get(i).getRoomType();
+			FreeRoomTypesDTO types = BookingSystemFactoryImpl.init().createFreeRoomTypesDTO();
+			types.setNumBeds(roomType.getNumberOfBeds());
+			types.setPricePerNight(roomType.getPrice());
+			types.setRoomTypeDescription(roomType.getDescription());
+			if(freeRooms.contains(types)){
+				types.setNumFreeRooms(types.getNumFreeRooms() + 1);
+			} else {
+				types.setNumFreeRooms(1);
+				freeRooms.add(types);
+			}
+		}
 	}
 
 	/**
