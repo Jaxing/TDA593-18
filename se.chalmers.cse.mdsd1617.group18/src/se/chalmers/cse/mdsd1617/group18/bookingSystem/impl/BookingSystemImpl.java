@@ -92,7 +92,8 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 		super();
 		this.events = new BasicEList<IEvent>();
 		this.bookings = new BasicEList<IBooking>();
-		this.roomProvider = (IHotelRoomProvider) RoomManagerFactoryImpl.getInstance();
+		this.roomProvider = (IHotelRoomProvider) RoomManagerFactoryImpl.getInstance().createRoomManager();
+		//TODO: How should we handle the IHotelRoomProvider? We can really just create a new since it will not be connected then.
 		this.freeRooms = new BasicEList<FreeRoomTypesDTO>();
 		//TODO: we should probably have a room list here as well
 	}
