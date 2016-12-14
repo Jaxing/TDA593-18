@@ -331,7 +331,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public double initiateRoomCheckout(int roomNumber, int bookingId) {
 		IBooking theBooking = findBooking(bookingId);
@@ -463,12 +463,27 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void editBookingRooms(int bookingID, int numOfRooms, IRoomType roomType) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		IBooking theBooking = findBooking(bookingID);
+		if (theBooking == null){
+			return;
+		}
+		if (numOfRooms < 0){
+			EList <IRoom> bookingRooms = theBooking.getRooms();
+			for (int i = 0; i < bookingRooms.size(); i++){
+				if(bookingRooms.get(i).getRoomType().equals(roomType)){
+					bookingRooms.remove(i);
+					numOfRooms++;
+				}
+			}
+		}else{
+			for (int i = 1; i <= numOfRooms;i++){
+				if(!addRoomToBooking(roomType.getDescription(), bookingID))
+					return; //How do we handle this??
+			}
+		}
 	}
 
 	/**
