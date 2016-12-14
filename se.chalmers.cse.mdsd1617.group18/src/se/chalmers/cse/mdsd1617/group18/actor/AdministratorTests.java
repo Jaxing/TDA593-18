@@ -82,6 +82,25 @@ public class AdministratorTests {
 		assertEquals(true, found);
 	}
 	
+	// UC 2.2.5
+	@Test
+	public void testAdministratorChangeRoomTypeOfRoom() {
+		int roomNumber = 10;
+		IRoomType oldType = factory.createRoomType(1000.0, "Room Type A", 2, "A description");
+		IRoomType newType = factory.createRoomType(1500.0, "Room type B", 5, "A fancy room");
+		roomManager.addRoom(roomNumber, oldType);
+		roomManager.changeRoomType(roomNumber, newType);
+		boolean works = false;
+		EList<IRoom> rooms = roomManager.getRooms();
+		for (int i = 0; i < rooms.size(); i++) {
+			IRoom room = rooms.get(i);
+			if (room.getRoomNumber() == roomNumber && room.getRoomType().equals(newType)) {
+				works = true;
+			}
+		}
+		assertEquals(true, works);
+	}
+	
 	// UC 2.2.6
 	@Test
 	public void testAdministratorRemoveRoom() {
