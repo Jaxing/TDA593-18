@@ -235,8 +235,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 			}
 		}
 		bookings.add(booking);
-		bookingId++;
-		return bookingId;
+		return bookingId++;
 		
 	}
 
