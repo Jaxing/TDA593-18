@@ -181,7 +181,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	public EList<FreeRoomTypesDTO> getFreeRooms(int numBeds, String startDate, String endDate) {
 		
 		if (freeRooms == null) {
-			freeRooms = new EObjectResolvingEList<FreeRoomTypesDTO>(FreeRoomTypesDTO.class, this, BookingSystemPackage.FREE_ROOM_TYPES_DTO);
+			freeRooms = new BasicEList<FreeRoomTypesDTO>();
 		}
 		freeRooms.clear();
 		updateFreeRooms();

@@ -20,6 +20,9 @@ import se.chalmers.cse.mdsd1617.group18.roomManager.*;
  * @generated
  */
 public class RoomManagerFactoryImpl extends EFactoryImpl implements RoomManagerFactory {
+	
+	private static RoomManager roomManagerInstance;
+	
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
@@ -80,8 +83,10 @@ public class RoomManagerFactoryImpl extends EFactoryImpl implements RoomManagerF
 	 * @generated
 	 */
 	public RoomManager createRoomManager() {
-		RoomManagerImpl roomManager = new RoomManagerImpl();
-		return roomManager;
+		if(roomManagerInstance == null){
+			roomManagerInstance = new RoomManagerImpl();
+		}
+		return roomManagerInstance;
 	}
 
 	/**
