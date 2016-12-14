@@ -506,9 +506,10 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 				break;
 			}
 		}
-		if (theRoom == null){
-			return; //Comeon Java, you are better than this
+		if(theRoom != null){
+			
 		}
+		
 		
 	}
 
