@@ -48,13 +48,6 @@ public class RoomManagerFactoryImpl extends EFactoryImpl implements RoomManagerF
 	public RoomManagerFactoryImpl() {
 		super();
 	}
-	
-	private static RoomManagerFactoryImpl instance = null;
-	
-	public static RoomManagerFactoryImpl getInstance(){
-		if(instance == null) instance = new RoomManagerFactoryImpl();
-		return instance;
-	}
 
 	/**
 	 * <!-- begin-user-doc -->
