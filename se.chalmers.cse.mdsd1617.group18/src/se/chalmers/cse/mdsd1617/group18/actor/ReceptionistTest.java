@@ -39,14 +39,6 @@ public class ReceptionistTest {
 	}
 	
 	//u.c. 2.1.1.  - make booking
-	@Test
-	public void createBooking() {		
-		int id = bookingSystem.initiateBooking("FirstName", "LastName", "20161208", "20161223");
-		
-		//TODO: Need a factory to create a booking with given parameters.
-		//assertTrue((Booking)bookingSystem.listBooking().get(0) == bookingSystemFactory.createBooking() );
-		assertTrue(bookingSystemFactory.createBooking(id,"FirstName", "LastName","20161208", "20161223").equals(bookingSystem.listBooking().get(0)));
-	}
 	
 	@Test
 	public void createMultipleBooking() throws Exception {
@@ -67,6 +59,25 @@ public class ReceptionistTest {
 		}
 		
 		assertFalse(bookingSystem.listBooking().isEmpty());
+	}
+	
+	@Test
+	public void createBookingWithEmptyNames() {
+		int id = bookingSystem.initiateBooking("", "", "20161208", "20161223");
+		
+		assertTrue(id == -1);
+	}
+	
+	@Test
+	public void addRoomWithNonExistingRoomType () {
+		int id = bookingSystem.initiateBooking("a", "b", "20201012", "20201112");
+		assertFalse(bookingSystem.addRoomToBooking("ugyg;l", id));
+	}
+	
+	@Test
+	public void addRoomWithExistingRoomType () {
+		int id = bookingSystem.initiateBooking("a", "b", "20201012", "20201112");
+		assertTrue(bookingSystem.addRoomToBooking("A basic room", id));
 	}
 	
 	//TODO:u.c. 2.1.2.  - search for free rooms
