@@ -119,4 +119,22 @@ public class AdministratorTests {
 		
 		assertEquals(false, found);
 	}
+	
+	// UC 2.2.7
+	@Test
+	public void testAdministratorBlockRoom() {
+		int roomNumber = 666;
+		IRoomType rT = factory.createRoomType(1000, "Basic room", 1, "A basic room");
+		roomManager.addRoom(roomNumber, rT);
+		roomManager.blockRoom(roomNumber);
+		EList<IRoom> rooms = roomManager.getRooms();
+		boolean works = false;
+		for (int i = 0; i < rooms.size(); i++) {
+			IRoom room = rooms.get(i);
+			if (room.getRoomNumber() == roomNumber && room.isBlocked()) {
+				works = true;
+			}
+		}
+		assertEquals(true, works);
+	}
 }
