@@ -141,6 +141,12 @@ public class ReceptionistTest {
 	//TODO:u.c. 2.1.6.  - cancel a booking
 	@Test
 	public void cancelBooking() {
+		int bookingId = bookingSystem.initiateBooking("FirstName", "LastName", "20161212", "20161214");
+		bookingSystem.initiateCheckin(bookingId);
+		bookingSystem.addRoomToBooking("roomTypeDescription", bookingId);
+		bookingSystem.cancelBooking(bookingId);
+		
+		assertTrue(bookingSystem.listBooking().isEmpty());
 		
 	}
 	//u.c. 2.1.7.  - list bookings
