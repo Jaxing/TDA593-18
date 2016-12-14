@@ -11,11 +11,12 @@ import se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomManagerFactoryImpl;
 public class AdministratorTests {
 	
 	private RoomManager roomManager;
+	private RoomManagerFactory factory;
 
 	@Before
 	public void initializeAdminTests() {
-		RoomManagerFactoryImpl.init();
-		roomManager = RoomManagerFactoryImpl.init().createRoomManager();
+		factory = RoomManagerFactoryImpl.init();
+		roomManager = factory.createRoomManager();
 		roomManager.startup(50);
 	}
 	
@@ -37,6 +38,20 @@ public class AdministratorTests {
 		assertEquals(true, found);
 	}
 	
+	// UC 2.2.2
+	@Test
+	public void testAdministratorUpdateRoomType() {
+		roomManager.addRoomType("Old name", 999.9, 2);
+		IRoomType rT = roomManager.getRoomTypes().get(0);
+		roomManager.updateRoomType(rT, "New name", 200.0, 1);
+		rT = roomManager.getRoomTypes().get(0);
+		boolean works = false;
+		if (rT.getName().equals("New name") && rT.getPrice() == 200.0 && rT.getNumberOfBeds() == 1) {
+			works = true;
+		}
+		assertEquals(true, works);
+	}
+	
 	// UC 2.2.3
 	@Test
 	public void testAdministratorRemoveRoomType() {
@@ -51,7 +66,7 @@ public class AdministratorTests {
 	@Test
 	public void testAdministratorAddRoom() {
 		int roomNumber = 0;
-		IRoomType rT = RoomManagerFactoryImpl.init().createRoomType(1000, "Basic room", 1, "A basic room");
+		IRoomType rT = factory.createRoomType(1000, "Basic room", 1, "A basic room");
 		roomManager.addRoom(roomNumber, rT);
 		boolean found = false;
 		EList<IRoom> rooms = roomManager.getRooms();
@@ -68,7 +83,7 @@ public class AdministratorTests {
 	@Test
 	public void testAdministratorRemoveRoom() {
 		int roomNumber = 999;
-		IRoomType rT = RoomManagerFactoryImpl.init().createRoomType(1000, "Basic room", 1, "A basic room");
+		IRoomType rT = factory.createRoomType(1000, "Basic room", 1, "A basic room");
 		roomManager.addRoom(roomNumber, rT);
 		roomManager.removeRoom(roomNumber);
 		boolean found = false;
