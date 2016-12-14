@@ -210,7 +210,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 */
 
 	public int initiateBooking(String firstName,  String lastName, String startDate, String endDate) {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyymmdd");
 		Date start = null;
 		Date end = null;
 		try {
