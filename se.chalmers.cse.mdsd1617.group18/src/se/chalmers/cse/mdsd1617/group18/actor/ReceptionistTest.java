@@ -2,6 +2,9 @@ package se.chalmers.cse.mdsd1617.group18.actor;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.emf.common.util.EList;
 import org.junit.Before;
 import org.junit.Test;
@@ -43,6 +46,28 @@ public class ReceptionistTest {
 		//TODO: Need a factory to create a booking with given parameters.
 		//assertTrue((Booking)bookingSystem.listBooking().get(0) == bookingSystemFactory.createBooking() );
 		assertTrue(bookingSystemFactory.createBooking(id,"FirstName", "LastName","20161208", "20161223").equals(bookingSystem.listBooking().get(0)));
+	}
+	
+	@Test
+	public void createMultipleBooking() throws Exception {
+		List<Integer> ids = new ArrayList<Integer>();
+		
+		for(int i = 0; i < 5; i++) {
+			Integer id = bookingSystem.initiateBooking("first"+i, "last"+i, "2016/12/08", "2016/12/23");
+			
+			if (id < 0) {
+				throw new Exception("okay bookings returns -1");
+			}
+			
+			if (!ids.contains(id)) {
+				ids.add(id);
+			} else {
+				System.out.println(id);
+				throw new Exception("Multiple bookings with same ids");
+			}
+		}
+		
+		assertTrue(true);
 	}
 	
 	//TODO:u.c. 2.1.2.  - search for free rooms
