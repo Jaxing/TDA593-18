@@ -302,12 +302,20 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public double initiateCheckout(int bookingID) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		IBooking theBooking = findBooking(bookingID);
+		if(theBooking == null){
+			return -1;
+		} else {
+			double price = 0;
+			EList <IRoom> bookingRoomList = theBooking.getRooms();
+			for (int i = 0; i < bookingRoomList.size();i++){
+				price += bookingRoomList.get(i).getRoomType().getPrice();
+			}
+			return price;
+		}
 	}
 
 	/**
@@ -327,9 +335,19 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * @generated
 	 */
 	public double initiateRoomCheckout(int roomNumber, int bookingId) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		IBooking theBooking = findBooking(bookingId);
+		if(theBooking == null){
+			return -1;
+		}
+		EList <IRoom> bookingRoomList = theBooking.getRooms();
+		IRoom currentRoom = null;
+		for(int i = 0; i< bookingRoomList.size(); i++){
+			currentRoom = bookingRoomList.get(i);
+			if (currentRoom.getRoomNumber()==roomNumber){
+				return currentRoom.getRoomType().getPrice();
+			}
+		}
+		return -1;
 	}
 
 	/**
