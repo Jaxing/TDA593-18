@@ -45,7 +45,7 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated NOT
 	 * @ordered
 	 */
-	protected EList roomTypes;
+	protected EList<IRoomType> roomTypes;
 
 	/**
 	 * The cached value of the '{@link #getRooms() <em>Rooms</em>}' reference list.
@@ -55,7 +55,7 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated NOT
 	 * @ordered
 	 */
-	protected EList rooms;
+	protected EList<IRoom> rooms;
 	
 	/**
 	 * <!-- begin-user-doc -->
@@ -64,8 +64,8 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 */
 	protected RoomManagerImpl() {
 		super();
-		this.rooms = new BasicEList();
-		this.roomTypes = new BasicEList();
+		this.rooms = new BasicEList<IRoom>();
+		this.roomTypes = new BasicEList<IRoomType>();
 		this.factory = RoomManagerFactoryImpl.init();
 	}
 
@@ -78,7 +78,7 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected RoomManagerImpl(EList roomTypes, EList rooms) {
+	protected RoomManagerImpl(EList<IRoomType> roomTypes, EList<IRoom> rooms) {
 		super();
 		this.roomTypes = roomTypes;
 		this.rooms = rooms;
@@ -100,9 +100,9 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public EList getRoomTypes() {
+	public EList<IRoomType> getRoomTypes() {
 		if (roomTypes == null) {
-			roomTypes = new EObjectResolvingEList(IRoomType.class, this, RoomManagerPackage.ROOM_MANAGER__ROOM_TYPES);
+			roomTypes = new EObjectResolvingEList<IRoomType>(IRoomType.class, this, RoomManagerPackage.ROOM_MANAGER__ROOM_TYPES);
 		}
 		return roomTypes;
 	}
@@ -112,9 +112,9 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public EList getRooms() {
+	public EList<IRoom> getRooms() {
 		if (rooms == null) {
-			rooms = new EObjectResolvingEList(IRoom.class, this, RoomManagerPackage.ROOM_MANAGER__ROOMS);
+			rooms = new EObjectResolvingEList<IRoom>(IRoom.class, this, RoomManagerPackage.ROOM_MANAGER__ROOMS);
 		}
 		return rooms;
 	}
@@ -172,7 +172,7 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	public IRoomType removeRoomType(IRoomType roomType) {
 		for(int i = 0; i < roomTypes.size(); i++){
 			if (roomTypes.get(i) == roomType){
-				return (IRoomType)roomTypes.remove(i);
+				return roomTypes.remove(i);
 			}
 		}
 		return null;
@@ -185,11 +185,12 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 */
 	public void addRoom(int roomNumber, IRoomType roomType) {
 		for(int i = 0; i < rooms.size(); i++){
-			if (((Room)(rooms.get(i))).getRoomNumber() == roomNumber){
+			if (rooms.get(i).getRoomNumber() == roomNumber){
 				return;
 			}
 		}
-		rooms.add(roomNumber, roomType);
+		IRoom room = factory.createRoom(roomType, roomNumber);
+		rooms.add(room);
 	}
 
 	/**
@@ -199,8 +200,8 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 */
 	public void changeRoomType(int roomNumber, IRoomType roomType) {
 		for(int i = 0; i < rooms.size(); i++){
-			if (((Room)(rooms.get(i))).getRoomNumber() == roomNumber){
-				((Room)(rooms.get(i))).setRoomType(roomType);
+			if (rooms.get(i).getRoomNumber() == roomNumber){
+				rooms.get(i).setRoomType(roomType);
 			}
 		}
 	}
@@ -212,7 +213,7 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 */
 	public IRoom removeRoom(int roomNumber) {
 		for(int i = 0; i < rooms.size(); i++){
-			if (((IRoom)(rooms.get(i))).getRoomNumber() == roomNumber){
+			if (rooms.get(i).getRoomNumber() == roomNumber){
 				return (IRoom)rooms.remove(i);
 			}
 		}
@@ -228,8 +229,8 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 */
 	private void setRoomBlock(int roomNumber, boolean block){
 		for(int i = 0; i < rooms.size(); i++){
-			if(((Room) rooms.get(i)).getRoomNumber()==roomNumber){
-				((Room) rooms.get(i)).setBlocked(block);
+			if(rooms.get(i).getRoomNumber()==roomNumber){
+				rooms.get(i).setIsBlocked(block);
 			}
 		}
 	}
