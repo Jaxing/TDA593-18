@@ -286,6 +286,18 @@
                 <eParameters name="blocked" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
               </eOperations>
               <eOperations name="isBlocked" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              <eOperations name="getExtraCostDescription" ordered="false" lowerBound="1"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eOperations name="setExtraCostDescription" ordered="false" lowerBound="1">
+                <eParameters name="extraCostDescription" ordered="false" lowerBound="1"
+                    eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              </eOperations>
+              <eOperations name="getExtraCostPrice" ordered="false" lowerBound="1"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+              <eOperations name="addExtraCost" ordered="false" lowerBound="1">
+                <eParameters name="extraCostPrice" ordered="false" lowerBound="1"
+                    eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+              </eOperations>
             </eClassifiers>
           </eSubpackages>
         </eSubpackages>

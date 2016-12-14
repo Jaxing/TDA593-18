@@ -694,13 +694,49 @@ public interface RoomManagerPackage extends EPackage {
 	int IROOM___IS_BLOCKED = 4;
 
 	/**
+	 * The operation id for the '<em>Get Extra Cost Description</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IROOM___GET_EXTRA_COST_DESCRIPTION = 5;
+
+	/**
+	 * The operation id for the '<em>Set Extra Cost Description</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IROOM___SET_EXTRA_COST_DESCRIPTION__STRING = 6;
+
+	/**
+	 * The operation id for the '<em>Get Extra Cost Price</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IROOM___GET_EXTRA_COST_PRICE = 7;
+
+	/**
+	 * The operation id for the '<em>Add Extra Cost</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IROOM___ADD_EXTRA_COST__DOUBLE = 8;
+
+	/**
 	 * The number of operations of the '<em>IRoom</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IROOM_OPERATION_COUNT = 5;
+	int IROOM_OPERATION_COUNT = 9;
 
 	/**
 	 * The meta object id for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomImpl <em>Room</em>}' class.
@@ -811,6 +847,42 @@ public interface RoomManagerPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROOM___IS_BLOCKED = IROOM___IS_BLOCKED;
+
+	/**
+	 * The operation id for the '<em>Get Extra Cost Description</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM___GET_EXTRA_COST_DESCRIPTION = IROOM___GET_EXTRA_COST_DESCRIPTION;
+
+	/**
+	 * The operation id for the '<em>Set Extra Cost Description</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM___SET_EXTRA_COST_DESCRIPTION__STRING = IROOM___SET_EXTRA_COST_DESCRIPTION__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Extra Cost Price</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM___GET_EXTRA_COST_PRICE = IROOM___GET_EXTRA_COST_PRICE;
+
+	/**
+	 * The operation id for the '<em>Add Extra Cost</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM___ADD_EXTRA_COST__DOUBLE = IROOM___ADD_EXTRA_COST__DOUBLE;
 
 	/**
 	 * The number of operations of the '<em>Room</em>' class.
@@ -1264,6 +1336,46 @@ public interface RoomManagerPackage extends EPackage {
 	EOperation getIRoom__IsBlocked();
 
 	/**
+	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IRoom#getExtraCostDescription() <em>Get Extra Cost Description</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Extra Cost Description</em>' operation.
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.IRoom#getExtraCostDescription()
+	 * @generated
+	 */
+	EOperation getIRoom__GetExtraCostDescription();
+
+	/**
+	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IRoom#setExtraCostDescription(java.lang.String) <em>Set Extra Cost Description</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set Extra Cost Description</em>' operation.
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.IRoom#setExtraCostDescription(java.lang.String)
+	 * @generated
+	 */
+	EOperation getIRoom__SetExtraCostDescription__String();
+
+	/**
+	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IRoom#getExtraCostPrice() <em>Get Extra Cost Price</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Extra Cost Price</em>' operation.
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.IRoom#getExtraCostPrice()
+	 * @generated
+	 */
+	EOperation getIRoom__GetExtraCostPrice();
+
+	/**
+	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IRoom#addExtraCost(double) <em>Add Extra Cost</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Extra Cost</em>' operation.
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.IRoom#addExtraCost(double)
+	 * @generated
+	 */
+	EOperation getIRoom__AddExtraCost__double();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1644,6 +1756,38 @@ public interface RoomManagerPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IROOM___IS_BLOCKED = eINSTANCE.getIRoom__IsBlocked();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Extra Cost Description</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IROOM___GET_EXTRA_COST_DESCRIPTION = eINSTANCE.getIRoom__GetExtraCostDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Set Extra Cost Description</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IROOM___SET_EXTRA_COST_DESCRIPTION__STRING = eINSTANCE.getIRoom__SetExtraCostDescription__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Extra Cost Price</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IROOM___GET_EXTRA_COST_PRICE = eINSTANCE.getIRoom__GetExtraCostPrice();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Extra Cost</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IROOM___ADD_EXTRA_COST__DOUBLE = eINSTANCE.getIRoom__AddExtraCost__double();
 
 	}
 

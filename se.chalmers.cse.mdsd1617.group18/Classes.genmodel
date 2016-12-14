@@ -281,6 +281,14 @@
                   <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IRoom/setIsBlocked/blocked"/>
                 </genOperations>
                 <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IRoom/isBlocked"/>
+                <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IRoom/getExtraCostDescription"/>
+                <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IRoom/setExtraCostDescription">
+                  <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IRoom/setExtraCostDescription/extraCostDescription"/>
+                </genOperations>
+                <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IRoom/getExtraCostPrice"/>
+                <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IRoom/addExtraCost">
+                  <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IRoom/addExtraCost/extraCostPrice"/>
+                </genOperations>
               </genClasses>
             </nestedGenPackages>
           </nestedGenPackages>

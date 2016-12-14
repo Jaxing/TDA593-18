@@ -495,6 +495,26 @@
                   <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
                 </ownedParameter>
               </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ohjlEMIOEeaRHNCC2GYp0w" name="getExtraCostDescription">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_E1k0UMIPEeaRHNCC2GYp0w" direction="return">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_FzFlcMIPEeaRHNCC2GYp0w" name="setExtraCostDescription">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_gfA1gMIPEeaRHNCC2GYp0w" name="extraCostDescription">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_mZUQwMIPEeaRHNCC2GYp0w" name="getExtraCostPrice" concurrency="guarded">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_sTyrIMIPEeaRHNCC2GYp0w" direction="return">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_uSaT8MIPEeaRHNCC2GYp0w" name="addExtraCost">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_SQwKkMIQEeaRHNCC2GYp0w" name="extraCostPrice">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
+                </ownedParameter>
+              </ownedOperation>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_FhhH8brREeaVMa-P8AMS-A" name="Room">
               <ownedAttribute xmi:type="uml:Property" xmi:id="_FhhH8rrREeaVMa-P8AMS-A" name="roomType" visibility="private" type="_FhhHzLrREeaVMa-P8AMS-A"/>

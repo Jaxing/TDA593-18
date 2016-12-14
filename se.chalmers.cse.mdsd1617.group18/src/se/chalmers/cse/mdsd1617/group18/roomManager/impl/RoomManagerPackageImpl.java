@@ -546,6 +546,42 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getIRoom__GetExtraCostDescription() {
+		return iRoomEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIRoom__SetExtraCostDescription__String() {
+		return iRoomEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIRoom__GetExtraCostPrice() {
+		return iRoomEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIRoom__AddExtraCost__double() {
+		return iRoomEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public RoomManagerFactory getRoomManagerFactory() {
 		return (RoomManagerFactory)getEFactoryInstance();
 	}
@@ -619,6 +655,10 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 		createEOperation(iRoomEClass, IROOM___SET_ROOM_TYPE__IROOMTYPE);
 		createEOperation(iRoomEClass, IROOM___SET_IS_BLOCKED__BOOLEAN);
 		createEOperation(iRoomEClass, IROOM___IS_BLOCKED);
+		createEOperation(iRoomEClass, IROOM___GET_EXTRA_COST_DESCRIPTION);
+		createEOperation(iRoomEClass, IROOM___SET_EXTRA_COST_DESCRIPTION__STRING);
+		createEOperation(iRoomEClass, IROOM___GET_EXTRA_COST_PRICE);
+		createEOperation(iRoomEClass, IROOM___ADD_EXTRA_COST__DOUBLE);
 	}
 
 	/**
@@ -755,6 +795,16 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 		addEParameter(op, ecorePackage.getEBoolean(), "blocked", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getIRoom__IsBlocked(), ecorePackage.getEBoolean(), "isBlocked", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getIRoom__GetExtraCostDescription(), ecorePackage.getEString(), "getExtraCostDescription", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIRoom__SetExtraCostDescription__String(), null, "setExtraCostDescription", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "extraCostDescription", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getIRoom__GetExtraCostPrice(), ecorePackage.getEDouble(), "getExtraCostPrice", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIRoom__AddExtraCost__double(), null, "addExtraCost", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "extraCostPrice", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

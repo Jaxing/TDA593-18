@@ -55,4 +55,36 @@ public interface IRoom extends EObject {
 	 */
 	boolean isBlocked();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	String getExtraCostDescription();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model extraCostDescriptionRequired="true" extraCostDescriptionOrdered="false"
+	 * @generated
+	 */
+	void setExtraCostDescription(String extraCostDescription);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	double getExtraCostPrice();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model extraCostPriceRequired="true" extraCostPriceOrdered="false"
+	 * @generated
+	 */
+	void addExtraCost(double extraCostPrice);
+
 } // IRoom

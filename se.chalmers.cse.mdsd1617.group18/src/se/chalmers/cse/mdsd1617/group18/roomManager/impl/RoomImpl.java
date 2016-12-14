@@ -292,6 +292,39 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getExtraCostDescription() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setExtraCostDescription(String extraCostDescription) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void addExtraCost(double extraCostPrice) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -396,6 +429,14 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		switch (operationID) {
 			case RoomManagerPackage.ROOM___SET_IS_BLOCKED__BOOLEAN:
 				setIsBlocked((Boolean)arguments.get(0));
+				return null;
+			case RoomManagerPackage.ROOM___GET_EXTRA_COST_DESCRIPTION:
+				return getExtraCostDescription();
+			case RoomManagerPackage.ROOM___SET_EXTRA_COST_DESCRIPTION__STRING:
+				setExtraCostDescription((String)arguments.get(0));
+				return null;
+			case RoomManagerPackage.ROOM___ADD_EXTRA_COST__DOUBLE:
+				addExtraCost((Double)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);
