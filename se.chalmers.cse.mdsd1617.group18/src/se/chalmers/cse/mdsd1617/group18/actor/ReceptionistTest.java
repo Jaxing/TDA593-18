@@ -45,7 +45,7 @@ public class ReceptionistTest {
 		List<Integer> ids = new ArrayList<Integer>();
 		
 		for(int i = 0; i < 5; i++) {
-			Integer id = bookingSystem.initiateBooking("first"+i, "last"+i, "20161208", "20161223");
+			Integer id = bookingSystem.initiateBooking("first"+i, "20161208", "20161223", "last"+i);
 			if (id < 0) {
 				throw new Exception("okay bookings returns -1");
 			}
@@ -63,20 +63,28 @@ public class ReceptionistTest {
 	
 	@Test
 	public void createBookingWithEmptyNames() {
-		int id = bookingSystem.initiateBooking("", "", "20161208", "20161223");
+		int id = bookingSystem.initiateBooking("", "20161208", "20161223", "");
 		
 		assertTrue(id == -1);
 	}
 	
 	@Test
+	public void createBookingWithNames() {
+		int id = bookingSystem.initiateBooking("First", "20161208", "20161223", "last");
+		
+		assertFalse(id == -1);
+	}
+	
+	
+	@Test
 	public void addRoomWithNonExistingRoomType () {
-		int id = bookingSystem.initiateBooking("a", "b", "20201012", "20201112");
+		int id = bookingSystem.initiateBooking("a", "20201012", "20201112", "b");
 		assertFalse(bookingSystem.addRoomToBooking("ugyg;l", id));
 	}
 	
 	@Test
 	public void addRoomWithExistingRoomType () {
-		int id = bookingSystem.initiateBooking("a", "b", "20201012", "20201112");
+		int id = bookingSystem.initiateBooking("a", "20201012", "20201112", "b");
 		assertTrue(bookingSystem.addRoomToBooking("A basic room", id));
 	}
 	
@@ -91,7 +99,7 @@ public class ReceptionistTest {
 	//TODO:u.c. 2.1.3.  - check in booking
 	@Test
 	public void checkInBooking() {
-		int bookingId = bookingSystem.initiateBooking("First", "Last", "20161211", "20161223");
+		int bookingId = bookingSystem.initiateBooking("First", "20161211", "20161223", "Last");
 		
 		//bookingSystem.checkInRoom("roomTypeDescription", id); //the input is only the booking id
 		bookingSystem.initiateCheckin(bookingId);
@@ -106,7 +114,7 @@ public class ReceptionistTest {
 	//TODO:u.c. 2.1.4.  - check out booking
 	@Test
 	public void checkOutBooking() {
-		int bookingId = bookingSystem.initiateBooking("FirstName", "LastName", "20161212", "20161214");
+		int bookingId = bookingSystem.initiateBooking("FirstName", "20161212", "20161214", "LastName");
 		bookingSystem.initiateCheckin(bookingId);
 		bookingSystem.addRoomToBooking("roomTypeDescription", bookingId);
 		bookingSystem.confirmBooking(bookingId);
@@ -119,7 +127,7 @@ public class ReceptionistTest {
 	//TODO:u.c. 2.1.5.  - edit a booking
 	@Test
 	public void editBooking() {
-		int bookingId = bookingSystem.initiateBooking("FirstName", "LastName", "20161212", "20161214");
+		int bookingId = bookingSystem.initiateBooking("FirstName", "20161212", "20161214", "LastName");
 		//bookingSystem.initiateCheckin(BookingId);
 
 			bookingSystem.editBookingPeriod(bookingId, "20161214" , "20161216");
@@ -138,7 +146,7 @@ public class ReceptionistTest {
 	//u.c. 2.1.7.  - list bookings
 	@Test
 	public void listBookingsIsNotEmpty () {
-		int id = bookingSystem.initiateBooking("FirstName","LastName", "20161208", "20161223");
+		int id = bookingSystem.initiateBooking("FirstName", "20161208", "20161223","LastName");
 		//bookingSystem.addRoomToBooking("A Room", id);
        //bookingSystem.checkInRoom("RoomType", id);
 		
@@ -147,7 +155,7 @@ public class ReceptionistTest {
 	
 	@Test
 	public void listBooking () {
-		int id = bookingSystem.initiateBooking("FirstName", "Last Name", "20161212", "20161223");
+		int id = bookingSystem.initiateBooking("FirstName", "20161212", "20161223", "Last Name");
 		//bookingSystem.addRoomToBooking("First Room", id);
 		
 		assertTrue(bookingSystem.listBooking().size() == 1); 
@@ -173,7 +181,7 @@ public class ReceptionistTest {
 	//TODO:u.c. 2.1.11. - check in room 
 	@Test
 	public void checkInRoom() {
-		int bookingId = bookingSystem.initiateBooking("FirstName", "LastName", "20161212", "20161214");
+		int bookingId = bookingSystem.initiateBooking("FirstName", "20161212", "20161214", "LastName");
 		int result = bookingSystem.checkInRoom("roomTypeDescription", bookingId);
 		//boolean result = bookingSystem.addRoomToBooking("roomTypeDescription", bookingId);
 		//bookingSystem.confirmBooking(bookingId);
@@ -183,7 +191,7 @@ public class ReceptionistTest {
 	//TODO:u.c. 2.1.12. - check out and pay room
 	@Test
 	public void checkOutAndPayRoom() {
-		int bookingId = bookingSystem.initiateBooking("FirstName", "LastName", "20161212", "20161214");
+		int bookingId = bookingSystem.initiateBooking("FirstName", "20161212", "20161214", "LastName");
 		int result1 = bookingSystem.checkInRoom("roomTypeDescription", bookingId);
 		double result2 = bookingSystem.initiateRoomCheckout(bookingId,12);
 		//boolean result = bookingSystem.addRoomToBooking("roomTypeDescription", bookingId);
@@ -197,7 +205,7 @@ public class ReceptionistTest {
 		int roomNumber = 111;
 		String descriptionOfCost = "laundry service";
 		double priceOfCost = 50.00;
-		int bookingId = bookingSystem.initiateBooking("FirstName", "LastName", "20161212", "20161214");
+		int bookingId = bookingSystem.initiateBooking("FirstName", "20161212", "20161214", "LastName");
 		bookingSystem.initiateCheckin(bookingId);
 		bookingSystem.addRoomToBooking("roomTypeDescription", bookingId);
 		bookingSystem.confirmBooking(bookingId);
