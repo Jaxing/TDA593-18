@@ -507,7 +507,9 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 			}
 		}
 		if(theRoom != null){
-			
+			theRoom.setExtraCostDescription(theRoom.getExtraCostDescription() 
+					+ "\n" + descriptionOfCost);
+			theRoom.addExtraCost(priceOfCost);
 		}
 		
 		
