@@ -99,7 +99,6 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 		this.roomProvider = (IHotelRoomProvider) RoomManagerFactoryImpl.init().createRoomManager();
 		//TODO: How should we handle the IHotelRoomProvider? We can really just create a new since it will not be connected then.
 		this.freeRooms = new BasicEList<FreeRoomTypesDTO>();
-		//TODO: we should probably have a room list here as well
 		EList<IRoom> rooms = roomProvider.getRooms();
 		for(int i = 0; i < rooms.size(); i++){
 			IRoomType roomType = rooms.get(i).getRoomType();
@@ -213,6 +212,11 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 		SimpleDateFormat dateFormat = new SimpleDateFormat("YYYYMMDD");
 		Date start = null;
 		Date end = null;
+		
+		if (startDate == null || endDate == null) {
+			return -1;
+		}
+		
 		try {
 			start = dateFormat.parse(startDate);
 			end = dateFormat.parse(endDate);
@@ -220,7 +224,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 			return -1;
 		}
 		
-		if(!start.before(end)){
+		if(end.before(start)){
 			return -1;
 		}
 		
