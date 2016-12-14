@@ -98,20 +98,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 		this.roomProvider = (IHotelRoomProvider) RoomManagerFactoryImpl.init().createRoomManager();
 		//TODO: How should we handle the IHotelRoomProvider? We can really just create a new since it will not be connected then.
 		this.freeRooms = new BasicEList<FreeRoomTypesDTO>();
-		EList<IRoom> rooms = roomProvider.getRooms();
-		for(int i = 0; i < rooms.size(); i++){
-			IRoomType roomType = rooms.get(i).getRoomType();
-			FreeRoomTypesDTO types = BookingSystemFactoryImpl.init().createFreeRoomTypesDTO();
-			types.setNumBeds(roomType.getNumberOfBeds());
-			types.setPricePerNight(roomType.getPrice());
-			types.setRoomTypeDescription(roomType.getDescription());
-			if(freeRooms.contains(types)){
-				types.setNumFreeRooms(types.getNumFreeRooms() + 1);
-			} else {
-				types.setNumFreeRooms(1);
-				freeRooms.add(types);
-			}
-		}
+		updateFreeRooms();
 	}
 
 	/**
@@ -185,19 +172,65 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BookingSystemPackage.BOOKING_SYSTEM__ROOM_PROVIDER, oldRoomProvider, roomProvider));
 	}
-
+	
 	/**
-	 * <!-- begin-user-doc -->
+	 * TODO: check start and end date
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public EList<FreeRoomTypesDTO> getFreeRooms(int numBeds, String startDate, String endDate) {
-		FreeRoomTypesDTOImpl freeRoomsTypes = new FreeRoomTypesDTOImpl("Basic", 2, 1000.00, 10);
-		freeRooms.add(freeRoomsTypes);
+		
 		if (freeRooms == null) {
 			freeRooms = new EObjectResolvingEList<FreeRoomTypesDTO>(FreeRoomTypesDTO.class, this, BookingSystemPackage.FREE_ROOM_TYPES_DTO);
 		}
-	   return freeRooms;
+		freeRooms.clear();
+		updateFreeRooms();
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
+		Date start = null;
+		Date end = null;
+		
+		if (startDate == null || endDate == null) {
+			return new BasicEList<FreeRoomTypesDTO>();
+		}
+		
+		try {
+			start = dateFormat.parse(startDate);
+			end = dateFormat.parse(endDate);
+		} catch (ParseException e) {
+			return new BasicEList<FreeRoomTypesDTO>();
+		}
+		
+		if(end.before(start)){
+			return new BasicEList<FreeRoomTypesDTO>();
+		}
+		
+		EList<FreeRoomTypesDTO> rooms = new BasicEList<FreeRoomTypesDTO>();
+		for(int i = 0; i < freeRooms.size(); i++){
+			if(freeRooms.get(i).getNumBeds() == numBeds){
+				rooms.add(freeRooms.get(i));
+			}
+		}
+	    return rooms;
+	}
+	
+	/**
+	 * @generated NOT
+	 */
+	private void updateFreeRooms(){
+		EList<IRoom> rooms = roomProvider.getRooms();
+		for(int i = 0; i < rooms.size(); i++){
+			IRoomType roomType = rooms.get(i).getRoomType();
+			FreeRoomTypesDTO types = BookingSystemFactoryImpl.init().createFreeRoomTypesDTO();
+			types.setNumBeds(roomType.getNumberOfBeds());
+			types.setPricePerNight(roomType.getPrice());
+			types.setRoomTypeDescription(roomType.getDescription());
+			if(freeRooms.contains(types)){
+				types.setNumFreeRooms(types.getNumFreeRooms() + 1);
+			} else {
+				types.setNumFreeRooms(1);
+				freeRooms.add(types);
+			}
+		}
 	}
 
 	/**
