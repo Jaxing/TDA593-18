@@ -377,9 +377,11 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * @generated
 	 */
 	public EList<FreeRoomTypesDTO> initiateCheckin(int bookingId) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		IBooking theBooking = findBooking(bookingId);
+		if (theBooking == null){
+			return null;
+		}
+		return null;
 	}
 
 	/**
@@ -457,12 +459,27 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void addExtraCostToRoom(int bookingId, int roomNumber, String descriptionOfCost, double priceOfCost) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		IBooking theBooking = findBooking(bookingId);
+		if (theBooking == null){
+			return ; //pissy as hell
+		}
+		EList <IRoom> bookingRooms = theBooking.getRooms();
+		IRoom theRoom = null;
+		IRoom indexedRoom = null;
+		for (int i = 0; i < bookingRooms.size(); i++){
+			indexedRoom = bookingRooms.get(i);
+			if (indexedRoom.getRoomNumber()==roomNumber){
+				theRoom = indexedRoom;
+				break;
+			}
+		}
+		if (theRoom == null){
+			return; //Comeon Java, you are better than this
+		}
+		
 	}
 
 	/**
