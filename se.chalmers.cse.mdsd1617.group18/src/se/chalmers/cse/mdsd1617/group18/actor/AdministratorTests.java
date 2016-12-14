@@ -23,9 +23,10 @@ public class AdministratorTests {
 	@Test
 	public void testAdministratorRemoveRoomType() {
 		EList<IRoomType> roomTypes = roomManager.getRoomTypes();
-		roomManager.removeRoomType(roomTypes.get(0));
+		IRoomType rT = roomTypes.get(0);
+		roomManager.removeRoomType(rT);
 		EList<IRoomType> newRoomTypes = roomManager.getRoomTypes();
-		assertEquals(false, newRoomTypes.contains(roomTypes.get(0)));
+		assertEquals(false, newRoomTypes.contains(rT));
 	}
 	
 	// UC 2.2.4
