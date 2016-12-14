@@ -212,7 +212,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 		Date start = null;
 		Date end = null;
 		
-		if (startDate == null || endDate == null || lastName == null || firstName.equals("")  || lastName == null || lastName.equals("")) {
+		if (startDate == null || endDate == null || firstName == null || firstName.equals("")  || lastName == null || lastName.equals("")) {
 			return -1;
 		}
 		
