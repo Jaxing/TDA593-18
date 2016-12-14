@@ -160,11 +160,17 @@ public class ReceptionistTest {
 		assertEquals(true, result!=-1);
 		
 	}
-	//TODO:u.c. 2.1.12. - check out and pay
+	//TODO:u.c. 2.1.12. - check out and pay room
 	@Test
-	public void checkOutAndPay() {
-		
+	public void checkOutAndPayRoom() {
+		int bookingId = bookingSystem.initiateBooking("FirstName", "LastName", "20161212", "20161214");
+		int result1 = bookingSystem.checkInRoom("roomTypeDescription", bookingId);
+		double result2 = bookingSystem.initiateRoomCheckout(bookingId,12);
+		//boolean result = bookingSystem.addRoomToBooking("roomTypeDescription", bookingId);
+		//bookingSystem.confirmBooking(bookingId);
+		assertEquals(true, result2==-1 && result1==-1);
 	}
+	
 	//TODO:u.c. 2.1.13. - add extra cost to rooms
 	@Test
 	public void addExtraCostToRoom() {
