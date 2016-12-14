@@ -64,7 +64,8 @@
                   eType="#//chalmers/cse/mdsd1617/group18/bookingSystem/FreeRoomTypesDTO">
                 <eParameters name="bookingId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
               </eOperations>
-              <eOperations name="editBookingPeriod" ordered="false" lowerBound="1">
+              <eOperations name="editBookingPeriod" ordered="false" lowerBound="1"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
                 <eParameters name="bookingId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
                 <eParameters name="startDate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
                 <eParameters name="endDate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

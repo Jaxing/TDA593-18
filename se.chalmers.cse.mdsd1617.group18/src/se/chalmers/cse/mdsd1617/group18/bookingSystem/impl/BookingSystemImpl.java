@@ -385,16 +385,17 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void editBookingPeriod(int bookingId, String startDate, String endDate) {
+	public boolean editBookingPeriod(int bookingId, String startDate, String endDate) {
 		IBooking booking = findBooking(bookingId);
 		if(booking == null){
-			
+			return false;
 		}else{
 			booking.setStartDate(startDate);
 			booking.setEndDate(endDate);
 		}
+		return true;
 	}
 
 	/**
@@ -601,8 +602,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 			case BookingSystemPackage.BOOKING_SYSTEM___INITIATE_CHECKIN__INT:
 				return initiateCheckin((Integer)arguments.get(0));
 			case BookingSystemPackage.BOOKING_SYSTEM___EDIT_BOOKING_PERIOD__INT_STRING_STRING:
-				editBookingPeriod((Integer)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2));
-				return null;
+				return editBookingPeriod((Integer)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2));
 			case BookingSystemPackage.BOOKING_SYSTEM___CANCEL_BOOKING__INT:
 				cancelBooking((Integer)arguments.get(0));
 				return null;

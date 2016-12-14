@@ -27,10 +27,10 @@ public interface IHotelBookingManager extends IHotelCustomerProvides {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model bookingIdRequired="true" bookingIdOrdered="false" startDateRequired="true" startDateOrdered="false" endDateRequired="true" endDateOrdered="false"
+	 * @model required="true" ordered="false" bookingIdRequired="true" bookingIdOrdered="false" startDateRequired="true" startDateOrdered="false" endDateRequired="true" endDateOrdered="false"
 	 * @generated
 	 */
-	void editBookingPeriod(int bookingId, String startDate, String endDate);
+	boolean editBookingPeriod(int bookingId, String startDate, String endDate);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -17,7 +17,6 @@ import se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager;
 import se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomProvider;
 import se.chalmers.cse.mdsd1617.group18.roomManager.IRoom;
 import se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType;
-import se.chalmers.cse.mdsd1617.group18.roomManager.Room;
 import se.chalmers.cse.mdsd1617.group18.roomManager.RoomManager;
 import se.chalmers.cse.mdsd1617.group18.roomManager.RoomManagerFactory;
 import se.chalmers.cse.mdsd1617.group18.roomManager.RoomManagerPackage;

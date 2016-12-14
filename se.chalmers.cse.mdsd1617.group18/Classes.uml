@@ -183,7 +183,7 @@
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WSlPML1YEea2wqLyiAvrGw" value="*"/>
                 </ownedParameter>
               </ownedOperation>
-              <ownedOperation xmi:type="uml:Operation" xmi:id="_FeS06brREeaVMa-P8AMS-A" name="editBookingPeriod" visibility="package">
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_FeS06brREeaVMa-P8AMS-A" name="editBookingPeriod" visibility="package" concurrency="concurrent">
                 <ownedParameter xmi:type="uml:Parameter" xmi:id="_FeS07LrREeaVMa-P8AMS-A" name="bookingId">
                   <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
                 </ownedParameter>
@@ -192,6 +192,9 @@
                 </ownedParameter>
                 <ownedParameter xmi:type="uml:Parameter" xmi:id="_FeS07rrREeaVMa-P8AMS-A" name="endDate">
                   <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+                </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_SLAswMIBEeaTf8R7izOAkA" direction="return">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
                 </ownedParameter>
               </ownedOperation>
               <ownedOperation xmi:type="uml:Operation" xmi:id="_FeS077rREeaVMa-P8AMS-A" name="cancelBooking">
