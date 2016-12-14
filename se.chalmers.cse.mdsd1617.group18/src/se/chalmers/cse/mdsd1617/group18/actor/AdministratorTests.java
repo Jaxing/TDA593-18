@@ -26,12 +26,14 @@ public class AdministratorTests {
 		double price = 1000.0;
 		String name = "A room type";
 		int numberOfBeds = 2;
-		roomManager.addRoomType(name, price, numberOfBeds);
+		String desc = "Some description";
+		roomManager.addRoomType(name, price, numberOfBeds, desc);
 		EList<IRoomType> roomTypes = roomManager.getRoomTypes();
 		boolean found = false;
 		for (int i = 0; i < roomTypes.size(); i++) {
 			IRoomType rT = roomTypes.get(i);
-			if (rT.getName().equals(name) && rT.getPrice() == price && rT.getNumberOfBeds() == numberOfBeds) {
+			if (rT.getName().equals(name) && rT.getPrice() == price 
+					&& rT.getNumberOfBeds() == numberOfBeds && rT.getDescription().equals(desc)) {
 				found = true;
 			}
 		}
@@ -41,12 +43,13 @@ public class AdministratorTests {
 	// UC 2.2.2
 	@Test
 	public void testAdministratorUpdateRoomType() {
-		roomManager.addRoomType("Old name", 999.9, 2);
+		roomManager.addRoomType("Old name", 999.9, 2, "Old desc");
 		IRoomType rT = roomManager.getRoomTypes().get(0);
-		roomManager.updateRoomType(rT, "New name", 200.0, 1);
+		roomManager.updateRoomType(rT, "New name", 200.0, 1, "New desc");
 		rT = roomManager.getRoomTypes().get(0);
 		boolean works = false;
-		if (rT.getName().equals("New name") && rT.getPrice() == 200.0 && rT.getNumberOfBeds() == 1) {
+		if (rT.getName().equals("New name") && rT.getPrice() == 200.0 
+				&& rT.getNumberOfBeds() == 1 && rT.getDescription().equals("New desc")) {
 			works = true;
 		}
 		assertEquals(true, works);
