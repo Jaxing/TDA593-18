@@ -388,9 +388,13 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * @generated
 	 */
 	public void editBookingPeriod(int bookingId, String startDate, String endDate) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		IBooking booking = findBooking(bookingId);
+		if(booking == null){
+			
+		}else{
+			booking.setStartDate(startDate);
+			booking.setEndDate(endDate);
+		}
 	}
 
 	/**

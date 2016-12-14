@@ -119,6 +119,15 @@ public class ReceptionistTest {
 	//TODO:u.c. 2.1.5.  - edit a booking
 	@Test
 	public void editBooking() {
+		int bookingId = bookingSystem.initiateBooking("FirstName", "LastName", "20161212", "20161214");
+		//bookingSystem.initiateCheckin(BookingId);
+
+			bookingSystem.editBookingPeriod(bookingId, "20161214" , "20161216");
+			
+		String newStartDate= bookingSystem.listBooking().get(0).getStartDate();
+		String newEndDate = bookingSystem.listBooking().get(0).getEndDate();
+		assertEquals("20161214", newStartDate);
+		assertEquals("20161216", newEndDate);
 		
 	}
 	//TODO:u.c. 2.1.6.  - cancel a booking
