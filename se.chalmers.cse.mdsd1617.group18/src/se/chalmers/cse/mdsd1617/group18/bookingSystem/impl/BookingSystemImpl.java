@@ -207,7 +207,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * Returns the booking id or -1 if empty
 	 */
 
-	public int initiateBooking(String firstName,  String lastName, String startDate, String endDate) {
+	public int initiateBooking(String firstName, String startDate, String endDate,  String lastName) {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
 		Date start = null;
 		Date end = null;
