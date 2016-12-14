@@ -436,6 +436,11 @@
                   <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
                 </ownedParameter>
               </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_uzpI0MH7Eeab6a5-2TA_6g" name="setDescription">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_6spXIMH7Eeab6a5-2TA_6g" name="description">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+                </ownedParameter>
+              </ownedOperation>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_FhhH27rREeaVMa-P8AMS-A" name="RoomType">
               <ownedAttribute xmi:type="uml:Property" xmi:id="_FhhH3LrREeaVMa-P8AMS-A" name="price" visibility="private">
@@ -518,6 +523,9 @@
                 <ownedParameter xmi:type="uml:Parameter" xmi:id="_FhhH_7rREeaVMa-P8AMS-A" name="numberOfBeds">
                   <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
                 </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Eafx8MH7Eeab6a5-2TA_6g" name="description">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+                </ownedParameter>
               </ownedOperation>
               <ownedOperation xmi:type="uml:Operation" xmi:id="_FhhIALrREeaVMa-P8AMS-A" name="updateRoomType">
                 <ownedParameter xmi:type="uml:Parameter" xmi:id="_8PCV8L0kEeaaBrh0Qg-85w" name="roomType" type="_FhhHzLrREeaVMa-P8AMS-A"/>
@@ -529,6 +537,9 @@
                 </ownedParameter>
                 <ownedParameter xmi:type="uml:Parameter" xmi:id="_FhhIA7rREeaVMa-P8AMS-A" name="numberOfBeds">
                   <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+                </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_JeEZgMH7Eeab6a5-2TA_6g" name="description">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
                 </ownedParameter>
               </ownedOperation>
               <ownedOperation xmi:type="uml:Operation" xmi:id="_FhhIBLrREeaVMa-P8AMS-A" name="getRoomTypes">

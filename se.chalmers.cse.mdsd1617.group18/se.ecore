@@ -196,6 +196,9 @@
               <eOperations name="setNumberOfBeds" ordered="false" lowerBound="1">
                 <eParameters name="beds" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
               </eOperations>
+              <eOperations name="setDescription" ordered="false" lowerBound="1">
+                <eParameters name="description" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              </eOperations>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="RoomType" eSuperTypes="#//chalmers/cse/mdsd1617/group18/roomManager/IRoomType">
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="price" ordered="false"
@@ -229,12 +232,14 @@
                 <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
                 <eParameters name="price" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
                 <eParameters name="numberOfBeds" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+                <eParameters name="description" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
               </eOperations>
               <eOperations name="updateRoomType" ordered="false" lowerBound="1">
                 <eParameters name="roomType" ordered="false" lowerBound="1" eType="#//chalmers/cse/mdsd1617/group18/roomManager/IRoomType"/>
                 <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
                 <eParameters name="price" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
                 <eParameters name="numberOfBeds" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+                <eParameters name="description" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
               </eOperations>
               <eOperations name="getRoomTypes" ordered="false" upperBound="-1" eType="#//chalmers/cse/mdsd1617/group18/roomManager/IRoomType"/>
               <eOperations name="removeRoomType" ordered="false" lowerBound="1" eType="#//chalmers/cse/mdsd1617/group18/roomManager/IRoomType">

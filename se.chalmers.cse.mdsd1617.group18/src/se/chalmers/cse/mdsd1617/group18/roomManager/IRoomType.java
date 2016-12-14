@@ -71,4 +71,12 @@ public interface IRoomType extends EObject {
 	 */
 	void setNumberOfBeds(int beds);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model descriptionRequired="true" descriptionOrdered="false"
+	 * @generated
+	 */
+	void setDescription(String description);
+
 } // IRoomType

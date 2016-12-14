@@ -231,6 +231,15 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getIRoomType__SetDescription__String() {
+		return iRoomTypeEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRoomType() {
 		return roomTypeEClass;
 	}
@@ -348,7 +357,7 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIHotelRoomManager__AddRoomType__String_double_int() {
+	public EOperation getIHotelRoomManager__AddRoomType__String_double_int_String() {
 		return iHotelRoomManagerEClass.getEOperations().get(0);
 	}
 
@@ -357,7 +366,7 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIHotelRoomManager__UpdateRoomType__IRoomType_String_double_int() {
+	public EOperation getIHotelRoomManager__UpdateRoomType__IRoomType_String_double_int_String() {
 		return iHotelRoomManagerEClass.getEOperations().get(1);
 	}
 
@@ -550,6 +559,7 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 		createEOperation(iRoomTypeEClass, IROOM_TYPE___SET_NAME__STRING);
 		createEOperation(iRoomTypeEClass, IROOM_TYPE___SET_PRICE__DOUBLE);
 		createEOperation(iRoomTypeEClass, IROOM_TYPE___SET_NUMBER_OF_BEDS__INT);
+		createEOperation(iRoomTypeEClass, IROOM_TYPE___SET_DESCRIPTION__STRING);
 
 		roomTypeEClass = createEClass(ROOM_TYPE);
 		createEAttribute(roomTypeEClass, ROOM_TYPE__PRICE);
@@ -568,8 +578,8 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 		createEOperation(iHotelRoomProviderEClass, IHOTEL_ROOM_PROVIDER___GET_ROOMS);
 
 		iHotelRoomManagerEClass = createEClass(IHOTEL_ROOM_MANAGER);
-		createEOperation(iHotelRoomManagerEClass, IHOTEL_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_DOUBLE_INT);
-		createEOperation(iHotelRoomManagerEClass, IHOTEL_ROOM_MANAGER___UPDATE_ROOM_TYPE__IROOMTYPE_STRING_DOUBLE_INT);
+		createEOperation(iHotelRoomManagerEClass, IHOTEL_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_DOUBLE_INT_STRING);
+		createEOperation(iHotelRoomManagerEClass, IHOTEL_ROOM_MANAGER___UPDATE_ROOM_TYPE__IROOMTYPE_STRING_DOUBLE_INT_STRING);
 		createEOperation(iHotelRoomManagerEClass, IHOTEL_ROOM_MANAGER___GET_ROOM_TYPES);
 		createEOperation(iHotelRoomManagerEClass, IHOTEL_ROOM_MANAGER___REMOVE_ROOM_TYPE__IROOMTYPE);
 		createEOperation(iHotelRoomManagerEClass, IHOTEL_ROOM_MANAGER___ADD_ROOM__INT_IROOMTYPE);
@@ -646,6 +656,9 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 		op = initEOperation(getIRoomType__SetNumberOfBeds__int(), null, "setNumberOfBeds", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "beds", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
+		op = initEOperation(getIRoomType__SetDescription__String(), null, "setDescription", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "description", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(roomTypeEClass, RoomType.class, "RoomType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoomType_Price(), ecorePackage.getEDouble(), "price", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomType_Name(), ecorePackage.getEString(), "name", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -667,16 +680,18 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 
 		initEClass(iHotelRoomManagerEClass, IHotelRoomManager.class, "IHotelRoomManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = initEOperation(getIHotelRoomManager__AddRoomType__String_double_int(), null, "addRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIHotelRoomManager__AddRoomType__String_double_int_String(), null, "addRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDouble(), "price", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "numberOfBeds", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "description", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getIHotelRoomManager__UpdateRoomType__IRoomType_String_double_int(), null, "updateRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIHotelRoomManager__UpdateRoomType__IRoomType_String_double_int_String(), null, "updateRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getIRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDouble(), "price", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "numberOfBeds", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "description", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getIHotelRoomManager__GetRoomTypes(), this.getIRoomType(), "getRoomTypes", 0, -1, IS_UNIQUE, !IS_ORDERED);
 

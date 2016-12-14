@@ -139,13 +139,22 @@ public interface RoomManagerPackage extends EPackage {
 	int IROOM_TYPE___SET_NUMBER_OF_BEDS__INT = 6;
 
 	/**
+	 * The operation id for the '<em>Set Description</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IROOM_TYPE___SET_DESCRIPTION__STRING = 7;
+
+	/**
 	 * The number of operations of the '<em>IRoom Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IROOM_TYPE_OPERATION_COUNT = 7;
+	int IROOM_TYPE_OPERATION_COUNT = 8;
 
 	/**
 	 * The meta object id for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomTypeImpl <em>Room Type</em>}' class.
@@ -266,6 +275,15 @@ public interface RoomManagerPackage extends EPackage {
 	int ROOM_TYPE___SET_NUMBER_OF_BEDS__INT = IROOM_TYPE___SET_NUMBER_OF_BEDS__INT;
 
 	/**
+	 * The operation id for the '<em>Set Description</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE___SET_DESCRIPTION__STRING = IROOM_TYPE___SET_DESCRIPTION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Room Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -373,7 +391,7 @@ public interface RoomManagerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER___ADD_ROOM_TYPE__STRING_DOUBLE_INT = IHOTEL_STARTUP_PROVIES_OPERATION_COUNT + 1;
+	int ROOM_MANAGER___ADD_ROOM_TYPE__STRING_DOUBLE_INT_STRING = IHOTEL_STARTUP_PROVIES_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Update Room Type</em>' operation.
@@ -382,7 +400,7 @@ public interface RoomManagerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGER___UPDATE_ROOM_TYPE__IROOMTYPE_STRING_DOUBLE_INT = IHOTEL_STARTUP_PROVIES_OPERATION_COUNT + 2;
+	int ROOM_MANAGER___UPDATE_ROOM_TYPE__IROOMTYPE_STRING_DOUBLE_INT_STRING = IHOTEL_STARTUP_PROVIES_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get Room Types</em>' operation.
@@ -528,7 +546,7 @@ public interface RoomManagerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_DOUBLE_INT = IHOTEL_ROOM_PROVIDER_OPERATION_COUNT + 0;
+	int IHOTEL_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_DOUBLE_INT_STRING = IHOTEL_ROOM_PROVIDER_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Update Room Type</em>' operation.
@@ -537,7 +555,7 @@ public interface RoomManagerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_ROOM_MANAGER___UPDATE_ROOM_TYPE__IROOMTYPE_STRING_DOUBLE_INT = IHOTEL_ROOM_PROVIDER_OPERATION_COUNT + 1;
+	int IHOTEL_ROOM_MANAGER___UPDATE_ROOM_TYPE__IROOMTYPE_STRING_DOUBLE_INT_STRING = IHOTEL_ROOM_PROVIDER_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get Room Types</em>' operation.
@@ -867,6 +885,16 @@ public interface RoomManagerPackage extends EPackage {
 	EOperation getIRoomType__SetNumberOfBeds__int();
 
 	/**
+	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType#setDescription(java.lang.String) <em>Set Description</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set Description</em>' operation.
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType#setDescription(java.lang.String)
+	 * @generated
+	 */
+	EOperation getIRoomType__SetDescription__String();
+
+	/**
 	 * Returns the meta object for class '{@link se.chalmers.cse.mdsd1617.group18.roomManager.RoomType <em>Room Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1003,24 +1031,24 @@ public interface RoomManagerPackage extends EPackage {
 	EClass getIHotelRoomManager();
 
 	/**
-	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#addRoomType(java.lang.String, double, int) <em>Add Room Type</em>}' operation.
+	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#addRoomType(java.lang.String, double, int, java.lang.String) <em>Add Room Type</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Add Room Type</em>' operation.
-	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#addRoomType(java.lang.String, double, int)
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#addRoomType(java.lang.String, double, int, java.lang.String)
 	 * @generated
 	 */
-	EOperation getIHotelRoomManager__AddRoomType__String_double_int();
+	EOperation getIHotelRoomManager__AddRoomType__String_double_int_String();
 
 	/**
-	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#updateRoomType(se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType, java.lang.String, double, int) <em>Update Room Type</em>}' operation.
+	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#updateRoomType(se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType, java.lang.String, double, int, java.lang.String) <em>Update Room Type</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Update Room Type</em>' operation.
-	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#updateRoomType(se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType, java.lang.String, double, int)
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#updateRoomType(se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType, java.lang.String, double, int, java.lang.String)
 	 * @generated
 	 */
-	EOperation getIHotelRoomManager__UpdateRoomType__IRoomType_String_double_int();
+	EOperation getIHotelRoomManager__UpdateRoomType__IRoomType_String_double_int_String();
 
 	/**
 	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IHotelRoomManager#getRoomTypes() <em>Get Room Types</em>}' operation.
@@ -1284,6 +1312,14 @@ public interface RoomManagerPackage extends EPackage {
 		EOperation IROOM_TYPE___SET_NUMBER_OF_BEDS__INT = eINSTANCE.getIRoomType__SetNumberOfBeds__int();
 
 		/**
+		 * The meta object literal for the '<em><b>Set Description</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IROOM_TYPE___SET_DESCRIPTION__STRING = eINSTANCE.getIRoomType__SetDescription__String();
+
+		/**
 		 * The meta object literal for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomTypeImpl <em>Room Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1403,7 +1439,7 @@ public interface RoomManagerPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IHOTEL_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_DOUBLE_INT = eINSTANCE.getIHotelRoomManager__AddRoomType__String_double_int();
+		EOperation IHOTEL_ROOM_MANAGER___ADD_ROOM_TYPE__STRING_DOUBLE_INT_STRING = eINSTANCE.getIHotelRoomManager__AddRoomType__String_double_int_String();
 
 		/**
 		 * The meta object literal for the '<em><b>Update Room Type</b></em>' operation.
@@ -1411,7 +1447,7 @@ public interface RoomManagerPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IHOTEL_ROOM_MANAGER___UPDATE_ROOM_TYPE__IROOMTYPE_STRING_DOUBLE_INT = eINSTANCE.getIHotelRoomManager__UpdateRoomType__IRoomType_String_double_int();
+		EOperation IHOTEL_ROOM_MANAGER___UPDATE_ROOM_TYPE__IROOMTYPE_STRING_DOUBLE_INT_STRING = eINSTANCE.getIHotelRoomManager__UpdateRoomType__IRoomType_String_double_int_String();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Room Types</b></em>' operation.

@@ -341,12 +341,9 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * @generated
 	 */
 	public boolean addRoom(IRoom room) {
-		if (roomList.contains(room)){
-			return false;
-		}else{
-			roomList.add(room);
-			return true;
-		}
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**

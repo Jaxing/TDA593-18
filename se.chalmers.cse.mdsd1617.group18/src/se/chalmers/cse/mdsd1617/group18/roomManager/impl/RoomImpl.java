@@ -197,11 +197,10 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setIsBlocked(boolean newBlocked) {
-		boolean oldBlocked = blocked;
-		blocked = newBlocked;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RoomManagerPackage.ROOM__BLOCKED, oldBlocked, blocked));
+	public void setIsBlocked(boolean blocked) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**

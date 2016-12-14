@@ -5,7 +5,6 @@ package se.chalmers.cse.mdsd1617.group18.bookingSystem.impl;
 import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
