@@ -53,8 +53,7 @@ public class ReceptionistTest {
 		List<Integer> ids = new ArrayList<Integer>();
 		
 		for(int i = 0; i < 5; i++) {
-			Integer id = bookingSystem.initiateBooking("first"+i, "last"+i, "2016/12/08", "2016/12/23");
-			
+			Integer id = bookingSystem.initiateBooking("first"+i, "last"+i, "20161208", "20161223");
 			if (id < 0) {
 				throw new Exception("okay bookings returns -1");
 			}
@@ -67,7 +66,7 @@ public class ReceptionistTest {
 			}
 		}
 		
-		assertTrue(true);
+		assertFalse(bookingSystem.listBooking().isEmpty());
 	}
 	
 	//TODO:u.c. 2.1.2.  - search for free rooms
