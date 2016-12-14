@@ -193,6 +193,14 @@
             <element xmi:type="uml:Property" href="Classes.uml#_FhhH9LrREeaVMa-P8AMS-A"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_Fhmn1rrREeaVMa-P8AMS-A"/>
           </children>
+          <children xmi:type="notation:Shape" xmi:id="_LN690MIMEea3W_xtvhrPlA" type="Property_ClassAttributeLabel">
+            <element xmi:type="uml:Property" href="Classes.uml#_LMG_8MIMEea3W_xtvhrPlA"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_LN690cIMEea3W_xtvhrPlA"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_QdidUMIMEea3W_xtvhrPlA" type="Property_ClassAttributeLabel">
+            <element xmi:type="uml:Property" href="Classes.uml#_QcQq8MIMEea3W_xtvhrPlA"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_QdidUcIMEea3W_xtvhrPlA"/>
+          </children>
           <styles xmi:type="notation:TitleStyle" xmi:id="_Fhmn17rREeaVMa-P8AMS-A"/>
           <styles xmi:type="notation:SortingStyle" xmi:id="_Fhmn2LrREeaVMa-P8AMS-A"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_Fhmn2brREeaVMa-P8AMS-A"/>

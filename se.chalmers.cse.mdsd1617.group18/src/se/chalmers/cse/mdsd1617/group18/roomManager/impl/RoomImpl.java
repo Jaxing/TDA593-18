@@ -27,6 +27,8 @@ import se.chalmers.cse.mdsd1617.group18.roomManager.RoomManagerPackage;
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomImpl#getRoomType <em>Room Type</em>}</li>
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomImpl#getRoomNumber <em>Room Number</em>}</li>
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomImpl#isBlocked <em>Blocked</em>}</li>
+ *   <li>{@link se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomImpl#getExtraCostDescriptions <em>Extra Cost Descriptions</em>}</li>
+ *   <li>{@link se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomImpl#getExtraCostPrice <em>Extra Cost Price</em>}</li>
  * </ul>
  *
  * @generated
@@ -81,6 +83,46 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @ordered
 	 */
 	protected boolean blocked = BLOCKED_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getExtraCostDescriptions() <em>Extra Cost Descriptions</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExtraCostDescriptions()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String EXTRA_COST_DESCRIPTIONS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getExtraCostDescriptions() <em>Extra Cost Descriptions</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExtraCostDescriptions()
+	 * @generated
+	 * @ordered
+	 */
+	protected String extraCostDescriptions = EXTRA_COST_DESCRIPTIONS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getExtraCostPrice() <em>Extra Cost Price</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExtraCostPrice()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final double EXTRA_COST_PRICE_EDEFAULT = 0.0;
+
+	/**
+	 * The cached value of the '{@link #getExtraCostPrice() <em>Extra Cost Price</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExtraCostPrice()
+	 * @generated
+	 * @ordered
+	 */
+	protected double extraCostPrice = EXTRA_COST_PRICE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -197,11 +239,52 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setIsBlocked(boolean newBlocked) {
-		boolean oldBlocked = blocked;
-		blocked = newBlocked;
+	public String getExtraCostDescriptions() {
+		return extraCostDescriptions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setExtraCostDescriptions(String newExtraCostDescriptions) {
+		String oldExtraCostDescriptions = extraCostDescriptions;
+		extraCostDescriptions = newExtraCostDescriptions;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RoomManagerPackage.ROOM__BLOCKED, oldBlocked, blocked));
+			eNotify(new ENotificationImpl(this, Notification.SET, RoomManagerPackage.ROOM__EXTRA_COST_DESCRIPTIONS, oldExtraCostDescriptions, extraCostDescriptions));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public double getExtraCostPrice() {
+		return extraCostPrice;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setExtraCostPrice(double newExtraCostPrice) {
+		double oldExtraCostPrice = extraCostPrice;
+		extraCostPrice = newExtraCostPrice;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RoomManagerPackage.ROOM__EXTRA_COST_PRICE, oldExtraCostPrice, extraCostPrice));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsBlocked(boolean blocked) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -219,6 +302,10 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return getRoomNumber();
 			case RoomManagerPackage.ROOM__BLOCKED:
 				return isBlocked();
+			case RoomManagerPackage.ROOM__EXTRA_COST_DESCRIPTIONS:
+				return getExtraCostDescriptions();
+			case RoomManagerPackage.ROOM__EXTRA_COST_PRICE:
+				return getExtraCostPrice();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -239,6 +326,12 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return;
 			case RoomManagerPackage.ROOM__BLOCKED:
 				setBlocked((Boolean)newValue);
+				return;
+			case RoomManagerPackage.ROOM__EXTRA_COST_DESCRIPTIONS:
+				setExtraCostDescriptions((String)newValue);
+				return;
+			case RoomManagerPackage.ROOM__EXTRA_COST_PRICE:
+				setExtraCostPrice((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -261,6 +354,12 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case RoomManagerPackage.ROOM__BLOCKED:
 				setBlocked(BLOCKED_EDEFAULT);
 				return;
+			case RoomManagerPackage.ROOM__EXTRA_COST_DESCRIPTIONS:
+				setExtraCostDescriptions(EXTRA_COST_DESCRIPTIONS_EDEFAULT);
+				return;
+			case RoomManagerPackage.ROOM__EXTRA_COST_PRICE:
+				setExtraCostPrice(EXTRA_COST_PRICE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -279,6 +378,10 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return roomNumber != ROOM_NUMBER_EDEFAULT;
 			case RoomManagerPackage.ROOM__BLOCKED:
 				return blocked != BLOCKED_EDEFAULT;
+			case RoomManagerPackage.ROOM__EXTRA_COST_DESCRIPTIONS:
+				return EXTRA_COST_DESCRIPTIONS_EDEFAULT == null ? extraCostDescriptions != null : !EXTRA_COST_DESCRIPTIONS_EDEFAULT.equals(extraCostDescriptions);
+			case RoomManagerPackage.ROOM__EXTRA_COST_PRICE:
+				return extraCostPrice != EXTRA_COST_PRICE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -312,6 +415,10 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		result.append(roomNumber);
 		result.append(", blocked: ");
 		result.append(blocked);
+		result.append(", extraCostDescriptions: ");
+		result.append(extraCostDescriptions);
+		result.append(", extraCostPrice: ");
+		result.append(extraCostPrice);
 		result.append(')');
 		return result.toString();
 	}

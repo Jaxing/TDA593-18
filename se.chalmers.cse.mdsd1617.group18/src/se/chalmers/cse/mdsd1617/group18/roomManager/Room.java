@@ -15,6 +15,8 @@ package se.chalmers.cse.mdsd1617.group18.roomManager;
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.roomManager.Room#getRoomType <em>Room Type</em>}</li>
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.roomManager.Room#getRoomNumber <em>Room Number</em>}</li>
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.roomManager.Room#isBlocked <em>Blocked</em>}</li>
+ *   <li>{@link se.chalmers.cse.mdsd1617.group18.roomManager.Room#getExtraCostDescriptions <em>Extra Cost Descriptions</em>}</li>
+ *   <li>{@link se.chalmers.cse.mdsd1617.group18.roomManager.Room#getExtraCostPrice <em>Extra Cost Price</em>}</li>
  * </ul>
  *
  * @see se.chalmers.cse.mdsd1617.group18.roomManager.RoomManagerPackage#getRoom()
@@ -99,5 +101,57 @@ public interface Room extends IRoom {
 	 * @generated
 	 */
 	void setBlocked(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Extra Cost Descriptions</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Extra Cost Descriptions</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Extra Cost Descriptions</em>' attribute.
+	 * @see #setExtraCostDescriptions(String)
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.RoomManagerPackage#getRoom_ExtraCostDescriptions()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	String getExtraCostDescriptions();
+
+	/**
+	 * Sets the value of the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.Room#getExtraCostDescriptions <em>Extra Cost Descriptions</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Extra Cost Descriptions</em>' attribute.
+	 * @see #getExtraCostDescriptions()
+	 * @generated
+	 */
+	void setExtraCostDescriptions(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Extra Cost Price</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Extra Cost Price</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Extra Cost Price</em>' attribute.
+	 * @see #setExtraCostPrice(double)
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.RoomManagerPackage#getRoom_ExtraCostPrice()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	double getExtraCostPrice();
+
+	/**
+	 * Sets the value of the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.Room#getExtraCostPrice <em>Extra Cost Price</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Extra Cost Price</em>' attribute.
+	 * @see #getExtraCostPrice()
+	 * @generated
+	 */
+	void setExtraCostPrice(double value);
 
 } // Room

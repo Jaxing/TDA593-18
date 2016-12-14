@@ -504,6 +504,12 @@
               <ownedAttribute xmi:type="uml:Property" xmi:id="_FhhH9LrREeaVMa-P8AMS-A" name="blocked" visibility="private">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
               </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_LMG_8MIMEea3W_xtvhrPlA" name="extraCostDescriptions" visibility="private">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_QcQq8MIMEea3W_xtvhrPlA" name="extraCostPrice" visibility="private">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
+              </ownedAttribute>
               <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_XuRxMLyUEea7_8j189OIog" client="_FhhH8brREeaVMa-P8AMS-A" supplier="_FhhH5rrREeaVMa-P8AMS-A" contract="_FhhH5rrREeaVMa-P8AMS-A"/>
             </packagedElement>
             <packagedElement xmi:type="uml:Interface" xmi:id="_FhhH9brREeaVMa-P8AMS-A" name="IHotelRoomProvider">

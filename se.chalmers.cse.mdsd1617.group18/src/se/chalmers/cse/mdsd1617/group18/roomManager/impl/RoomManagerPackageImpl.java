@@ -474,6 +474,24 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getRoom_ExtraCostDescriptions() {
+		return (EAttribute)roomEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRoom_ExtraCostPrice() {
+		return (EAttribute)roomEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getIRoom() {
 		return iRoomEClass;
 	}
@@ -592,6 +610,8 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 		createEReference(roomEClass, ROOM__ROOM_TYPE);
 		createEAttribute(roomEClass, ROOM__ROOM_NUMBER);
 		createEAttribute(roomEClass, ROOM__BLOCKED);
+		createEAttribute(roomEClass, ROOM__EXTRA_COST_DESCRIPTIONS);
+		createEAttribute(roomEClass, ROOM__EXTRA_COST_PRICE);
 
 		iRoomEClass = createEClass(IROOM);
 		createEOperation(iRoomEClass, IROOM___GET_ROOM_TYPE);
@@ -719,6 +739,8 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 		initEReference(getRoom_RoomType(), this.getIRoomType(), null, "roomType", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_RoomNumber(), ecorePackage.getEInt(), "roomNumber", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_Blocked(), ecorePackage.getEBoolean(), "blocked", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoom_ExtraCostDescriptions(), ecorePackage.getEString(), "extraCostDescriptions", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoom_ExtraCostPrice(), ecorePackage.getEDouble(), "extraCostPrice", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(iRoomEClass, IRoom.class, "IRoom", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

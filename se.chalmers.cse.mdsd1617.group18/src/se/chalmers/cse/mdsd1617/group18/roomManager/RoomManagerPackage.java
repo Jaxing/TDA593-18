@@ -740,13 +740,31 @@ public interface RoomManagerPackage extends EPackage {
 	int ROOM__BLOCKED = IROOM_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Extra Cost Descriptions</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM__EXTRA_COST_DESCRIPTIONS = IROOM_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Extra Cost Price</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM__EXTRA_COST_PRICE = IROOM_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Room</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_FEATURE_COUNT = IROOM_FEATURE_COUNT + 3;
+	int ROOM_FEATURE_COUNT = IROOM_FEATURE_COUNT + 5;
 
 
 	/**
@@ -1164,6 +1182,28 @@ public interface RoomManagerPackage extends EPackage {
 	EAttribute getRoom_Blocked();
 
 	/**
+	 * Returns the meta object for the attribute '{@link se.chalmers.cse.mdsd1617.group18.roomManager.Room#getExtraCostDescriptions <em>Extra Cost Descriptions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Extra Cost Descriptions</em>'.
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.Room#getExtraCostDescriptions()
+	 * @see #getRoom()
+	 * @generated
+	 */
+	EAttribute getRoom_ExtraCostDescriptions();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.chalmers.cse.mdsd1617.group18.roomManager.Room#getExtraCostPrice <em>Extra Cost Price</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Extra Cost Price</em>'.
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.Room#getExtraCostPrice()
+	 * @see #getRoom()
+	 * @generated
+	 */
+	EAttribute getRoom_ExtraCostPrice();
+
+	/**
 	 * Returns the meta object for class '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IRoom <em>IRoom</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1538,6 +1578,22 @@ public interface RoomManagerPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ROOM__BLOCKED = eINSTANCE.getRoom_Blocked();
+
+		/**
+		 * The meta object literal for the '<em><b>Extra Cost Descriptions</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM__EXTRA_COST_DESCRIPTIONS = eINSTANCE.getRoom_ExtraCostDescriptions();
+
+		/**
+		 * The meta object literal for the '<em><b>Extra Cost Price</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM__EXTRA_COST_PRICE = eINSTANCE.getRoom_ExtraCostPrice();
 
 		/**
 		 * The meta object literal for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IRoom <em>IRoom</em>}' class.
