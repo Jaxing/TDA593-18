@@ -19,6 +19,24 @@ public class AdministratorTests {
 		roomManager.startup(50);
 	}
 	
+	// UC 2.2.1
+	@Test
+	public void testAdministratorAddRoomType() {
+		double price = 1000.0;
+		String name = "A room type";
+		int numberOfBeds = 2;
+		roomManager.addRoomType(name, price, numberOfBeds);
+		EList<IRoomType> roomTypes = roomManager.getRoomTypes();
+		boolean found = false;
+		for (int i = 0; i < roomTypes.size(); i++) {
+			IRoomType rT = roomTypes.get(i);
+			if (rT.getName().equals(name) && rT.getPrice() == price && rT.getNumberOfBeds() == numberOfBeds) {
+				found = true;
+			}
+		}
+		assertEquals(true, found);
+	}
+	
 	// UC 2.2.3
 	@Test
 	public void testAdministratorRemoveRoomType() {
