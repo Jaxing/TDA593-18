@@ -19,6 +19,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
+import com.sun.corba.se.spi.orbutil.fsm.Action;
+
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.BookingSystem;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.BookingSystemPackage;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.FreeRoomTypesDTO;
@@ -231,7 +233,8 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 			types.setPricePerNight(roomType.getPrice());
 			types.setRoomTypeDescription(roomType.getDescription());
 			if(freeRooms.contains(types)){
-				types.setNumFreeRooms(types.getNumFreeRooms() + 1);
+				FreeRoomTypesDTO acutualType = freeRooms.get(freeRooms.indexOf(types));
+				acutualType.setNumFreeRooms(acutualType.getNumFreeRooms() + 1);
 			} else {
 				types.setNumFreeRooms(1);
 				freeRooms.add(types);
