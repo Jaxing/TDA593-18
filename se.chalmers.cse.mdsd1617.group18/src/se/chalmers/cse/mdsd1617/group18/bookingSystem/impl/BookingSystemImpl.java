@@ -280,6 +280,16 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	}
 
 	/**
+	 * @throws ParseException 
+	 * @generated NOT
+	 */
+	private Date parseDate (String date) throws ParseException {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
+		
+		return dateFormat.parse(date);
+	}
+	
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -287,7 +297,6 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 */
 
 	public int initiateBooking(String firstName, String startDate, String endDate,  String lastName) {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
 		Date start = null;
 		Date end = null;
 		
@@ -296,8 +305,8 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 		}
 		
 		try {
-			start = dateFormat.parse(startDate);
-			end = dateFormat.parse(endDate);
+			start = parseDate(startDate);
+			end = parseDate(endDate);
 		} catch (ParseException e) {
 			return -1;
 		}
