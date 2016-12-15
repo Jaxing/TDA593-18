@@ -101,6 +101,18 @@ public class ReceptionistTest {
 		IBooking booking = ((BookingSystemImpl)bookingSystem).findBooking(id);
 		assertTrue(booking.getRooms().size() == 2);
 	}
+	
+	@Test
+	public void addTooManyRooms () {
+		int id = bookingSystem.initiateBooking("a", "20201012", "20201112", "b");
+		
+		//should add all rooms available
+		for (int i = 0; i < 10; i++) {
+			bookingSystem.addRoomToBooking("A basic room", id);
+		}
+		
+		assertFalse(bookingSystem.addRoomToBooking("A basic room", id));
+	}
 		
 	@Test	
 	public void confirmBooking () {
