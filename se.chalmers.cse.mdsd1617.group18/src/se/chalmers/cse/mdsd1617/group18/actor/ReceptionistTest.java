@@ -88,6 +88,20 @@ public class ReceptionistTest {
 		assertTrue(bookingSystem.addRoomToBooking("A basic room", id));
 	}
 	
+	@Test
+	public void addRoomWithInvalidId(){
+		assertFalse(bookingSystem.addRoomToBooking("A basic room", 999));
+	}
+	
+	@Test
+	public void addRoomMultipleRoomWithValidId(){
+		int id = bookingSystem.initiateBooking("a", "20201012", "20201112", "b");
+		bookingSystem.addRoomToBooking("A basic room", id);
+		bookingSystem.addRoomToBooking("A basic room", id);
+		IBooking booking = ((BookingSystemImpl)bookingSystem).findBooking(id);
+		assertTrue(booking.getRooms().size() == 2);
+	}
+	
 	//TODO:u.c. 2.1.2.  - search for free rooms
 	@Test
 	public void searchForFreeRooms() {

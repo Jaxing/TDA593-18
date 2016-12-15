@@ -83,6 +83,11 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	
 	/**
 	 * @generated NOT
+	 */
+	protected EList<IRoom> assignedRooms;
+	
+	/**
+	 * @generated NOT
 	 * */
 	protected int bookingId = 0;
 
@@ -98,6 +103,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 		this.roomProvider = (IHotelRoomProvider) RoomManagerFactoryImpl.init().createRoomManager();
 		//TODO: How should we handle the IHotelRoomProvider? We can really just create a new since it will not be connected then.
 		this.freeRooms = new BasicEList<FreeRoomTypesDTO>();
+		this.assignedRooms = new BasicEList<IRoom>();
 		updateFreeRooms();
 	}
 
@@ -310,9 +316,10 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 		theBooking = findBooking(bookingID);
 		if (theBooking == null){
 			return false;
-		}else{
+		}else {
 			return theBooking.addRoom(freeRoomOfType);
 		}
+
 	}
 
 	/**
@@ -682,7 +689,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * @return The Booking the the matching ID
 	 * @generated NOT
 	 */
-	private IBooking findBooking(int bookingID){
+	public IBooking findBooking(int bookingID){
 		IBooking currentBooking = null;
 		for (int i = 0; i < bookings.size(); i++){
 			currentBooking = bookings.get(i);
