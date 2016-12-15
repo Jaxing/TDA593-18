@@ -298,7 +298,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 					}
 				}
 			}
-			if(!typeExists){
+			if(typeExists){
 				break;
 			}
 		}
