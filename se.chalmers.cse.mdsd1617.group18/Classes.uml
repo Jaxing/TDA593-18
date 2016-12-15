@@ -178,7 +178,7 @@
                 <ownedParameter xmi:type="uml:Parameter" xmi:id="_FeS057rREeaVMa-P8AMS-A" name="bookingId" visibility="package">
                   <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
                 </ownedParameter>
-                <ownedParameter xmi:type="uml:Parameter" xmi:id="_SprO0L1YEea2wqLyiAvrGw" type="_FSfiYLrTEeaz3IRliUciHQ" direction="return">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_SprO0L1YEea2wqLyiAvrGw" type="_FhhH5rrREeaVMa-P8AMS-A" direction="return">
                   <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WScFQL1YEea2wqLyiAvrGw"/>
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WSlPML1YEea2wqLyiAvrGw" value="*"/>
                 </ownedParameter>

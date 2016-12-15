@@ -3,6 +3,7 @@
 package se.chalmers.cse.mdsd1617.group18.bookingSystem;
 
 import org.eclipse.emf.common.util.EList;
+import se.chalmers.cse.mdsd1617.group18.roomManager.IRoom;
 import se.chalmers.cse.mdsd1617.group18.roomManager.IRoomType;
 
 /**
@@ -22,7 +23,7 @@ public interface IHotelBookingManager extends IHotelCustomerProvides {
 	 * @model ordered="false" bookingIdRequired="true" bookingIdOrdered="false"
 	 * @generated
 	 */
-	EList<FreeRoomTypesDTO> initiateCheckin(int bookingId);
+	EList<IRoom> initiateCheckin(int bookingId);
 
 	/**
 	 * <!-- begin-user-doc -->

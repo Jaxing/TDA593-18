@@ -18,9 +18,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
-import com.sun.corba.se.spi.orbutil.fsm.Action;
-
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.BookingSystem;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.BookingSystemPackage;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.FreeRoomTypesDTO;
@@ -81,7 +78,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * @generated NOT
 	 */
-	protected EList<FreeRoomTypesDTO> freeRooms;
+	protected EList<IRoom> rooms;
 	
 	/**
 	 * @generated NOT
@@ -103,10 +100,8 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 		this.events = new BasicEList<IEvent>();
 		this.bookings = new BasicEList<IBooking>();
 		this.roomProvider = (IHotelRoomProvider) RoomManagerFactoryImpl.init().createRoomManager();
-		//TODO: How should we handle the IHotelRoomProvider? We can really just create a new since it will not be connected then.
-		this.freeRooms = new BasicEList<FreeRoomTypesDTO>();
+		this.rooms = new BasicEList<IRoom>();
 		this.assignedRooms = new BasicEList<IRoom>();
-		updateFreeRooms();
 	}
 
 	/**
@@ -187,54 +182,67 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * @generated NOT
 	 */
 	public EList<FreeRoomTypesDTO> getFreeRooms(int numBeds, String startDate, String endDate) {
+		EList<IRoom> freeRooms = getFreeRooms(startDate, endDate);
 		
-		if (freeRooms == null) {
-			freeRooms = new BasicEList<FreeRoomTypesDTO>();
-		}
-		freeRooms.clear();
-		updateFreeRooms();
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
-		Date start = null;
-		Date end = null;
+		EList<FreeRoomTypesDTO> freeRoomsTypes = new BasicEList<FreeRoomTypesDTO>();
 		
-		if (startDate == null || endDate == null) {
-			return new BasicEList<FreeRoomTypesDTO>();
-		}
-		
-		try {
-			start = dateFormat.parse(startDate);
-			end = dateFormat.parse(endDate);
-		} catch (ParseException e) {
-			return new BasicEList<FreeRoomTypesDTO>();
-		}
-		
-		if(end.before(start)){
-			return new BasicEList<FreeRoomTypesDTO>();
-		}
-		
-		EList<FreeRoomTypesDTO> rooms = new BasicEList<FreeRoomTypesDTO>();
-		for(int i = 0; i < freeRooms.size(); i++){
-			if(freeRooms.get(i).getNumBeds() == numBeds){
-				rooms.add(freeRooms.get(i));
+		for(int i = 0; i < freeRooms.size(); i++) {
+			IRoom room = freeRooms.get(i);
+			if (room.getRoomType().getNumberOfBeds() == numBeds) {
+				FreeRoomTypesDTO freeRoomType = BookingSystemFactoryImpl.init().createFreeRoomTypesDTO();
+				
+				freeRoomType.setNumBeds(room.getRoomType().getNumberOfBeds());
+				freeRoomType.setPricePerNight(room.getRoomType().getPrice());
+				freeRoomType.setRoomTypeDescription(room.getRoomType().getDescription());
+				
+				if(freeRoomsTypes.contains(freeRoomType)) {
+					FreeRoomTypesDTO acutualType = freeRoomsTypes.get(freeRoomsTypes.indexOf(freeRoomType));
+					acutualType.setNumFreeRooms(acutualType.getNumFreeRooms() + 1);
+				} else {
+					freeRoomType.setNumFreeRooms(1);
+					freeRoomsTypes.add(freeRoomType);
+				}
 			}
 		}
-	    return rooms;
+		
+	    return freeRoomsTypes;
 	}
 	
 	/**
-	 * A wrapper for getFreeRooms that takes a description for room type and return all rooms of that type
+	 * TODO: check start and end date
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	private EList<FreeRoomTypesDTO> getFreeRooms(String description, String startDate, String endDate) {
-		EList<FreeRoomTypesDTO> rooms = new BasicEList<FreeRoomTypesDTO>();
+	public EList<IRoom> getFreeRooms(String startDate, String endDate) {
+		this.rooms = this.roomProvider.getRooms();
+		Date start = null;
+		Date end = null;
+		EList<IRoom> bookedRooms = null;
 		
-		for (int i = 0; i < freeRooms.size(); i++){
-			FreeRoomTypesDTO freeRoom = freeRooms.get(i);
-			if (freeRoom.getRoomTypeDescription().equals(description)) {
-				rooms.addAll(this.getFreeRooms(freeRoom.getNumBeds(), startDate, endDate));
+		if (startDate == null || endDate == null) {
+			return new BasicEList<IRoom>();
+		}
+		
+		try {
+			start = parseDate(startDate);
+			end = parseDate(endDate);
+			bookedRooms = getBookedRooms(startDate, endDate);
+		} catch (ParseException e) {
+			return new BasicEList<IRoom>();
+		}
+		
+		if(end.before(start)){
+			return new BasicEList<IRoom>();
+		}
+		
+		EList<IRoom> freeRooms = new BasicEList<IRoom>();
+		for(int i = 0; i < this.rooms.size(); i++){
+			IRoom room = rooms.get(i);
+			if (!bookedRooms.contains(room)) {
+				freeRooms.add(room);
 			}
 		}
-		return rooms;
+	    return freeRooms;
 	}
 	
 	/**
@@ -250,33 +258,15 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 			Date start = parseDate(startDate);
 			Date end = parseDate(endDate);
 			
-			if ((start.before(parseDate(booking.getStartDate()))) && (parseDate(booking.getEndDate()).before(end))) {
+			int startComp = start.compareTo(parseDate(booking.getStartDate()));
+			int endComp = end.compareTo(parseDate(booking.getEndDate()));
+			
+			if ((startComp <= 0) && (endComp >= 0)) {
 				rooms.addAll(booking.getRooms());
 			}
 		}
 		
 		return rooms;
-	}
-	
-	/**
-	 * @generated NOT
-	 */
-	private void updateFreeRooms(){
-		EList<IRoom> rooms = roomProvider.getRooms();
-		for(int i = 0; i < rooms.size(); i++){
-			IRoomType roomType = rooms.get(i).getRoomType();
-			FreeRoomTypesDTO types = BookingSystemFactoryImpl.init().createFreeRoomTypesDTO();
-			types.setNumBeds(roomType.getNumberOfBeds());
-			types.setPricePerNight(roomType.getPrice());
-			types.setRoomTypeDescription(roomType.getDescription());
-			if(freeRooms.contains(types)){
-				FreeRoomTypesDTO acutualType = freeRooms.get(freeRooms.indexOf(types));
-				acutualType.setNumFreeRooms(acutualType.getNumFreeRooms() + 1);
-			} else {
-				types.setNumFreeRooms(1);
-				freeRooms.add(types);
-			}
-		}
 	}
 
 	/**
@@ -334,38 +324,18 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 */
 	public boolean addRoomToBooking(String roomTypeDescription, int bookingID) {
 		IBooking theBooking = findBooking(bookingID);
-		EList<FreeRoomTypesDTO> freeRoomsFitBooking = getFreeRooms(roomTypeDescription, theBooking.getStartDate(), theBooking.getStartDate());
-		EList<IRoom> rooms = this.roomProvider.getRooms();
-		IRoom freeRoomOfType = null;
-		boolean typeExists = false;
-		
-		for (int i = 0; i < freeRoomsFitBooking.size(); i++) {
-			FreeRoomTypesDTO freeRoomType = freeRoomsFitBooking.get(i); 
-			if (freeRoomType.getRoomTypeDescription().equals(roomTypeDescription) && freeRoomType.getNumFreeRooms() > 0) {
-				for (int j = 0; j < rooms.size(); j++) {
-					String description = rooms.get(j).getRoomType().getDescription();
-					if (description.equals(roomTypeDescription)) {
-						freeRoomOfType = rooms.get(j);
-						freeRoomType.setNumFreeRooms(freeRoomType.getNumFreeRooms() - 1);
-						typeExists = true;
-						break;
-					}
-				}
-			}
-			if(typeExists){
-				break;
-			}
-		}
-		
-		if (!typeExists) {
+		if (theBooking == null) {
 			return false;
 		}
+		EList<IRoom> rooms = getFreeRooms(theBooking.getStartDate(), theBooking.getEndDate());
 		
-		if (theBooking == null){
-			return false;
-		}else {
-			return theBooking.addRoom(freeRoomOfType);
+		for (int i = 0; i < rooms.size(); i++) {
+			IRoom freeRoom = rooms.get(i); 
+			if (freeRoom.getRoomType().getDescription().equals(roomTypeDescription)) {
+				return theBooking.addRoom(freeRoom);
+			}
 		}
+		return false;
 
 	}
 
@@ -467,7 +437,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<FreeRoomTypesDTO> initiateCheckin(int bookingId) {
+	public EList<IRoom> initiateCheckin(int bookingId) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -890,7 +890,7 @@ public class BookingSystemPackageImpl extends EPackageImpl implements BookingSys
 
 		initEClass(iHotelBookingManagerEClass, IHotelBookingManager.class, "IHotelBookingManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = initEOperation(getIHotelBookingManager__InitiateCheckin__int(), this.getFreeRoomTypesDTO(), "initiateCheckin", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIHotelBookingManager__InitiateCheckin__int(), theRoomManagerPackage.getIRoom(), "initiateCheckin", 0, -1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "bookingId", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getIHotelBookingManager__EditBookingPeriod__int_String_String(), ecorePackage.getEBoolean(), "editBookingPeriod", 1, 1, IS_UNIQUE, !IS_ORDERED);
