@@ -29,6 +29,39 @@ import se.chalmers.cse.mdsd1617.group18.bookingSystem.FreeRoomTypesDTO;
  * @generated
  */
 public class FreeRoomTypesDTOImpl extends MinimalEObjectImpl.Container implements FreeRoomTypesDTO {
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + numBeds;
+		long temp;
+		temp = Double.doubleToLongBits(pricePerNight);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((roomTypeDescription == null) ? 0 : roomTypeDescription.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		FreeRoomTypesDTOImpl other = (FreeRoomTypesDTOImpl) obj;
+		if (numBeds != other.numBeds)
+			return false;
+		if (Double.doubleToLongBits(pricePerNight) != Double.doubleToLongBits(other.pricePerNight))
+			return false;
+		if (roomTypeDescription == null) {
+			if (other.roomTypeDescription != null)
+				return false;
+		} else if (!roomTypeDescription.equals(other.roomTypeDescription))
+			return false;
+		return true;
+	}
+
 	/**
 	 * The default value of the '{@link #getRoomTypeDescription() <em>Room Type Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
