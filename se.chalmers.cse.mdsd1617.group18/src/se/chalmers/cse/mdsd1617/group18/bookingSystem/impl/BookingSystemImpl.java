@@ -287,7 +287,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 		
 		for (int i = 0; i < this.freeRooms.size(); i++) {
 			FreeRoomTypesDTO freeRoomType = freeRooms.get(i); 
-			if (freeRoomType.equals(roomTypeDescription) && freeRoomType.getNumFreeRooms() > 0) {
+			if (freeRoomType.getRoomTypeDescription().equals(roomTypeDescription) && freeRoomType.getNumFreeRooms() > 0) {
 				for (int j = 0; j < rooms.size(); j++) {
 					String description = rooms.get(j).getRoomType().getDescription();
 					if (description.equals(roomTypeDescription)) {
@@ -297,6 +297,8 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 						break;
 					}
 				}
+			}
+			if(!typeExists){
 				break;
 			}
 		}
