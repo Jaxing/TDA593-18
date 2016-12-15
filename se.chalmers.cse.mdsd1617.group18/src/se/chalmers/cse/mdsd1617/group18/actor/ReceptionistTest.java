@@ -101,6 +101,17 @@ public class ReceptionistTest {
 		IBooking booking = ((BookingSystemImpl)bookingSystem).findBooking(id);
 		assertTrue(booking.getRooms().size() == 2);
 	}
+		
+	@Test	
+	public void confirmBooking () {
+		assertFalse(bookingSystem.confirmBooking(6));
+		int id = bookingSystem.initiateBooking("a", "20201012", "20201112", "b");
+		
+		assertFalse(bookingSystem.confirmBooking(id));
+		bookingSystem.addRoomToBooking("A basic room", id);
+		
+		assertTrue(bookingSystem.confirmBooking(id));
+	}
 	
 	//TODO:u.c. 2.1.2.  - search for free rooms
 	@Test
