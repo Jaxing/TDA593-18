@@ -222,6 +222,43 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	}
 	
 	/**
+	 * A wrapper for getFreeRooms that takes a description for room type and return all rooms of that type
+	 * @generated NOT
+	 */
+	private EList<FreeRoomTypesDTO> getFreeRooms(String description, String startDate, String endDate) {
+		EList<FreeRoomTypesDTO> rooms = new BasicEList<FreeRoomTypesDTO>();
+		
+		for (int i = 0; i < freeRooms.size(); i++){
+			FreeRoomTypesDTO freeRoom = freeRooms.get(i);
+			if (freeRoom.getRoomTypeDescription().equals(description)) {
+				rooms.addAll(this.getFreeRooms(freeRoom.getNumBeds(), startDate, endDate));
+			}
+		}
+		return rooms;
+	}
+	
+	/**
+	 * Returns the combined roomList of all bookings
+	 * @throws ParseException 
+	 * @generated NOT
+	 */
+	private EList<IRoom> getBookedRooms(String startDate, String endDate) throws ParseException {
+		EList<IRoom> rooms = new BasicEList<IRoom>();
+		
+		for (int i = 0; i < this.bookings.size(); i++) {
+			IBooking booking = this.bookings.get(i);
+			Date start = parseDate(startDate);
+			Date end = parseDate(endDate);
+			
+			if ((start.before(parseDate(booking.getStartDate()))) && (parseDate(booking.getEndDate()).before(end))) {
+				rooms.addAll(booking.getRooms());
+			}
+		}
+		
+		return rooms;
+	}
+	
+	/**
 	 * @generated NOT
 	 */
 	private void updateFreeRooms(){
