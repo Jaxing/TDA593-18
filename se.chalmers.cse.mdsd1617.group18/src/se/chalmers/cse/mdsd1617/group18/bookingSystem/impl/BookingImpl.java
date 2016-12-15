@@ -6,7 +6,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -177,6 +177,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		this.lastName = lastName;
 		this.startDate = startDate;
 		this.endDate = endDate;
+		roomList = new BasicEList<IRoom>();
 	}
 
 	/**
@@ -341,9 +342,12 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * @generated
 	 */
 	public boolean addRoom(IRoom room) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if(roomList.contains(room)){
+			return false;
+		} else {
+			roomList.add(room);
+			return true;
+		}
 	}
 
 	/**
