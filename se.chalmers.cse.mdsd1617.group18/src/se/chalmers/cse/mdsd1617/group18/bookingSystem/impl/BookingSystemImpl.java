@@ -300,8 +300,8 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 				for (int j = 0; j < rooms.size(); j++) {
 					String description = rooms.get(j).getRoomType().getDescription();
 					if (description.equals(roomTypeDescription)) {
-						freeRoomOfType = rooms.get(j);
-						freeRoomType.setNumFreeRooms(freeRoomType.getNumFreeRooms());
+						freeRoomOfType = rooms.remove(j);
+						freeRoomType.setNumFreeRooms(freeRoomType.getNumFreeRooms() - 1);
 						typeExists = true;
 						break;
 					}
