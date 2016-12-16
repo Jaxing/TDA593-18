@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.eclipse.emf.common.util.EList;
 import org.junit.*;
 
+import se.chalmers.cse.mdsd1617.group18.bookingSystem.impl.BookingSystemFactoryImpl;
 import se.chalmers.cse.mdsd1617.group18.roomManager.*;
 import se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomManagerFactoryImpl;
 
@@ -155,5 +156,32 @@ public class AdministratorTests {
 			}
 		}
 		assertEquals(true, works);
+	}
+	
+	// UC 2.2.9
+	@Test
+	public void testStartupHotelSystem() {
+		// Create some data that should be removed after startup
+		roomManager.addRoomType("Random room type", 200.0, 3, "Test");
+		IRoomType rT = roomManager.getRoomTypes().get(0);
+		roomManager.addRoom(200, rT);
+		roomManager.addRoom(201, rT);
+		// Startup
+		roomManager.startup(5);
+		
+		EList<IRoom> rooms = roomManager.getRooms();
+		EList<IRoomType> rTypes = roomManager.getRoomTypes();
+		boolean correctBeds = true;
+		for (int i = 0; i < rTypes.size(); i++) {
+			correctBeds = correctBeds && (rTypes.get(i).getNumberOfBeds() == 2);
+			if (!correctBeds) {
+				System.out.println("The type is " + rTypes.get(i));
+			}
+		}
+		for (int i = 0; i < rooms.size(); i++) {
+			correctBeds = correctBeds && (rooms.get(i).getRoomType().getNumberOfBeds() == 2);
+		}
+		assertEquals(true, correctBeds && rooms.size() == 5);		
+		
 	}
 }
