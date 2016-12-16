@@ -438,9 +438,13 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * @generated
 	 */
 	public EList<IRoom> initiateCheckin(int bookingId) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		IBooking booking = this.findBooking(bookingId);
+		
+		if (booking != null) {
+			return booking.getRooms();
+		}
+		
+		return null;
 	}
 
 	/**
