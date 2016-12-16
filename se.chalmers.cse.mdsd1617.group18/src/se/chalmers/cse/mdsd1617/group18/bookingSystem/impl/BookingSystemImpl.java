@@ -511,12 +511,23 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 					if(booking.getCheckedInRooms().contains(tempRoom)) {
 						
 						if (booking.checkOutRoom(tempRoom)) {
-							try {
+							/*try {
 								CustomerRequires customerRequires = CustomerRequires.instance();
 								boolean isValid = customerRequires.isCreditCardValid(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
 								return isValid && customerRequires.makePayment(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, tempRoom.getExtraCostPrice() + tempRoom.getRoomType().getPrice());
 								
 							} catch (SOAPException e) {
+								return false;
+							}*/
+							try {
+								CustomerRequires cr = initCustomerRequires();
+								if (cr == null){
+									return false;
+								}
+									return cr.isCreditCardValid(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName)&&
+									cr.makePayment(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, 
+											tempRoom.getExtraCostPrice() + tempRoom.getRoomType().getPrice());
+							}catch(SOAPException soap){
 								return false;
 							}
 						}
