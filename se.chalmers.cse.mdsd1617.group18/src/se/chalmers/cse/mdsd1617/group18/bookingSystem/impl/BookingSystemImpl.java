@@ -24,8 +24,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import se.chalmers.cse.mdsd1617.banking.customerRequires.CustomerRequires;
+import se.chalmers.cse.mdsd1617.group18.bookingSystem.AbstractEvent;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.BookingSystem;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.BookingSystemPackage;
+import se.chalmers.cse.mdsd1617.group18.bookingSystem.EventType;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.FreeRoomTypesDTO;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.IBooking;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.IEvent;
@@ -452,6 +454,12 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 				price += bookingRoomList.get(i).getRoomType().getPrice();
 				price += bookingRoomList.get(i).getExtraCostPrice();
 			}
+			
+	    	AbstractEvent event = BookingSystemFactoryImpl.init().createCheckOutEvent();
+	    	event.setBookingID(theBooking.getID());
+	    	event.setTimestamp(LocalDate.now().toEpochDay());
+	    	this.events.add(event);
+    	   
 			return price;
 		}
 	}
@@ -573,6 +581,10 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 		IBooking booking = this.findBooking(bookingId);
 		              
        if (booking != null) {
+    	   AbstractEvent event = BookingSystemFactoryImpl.init().createCheckInEvent();
+    	   event.setBookingID(booking.getID());
+    	   event.setTimestamp(LocalDate.now().toEpochDay());
+    	   this.events.add(event);
     	   return booking.getRooms();
        }
 		               
@@ -661,9 +673,20 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * @generated
 	 */
 	public EList<IEvent> listCheckins(String startTime, String endTime) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<IEvent> checkIns = new BasicEList<IEvent>();
+		
+		for(int i = 0; i < events.size(); i++) {
+			if(events.get(i).getType() == EventType.CHECK_IN) {
+				long startDate = LocalDate.parse(startTime).toEpochDay();
+				long endDate = LocalDate.parse(endTime).toEpochDay();
+				
+				if (startDate <= events.get(i).getTimestamp() && events.get(i).getTimestamp() <= endDate) {
+					checkIns.add(events.get(i));
+				}
+			}
+		}
+		
+		return checkIns;
 	}
 
 	/**
@@ -672,9 +695,20 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * @generated
 	 */
 	public EList<IEvent> listCheckouts(String startTime, String endTime) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<IEvent> checkIns = new BasicEList<IEvent>();
+		
+		for(int i = 0; i < events.size(); i++) {
+			if(events.get(i).getType() == EventType.CHECK_OUT) {
+				long startDate = LocalDate.parse(startTime).toEpochDay();
+				long endDate = LocalDate.parse(endTime).toEpochDay();
+				
+				if (startDate <= events.get(i).getTimestamp() && events.get(i).getTimestamp() <= endDate) {
+					checkIns.add(events.get(i));
+				}
+			}
+		}
+		
+		return checkIns;
 	}
 
 	/**
