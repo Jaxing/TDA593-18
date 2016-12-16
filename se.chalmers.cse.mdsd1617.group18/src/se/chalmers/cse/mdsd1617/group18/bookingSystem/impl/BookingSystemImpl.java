@@ -670,7 +670,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<IEvent> listCheckins(String startTime, String endTime) {
 		EList<IEvent> checkIns = new BasicEList<IEvent>();
@@ -692,7 +692,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<IEvent> listCheckouts(String startTime, String endTime) {
 		EList<IEvent> checkIns = new BasicEList<IEvent>();
