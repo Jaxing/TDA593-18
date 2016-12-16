@@ -9,16 +9,15 @@ import org.eclipse.emf.common.util.EList;
 import org.junit.Before;
 import org.junit.Test;
 
-import se.chalmers.cse.mdsd1617.group18.bookingSystem.Booking;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.BookingSystem;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.BookingSystemFactory;
+import se.chalmers.cse.mdsd1617.group18.bookingSystem.FreeRoomTypesDTO;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.IBooking;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.impl.BookingSystemFactoryImpl;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.impl.BookingSystemImpl;
 import se.chalmers.cse.mdsd1617.group18.roomManager.RoomManager;
 import se.chalmers.cse.mdsd1617.group18.roomManager.RoomManagerFactory;
 import se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomManagerFactoryImpl;
-import se.chalmers.cse.mdsd1617.group18.bookingSystem.impl.BookingImpl;;
 
 
 public class ReceptionistTest {
@@ -128,7 +127,7 @@ public class ReceptionistTest {
 	//TODO:u.c. 2.1.2.  - search for free rooms
 	@Test
 	public void searchForFreeRooms() {
-		EList freeRooms = bookingSystem.getFreeRooms(2, "20170112", "20170118");
+		EList<FreeRoomTypesDTO> freeRooms = bookingSystem.getFreeRooms(2, "20170112", "20170118");
 		
 		assertFalse(freeRooms.isEmpty());
 	}

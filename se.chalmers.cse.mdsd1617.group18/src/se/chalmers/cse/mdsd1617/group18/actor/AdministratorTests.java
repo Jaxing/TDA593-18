@@ -5,7 +5,6 @@ import static org.junit.Assert.assertEquals;
 import org.eclipse.emf.common.util.EList;
 import org.junit.*;
 
-import se.chalmers.cse.mdsd1617.group18.bookingSystem.impl.BookingSystemFactoryImpl;
 import se.chalmers.cse.mdsd1617.group18.roomManager.*;
 import se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomManagerFactoryImpl;
 
@@ -174,9 +173,6 @@ public class AdministratorTests {
 		boolean correctBeds = true;
 		for (int i = 0; i < rTypes.size(); i++) {
 			correctBeds = correctBeds && (rTypes.get(i).getNumberOfBeds() == 2);
-			if (!correctBeds) {
-				System.out.println("The type is " + rTypes.get(i));
-			}
 		}
 		for (int i = 0; i < rooms.size(); i++) {
 			correctBeds = correctBeds && (rooms.get(i).getRoomType().getNumberOfBeds() == 2);
