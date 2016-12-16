@@ -177,11 +177,19 @@ public class ReceptionistTest {
 	//TODO:u.c. 2.1.6.  - cancel a booking
 	@Test
 	public void cancelBooking() {
-		int bookingId = bookingSystem.initiateBooking("FirstName", "LastName", "20161212", "20161214");
-		bookingSystem.initiateCheckin(bookingId);
-		bookingSystem.addRoomToBooking("roomTypeDescription", bookingId);
+		int bookingId = bookingSystem.initiateBooking("FirstName", "20161212", "20161214", "LastName");
+		//bookingSystem.initiateCheckin(bookingId);
+		bookingSystem.addRoomToBooking("A basic room", bookingId);
+		
+		EList <IRoom> freeRoomList = ((BookingSystemImpl)bookingSystem).getFreeRooms("20161212", "20161214");
+		int listSize = freeRoomList.size();
 		bookingSystem.cancelBooking(bookingId);
 		
+		EList <IRoom> freeRoomList2 = ((BookingSystemImpl)bookingSystem).getFreeRooms("20161212", "20161214");
+		int listSize2 = freeRoomList2.size();
+		//System.out.println(listSize + " " + listSize2);
+		
+	    assertTrue(listSize == listSize2 -1);
 		assertTrue(bookingSystem.listBooking().isEmpty());
 		
 	}

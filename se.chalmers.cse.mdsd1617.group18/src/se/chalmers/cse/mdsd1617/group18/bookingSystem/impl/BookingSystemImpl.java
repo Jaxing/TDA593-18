@@ -484,8 +484,10 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * @generated NOT
 	 */
 	public void cancelBooking(int bookingId) {
+		
 		for(int i = 0; i < bookings.size(); i++){
 			if(bookings.get(i).getID() == bookingId){
+				bookings.get(i).getRooms().clear();
 				bookings.remove(i);
 			}
 		}
