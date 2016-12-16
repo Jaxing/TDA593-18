@@ -216,12 +216,13 @@
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FeS09LrREeaVMa-P8AMS-A" value="*"/>
                 </ownedParameter>
               </ownedOperation>
-              <ownedOperation xmi:type="uml:Operation" xmi:id="_FeS09brREeaVMa-P8AMS-A" name="listOccupiedRooms">
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_FeS09brREeaVMa-P8AMS-A" name="listOccupiedRooms" concurrency="concurrent">
                 <ownedParameter xmi:type="uml:Parameter" xmi:id="_FeS09rrREeaVMa-P8AMS-A" name="date">
                   <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
                 </ownedParameter>
-                <ownedParameter xmi:type="uml:Parameter" xmi:id="_FeS097rREeaVMa-P8AMS-A" name="roomList" direction="return">
-                  <type xmi:type="uml:DataType" href="group18.uml#_d9uCILSVEeaxVPR210aiSw"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_FeS097rREeaVMa-P8AMS-A" type="_FhhH5rrREeaVMa-P8AMS-A" direction="return">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uve14MONEea15orvQmXpEA"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uvh5MMONEea15orvQmXpEA" value="*"/>
                 </ownedParameter>
               </ownedOperation>
               <ownedOperation xmi:type="uml:Operation" xmi:id="_FeS0-LrREeaVMa-P8AMS-A" name="listCheckins" visibility="public" concurrency="concurrent">

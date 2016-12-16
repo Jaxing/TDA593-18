@@ -641,7 +641,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Object listOccupiedRooms(String date) {
+	public EList<IRoom> listOccupiedRooms(String date) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

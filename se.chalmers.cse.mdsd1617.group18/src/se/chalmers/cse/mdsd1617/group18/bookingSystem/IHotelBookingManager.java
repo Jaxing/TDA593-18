@@ -52,10 +52,10 @@ public interface IHotelBookingManager extends IHotelCustomerProvides {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" dateRequired="true" dateOrdered="false"
+	 * @model ordered="false" dateRequired="true" dateOrdered="false"
 	 * @generated
 	 */
-	Object listOccupiedRooms(String date);
+	EList<IRoom> listOccupiedRooms(String date);
 
 	/**
 	 * <!-- begin-user-doc -->

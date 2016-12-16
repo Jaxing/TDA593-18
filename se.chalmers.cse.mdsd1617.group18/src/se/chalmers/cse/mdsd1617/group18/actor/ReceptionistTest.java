@@ -224,6 +224,12 @@ public class ReceptionistTest {
 	//u.c. 2.1.8.  - list occupied rooms for specified day
 	@Test
 	public void listOccupiedRoomsForSpecifiedDay () {
+		int id = bookingSystem.initiateBooking("FirstName", "20161212", "20161223", "Last Name");
+		bookingSystem.addRoomToBooking("A basic room", id);
+		bookingSystem.initiateCheckin(id);
+		bookingSystem.checkInRoom("A basic room", id);
+		
+		assertFalse(bookingSystem.listOccupiedRooms("20161213").isEmpty());
 		
 	}
 	
