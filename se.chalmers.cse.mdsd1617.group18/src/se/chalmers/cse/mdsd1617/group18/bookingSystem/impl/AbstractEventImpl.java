@@ -181,7 +181,7 @@ public abstract class AbstractEventImpl extends MinimalEObjectImpl.Container imp
 	public EventType getType() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return this.eventType;
 	}
 
 	/**
