@@ -453,10 +453,25 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * @generated NOT
 	 */
 	public boolean editBookingPeriod(int bookingId, String startDate, String endDate) {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
+		Date start = null;
+		Date end = null;
 		IBooking booking = findBooking(bookingId);
-		if(booking == null){
+		
+		try {
+			start = dateFormat.parse(startDate);
+			end = dateFormat.parse(endDate);
+		} catch (ParseException e) {
+			e.printStackTrace();
 			return false;
-		}else{
+		}
+			
+		if(booking == null || startDate == null || endDate == null){
+			return false;
+		}if(end.before(start)){
+			return false;
+		}
+		else{
 			booking.setStartDate(startDate);
 			booking.setEndDate(endDate);
 		}
@@ -469,7 +484,11 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * @generated NOT
 	 */
 	public void cancelBooking(int bookingId) {
-			
+		for(int i = 0; i < bookings.size(); i++){
+			if(bookings.get(i).getID() == bookingId){
+				bookings.remove(i);
+			}
+		}
 	}
 
 	/**
