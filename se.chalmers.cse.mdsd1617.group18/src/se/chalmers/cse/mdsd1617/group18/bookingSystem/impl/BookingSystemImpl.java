@@ -5,6 +5,8 @@ package se.chalmers.cse.mdsd1617.group18.bookingSystem.impl;
 import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 import java.util.Date;
 
@@ -639,12 +641,18 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<IRoom> listOccupiedRooms(String date) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<IRoom> rooms = new BasicEList<IRoom>();
+		
+		for (int i = 0; i < bookings.size(); i++) {
+			if (bookings.get(i).getStartDate().compareTo(date) <= 0 && date.compareTo(bookings.get(i).getEndDate()) <= 0) {
+				rooms.addAll(bookings.get(i).getCheckedInRooms());
+			}
+		}
+		
+		return rooms;
 	}
 
 	/**
