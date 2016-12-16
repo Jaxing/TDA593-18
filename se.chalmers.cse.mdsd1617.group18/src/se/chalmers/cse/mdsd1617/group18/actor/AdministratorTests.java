@@ -126,16 +126,15 @@ public class AdministratorTests {
 		int roomNumber = 666;
 		IRoomType rT = factory.createRoomType(1000, "Basic room", 1, "A basic room");
 		roomManager.addRoom(roomNumber, rT);
+		EList<IRoom> noBlockedRooms = roomManager.getRooms();
 		roomManager.blockRoom(roomNumber);
-		EList<IRoom> rooms = roomManager.getRooms();
-		boolean works = false;
-		for (int i = 0; i < rooms.size(); i++) {
-			IRoom room = rooms.get(i);
-			if (room.getRoomNumber() == roomNumber && room.isBlocked()) {
-				works = true;
-			}
-		}
-		assertEquals(true, works);
+		
+		EList<IRoom> oneBlockedRoom = roomManager.getRooms();
+		assertEquals(true, noBlockedRooms.size() == oneBlockedRoom.size() +1);
+		
+		roomManager.unblockRoom(roomNumber);
+		EList<IRoom> noBlockedRooms2 = roomManager.getRooms();
+		assertEquals(true, noBlockedRooms.size() == noBlockedRooms2.size());
 	}
 	
 	// UC 2.2.8

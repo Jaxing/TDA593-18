@@ -115,8 +115,16 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 		if (rooms == null) {
 			rooms = new EObjectResolvingEList<IRoom>(IRoom.class, this, RoomManagerPackage.ROOM_MANAGER__ROOMS);
 		}
-		return rooms;
+		EList<IRoom> notBlockedRooms = new BasicEList<IRoom>();  
+		for(int i = 0; i < rooms.size(); i++){
+			if(!rooms.get(i).isBlocked()){
+				notBlockedRooms.add(rooms.get(i));
+			}
+		}
+		return notBlockedRooms;
 	}
+	
+	
 
 	/**
 	 * <!-- begin-user-doc -->
