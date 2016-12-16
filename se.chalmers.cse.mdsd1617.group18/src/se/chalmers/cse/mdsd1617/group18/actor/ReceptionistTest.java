@@ -15,6 +15,7 @@ import se.chalmers.cse.mdsd1617.group18.bookingSystem.FreeRoomTypesDTO;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.IBooking;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.impl.BookingSystemFactoryImpl;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.impl.BookingSystemImpl;
+import se.chalmers.cse.mdsd1617.group18.roomManager.IRoom;
 import se.chalmers.cse.mdsd1617.group18.roomManager.RoomManager;
 import se.chalmers.cse.mdsd1617.group18.roomManager.RoomManagerFactory;
 import se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomManagerFactoryImpl;
@@ -136,13 +137,12 @@ public class ReceptionistTest {
 	@Test
 	public void checkInBooking() {
 		int bookingId = bookingSystem.initiateBooking("First", "20161211", "20161223", "Last");
-		
+		boolean result = bookingSystem.addRoomToBooking("A basic room", bookingId);
 		//bookingSystem.checkInRoom("roomTypeDescription", id); //the input is only the booking id
-		bookingSystem.initiateCheckin(bookingId);
+		EList<IRoom> rooms = bookingSystem.initiateCheckin(bookingId);
 		//marks the room as occupied and links that room to the booking id, returns true if successful
-		boolean result = bookingSystem.addRoomToBooking("roomTypeDescription", bookingId);
 		
-		assertEquals(true, result);
+		assertFalse(rooms.isEmpty());
 		
 		
 	}
