@@ -133,16 +133,25 @@ public class ReceptionistTest {
 		assertFalse(freeRooms.isEmpty());
 	}
 	
-	//TODO:u.c. 2.1.3.  - check in booking
+	// UC 2.1.3.  - check in booking
 	@Test
 	public void checkInBooking() {
 		int bookingId = bookingSystem.initiateBooking("First", "20161211", "20161223", "Last");
 		boolean result = bookingSystem.addRoomToBooking("A basic room", bookingId);
-		//bookingSystem.checkInRoom("roomTypeDescription", id); //the input is only the booking id
+		bookingSystem.confirmBooking(bookingId);
 		EList<IRoom> rooms = bookingSystem.initiateCheckin(bookingId);
-		//marks the room as occupied and links that room to the booking id, returns true if successful
+		for (IRoom room : rooms) {
+			bookingSystem.checkInRoom(room.getRoomType().getDescription(), bookingId);
+		}
 		
-		assertFalse(rooms.isEmpty());
+		int checkedInCount = 0;
+		for (IBooking booking : bookingSystem.getBookings()) {
+			if (booking.getID() == bookingId) {
+				checkedInCount += booking.getCheckedInRooms().size();
+				break;
+			}
+		}		
+		assertTrue(result && checkedInCount == 1);
 		
 		
 	}
