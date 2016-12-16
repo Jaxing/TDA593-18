@@ -2,7 +2,11 @@ package se.chalmers.cse.mdsd1617.group18.actor;
 
 import static org.junit.Assert.*;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
@@ -236,12 +240,25 @@ public class ReceptionistTest {
 	//TODO:u.c. 2.1.9.  - list check in for specific day(s)
 	@Test
 	public void listCheckinsForSpecificDay() {
+		int id = bookingSystem.initiateBooking("FirstName", "20161212", "20161223", "Last Name");
+		bookingSystem.addRoomToBooking("A basic room", id);
+		bookingSystem.initiateCheckin(id);
+		bookingSystem.checkInRoom("A basic room", id);
 		
+		LocalDate now = LocalDate.now();
+		assertFalse(bookingSystem.listCheckins(now.minusDays(1).format(DateTimeFormatter.ofPattern("yyyyMMdd")), now.plusDays(1).format(DateTimeFormatter.ofPattern("yyyyMMdd"))).isEmpty());
 	}
 	//TODO:u.c. 2.1.10. - list check out for specific day(s)
 	@Test
 	public void listCheckoutForSpecificDay() {
+		int id = bookingSystem.initiateBooking("FirstName", "20161212", "20161223", "Last Name");
+		bookingSystem.addRoomToBooking("A basic room", id);
+		bookingSystem.initiateCheckin(id);
+		int roomNbr = bookingSystem.checkInRoom("A basic room", id);
+		bookingSystem.initiateCheckout(id);
 		
+		LocalDate now = LocalDate.now();
+		assertFalse(bookingSystem.listCheckouts(now.minusDays(1).format(DateTimeFormatter.ofPattern("yyyyMMdd")), now.plusDays(1).format(DateTimeFormatter.ofPattern("yyyyMMdd"))).isEmpty());		
 	}
 	//TODO:u.c. 2.1.11. - check in room 
 	@Test
