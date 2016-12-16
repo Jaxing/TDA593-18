@@ -382,6 +382,15 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean checkOutRoom(IRoom roomToCheckOut) {
+		return checkedInRooms.remove(roomToCheckOut);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -520,6 +529,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return addRoom((IRoom)arguments.get(0));
 			case BookingSystemPackage.BOOKING___CHECK_IN_ROOM__IROOM:
 				return checkInRoom((IRoom)arguments.get(0));
+			case BookingSystemPackage.BOOKING___CHECK_OUT_ROOM__IROOM:
+				return checkOutRoom((IRoom)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

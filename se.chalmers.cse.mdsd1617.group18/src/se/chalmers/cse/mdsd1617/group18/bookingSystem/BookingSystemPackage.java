@@ -1020,13 +1020,22 @@ public interface BookingSystemPackage extends EPackage {
 	int IBOOKING___GET_CHECKED_IN_ROOMS = 11;
 
 	/**
+	 * The operation id for the '<em>Check Out Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING___CHECK_OUT_ROOM__IROOM = 12;
+
+	/**
 	 * The number of operations of the '<em>IBooking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_OPERATION_COUNT = 12;
+	int IBOOKING_OPERATION_COUNT = 13;
 
 	/**
 	 * The meta object id for the '{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.impl.FreeRoomTypesDTOImpl <em>Free Room Types DTO</em>}' class.
@@ -1281,6 +1290,15 @@ public interface BookingSystemPackage extends EPackage {
 	 * @ordered
 	 */
 	int BOOKING___GET_CHECKED_IN_ROOMS = IBOOKING___GET_CHECKED_IN_ROOMS;
+
+	/**
+	 * The operation id for the '<em>Check Out Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING___CHECK_OUT_ROOM__IROOM = IBOOKING___CHECK_OUT_ROOM__IROOM;
 
 	/**
 	 * The number of operations of the '<em>Booking</em>' class.
@@ -1599,6 +1617,16 @@ public interface BookingSystemPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getIBooking__GetCheckedInRooms();
+
+	/**
+	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.IBooking#checkOutRoom(se.chalmers.cse.mdsd1617.group18.roomManager.IRoom) <em>Check Out Room</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Check Out Room</em>' operation.
+	 * @see se.chalmers.cse.mdsd1617.group18.bookingSystem.IBooking#checkOutRoom(se.chalmers.cse.mdsd1617.group18.roomManager.IRoom)
+	 * @generated
+	 */
+	EOperation getIBooking__CheckOutRoom__IRoom();
 
 	/**
 	 * Returns the meta object for class '{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.IHotelBookingManager <em>IHotel Booking Manager</em>}'.
@@ -2216,6 +2244,14 @@ public interface BookingSystemPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IBOOKING___GET_CHECKED_IN_ROOMS = eINSTANCE.getIBooking__GetCheckedInRooms();
+
+		/**
+		 * The meta object literal for the '<em><b>Check Out Room</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IBOOKING___CHECK_OUT_ROOM__IROOM = eINSTANCE.getIBooking__CheckOutRoom__IRoom();
 
 		/**
 		 * The meta object literal for the '{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.IHotelBookingManager <em>IHotel Booking Manager</em>}' class.

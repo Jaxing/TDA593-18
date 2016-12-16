@@ -94,6 +94,9 @@
                   <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="se.ecore#//chalmers/cse/mdsd1617/group18/bookingSystem/IBooking/checkInRoom/roomToCheckIn"/>
                 </genOperations>
                 <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="se.ecore#//chalmers/cse/mdsd1617/group18/bookingSystem/IBooking/getCheckedInRooms"/>
+                <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="se.ecore#//chalmers/cse/mdsd1617/group18/bookingSystem/IBooking/checkOutRoom">
+                  <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="se.ecore#//chalmers/cse/mdsd1617/group18/bookingSystem/IBooking/checkOutRoom/roomToCheckOut"/>
+                </genOperations>
               </genClasses>
               <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="se.ecore#//chalmers/cse/mdsd1617/group18/bookingSystem/IHotelBookingManager">
                 <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="se.ecore#//chalmers/cse/mdsd1617/group18/bookingSystem/IHotelBookingManager/initiateCheckin">

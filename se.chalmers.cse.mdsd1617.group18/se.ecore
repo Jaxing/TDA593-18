@@ -67,6 +67,10 @@
               </eOperations>
               <eOperations name="getCheckedInRooms" ordered="false" upperBound="-1"
                   eType="#//chalmers/cse/mdsd1617/group18/roomManager/IRoom"/>
+              <eOperations name="checkOutRoom" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+                <eParameters name="roomToCheckOut" ordered="false" lowerBound="1"
+                    eType="#//chalmers/cse/mdsd1617/group18/roomManager/IRoom"/>
+              </eOperations>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="IHotelBookingManager" abstract="true"
                 interface="true" eSuperTypes="#//chalmers/cse/mdsd1617/group18/bookingSystem/IHotelCustomerProvides">

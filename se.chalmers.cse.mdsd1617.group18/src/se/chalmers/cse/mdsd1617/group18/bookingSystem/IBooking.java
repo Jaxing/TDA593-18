@@ -114,4 +114,12 @@ public interface IBooking extends EObject {
 	 */
 	EList<IRoom> getCheckedInRooms();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" roomToCheckOutRequired="true" roomToCheckOutOrdered="false"
+	 * @generated
+	 */
+	boolean checkOutRoom(IRoom roomToCheckOut);
+
 } // IBooking

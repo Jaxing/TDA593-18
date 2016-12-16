@@ -445,6 +445,15 @@ public class BookingSystemPackageImpl extends EPackageImpl implements BookingSys
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getIBooking__CheckOutRoom__IRoom() {
+		return iBookingEClass.getEOperations().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getIHotelBookingManager() {
 		return iHotelBookingManagerEClass;
 	}
@@ -808,6 +817,7 @@ public class BookingSystemPackageImpl extends EPackageImpl implements BookingSys
 		createEOperation(iBookingEClass, IBOOKING___ADD_ROOM__IROOM);
 		createEOperation(iBookingEClass, IBOOKING___CHECK_IN_ROOM__IROOM);
 		createEOperation(iBookingEClass, IBOOKING___GET_CHECKED_IN_ROOMS);
+		createEOperation(iBookingEClass, IBOOKING___CHECK_OUT_ROOM__IROOM);
 
 		iHotelBookingManagerEClass = createEClass(IHOTEL_BOOKING_MANAGER);
 		createEOperation(iHotelBookingManagerEClass, IHOTEL_BOOKING_MANAGER___INITIATE_CHECKIN__INT);
@@ -944,6 +954,9 @@ public class BookingSystemPackageImpl extends EPackageImpl implements BookingSys
 		addEParameter(op, theRoomManagerPackage.getIRoom(), "roomToCheckIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getIBooking__GetCheckedInRooms(), theRoomManagerPackage.getIRoom(), "getCheckedInRooms", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIBooking__CheckOutRoom__IRoom(), ecorePackage.getEBoolean(), "checkOutRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theRoomManagerPackage.getIRoom(), "roomToCheckOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(iHotelBookingManagerEClass, IHotelBookingManager.class, "IHotelBookingManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
