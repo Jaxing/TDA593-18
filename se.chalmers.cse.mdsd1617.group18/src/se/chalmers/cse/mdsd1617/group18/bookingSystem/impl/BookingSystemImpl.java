@@ -445,7 +445,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 			return -1;
 		} else {
 			double price = 0;
-			EList <IRoom> bookingRoomList = theBooking.getRooms();
+			EList <IRoom> bookingRoomList = theBooking.getCheckedInRooms();
 			for (int i = 0; i < bookingRoomList.size();i++){
 				price += bookingRoomList.get(i).getRoomType().getPrice();
 				price += bookingRoomList.get(i).getExtraCostPrice();
@@ -484,7 +484,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 		if(theBooking == null){
 			return -1;
 		}
-		EList <IRoom> bookingRoomList = theBooking.getRooms();
+		EList <IRoom> bookingRoomList = theBooking.getCheckedInRooms();
 		IRoom currentRoom = null;
 		for(int i = 0; i< bookingRoomList.size(); i++){
 			currentRoom = bookingRoomList.get(i);
