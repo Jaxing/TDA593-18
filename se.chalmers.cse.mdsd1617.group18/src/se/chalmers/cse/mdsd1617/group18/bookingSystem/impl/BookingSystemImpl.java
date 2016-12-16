@@ -554,7 +554,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 		}
 		if (numOfRooms < 0){
 			EList <IRoom> bookingRooms = theBooking.getRooms();
-			for (int i = 0; i < bookingRooms.size(); i++){
+			for (int i = 0; i < bookingRooms.size() && numOfRooms < 0; i++){
 				if(bookingRooms.get(i).getRoomType().equals(roomType)){
 					bookingRooms.remove(i);
 					numOfRooms++;
