@@ -36,6 +36,11 @@
                   upperBound="-1" eType="#//chalmers/cse/mdsd1617/group18/bookingSystem/IBooking"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="roomProvider"
                   ordered="false" lowerBound="1" eType="#//chalmers/cse/mdsd1617/group18/roomManager/IHotelRoomProvider"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="rooms" ordered="false"
+                  upperBound="-1" eType="#//chalmers/cse/mdsd1617/group18/roomManager/IRoom"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="bookingId" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                  defaultValueLiteral="0"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="IBooking" abstract="true"
                 interface="true">
@@ -57,6 +62,11 @@
               <eOperations name="addRoom" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
                 <eParameters name="room" ordered="false" lowerBound="1" eType="#//chalmers/cse/mdsd1617/group18/roomManager/IRoom"/>
               </eOperations>
+              <eOperations name="checkInRoom" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+                <eParameters name="roomToCheckIn" ordered="false" lowerBound="1" eType="#//chalmers/cse/mdsd1617/group18/roomManager/IRoom"/>
+              </eOperations>
+              <eOperations name="getCheckedInRooms" ordered="false" upperBound="-1"
+                  eType="#//chalmers/cse/mdsd1617/group18/roomManager/IRoom"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="IHotelBookingManager" abstract="true"
                 interface="true" eSuperTypes="#//chalmers/cse/mdsd1617/group18/bookingSystem/IHotelCustomerProvides">
@@ -178,6 +188,8 @@
                   lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="roomList" ordered="false"
                   upperBound="-1" eType="#//chalmers/cse/mdsd1617/group18/roomManager/IRoom"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="checkedInRooms"
+                  ordered="false" upperBound="-1" eType="#//chalmers/cse/mdsd1617/group18/roomManager/IRoom"/>
             </eClassifiers>
           </eSubpackages>
           <eSubpackages name="roomManager" nsURI="http:///se/chalmers/cse/mdsd1617/group18/roomManager.ecore"

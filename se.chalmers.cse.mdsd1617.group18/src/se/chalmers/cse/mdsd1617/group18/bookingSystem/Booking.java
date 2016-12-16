@@ -20,6 +20,7 @@ import se.chalmers.cse.mdsd1617.group18.roomManager.IRoom;
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.Booking#getStartDate <em>Start Date</em>}</li>
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.Booking#getEndDate <em>End Date</em>}</li>
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.Booking#getRoomList <em>Room List</em>}</li>
+ *   <li>{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.Booking#getCheckedInRooms <em>Checked In Rooms</em>}</li>
  * </ul>
  *
  * @see se.chalmers.cse.mdsd1617.group18.bookingSystem.BookingSystemPackage#getBooking()
@@ -172,5 +173,21 @@ public interface Booking extends IBooking {
 	 * @generated
 	 */
 	EList<IRoom> getRoomList();
+
+	/**
+	 * Returns the value of the '<em><b>Checked In Rooms</b></em>' reference list.
+	 * The list contents are of type {@link se.chalmers.cse.mdsd1617.group18.roomManager.IRoom}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Checked In Rooms</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Checked In Rooms</em>' reference list.
+	 * @see se.chalmers.cse.mdsd1617.group18.bookingSystem.BookingSystemPackage#getBooking_CheckedInRooms()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<IRoom> getCheckedInRooms();
 
 } // Booking

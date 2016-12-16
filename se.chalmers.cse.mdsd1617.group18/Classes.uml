@@ -33,6 +33,14 @@
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FeS0rbrREeaVMa-P8AMS-A" value="*"/>
               </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="_FeS0rrrREeaVMa-P8AMS-A" name="roomProvider" type="_FhhH9brREeaVMa-P8AMS-A" association="_FhggtrrREeaVMa-P8AMS-A"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_e4In4MN7Eea15orvQmXpEA" name="rooms" type="_FhhH5rrREeaVMa-P8AMS-A">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lFwnwMN7Eea15orvQmXpEA"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lF2uYMN7Eea15orvQmXpEA" value="*"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_l16SUMN7Eea15orvQmXpEA" name="bookingId">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+                <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_2gs0oMN7Eea15orvQmXpEA"/>
+              </ownedAttribute>
               <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_DZtBkLyQEea7_8j189OIog" client="_FeS0p7rREeaVMa-P8AMS-A" supplier="_FeS05LrREeaVMa-P8AMS-A" contract="_FeS05LrREeaVMa-P8AMS-A"/>
               <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_FX4lgLyQEea7_8j189OIog" client="_FeS0p7rREeaVMa-P8AMS-A" supplier="_FeS0r7rREeaVMa-P8AMS-A" contract="_FeS0r7rREeaVMa-P8AMS-A"/>
             </packagedElement>
@@ -348,6 +356,18 @@
                   <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
                 </ownedParameter>
               </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_hOGHwMN9Eea15orvQmXpEA" name="checkInRoom" concurrency="concurrent">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_2pc2EMN9Eea15orvQmXpEA" direction="return">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+                </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_A6uRkMN-Eea15orvQmXpEA" name="roomToCheckIn" type="_FhhH5rrREeaVMa-P8AMS-A"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Hpv44MN_Eea15orvQmXpEA" name="getCheckedInRooms">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_N3a8EMN_Eea15orvQmXpEA" type="_FhhH5rrREeaVMa-P8AMS-A" direction="return">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Oq19EMN_Eea15orvQmXpEA"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Oq7coMN_Eea15orvQmXpEA" value="*"/>
+                </ownedParameter>
+              </ownedOperation>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_FeS1NrrREeaVMa-P8AMS-A" name="Booking">
               <ownedAttribute xmi:type="uml:Property" xmi:id="_FeS1N7rREeaVMa-P8AMS-A" name="id">
@@ -368,6 +388,10 @@
               <ownedAttribute xmi:type="uml:Property" xmi:id="_FeS1PLrREeaVMa-P8AMS-A" name="roomList" type="_FhhH5rrREeaVMa-P8AMS-A">
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FeS1PbrREeaVMa-P8AMS-A"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FeS1PrrREeaVMa-P8AMS-A" value="*"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_OkaFQMN8Eea15orvQmXpEA" name="checkedInRooms" type="_FhhH5rrREeaVMa-P8AMS-A">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Tx8hIMN8Eea15orvQmXpEA"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Tx-WUMN8Eea15orvQmXpEA" value="*"/>
               </ownedAttribute>
               <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_GvI24LyREea7_8j189OIog" client="_FeS1NrrREeaVMa-P8AMS-A" supplier="_FeS1H7rREeaVMa-P8AMS-A" contract="_FeS1H7rREeaVMa-P8AMS-A"/>
             </packagedElement>

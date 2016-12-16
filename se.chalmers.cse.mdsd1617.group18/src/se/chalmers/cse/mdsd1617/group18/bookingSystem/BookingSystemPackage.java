@@ -695,13 +695,31 @@ public interface BookingSystemPackage extends EPackage {
 	int BOOKING_SYSTEM__ROOM_PROVIDER = IHOTEL_BOOKING_MANAGER_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Rooms</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_SYSTEM__ROOMS = IHOTEL_BOOKING_MANAGER_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Booking Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_SYSTEM__BOOKING_ID = IHOTEL_BOOKING_MANAGER_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Booking System</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_SYSTEM_FEATURE_COUNT = IHOTEL_BOOKING_MANAGER_FEATURE_COUNT + 3;
+	int BOOKING_SYSTEM_FEATURE_COUNT = IHOTEL_BOOKING_MANAGER_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Get Free Rooms</em>' operation.
@@ -984,13 +1002,31 @@ public interface BookingSystemPackage extends EPackage {
 	int IBOOKING___ADD_ROOM__IROOM = 9;
 
 	/**
+	 * The operation id for the '<em>Check In Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING___CHECK_IN_ROOM__IROOM = 10;
+
+	/**
+	 * The operation id for the '<em>Get Checked In Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING___GET_CHECKED_IN_ROOMS = 11;
+
+	/**
 	 * The number of operations of the '<em>IBooking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_OPERATION_COUNT = 10;
+	int IBOOKING_OPERATION_COUNT = 12;
 
 	/**
 	 * The meta object id for the '{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.impl.FreeRoomTypesDTOImpl <em>Free Room Types DTO</em>}' class.
@@ -1121,13 +1157,22 @@ public interface BookingSystemPackage extends EPackage {
 	int BOOKING__ROOM_LIST = IBOOKING_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Checked In Rooms</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING__CHECKED_IN_ROOMS = IBOOKING_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Booking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_FEATURE_COUNT = IBOOKING_FEATURE_COUNT + 6;
+	int BOOKING_FEATURE_COUNT = IBOOKING_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Get Rooms</em>' operation.
@@ -1218,6 +1263,24 @@ public interface BookingSystemPackage extends EPackage {
 	 * @ordered
 	 */
 	int BOOKING___ADD_ROOM__IROOM = IBOOKING___ADD_ROOM__IROOM;
+
+	/**
+	 * The operation id for the '<em>Check In Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING___CHECK_IN_ROOM__IROOM = IBOOKING___CHECK_IN_ROOM__IROOM;
+
+	/**
+	 * The operation id for the '<em>Get Checked In Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING___GET_CHECKED_IN_ROOMS = IBOOKING___GET_CHECKED_IN_ROOMS;
 
 	/**
 	 * The number of operations of the '<em>Booking</em>' class.
@@ -1386,6 +1449,28 @@ public interface BookingSystemPackage extends EPackage {
 	EReference getBookingSystem_RoomProvider();
 
 	/**
+	 * Returns the meta object for the reference list '{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.BookingSystem#getRooms <em>Rooms</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Rooms</em>'.
+	 * @see se.chalmers.cse.mdsd1617.group18.bookingSystem.BookingSystem#getRooms()
+	 * @see #getBookingSystem()
+	 * @generated
+	 */
+	EReference getBookingSystem_Rooms();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.BookingSystem#getBookingId <em>Booking Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Booking Id</em>'.
+	 * @see se.chalmers.cse.mdsd1617.group18.bookingSystem.BookingSystem#getBookingId()
+	 * @see #getBookingSystem()
+	 * @generated
+	 */
+	EAttribute getBookingSystem_BookingId();
+
+	/**
 	 * Returns the meta object for class '{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.IBooking <em>IBooking</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1494,6 +1579,26 @@ public interface BookingSystemPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getIBooking__AddRoom__IRoom();
+
+	/**
+	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.IBooking#checkInRoom(se.chalmers.cse.mdsd1617.group18.roomManager.IRoom) <em>Check In Room</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Check In Room</em>' operation.
+	 * @see se.chalmers.cse.mdsd1617.group18.bookingSystem.IBooking#checkInRoom(se.chalmers.cse.mdsd1617.group18.roomManager.IRoom)
+	 * @generated
+	 */
+	EOperation getIBooking__CheckInRoom__IRoom();
+
+	/**
+	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.IBooking#getCheckedInRooms() <em>Get Checked In Rooms</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Checked In Rooms</em>' operation.
+	 * @see se.chalmers.cse.mdsd1617.group18.bookingSystem.IBooking#getCheckedInRooms()
+	 * @generated
+	 */
+	EOperation getIBooking__GetCheckedInRooms();
 
 	/**
 	 * Returns the meta object for class '{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.IHotelBookingManager <em>IHotel Booking Manager</em>}'.
@@ -1826,6 +1931,17 @@ public interface BookingSystemPackage extends EPackage {
 	EReference getBooking_RoomList();
 
 	/**
+	 * Returns the meta object for the reference list '{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.Booking#getCheckedInRooms <em>Checked In Rooms</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Checked In Rooms</em>'.
+	 * @see se.chalmers.cse.mdsd1617.group18.bookingSystem.Booking#getCheckedInRooms()
+	 * @see #getBooking()
+	 * @generated
+	 */
+	EReference getBooking_CheckedInRooms();
+
+	/**
 	 * Returns the meta object for enum '{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.EventType <em>Event Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1980,6 +2096,22 @@ public interface BookingSystemPackage extends EPackage {
 		EReference BOOKING_SYSTEM__ROOM_PROVIDER = eINSTANCE.getBookingSystem_RoomProvider();
 
 		/**
+		 * The meta object literal for the '<em><b>Rooms</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BOOKING_SYSTEM__ROOMS = eINSTANCE.getBookingSystem_Rooms();
+
+		/**
+		 * The meta object literal for the '<em><b>Booking Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BOOKING_SYSTEM__BOOKING_ID = eINSTANCE.getBookingSystem_BookingId();
+
+		/**
 		 * The meta object literal for the '{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.IBooking <em>IBooking</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2068,6 +2200,22 @@ public interface BookingSystemPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IBOOKING___ADD_ROOM__IROOM = eINSTANCE.getIBooking__AddRoom__IRoom();
+
+		/**
+		 * The meta object literal for the '<em><b>Check In Room</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IBOOKING___CHECK_IN_ROOM__IROOM = eINSTANCE.getIBooking__CheckInRoom__IRoom();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Checked In Rooms</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IBOOKING___GET_CHECKED_IN_ROOMS = eINSTANCE.getIBooking__GetCheckedInRooms();
 
 		/**
 		 * The meta object literal for the '{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.IHotelBookingManager <em>IHotel Booking Manager</em>}' class.
@@ -2332,6 +2480,14 @@ public interface BookingSystemPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BOOKING__ROOM_LIST = eINSTANCE.getBooking_RoomList();
+
+		/**
+		 * The meta object literal for the '<em><b>Checked In Rooms</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BOOKING__CHECKED_IN_ROOMS = eINSTANCE.getBooking_CheckedInRooms();
 
 		/**
 		 * The meta object literal for the '{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.EventType <em>Event Type</em>}' enum.

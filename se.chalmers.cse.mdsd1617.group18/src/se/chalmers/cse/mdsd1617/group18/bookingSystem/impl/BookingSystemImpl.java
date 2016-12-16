@@ -40,6 +40,8 @@ import se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomManagerFactoryImpl;
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.impl.BookingSystemImpl#getEvents <em>Events</em>}</li>
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.impl.BookingSystemImpl#getBookings <em>Bookings</em>}</li>
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.impl.BookingSystemImpl#getRoomProvider <em>Room Provider</em>}</li>
+ *   <li>{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.impl.BookingSystemImpl#getRooms <em>Rooms</em>}</li>
+ *   <li>{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.impl.BookingSystemImpl#getBookingId <em>Booking Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -74,21 +76,36 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * @ordered
 	 */
 	protected IHotelRoomProvider roomProvider;
-	
+
 	/**
-	 * @generated NOT
+	 * The cached value of the '{@link #getRooms() <em>Rooms</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRooms()
+	 * @generated
+	 * @ordered
 	 */
 	protected EList<IRoom> rooms;
-	
+
 	/**
-	 * @generated NOT
+	 * The default value of the '{@link #getBookingId() <em>Booking Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBookingId()
+	 * @generated
+	 * @ordered
 	 */
-	protected EList<IRoom> assignedRooms;
-	
+	protected static final int BOOKING_ID_EDEFAULT = 0;
+
 	/**
-	 * @generated NOT
-	 * */
-	protected int bookingId = 0;
+	 * The cached value of the '{@link #getBookingId() <em>Booking Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBookingId()
+	 * @generated
+	 * @ordered
+	 */
+	protected int bookingId = BOOKING_ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -101,7 +118,6 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 		this.bookings = new BasicEList<IBooking>();
 		this.roomProvider = (IHotelRoomProvider) RoomManagerFactoryImpl.init().createRoomManager();
 		this.rooms = new BasicEList<IRoom>();
-		this.assignedRooms = new BasicEList<IRoom>();
 	}
 
 	/**
@@ -176,6 +192,39 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 			eNotify(new ENotificationImpl(this, Notification.SET, BookingSystemPackage.BOOKING_SYSTEM__ROOM_PROVIDER, oldRoomProvider, roomProvider));
 	}
 	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<IRoom> getRooms() {
+		if (rooms == null) {
+			rooms = new EObjectResolvingEList<IRoom>(IRoom.class, this, BookingSystemPackage.BOOKING_SYSTEM__ROOMS);
+		}
+		return rooms;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getBookingId() {
+		return bookingId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBookingId(int newBookingId) {
+		int oldBookingId = bookingId;
+		bookingId = newBookingId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BookingSystemPackage.BOOKING_SYSTEM__BOOKING_ID, oldBookingId, bookingId));
+	}
+
 	/**
 	 * TODO: check start and end date
 	 * <!-- end-user-doc -->
@@ -262,7 +311,16 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 			int endComp = end.compareTo(parseDate(booking.getEndDate()));
 			
 			if ((startComp <= 0) && (endComp >= 0)) {
-				rooms.addAll(booking.getRooms());
+				EList<IRoom> assignedRooms = booking.getRooms();
+				EList<IRoom> checkedInRooms = booking.getCheckedInRooms();
+				
+				if(assignedRooms != null) {
+					rooms.addAll(assignedRooms);
+				}
+				
+				if(checkedInRooms != null) {
+					rooms.addAll(checkedInRooms);
+				}
 			}
 		}
 		
@@ -428,23 +486,37 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 * Returns a non negative room number or -1 if unsuccessful
 	 */
 	public int checkInRoom(String roomTypeDescription, int bookingId) {
+		IBooking booking = findBooking(bookingId);
 		
-		throw new UnsupportedOperationException();
+		if (booking != null) {
+			for (int i = 0; i < booking.getRooms().size(); i++) {
+				IRoomType roomType = booking.getRooms().get(i).getRoomType();
+				
+				if (roomType.getDescription().equals(roomTypeDescription)) {
+					IRoom room = booking.getRooms().get(i);
+					if (booking.checkInRoom(room)) {
+						return room.getRoomNumber();
+					}
+				}
+			}
+		}
+		return -1;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<IRoom> initiateCheckin(int bookingId) {
 		IBooking booking = this.findBooking(bookingId);
-		
-		if (booking != null) {
-			return booking.getRooms();
-		}
-		
-		return null;
+		              
+       if (booking != null) {
+    	   return booking.getRooms();
+       }
+		               
+       return null;
+
 	}
 
 	/**
@@ -608,6 +680,10 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 			case BookingSystemPackage.BOOKING_SYSTEM__ROOM_PROVIDER:
 				if (resolve) return getRoomProvider();
 				return basicGetRoomProvider();
+			case BookingSystemPackage.BOOKING_SYSTEM__ROOMS:
+				return getRooms();
+			case BookingSystemPackage.BOOKING_SYSTEM__BOOKING_ID:
+				return getBookingId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -632,6 +708,13 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 			case BookingSystemPackage.BOOKING_SYSTEM__ROOM_PROVIDER:
 				setRoomProvider((IHotelRoomProvider)newValue);
 				return;
+			case BookingSystemPackage.BOOKING_SYSTEM__ROOMS:
+				getRooms().clear();
+				getRooms().addAll((Collection<? extends IRoom>)newValue);
+				return;
+			case BookingSystemPackage.BOOKING_SYSTEM__BOOKING_ID:
+				setBookingId((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -653,6 +736,12 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 			case BookingSystemPackage.BOOKING_SYSTEM__ROOM_PROVIDER:
 				setRoomProvider((IHotelRoomProvider)null);
 				return;
+			case BookingSystemPackage.BOOKING_SYSTEM__ROOMS:
+				getRooms().clear();
+				return;
+			case BookingSystemPackage.BOOKING_SYSTEM__BOOKING_ID:
+				setBookingId(BOOKING_ID_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -671,6 +760,10 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 				return bookings != null && !bookings.isEmpty();
 			case BookingSystemPackage.BOOKING_SYSTEM__ROOM_PROVIDER:
 				return roomProvider != null;
+			case BookingSystemPackage.BOOKING_SYSTEM__ROOMS:
+				return rooms != null && !rooms.isEmpty();
+			case BookingSystemPackage.BOOKING_SYSTEM__BOOKING_ID:
+				return bookingId != BOOKING_ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -725,6 +818,22 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 		}
 		return super.eInvoke(operationID, arguments);
 	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (bookingId: ");
+		result.append(bookingId);
+		result.append(')');
+		return result.toString();
+	}
+
 	/**
 	 * 
 	 * @param bookingID

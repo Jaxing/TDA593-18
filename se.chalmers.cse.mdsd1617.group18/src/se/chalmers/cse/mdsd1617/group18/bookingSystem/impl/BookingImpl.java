@@ -35,6 +35,7 @@ import se.chalmers.cse.mdsd1617.group18.roomManager.IRoom;
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.impl.BookingImpl#getStartDate <em>Start Date</em>}</li>
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.impl.BookingImpl#getEndDate <em>End Date</em>}</li>
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.impl.BookingImpl#getRoomList <em>Room List</em>}</li>
+ *   <li>{@link se.chalmers.cse.mdsd1617.group18.bookingSystem.impl.BookingImpl#getCheckedInRooms <em>Checked In Rooms</em>}</li>
  * </ul>
  *
  * @generated
@@ -151,6 +152,16 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	protected EList<IRoom> roomList;
 
 	/**
+	 * The cached value of the '{@link #getCheckedInRooms() <em>Checked In Rooms</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCheckedInRooms()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<IRoom> checkedInRooms;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -178,6 +189,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		this.startDate = startDate;
 		this.endDate = endDate;
 		roomList = new BasicEList<IRoom>();
+		checkedInRooms = new BasicEList<IRoom>();
 	}
 
 	/**
@@ -312,8 +324,19 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	public EList<IRoom> getCheckedInRooms() {
+		EList<IRoom> list = new BasicEList<IRoom>(this.checkedInRooms);
+		return list;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
 	public EList<IRoom> getRooms() {
-		return this.getRoomList();
+		EList<IRoom> list = new BasicEList<IRoom>(this.getRoomList());
+		return list;
 	}
 
 	/**
@@ -349,6 +372,16 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean checkInRoom(IRoom roomToCheckIn) {
+		roomList.remove(roomToCheckIn);
+		return this.checkedInRooms.add(roomToCheckIn);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -366,6 +399,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return getEndDate();
 			case BookingSystemPackage.BOOKING__ROOM_LIST:
 				return getRoomList();
+			case BookingSystemPackage.BOOKING__CHECKED_IN_ROOMS:
+				return getCheckedInRooms();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -398,6 +433,10 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				getRoomList().clear();
 				getRoomList().addAll((Collection<? extends IRoom>)newValue);
 				return;
+			case BookingSystemPackage.BOOKING__CHECKED_IN_ROOMS:
+				getCheckedInRooms().clear();
+				getCheckedInRooms().addAll((Collection<? extends IRoom>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -428,6 +467,9 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case BookingSystemPackage.BOOKING__ROOM_LIST:
 				getRoomList().clear();
 				return;
+			case BookingSystemPackage.BOOKING__CHECKED_IN_ROOMS:
+				getCheckedInRooms().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -452,6 +494,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return END_DATE_EDEFAULT == null ? endDate != null : !END_DATE_EDEFAULT.equals(endDate);
 			case BookingSystemPackage.BOOKING__ROOM_LIST:
 				return roomList != null && !roomList.isEmpty();
+			case BookingSystemPackage.BOOKING__CHECKED_IN_ROOMS:
+				return checkedInRooms != null && !checkedInRooms.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -474,6 +518,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return null;
 			case BookingSystemPackage.BOOKING___ADD_ROOM__IROOM:
 				return addRoom((IRoom)arguments.get(0));
+			case BookingSystemPackage.BOOKING___CHECK_IN_ROOM__IROOM:
+				return checkInRoom((IRoom)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

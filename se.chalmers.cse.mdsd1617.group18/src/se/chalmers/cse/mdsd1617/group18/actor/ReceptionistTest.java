@@ -232,7 +232,7 @@ public class ReceptionistTest {
 	@Test
 	public void checkInRoom() {
 		int bookingId = bookingSystem.initiateBooking("FirstName", "20161212", "20161214", "LastName");
-		int result = bookingSystem.checkInRoom("roomTypeDescription", bookingId);
+		int result = bookingSystem.checkInRoom("A basic room", bookingId);
 		//boolean result = bookingSystem.addRoomToBooking("roomTypeDescription", bookingId);
 		//bookingSystem.confirmBooking(bookingId);
 		assertEquals(true, result!=-1);

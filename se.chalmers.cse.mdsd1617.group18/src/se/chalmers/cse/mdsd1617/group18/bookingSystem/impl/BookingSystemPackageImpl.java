@@ -310,6 +310,24 @@ public class BookingSystemPackageImpl extends EPackageImpl implements BookingSys
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getBookingSystem_Rooms() {
+		return (EReference)bookingSystemEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBookingSystem_BookingId() {
+		return (EAttribute)bookingSystemEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getIBooking() {
 		return iBookingEClass;
 	}
@@ -402,6 +420,24 @@ public class BookingSystemPackageImpl extends EPackageImpl implements BookingSys
 	 */
 	public EOperation getIBooking__AddRoom__IRoom() {
 		return iBookingEClass.getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIBooking__CheckInRoom__IRoom() {
+		return iBookingEClass.getEOperations().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIBooking__GetCheckedInRooms() {
+		return iBookingEClass.getEOperations().get(11);
 	}
 
 	/**
@@ -697,6 +733,15 @@ public class BookingSystemPackageImpl extends EPackageImpl implements BookingSys
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getBooking_CheckedInRooms() {
+		return (EReference)bookingEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getEventType() {
 		return eventTypeEEnum;
 	}
@@ -747,6 +792,8 @@ public class BookingSystemPackageImpl extends EPackageImpl implements BookingSys
 		createEReference(bookingSystemEClass, BOOKING_SYSTEM__EVENTS);
 		createEReference(bookingSystemEClass, BOOKING_SYSTEM__BOOKINGS);
 		createEReference(bookingSystemEClass, BOOKING_SYSTEM__ROOM_PROVIDER);
+		createEReference(bookingSystemEClass, BOOKING_SYSTEM__ROOMS);
+		createEAttribute(bookingSystemEClass, BOOKING_SYSTEM__BOOKING_ID);
 
 		iBookingEClass = createEClass(IBOOKING);
 		createEOperation(iBookingEClass, IBOOKING___GET_ROOMS);
@@ -759,6 +806,8 @@ public class BookingSystemPackageImpl extends EPackageImpl implements BookingSys
 		createEOperation(iBookingEClass, IBOOKING___SET_START_DATE__STRING);
 		createEOperation(iBookingEClass, IBOOKING___SET_END_DATE__STRING);
 		createEOperation(iBookingEClass, IBOOKING___ADD_ROOM__IROOM);
+		createEOperation(iBookingEClass, IBOOKING___CHECK_IN_ROOM__IROOM);
+		createEOperation(iBookingEClass, IBOOKING___GET_CHECKED_IN_ROOMS);
 
 		iHotelBookingManagerEClass = createEClass(IHOTEL_BOOKING_MANAGER);
 		createEOperation(iHotelBookingManagerEClass, IHOTEL_BOOKING_MANAGER___INITIATE_CHECKIN__INT);
@@ -795,6 +844,7 @@ public class BookingSystemPackageImpl extends EPackageImpl implements BookingSys
 		createEAttribute(bookingEClass, BOOKING__START_DATE);
 		createEAttribute(bookingEClass, BOOKING__END_DATE);
 		createEReference(bookingEClass, BOOKING__ROOM_LIST);
+		createEReference(bookingEClass, BOOKING__CHECKED_IN_ROOMS);
 
 		// Create enums
 		eventTypeEEnum = createEEnum(EVENT_TYPE);
@@ -861,6 +911,8 @@ public class BookingSystemPackageImpl extends EPackageImpl implements BookingSys
 		initEReference(getBookingSystem_Events(), this.getIEvent(), null, "events", null, 0, -1, BookingSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBookingSystem_Bookings(), this.getIBooking(), null, "bookings", null, 0, -1, BookingSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBookingSystem_RoomProvider(), theRoomManagerPackage.getIHotelRoomProvider(), null, "roomProvider", null, 1, 1, BookingSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBookingSystem_Rooms(), theRoomManagerPackage.getIRoom(), null, "rooms", null, 0, -1, BookingSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getBookingSystem_BookingId(), ecorePackage.getEInt(), "bookingId", "0", 1, 1, BookingSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(iBookingEClass, IBooking.class, "IBooking", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -887,6 +939,11 @@ public class BookingSystemPackageImpl extends EPackageImpl implements BookingSys
 
 		op = initEOperation(getIBooking__AddRoom__IRoom(), ecorePackage.getEBoolean(), "addRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theRoomManagerPackage.getIRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIBooking__CheckInRoom__IRoom(), ecorePackage.getEBoolean(), "checkInRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theRoomManagerPackage.getIRoom(), "roomToCheckIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getIBooking__GetCheckedInRooms(), theRoomManagerPackage.getIRoom(), "getCheckedInRooms", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(iHotelBookingManagerEClass, IHotelBookingManager.class, "IHotelBookingManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -986,6 +1043,7 @@ public class BookingSystemPackageImpl extends EPackageImpl implements BookingSys
 		initEAttribute(getBooking_StartDate(), ecorePackage.getEString(), "startDate", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBooking_EndDate(), ecorePackage.getEString(), "endDate", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBooking_RoomList(), theRoomManagerPackage.getIRoom(), null, "roomList", null, 0, -1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBooking_CheckedInRooms(), theRoomManagerPackage.getIRoom(), null, "checkedInRooms", null, 0, -1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(eventTypeEEnum, EventType.class, "EventType");

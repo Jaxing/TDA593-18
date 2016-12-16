@@ -32,16 +32,17 @@
   <foreignModel>Classes.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="Se" disposableProviderFactory="true"
       ecorePackage="se.ecore#/">
-    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Chalmers" disposableProviderFactory="true"
-        ecorePackage="se.ecore#//chalmers">
-      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Cse" disposableProviderFactory="true"
-          ecorePackage="se.ecore#//chalmers/cse">
-        <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Mdsd1617" disposableProviderFactory="true"
-            ecorePackage="se.ecore#//chalmers/cse/mdsd1617">
-          <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Group18" disposableProviderFactory="true"
-              ecorePackage="se.ecore#//chalmers/cse/mdsd1617/group18">
+    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Chalmers" basePackage="se"
+        disposableProviderFactory="true" ecorePackage="se.ecore#//chalmers">
+      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Cse" basePackage="se.chalmers"
+          disposableProviderFactory="true" ecorePackage="se.ecore#//chalmers/cse">
+        <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Mdsd1617" basePackage="se.chalmers.cse"
+            disposableProviderFactory="true" ecorePackage="se.ecore#//chalmers/cse/mdsd1617">
+          <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Group18" basePackage="se.chalmers.cse.mdsd1617"
+              disposableProviderFactory="true" ecorePackage="se.ecore#//chalmers/cse/mdsd1617/group18">
             <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="BookingSystem"
-                disposableProviderFactory="true" ecorePackage="se.ecore#//chalmers/cse/mdsd1617/group18/bookingSystem">
+                basePackage="se.chalmers.cse.mdsd1617.group18" disposableProviderFactory="true"
+                ecorePackage="se.ecore#//chalmers/cse/mdsd1617/group18/bookingSystem">
               <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false"
                   ecoreEnum="se.ecore#//chalmers/cse/mdsd1617/group18/bookingSystem/EventType">
                 <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="se.ecore#//chalmers/cse/mdsd1617/group18/bookingSystem/EventType/CHECK_IN"/>
@@ -66,6 +67,9 @@
                     propertySortChoices="true" ecoreFeature="ecore:EReference se.ecore#//chalmers/cse/mdsd1617/group18/bookingSystem/BookingSystem/bookings"/>
                 <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
                     propertySortChoices="true" ecoreFeature="ecore:EReference se.ecore#//chalmers/cse/mdsd1617/group18/bookingSystem/BookingSystem/roomProvider"/>
+                <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+                    propertySortChoices="true" ecoreFeature="ecore:EReference se.ecore#//chalmers/cse/mdsd1617/group18/bookingSystem/BookingSystem/rooms"/>
+                <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute se.ecore#//chalmers/cse/mdsd1617/group18/bookingSystem/BookingSystem/bookingId"/>
               </genClasses>
               <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="se.ecore#//chalmers/cse/mdsd1617/group18/bookingSystem/IBooking">
                 <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="se.ecore#//chalmers/cse/mdsd1617/group18/bookingSystem/IBooking/getRooms"/>
@@ -86,6 +90,10 @@
                 <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="se.ecore#//chalmers/cse/mdsd1617/group18/bookingSystem/IBooking/addRoom">
                   <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="se.ecore#//chalmers/cse/mdsd1617/group18/bookingSystem/IBooking/addRoom/room"/>
                 </genOperations>
+                <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="se.ecore#//chalmers/cse/mdsd1617/group18/bookingSystem/IBooking/checkInRoom">
+                  <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="se.ecore#//chalmers/cse/mdsd1617/group18/bookingSystem/IBooking/checkInRoom/roomToCheckIn"/>
+                </genOperations>
+                <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="se.ecore#//chalmers/cse/mdsd1617/group18/bookingSystem/IBooking/getCheckedInRooms"/>
               </genClasses>
               <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="se.ecore#//chalmers/cse/mdsd1617/group18/bookingSystem/IHotelBookingManager">
                 <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="se.ecore#//chalmers/cse/mdsd1617/group18/bookingSystem/IHotelBookingManager/initiateCheckin">
@@ -185,10 +193,13 @@
                 <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute se.ecore#//chalmers/cse/mdsd1617/group18/bookingSystem/Booking/endDate"/>
                 <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
                     propertySortChoices="true" ecoreFeature="ecore:EReference se.ecore#//chalmers/cse/mdsd1617/group18/bookingSystem/Booking/roomList"/>
+                <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+                    propertySortChoices="true" ecoreFeature="ecore:EReference se.ecore#//chalmers/cse/mdsd1617/group18/bookingSystem/Booking/checkedInRooms"/>
               </genClasses>
             </nestedGenPackages>
             <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="RoomManager"
-                disposableProviderFactory="true" ecorePackage="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager">
+                basePackage="se.chalmers.cse.mdsd1617.group18" disposableProviderFactory="true"
+                ecorePackage="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager">
               <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IRoomType">
                 <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IRoomType/getName"/>
                 <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IRoomType/getPrice"/>
