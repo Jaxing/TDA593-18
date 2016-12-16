@@ -8,6 +8,8 @@ import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.xml.soap.SOAPException;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -18,6 +20,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
+import se.chalmers.cse.mdsd1617.banking.customerRequires.CustomerRequires;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.BookingSystem;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.BookingSystemPackage;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.FreeRoomTypesDTO;
@@ -107,6 +111,16 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 */
 	protected int bookingId = BOOKING_ID_EDEFAULT;
 
+	/**
+	 * @generated NOT
+	 */
+	protected IBooking bookingInCheckout = null;
+	
+	/**
+	 * @generated NOT
+	 */
+
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -848,6 +862,16 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 				return currentBooking;
 		}
 		return null;
+	}
+	private CustomerRequires initCustomerRequires(){
+		try {
+			return CustomerRequires.instance();
+		}catch(SOAPException soap){
+			soap.printStackTrace();
+			System.out.print("Something went wrong");
+			return null;
+		}
+		
 	}
 
 } //BookingSystemImpl
