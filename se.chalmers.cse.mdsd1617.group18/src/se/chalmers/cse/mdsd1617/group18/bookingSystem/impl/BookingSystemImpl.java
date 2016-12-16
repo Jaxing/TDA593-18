@@ -437,6 +437,10 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	 */
 	public double initiateCheckout(int bookingID) {
 		IBooking theBooking = findBooking(bookingID);
+		if(bookingInCheckout != null){
+			return -1;
+		}
+		bookingInCheckout = theBooking;
 		if(theBooking == null){
 			return -1;
 		} else {
