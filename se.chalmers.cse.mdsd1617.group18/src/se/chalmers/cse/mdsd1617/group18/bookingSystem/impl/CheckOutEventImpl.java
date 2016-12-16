@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.BookingSystemPackage;
 import se.chalmers.cse.mdsd1617.group18.bookingSystem.CheckOutEvent;
+import se.chalmers.cse.mdsd1617.group18.bookingSystem.EventType;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,6 +23,7 @@ public class CheckOutEventImpl extends AbstractEventImpl implements CheckOutEven
 	 */
 	protected CheckOutEventImpl() {
 		super();
+		this.eventType = EventType.CHECK_OUT;
 	}
 
 	/**
