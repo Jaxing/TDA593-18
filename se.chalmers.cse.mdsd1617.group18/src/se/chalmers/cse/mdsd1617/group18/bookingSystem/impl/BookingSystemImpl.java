@@ -457,12 +457,21 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean payDuringCheckout(String ccNumber, String ccv, int expiryMonth, int expiryYear, String firstName, String lastName) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if (bookingInCheckout == null){
+			return false;
+		}
+		EList<IRoom>theRooms = bookingInCheckout.getRooms();
+		for (int i = 0; i < theRooms.size(); i++){
+			if (!payRoomDuringCheckout(theRooms.get(i).getRoomNumber(), 
+					ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName))
+				return false;
+		
+		}
+		bookingInCheckout = null;
+		return true;
 	}
 
 	/**
