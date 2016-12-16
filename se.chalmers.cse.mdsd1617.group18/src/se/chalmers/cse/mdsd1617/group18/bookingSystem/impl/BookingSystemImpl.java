@@ -245,8 +245,8 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 				freeRoomType.setRoomTypeDescription(room.getRoomType().getDescription());
 				
 				if(freeRoomsTypes.contains(freeRoomType)) {
-					FreeRoomTypesDTO acutualType = freeRoomsTypes.get(freeRoomsTypes.indexOf(freeRoomType));
-					acutualType.setNumFreeRooms(acutualType.getNumFreeRooms() + 1);
+					FreeRoomTypesDTO actualType = freeRoomsTypes.get(freeRoomsTypes.indexOf(freeRoomType));
+					actualType.setNumFreeRooms(actualType.getNumFreeRooms() + 1);
 				} else {
 					freeRoomType.setNumFreeRooms(1);
 					freeRoomsTypes.add(freeRoomType);
