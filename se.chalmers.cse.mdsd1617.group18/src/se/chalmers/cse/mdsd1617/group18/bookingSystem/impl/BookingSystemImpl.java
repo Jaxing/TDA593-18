@@ -713,7 +713,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 			if(currentBooking.getID() == bookingID)
 				return currentBooking;
 		}
-		return currentBooking;
+		return null;
 	}
 
 } //BookingSystemImpl
