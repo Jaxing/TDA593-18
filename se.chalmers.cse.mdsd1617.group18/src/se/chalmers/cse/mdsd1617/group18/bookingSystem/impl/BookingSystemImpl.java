@@ -463,7 +463,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 		if (bookingInCheckout == null){
 			return false;
 		}
-		EList<IRoom>theRooms = bookingInCheckout.getRooms();
+		EList<IRoom>theRooms = bookingInCheckout.getCheckedInRooms();
 		for (int i = 0; i < theRooms.size(); i++){
 			if (!payRoomDuringCheckout(theRooms.get(i).getRoomNumber(), 
 					ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName))
