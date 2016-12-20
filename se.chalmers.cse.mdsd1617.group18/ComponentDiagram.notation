@@ -116,10 +116,6 @@
             <element xmi:type="uml:Operation" href="ComponentDiagram.uml#_dYkhkKf7EeauM4HoNkhouQ"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_dZRFIaf7EeauM4HoNkhouQ"/>
           </children>
-          <children xmi:type="notation:Shape" xmi:id="_nIREkKf8EeauM4HoNkhouQ" type="Operation_InterfaceOperationLabel">
-            <element xmi:type="uml:Operation" href="ComponentDiagram.uml#_nHqnoKf8EeauM4HoNkhouQ"/>
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_nIREkaf8EeauM4HoNkhouQ"/>
-          </children>
           <children xmi:type="notation:Shape" xmi:id="_ba63MKf9EeauM4HoNkhouQ" type="Operation_InterfaceOperationLabel">
             <element xmi:type="uml:Operation" href="ComponentDiagram.uml#_bajDwKf9EeauM4HoNkhouQ"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_ba63Maf9EeauM4HoNkhouQ"/>
@@ -144,6 +140,14 @@
             <element xmi:type="uml:Operation" href="ComponentDiagram.uml#_jQe_wLDFEeaEbPVMIWlGVA"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_jRtHwbDFEeaEbPVMIWlGVA"/>
           </children>
+          <children xmi:type="notation:Shape" xmi:id="_H6XgMMbfEea1xZhsw47EBw" type="Operation_InterfaceOperationLabel">
+            <element xmi:type="uml:Operation" href="ComponentDiagram.uml#_H5hysMbfEea1xZhsw47EBw"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_H6XgMcbfEea1xZhsw47EBw"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_LcgKMMbfEea1xZhsw47EBw" type="Operation_InterfaceOperationLabel">
+            <element xmi:type="uml:Operation" href="ComponentDiagram.uml#_Lb9XoMbfEea1xZhsw47EBw"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_LcgKMcbfEea1xZhsw47EBw"/>
+          </children>
           <styles xmi:type="notation:TitleStyle" xmi:id="_OwvPqaa1Eea6v_LEHy7Trw"/>
           <styles xmi:type="notation:SortingStyle" xmi:id="_OwvPqqa1Eea6v_LEHy7Trw"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_OwvPq6a1Eea6v_LEHy7Trw"/>
@@ -162,7 +166,7 @@
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gBtLtaa2Eea6v_LEHy7Trw"/>
         </children>
         <element xmi:type="uml:Component" href="ComponentDiagram.uml#_gBizoKa2Eea6v_LEHy7Trw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gBskoaa2Eea6v_LEHy7Trw" x="398" y="576"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gBskoaa2Eea6v_LEHy7Trw" x="524" y="583"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_hdGysKa2Eea6v_LEHy7Trw" type="Component_PackagedElementShape_CCN" fillColor="10265827">
         <children xmi:type="notation:DecorationNode" xmi:id="_hdGysqa2Eea6v_LEHy7Trw" type="Component_NameLabel_CCN"/>
