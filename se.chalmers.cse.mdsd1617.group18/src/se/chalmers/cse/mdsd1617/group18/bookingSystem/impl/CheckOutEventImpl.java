@@ -19,7 +19,7 @@ public class CheckOutEventImpl extends AbstractEventImpl implements CheckOutEven
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected CheckOutEventImpl() {
 		super();

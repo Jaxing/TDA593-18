@@ -18,10 +18,10 @@ public interface IHotelRoomManager extends IHotelRoomProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model nameRequired="true" nameOrdered="false" priceRequired="true" priceOrdered="false" numberOfBedsRequired="true" numberOfBedsOrdered="false" descriptionRequired="true" descriptionOrdered="false"
+	 * @model required="true" ordered="false" nameRequired="true" nameOrdered="false" priceRequired="true" priceOrdered="false" numberOfBedsRequired="true" numberOfBedsOrdered="false" descriptionRequired="true" descriptionOrdered="false"
 	 * @generated
 	 */
-	void addRoomType(String name, double price, int numberOfBeds, String description);
+	boolean addRoomType(String name, double price, int numberOfBeds, String description);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -50,18 +50,18 @@ public interface IHotelRoomManager extends IHotelRoomProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model roomNumberRequired="true" roomNumberOrdered="false" roomTypeRequired="true" roomTypeOrdered="false"
+	 * @model required="true" ordered="false" roomNumberRequired="true" roomNumberOrdered="false" roomTypeRequired="true" roomTypeOrdered="false"
 	 * @generated
 	 */
-	void addRoom(int roomNumber, IRoomType roomType);
+	boolean addRoom(int roomNumber, IRoomType roomType);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model roomNumberRequired="true" roomNumberOrdered="false" roomTypeRequired="true" roomTypeOrdered="false"
+	 * @model required="true" ordered="false" roomNumberRequired="true" roomNumberOrdered="false" roomTypeRequired="true" roomTypeOrdered="false"
 	 * @generated
 	 */
-	void changeRoomType(int roomNumber, IRoomType roomType);
+	boolean changeRoomType(int roomNumber, IRoomType roomType);
 
 	/**
 	 * <!-- begin-user-doc -->

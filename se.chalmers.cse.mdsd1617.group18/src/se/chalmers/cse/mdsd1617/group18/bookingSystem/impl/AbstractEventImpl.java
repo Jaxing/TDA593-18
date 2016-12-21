@@ -176,23 +176,19 @@ public abstract class AbstractEventImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EventType getType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
 		return this.eventType;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public int getBookingId() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return this.bookingID;
 	}
 
 	/**

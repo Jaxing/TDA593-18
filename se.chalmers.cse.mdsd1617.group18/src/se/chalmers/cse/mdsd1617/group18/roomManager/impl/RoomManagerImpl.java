@@ -150,8 +150,14 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void addRoomType(String name, double price, int numberOfBeds, String description) {
+	public boolean addRoomType(String name, double price, int numberOfBeds, String description) {
+		for (int i = 0; i < roomTypes.size(); i++) {
+			if (roomTypes.get(i).getName().equals(name)) {
+				return false;
+			}
+		}
 		roomTypes.add(factory.createRoomType(price, name, numberOfBeds, description));
+		return true;
 	}
 
 	/**
@@ -190,14 +196,15 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void addRoom(int roomNumber, IRoomType roomType) {
+	public boolean addRoom(int roomNumber, IRoomType roomType) {
 		for(int i = 0; i < rooms.size(); i++){
 			if (rooms.get(i).getRoomNumber() == roomNumber){
-				return;
+				return false;
 			}
 		}
 		IRoom room = factory.createRoom(roomType, roomNumber);
 		rooms.add(room);
+		return true;
 	}
 
 	/**
@@ -205,12 +212,14 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void changeRoomType(int roomNumber, IRoomType roomType) {
+	public boolean changeRoomType(int roomNumber, IRoomType roomType) {
 		for(int i = 0; i < rooms.size(); i++){
 			if (rooms.get(i).getRoomNumber() == roomNumber){
 				rooms.get(i).setRoomType(roomType);
+				return true;
 			}
 		}
+		return false;
 	}
 
 	/**
@@ -373,19 +382,16 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 				startup((Integer)arguments.get(0));
 				return null;
 			case RoomManagerPackage.ROOM_MANAGER___ADD_ROOM_TYPE__STRING_DOUBLE_INT_STRING:
-				addRoomType((String)arguments.get(0), (Double)arguments.get(1), (Integer)arguments.get(2), (String)arguments.get(3));
-				return null;
+				return addRoomType((String)arguments.get(0), (Double)arguments.get(1), (Integer)arguments.get(2), (String)arguments.get(3));
 			case RoomManagerPackage.ROOM_MANAGER___UPDATE_ROOM_TYPE__IROOMTYPE_STRING_DOUBLE_INT_STRING:
 				updateRoomType((IRoomType)arguments.get(0), (String)arguments.get(1), (Double)arguments.get(2), (Integer)arguments.get(3), (String)arguments.get(4));
 				return null;
 			case RoomManagerPackage.ROOM_MANAGER___REMOVE_ROOM_TYPE__IROOMTYPE:
 				return removeRoomType((IRoomType)arguments.get(0));
 			case RoomManagerPackage.ROOM_MANAGER___ADD_ROOM__INT_IROOMTYPE:
-				addRoom((Integer)arguments.get(0), (IRoomType)arguments.get(1));
-				return null;
+				return addRoom((Integer)arguments.get(0), (IRoomType)arguments.get(1));
 			case RoomManagerPackage.ROOM_MANAGER___CHANGE_ROOM_TYPE__INT_IROOMTYPE:
-				changeRoomType((Integer)arguments.get(0), (IRoomType)arguments.get(1));
-				return null;
+				return changeRoomType((Integer)arguments.get(0), (IRoomType)arguments.get(1));
 			case RoomManagerPackage.ROOM_MANAGER___REMOVE_ROOM__INT:
 				return removeRoom((Integer)arguments.get(0));
 			case RoomManagerPackage.ROOM_MANAGER___BLOCK_ROOM__INT:

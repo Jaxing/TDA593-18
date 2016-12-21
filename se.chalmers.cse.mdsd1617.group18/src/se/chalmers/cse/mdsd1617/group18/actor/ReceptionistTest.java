@@ -179,7 +179,7 @@ public class ReceptionistTest {
 		int bookingId = bookingSystem.initiateBooking("FirstName", "20161212", "20161214", "LastName");
 		//bookingSystem.initiateCheckin(BookingId);
 
-			bookingSystem.editBookingPeriod(bookingId, "20161214" , "20161216");
+		bookingSystem.editBookingPeriod(bookingId, "20161214" , "20161216");
 			
 		String newStartDate= bookingSystem.listBooking().get(0).getStartDate();
 		String newEndDate = bookingSystem.listBooking().get(0).getEndDate();

@@ -19,7 +19,7 @@ public class CheckInEventImpl extends AbstractEventImpl implements CheckInEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected CheckInEventImpl() {
 		super();

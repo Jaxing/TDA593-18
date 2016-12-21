@@ -6,7 +6,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 import java.util.Date;
 
@@ -675,11 +674,23 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	public EList<IEvent> listCheckins(String startTime, String endTime) {
 		EList<IEvent> checkIns = new BasicEList<IEvent>();
 		
+		long startDate;
+		long endDate;
+		long hoursOfDay = 24;
+		long minutesOfHour = 60;
+		long secondsOfMinutes = 60;
+		long milliSecondsOfSeconds = 1000;
+		long milliSecondsOfDay = hoursOfDay * minutesOfHour * secondsOfMinutes * milliSecondsOfSeconds;
+		
+		try {
+			startDate = this.parseDate(startTime).getTime()/milliSecondsOfDay;
+			endDate = this.parseDate(endTime).getTime()/milliSecondsOfDay;
+		} catch (ParseException e) {
+			return checkIns;
+		}
+		
 		for(int i = 0; i < events.size(); i++) {
-			if(events.get(i).getType() == EventType.CHECK_IN) {
-				long startDate = LocalDate.parse(startTime).toEpochDay();
-				long endDate = LocalDate.parse(endTime).toEpochDay();
-				
+			if(events.get(i).getType() == EventType.CHECK_IN) {				
 				if (startDate <= events.get(i).getTimestamp() && events.get(i).getTimestamp() <= endDate) {
 					checkIns.add(events.get(i));
 				}
@@ -697,11 +708,23 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 	public EList<IEvent> listCheckouts(String startTime, String endTime) {
 		EList<IEvent> checkIns = new BasicEList<IEvent>();
 		
+		long startDate;
+		long endDate;
+		long hoursOfDay = 24;
+		long minutesOfHour = 60;
+		long secondsOfMinutes = 60;
+		long milliSecondsOfSeconds = 1000;
+		long milliSecondsOfDay = hoursOfDay * minutesOfHour * secondsOfMinutes * milliSecondsOfSeconds;
+		
+		try {
+			startDate = this.parseDate(startTime).getTime()/milliSecondsOfDay;
+			endDate = this.parseDate(endTime).getTime()/milliSecondsOfDay;
+		} catch (ParseException e) {
+			return checkIns;
+		}
+		
 		for(int i = 0; i < events.size(); i++) {
-			if(events.get(i).getType() == EventType.CHECK_OUT) {
-				long startDate = LocalDate.parse(startTime).toEpochDay();
-				long endDate = LocalDate.parse(endTime).toEpochDay();
-				
+			if(events.get(i).getType() == EventType.CHECK_OUT) {				
 				if (startDate <= events.get(i).getTimestamp() && events.get(i).getTimestamp() <= endDate) {
 					checkIns.add(events.get(i));
 				}
