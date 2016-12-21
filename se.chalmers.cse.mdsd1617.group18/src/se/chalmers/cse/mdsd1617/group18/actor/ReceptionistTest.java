@@ -165,6 +165,7 @@ public class ReceptionistTest {
 	@Test
 	public void checkOutBooking() {	
 		// First check in a booking 
+		double expectedPrice = 800 * 2; // The default room costs 800
 		int bookingId = bookingSystem.initiateBooking("First", "20161211", "20161223", "Last");
 		bookingSystem.addRoomToBooking("A basic room", bookingId);
 		bookingSystem.addRoomToBooking("A basic room", bookingId);
@@ -175,9 +176,9 @@ public class ReceptionistTest {
 		}
 		
 		// Then check it out again
-		bookingSystem.initiateCheckout(bookingId);
-		boolean result = bookingSystem.payDuringCheckout("5105105105105100", "123", 12, 2020, "John", "Doe");
-		assertTrue(result);
+		double price = bookingSystem.initiateCheckout(bookingId);
+		//boolean result = bookingSystem.payDuringCheckout("5105105105105100", "123", 12, 2020, "John", "Doe");
+		assertTrue(price == expectedPrice);
 		
 		
 	}
