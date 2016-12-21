@@ -142,6 +142,7 @@ public class ReceptionistTest {
 	public void checkInBooking() {
 		int bookingId = bookingSystem.initiateBooking("First", "20161211", "20161223", "Last");
 		boolean result = bookingSystem.addRoomToBooking("A basic room", bookingId);
+		result = result && bookingSystem.addRoomToBooking("A basic room", bookingId);
 		bookingSystem.confirmBooking(bookingId);
 		EList<IRoom> rooms = bookingSystem.initiateCheckin(bookingId);
 		for (IRoom room : rooms) {
@@ -155,22 +156,29 @@ public class ReceptionistTest {
 				break;
 			}
 		}		
-		assertTrue(result && checkedInCount == 1);
+		assertTrue(result && checkedInCount == 2);
 		
 		
 	}
 	
-	//TODO:u.c. 2.1.4.  - check out booking
+	// u.c. 2.1.4.  - check out booking
 	@Test
-	public void checkOutBooking() {
-		int bookingId = bookingSystem.initiateBooking("FirstName", "20161212", "20161214", "LastName");
-		bookingSystem.initiateCheckin(bookingId);
-		bookingSystem.addRoomToBooking("roomTypeDescription", bookingId);
+	public void checkOutBooking() {	
+		// First check in a booking 
+		int bookingId = bookingSystem.initiateBooking("First", "20161211", "20161223", "Last");
+		bookingSystem.addRoomToBooking("A basic room", bookingId);
+		bookingSystem.addRoomToBooking("A basic room", bookingId);
 		bookingSystem.confirmBooking(bookingId);
+		EList<IRoom> rooms = bookingSystem.initiateCheckin(bookingId);
+		for (IRoom room : rooms) {
+			bookingSystem.checkInRoom(room.getRoomType().getDescription(), bookingId);
+		}
+		
+		// Then check it out again
 		bookingSystem.initiateCheckout(bookingId);
-		//boolean result = bookingSystem.payDuringCheckout("ccNumber", "ccv", 05, 2018, "firstName", "lastName");
-		boolean result = bookingSystem.payRoomDuringCheckout(111, "ccNumber", "ccv", 05, 2018, "firstName", "lastName");
-		assertEquals(true, result);
+		boolean result = bookingSystem.payDuringCheckout("5105105105105100", "123", 12, 2020, "John", "Doe");
+		assertTrue(result);
+		
 		
 	}
 	//TODO:u.c. 2.1.5.  - edit a booking
