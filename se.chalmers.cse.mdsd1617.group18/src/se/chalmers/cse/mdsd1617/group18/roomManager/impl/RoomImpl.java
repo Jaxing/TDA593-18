@@ -29,6 +29,7 @@ import se.chalmers.cse.mdsd1617.group18.roomManager.RoomManagerPackage;
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomImpl#isBlocked <em>Blocked</em>}</li>
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomImpl#getExtraCostDescriptions <em>Extra Cost Descriptions</em>}</li>
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomImpl#getExtraCostPrice <em>Extra Cost Price</em>}</li>
+ *   <li>{@link se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomImpl#isOccupied <em>Occupied</em>}</li>
  * </ul>
  *
  * @generated
@@ -123,6 +124,26 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @ordered
 	 */
 	protected double extraCostPrice = EXTRA_COST_PRICE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isOccupied() <em>Occupied</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOccupied()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean OCCUPIED_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isOccupied() <em>Occupied</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOccupied()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean occupied = OCCUPIED_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -279,6 +300,27 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isOccupied() {
+		return occupied;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOccupied(boolean newOccupied) {
+		boolean oldOccupied = occupied;
+		occupied = newOccupied;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RoomManagerPackage.ROOM__OCCUPIED, oldOccupied, occupied));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public void setIsBlocked(boolean blocked) {
@@ -331,6 +373,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return getExtraCostDescriptions();
 			case RoomManagerPackage.ROOM__EXTRA_COST_PRICE:
 				return getExtraCostPrice();
+			case RoomManagerPackage.ROOM__OCCUPIED:
+				return isOccupied();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -357,6 +401,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return;
 			case RoomManagerPackage.ROOM__EXTRA_COST_PRICE:
 				setExtraCostPrice((Double)newValue);
+				return;
+			case RoomManagerPackage.ROOM__OCCUPIED:
+				setOccupied((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -385,6 +432,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case RoomManagerPackage.ROOM__EXTRA_COST_PRICE:
 				setExtraCostPrice(EXTRA_COST_PRICE_EDEFAULT);
 				return;
+			case RoomManagerPackage.ROOM__OCCUPIED:
+				setOccupied(OCCUPIED_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -407,6 +457,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return EXTRA_COST_DESCRIPTIONS_EDEFAULT == null ? extraCostDescriptions != null : !EXTRA_COST_DESCRIPTIONS_EDEFAULT.equals(extraCostDescriptions);
 			case RoomManagerPackage.ROOM__EXTRA_COST_PRICE:
 				return extraCostPrice != EXTRA_COST_PRICE_EDEFAULT;
+			case RoomManagerPackage.ROOM__OCCUPIED:
+				return occupied != OCCUPIED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -452,6 +504,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		result.append(extraCostDescriptions);
 		result.append(", extraCostPrice: ");
 		result.append(extraCostPrice);
+		result.append(", occupied: ");
+		result.append(occupied);
 		result.append(')');
 		return result.toString();
 	}

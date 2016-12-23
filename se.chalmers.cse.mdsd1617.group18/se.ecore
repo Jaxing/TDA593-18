@@ -291,6 +291,8 @@
                   ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="extraCostPrice"
                   ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="occupied" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="IRoom" abstract="true" interface="true">
               <eOperations name="getRoomType" ordered="false" lowerBound="1" eType="#//chalmers/cse/mdsd1617/group18/roomManager/IRoomType"/>
@@ -313,6 +315,10 @@
               <eOperations name="addExtraCost" ordered="false" lowerBound="1">
                 <eParameters name="extraCostPrice" ordered="false" lowerBound="1"
                     eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+              </eOperations>
+              <eOperations name="isOccupied" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              <eOperations name="setOccupied" ordered="false" lowerBound="1">
+                <eParameters name="status" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
               </eOperations>
             </eClassifiers>
           </eSubpackages>

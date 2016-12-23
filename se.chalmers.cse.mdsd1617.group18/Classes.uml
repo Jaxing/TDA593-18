@@ -546,6 +546,16 @@
                   <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
                 </ownedParameter>
               </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ED67QMkdEeaDWOSmAMPosQ" name="isOccupied">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_J-uFwMkdEeaDWOSmAMPosQ" direction="return">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_L-PtgMkdEeaDWOSmAMPosQ" name="setOccupied">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_QmlKkMkdEeaDWOSmAMPosQ" name="status">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+                </ownedParameter>
+              </ownedOperation>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_FhhH8brREeaVMa-P8AMS-A" name="Room">
               <ownedAttribute xmi:type="uml:Property" xmi:id="_FhhH8rrREeaVMa-P8AMS-A" name="roomType" visibility="private" type="_FhhHzLrREeaVMa-P8AMS-A"/>
@@ -560,6 +570,9 @@
               </ownedAttribute>
               <ownedAttribute xmi:type="uml:Property" xmi:id="_QcQq8MIMEea3W_xtvhrPlA" name="extraCostPrice" visibility="private">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_5iRhcMkcEeaDWOSmAMPosQ" name="occupied">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
               </ownedAttribute>
               <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_XuRxMLyUEea7_8j189OIog" client="_FhhH8brREeaVMa-P8AMS-A" supplier="_FhhH5rrREeaVMa-P8AMS-A" contract="_FhhH5rrREeaVMa-P8AMS-A"/>
             </packagedElement>

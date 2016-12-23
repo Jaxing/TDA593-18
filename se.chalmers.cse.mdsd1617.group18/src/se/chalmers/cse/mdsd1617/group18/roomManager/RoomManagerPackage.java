@@ -730,13 +730,31 @@ public interface RoomManagerPackage extends EPackage {
 	int IROOM___ADD_EXTRA_COST__DOUBLE = 8;
 
 	/**
+	 * The operation id for the '<em>Is Occupied</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IROOM___IS_OCCUPIED = 9;
+
+	/**
+	 * The operation id for the '<em>Set Occupied</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IROOM___SET_OCCUPIED__BOOLEAN = 10;
+
+	/**
 	 * The number of operations of the '<em>IRoom</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IROOM_OPERATION_COUNT = 9;
+	int IROOM_OPERATION_COUNT = 11;
 
 	/**
 	 * The meta object id for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomImpl <em>Room</em>}' class.
@@ -794,13 +812,22 @@ public interface RoomManagerPackage extends EPackage {
 	int ROOM__EXTRA_COST_PRICE = IROOM_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Occupied</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM__OCCUPIED = IROOM_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Room</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_FEATURE_COUNT = IROOM_FEATURE_COUNT + 5;
+	int ROOM_FEATURE_COUNT = IROOM_FEATURE_COUNT + 6;
 
 
 	/**
@@ -883,6 +910,24 @@ public interface RoomManagerPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROOM___ADD_EXTRA_COST__DOUBLE = IROOM___ADD_EXTRA_COST__DOUBLE;
+
+	/**
+	 * The operation id for the '<em>Is Occupied</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM___IS_OCCUPIED = IROOM___IS_OCCUPIED;
+
+	/**
+	 * The operation id for the '<em>Set Occupied</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM___SET_OCCUPIED__BOOLEAN = IROOM___SET_OCCUPIED__BOOLEAN;
 
 	/**
 	 * The number of operations of the '<em>Room</em>' class.
@@ -1276,6 +1321,17 @@ public interface RoomManagerPackage extends EPackage {
 	EAttribute getRoom_ExtraCostPrice();
 
 	/**
+	 * Returns the meta object for the attribute '{@link se.chalmers.cse.mdsd1617.group18.roomManager.Room#isOccupied <em>Occupied</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Occupied</em>'.
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.Room#isOccupied()
+	 * @see #getRoom()
+	 * @generated
+	 */
+	EAttribute getRoom_Occupied();
+
+	/**
 	 * Returns the meta object for class '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IRoom <em>IRoom</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1374,6 +1430,26 @@ public interface RoomManagerPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getIRoom__AddExtraCost__double();
+
+	/**
+	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IRoom#isOccupied() <em>Is Occupied</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is Occupied</em>' operation.
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.IRoom#isOccupied()
+	 * @generated
+	 */
+	EOperation getIRoom__IsOccupied();
+
+	/**
+	 * Returns the meta object for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IRoom#setOccupied(boolean) <em>Set Occupied</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set Occupied</em>' operation.
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.IRoom#setOccupied(boolean)
+	 * @generated
+	 */
+	EOperation getIRoom__SetOccupied__boolean();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1708,6 +1784,14 @@ public interface RoomManagerPackage extends EPackage {
 		EAttribute ROOM__EXTRA_COST_PRICE = eINSTANCE.getRoom_ExtraCostPrice();
 
 		/**
+		 * The meta object literal for the '<em><b>Occupied</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM__OCCUPIED = eINSTANCE.getRoom_Occupied();
+
+		/**
 		 * The meta object literal for the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.IRoom <em>IRoom</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1788,6 +1872,22 @@ public interface RoomManagerPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IROOM___ADD_EXTRA_COST__DOUBLE = eINSTANCE.getIRoom__AddExtraCost__double();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Occupied</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IROOM___IS_OCCUPIED = eINSTANCE.getIRoom__IsOccupied();
+
+		/**
+		 * The meta object literal for the '<em><b>Set Occupied</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IROOM___SET_OCCUPIED__BOOLEAN = eINSTANCE.getIRoom__SetOccupied__boolean();
 
 	}
 

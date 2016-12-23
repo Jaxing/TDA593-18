@@ -1,10 +1,13 @@
 package se.chalmers.cse.mdsd1617.group18.actor;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.eclipse.emf.common.util.EList;
 import org.junit.*;
 
+import se.chalmers.cse.mdsd1617.group18.bookingSystem.BookingSystem;
+import se.chalmers.cse.mdsd1617.group18.bookingSystem.BookingSystemFactory;
+import se.chalmers.cse.mdsd1617.group18.bookingSystem.impl.BookingSystemFactoryImpl;
 import se.chalmers.cse.mdsd1617.group18.roomManager.*;
 import se.chalmers.cse.mdsd1617.group18.roomManager.impl.RoomManagerFactoryImpl;
 
@@ -118,6 +121,28 @@ public class AdministratorTests {
 		}
 		
 		assertEquals(false, found);
+	}
+	
+	@Test
+	public void testRemoveOccupiedRoom() {
+		BookingSystemFactory bookingSystemFactory = BookingSystemFactoryImpl.init();
+		BookingSystem bookingSystem = bookingSystemFactory.createBookingSystem();
+		
+		int bookingId = bookingSystem.initiateBooking("First", "20161211", "20161223", "Last");
+		boolean result = bookingSystem.addRoomToBooking("A basic room", bookingId);
+		bookingSystem.confirmBooking(bookingId);
+		bookingSystem.initiateCheckin(bookingId);
+		int roomNumber = bookingSystem.checkInRoom("A basic room", bookingId);
+		
+		IRoom room = roomManager.removeRoom(roomNumber);
+		
+		assertTrue(room == null);
+		
+		bookingSystem.initiateRoomCheckout(roomNumber, bookingId);
+		
+		room = roomManager.removeRoom(roomNumber);
+		
+		assertTrue(room != null);
 	}
 	
 	// UC 2.2.7
