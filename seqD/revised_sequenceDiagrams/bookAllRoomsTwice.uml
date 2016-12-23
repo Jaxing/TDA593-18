@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_3jCesMlKEeaHi6r33m77Ww" name="RootElement">
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_CMV_sMlLEeaHi6r33m77Ww" name="bookAllRoomsTwice">
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_yAiC8MlLEeauXd9_yH_bpw" name="user" coveredBy="_o6a9kMlMEeauXd9_yH_bpw _mg4d4MlNEeauXd9_yH_bpw _EKF-cMlOEeauXd9_yH_bpw _EKJo0MlOEeauXd9_yH_bpw _GuU1wMlOEeauXd9_yH_bpw"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_50H7EMlLEeauXd9_yH_bpw" name="booking0" coveredBy="_mg5E8MlNEeauXd9_yH_bpw _z8aO4MlNEeauXd9_yH_bpw _GuUOsMlOEeauXd9_yH_bpw _aM7jgMlOEeauXd9_yH_bpw _egBJUMlOEeauXd9_yH_bpw _3G5_gMlOEeauXd9_yH_bpw _4IOSkclOEeauXd9_yH_bpw"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_9BmjsMlLEeauXd9_yH_bpw" name="reservations"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_BxyVMMlMEeauXd9_yH_bpw" name="rooms"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_mg4d4MlNEeauXd9_yH_bpw" name="MessageSend0" covered="_yAiC8MlLEeauXd9_yH_bpw" message="_mg3PwMlNEeauXd9_yH_bpw"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_EKF-cMlOEeauXd9_yH_bpw" name="ActionExecSpec0Start" covered="_yAiC8MlLEeauXd9_yH_bpw" execution="_EKJo0MlOEeauXd9_yH_bpw"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_EKJo0MlOEeauXd9_yH_bpw" name="ActionExecSpec0" covered="_yAiC8MlLEeauXd9_yH_bpw" finish="_GuU1wMlOEeauXd9_yH_bpw" start="_EKF-cMlOEeauXd9_yH_bpw"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_4IOSkclOEeauXd9_yH_bpw" name="ActionExecSpecStart" covered="_50H7EMlLEeauXd9_yH_bpw" execution="_z8aO4MlNEeauXd9_yH_bpw"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_mg5E8MlNEeauXd9_yH_bpw" name="MessageRecv" covered="_50H7EMlLEeauXd9_yH_bpw" message="_mg3PwMlNEeauXd9_yH_bpw"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_3G5_gMlOEeauXd9_yH_bpw" name="MessageSend2" covered="_50H7EMlLEeauXd9_yH_bpw" message="_3G5YcMlOEeauXd9_yH_bpw"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_3G6mkMlOEeauXd9_yH_bpw" name="MessageRecv1" message="_3G5YcMlOEeauXd9_yH_bpw"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_o6a9kMlMEeauXd9_yH_bpw" name="MessageSend" covered="_yAiC8MlLEeauXd9_yH_bpw"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_aM7jgMlOEeauXd9_yH_bpw" name="ActionExecSpec1Start" covered="_50H7EMlLEeauXd9_yH_bpw"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_z8aO4MlNEeauXd9_yH_bpw" name="ActionExecSpec" covered="_50H7EMlLEeauXd9_yH_bpw" finish="_GuUOsMlOEeauXd9_yH_bpw" start="_4IOSkclOEeauXd9_yH_bpw"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_4HvxcMlOEeauXd9_yH_bpw" name="ActionExecSpec1" finish="_4HwYgMlOEeauXd9_yH_bpw" start="_3G6mkMlOEeauXd9_yH_bpw"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_GuU1wMlOEeauXd9_yH_bpw" name="MessageRecv0" covered="_yAiC8MlLEeauXd9_yH_bpw" message="_GuTnoMlOEeauXd9_yH_bpw"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_4HwYgMlOEeauXd9_yH_bpw" name="ActionExecSpec1Finish" execution="_4HvxcMlOEeauXd9_yH_bpw"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_egBJUMlOEeauXd9_yH_bpw" name="ActionExecSpec1Start" covered="_50H7EMlLEeauXd9_yH_bpw"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_GuUOsMlOEeauXd9_yH_bpw" name="MessageSend1" covered="_50H7EMlLEeauXd9_yH_bpw" message="_GuTnoMlOEeauXd9_yH_bpw"/>
+    <message xmi:type="uml:Message" xmi:id="_mg3PwMlNEeauXd9_yH_bpw" name="initiateBooking(bookingid 0)" receiveEvent="_mg5E8MlNEeauXd9_yH_bpw" sendEvent="_mg4d4MlNEeauXd9_yH_bpw"/>
+    <message xmi:type="uml:Message" xmi:id="_GuTnoMlOEeauXd9_yH_bpw" name="initiated" messageSort="reply" receiveEvent="_GuU1wMlOEeauXd9_yH_bpw" sendEvent="_GuUOsMlOEeauXd9_yH_bpw"/>
+    <message xmi:type="uml:Message" xmi:id="_3G5YcMlOEeauXd9_yH_bpw" name="[bookingId==0] initiate" receiveEvent="_3G6mkMlOEeauXd9_yH_bpw" sendEvent="_3G5_gMlOEeauXd9_yH_bpw"/>
+  </packagedElement>
+</uml:Model>
