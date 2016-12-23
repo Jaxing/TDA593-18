@@ -498,6 +498,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 		for(int i = 0; i< bookingRoomList.size(); i++){
 			currentRoom = bookingRoomList.get(i);
 			if (currentRoom.getRoomNumber()==roomNumber){
+				currentRoom.setOccupied(false);
 				return currentRoom.getRoomType().getPrice() + currentRoom.getExtraCostPrice();
 			}
 		}
@@ -563,6 +564,7 @@ public class BookingSystemImpl extends MinimalEObjectImpl.Container implements B
 				if (roomType.getDescription().equals(roomTypeDescription)) {
 					IRoom room = booking.getRooms().get(i);
 					if (booking.checkInRoom(room)) {
+						room.setOccupied(true);
 						return room.getRoomNumber();
 					}
 				}

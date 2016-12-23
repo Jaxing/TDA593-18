@@ -229,7 +229,7 @@ public class RoomManagerImpl extends MinimalEObjectImpl.Container implements Roo
 	 */
 	public IRoom removeRoom(int roomNumber) {
 		for(int i = 0; i < rooms.size(); i++){
-			if (rooms.get(i).getRoomNumber() == roomNumber){
+			if (rooms.get(i).getRoomNumber() == roomNumber && !rooms.get(i).isOccupied()){
 				return (IRoom)rooms.remove(i);
 			}
 		}

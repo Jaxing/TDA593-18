@@ -87,4 +87,20 @@ public interface IRoom extends EObject {
 	 */
 	void addExtraCost(double extraCostPrice);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	boolean isOccupied();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model statusRequired="true" statusOrdered="false"
+	 * @generated
+	 */
+	void setOccupied(boolean status);
+
 } // IRoom

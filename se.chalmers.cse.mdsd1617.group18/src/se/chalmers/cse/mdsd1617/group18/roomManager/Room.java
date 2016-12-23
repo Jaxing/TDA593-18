@@ -17,6 +17,7 @@ package se.chalmers.cse.mdsd1617.group18.roomManager;
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.roomManager.Room#isBlocked <em>Blocked</em>}</li>
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.roomManager.Room#getExtraCostDescriptions <em>Extra Cost Descriptions</em>}</li>
  *   <li>{@link se.chalmers.cse.mdsd1617.group18.roomManager.Room#getExtraCostPrice <em>Extra Cost Price</em>}</li>
+ *   <li>{@link se.chalmers.cse.mdsd1617.group18.roomManager.Room#isOccupied <em>Occupied</em>}</li>
  * </ul>
  *
  * @see se.chalmers.cse.mdsd1617.group18.roomManager.RoomManagerPackage#getRoom()
@@ -153,5 +154,31 @@ public interface Room extends IRoom {
 	 * @generated
 	 */
 	void setExtraCostPrice(double value);
+
+	/**
+	 * Returns the value of the '<em><b>Occupied</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Occupied</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Occupied</em>' attribute.
+	 * @see #setOccupied(boolean)
+	 * @see se.chalmers.cse.mdsd1617.group18.roomManager.RoomManagerPackage#getRoom_Occupied()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	boolean isOccupied();
+
+	/**
+	 * Sets the value of the '{@link se.chalmers.cse.mdsd1617.group18.roomManager.Room#isOccupied <em>Occupied</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Occupied</em>' attribute.
+	 * @see #isOccupied()
+	 * @generated
+	 */
+	void setOccupied(boolean value);
 
 } // Room

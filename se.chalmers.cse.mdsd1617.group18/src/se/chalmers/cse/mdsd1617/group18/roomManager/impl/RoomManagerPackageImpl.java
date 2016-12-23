@@ -492,6 +492,15 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getRoom_Occupied() {
+		return (EAttribute)roomEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getIRoom() {
 		return iRoomEClass;
 	}
@@ -582,6 +591,24 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getIRoom__IsOccupied() {
+		return iRoomEClass.getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIRoom__SetOccupied__boolean() {
+		return iRoomEClass.getEOperations().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public RoomManagerFactory getRoomManagerFactory() {
 		return (RoomManagerFactory)getEFactoryInstance();
 	}
@@ -648,6 +675,7 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 		createEAttribute(roomEClass, ROOM__BLOCKED);
 		createEAttribute(roomEClass, ROOM__EXTRA_COST_DESCRIPTIONS);
 		createEAttribute(roomEClass, ROOM__EXTRA_COST_PRICE);
+		createEAttribute(roomEClass, ROOM__OCCUPIED);
 
 		iRoomEClass = createEClass(IROOM);
 		createEOperation(iRoomEClass, IROOM___GET_ROOM_TYPE);
@@ -659,6 +687,8 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 		createEOperation(iRoomEClass, IROOM___SET_EXTRA_COST_DESCRIPTION__STRING);
 		createEOperation(iRoomEClass, IROOM___GET_EXTRA_COST_PRICE);
 		createEOperation(iRoomEClass, IROOM___ADD_EXTRA_COST__DOUBLE);
+		createEOperation(iRoomEClass, IROOM___IS_OCCUPIED);
+		createEOperation(iRoomEClass, IROOM___SET_OCCUPIED__BOOLEAN);
 	}
 
 	/**
@@ -781,6 +811,7 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 		initEAttribute(getRoom_Blocked(), ecorePackage.getEBoolean(), "blocked", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_ExtraCostDescriptions(), ecorePackage.getEString(), "extraCostDescriptions", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_ExtraCostPrice(), ecorePackage.getEDouble(), "extraCostPrice", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoom_Occupied(), ecorePackage.getEBoolean(), "occupied", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(iRoomEClass, IRoom.class, "IRoom", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -805,6 +836,11 @@ public class RoomManagerPackageImpl extends EPackageImpl implements RoomManagerP
 
 		op = initEOperation(getIRoom__AddExtraCost__double(), null, "addExtraCost", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDouble(), "extraCostPrice", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getIRoom__IsOccupied(), ecorePackage.getEBoolean(), "isOccupied", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIRoom__SetOccupied__boolean(), null, "setOccupied", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "status", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

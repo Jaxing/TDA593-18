@@ -284,6 +284,7 @@
                 <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/Room/blocked"/>
                 <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/Room/extraCostDescriptions"/>
                 <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/Room/extraCostPrice"/>
+                <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/Room/occupied"/>
               </genClasses>
               <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IRoom">
                 <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IRoom/getRoomType"/>
@@ -302,6 +303,10 @@
                 <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IRoom/getExtraCostPrice"/>
                 <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IRoom/addExtraCost">
                   <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IRoom/addExtraCost/extraCostPrice"/>
+                </genOperations>
+                <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IRoom/isOccupied"/>
+                <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IRoom/setOccupied">
+                  <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="se.ecore#//chalmers/cse/mdsd1617/group18/roomManager/IRoom/setOccupied/status"/>
                 </genOperations>
               </genClasses>
             </nestedGenPackages>
